@@ -985,5 +985,165 @@ const questionDataExtra = {
             { num: 4, btn: "4. 使用開始", desc: "<strong>4. 応答がなければ使用開始</strong><br>どのホストからも ARP 応答がなければ、その IP は未使用と判断して利用を開始します。", stateClass: "state-4" }
         ],
         packetLabels: { req: "ARP Req", res: "No Reply" }
+    },
+    spf: {
+        source: "情報処理安全確保支援士試験・R4秋・午前II問15",
+        diagramTitle: "SPF ドメイン認証（シミュレーター）",
+        text: "SPF を用いたドメイン認証を実施する場合，送信元の電子メールアドレスのドメイン所有者が SPF の導入時に行う設定はどれか。",
+        options: [
+            { key: "ア", text: "DNS サーバに SPF レコードを登録する。", correct: true },
+            { key: "イ", text: "DNS クエリを受け付けるポート番号を変更する。", correct: false },
+            { key: "ウ", text: "メールサーバにデジタル証明書をインストールする。", correct: false },
+            { key: "エ", text: "メールサーバの TCP ポート 25 を使用不可にする。", correct: false }
+        ],
+        explanation: `<p><strong>正解は「ア」です。</strong></p><br><p>SPF は送信元ドメインの DNS に<strong>SPF レコード</strong>（許可 SMTP サーバ IP）を登録し，受信側が MAIL FROM ドメインと送信 IP の整合性を確認します。</p>`,
+        nodes: { left: { name: "送信SMTP", ip: "MAIL FROM", icon: "fa-paper-plane", color: "var(--primary)" }, center: { name: "DNS\nSPFレコード", ip: "許可IP一覧", icon: "fa-globe", color: "var(--secondary)" }, right: { name: "受信SMTP", ip: "整合性確認", icon: "fa-inbox", color: "var(--success)" } },
+        steps: [
+            { num: 1, btn: "1. SPF登録", desc: "<strong>1. DNS に SPF レコード登録</strong><br>ドメイン所有者が許可する SMTP サーバ IP を DNS TXT レコードに登録します。", stateClass: "state-1" },
+            { num: 2, btn: "2. メール受信", desc: "<strong>2. 受信 SMTP がメールを受信</strong><br>MAIL FROM のドメインと送信サーバ IP を取得します。", stateClass: "state-2" },
+            { num: 3, btn: "3. DNS照会", desc: "<strong>3. SPF レコードを DNS 照会</strong><br>送信 IP が許可リストに含まれるか確認します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 判定", desc: "<strong>4. 受入/拒否</strong><br>整合すれば受け入れ，不一致なら拒否します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "SPF Query", res: "Pass/Fail" }
+    },
+    ip25b: {
+        source: "情報処理安全確保支援士試験・R2秋・午前II問17",
+        diagramTitle: "IP25B（インバウンドポート25遮断）（シミュレーター）",
+        text: "インターネットサービスプロバイダ（ISP）が，スパムメール対策として導入する IP25B に該当するものはどれか。",
+        options: [
+            { key: "ア", text: "自社 ISP ネットワークの動的 IP アドレスから，他 ISP が管理するメールサーバへの SMTP 通信を制限する。", correct: false },
+            { key: "イ", text: "自社 ISP のメールサーバが受信した電子メールのうち，スパムメールのシグネチャに合致するものを隔離する。", correct: false },
+            { key: "ウ", text: "他 ISP ネットワークの動的 IP アドレスから，自社 ISP のメールサーバへの SMTP 通信を制限する。", correct: true },
+            { key: "エ", text: "第三者中継の脆弱性をもつ他 ISP のメールサーバから自社 ISP のメールサーバへ送信された電子メールを隔離する。", correct: false }
+        ],
+        explanation: `<p><strong>正解は「ウ」です。</strong></p><br><p><strong>IP25B</strong>は他 ISP の動的 IP から自社メールサーバ（ポート 25）への SMTP を遮断する対策です。アは OP25B の説明です。</p>`,
+        nodes: { left: { name: "他ISP\n動的IP", ip: "SMTP送信", icon: "fa-user-secret", color: "var(--accent)" }, center: { name: "自社ISP\nIP25B", ip: "Port25遮断", icon: "fa-shield-halved", color: "var(--secondary)" }, right: { name: "自社\nメールサーバ", ip: "受信保護", icon: "fa-server", color: "var(--success)" } },
+        steps: [
+            { num: 1, btn: "1. 外部からSMTP", desc: "<strong>1. 他 ISP 動的 IP から SMTP</strong><br>外部の動的 IP から自社メールサーバへポート 25 通信が試みられます。", stateClass: "state-1" },
+            { num: 2, btn: "2. IP25B遮断", desc: "<strong>2. IP25B による遮断</strong><br>ISP がインバウンドのポート 25 通信をブロックします。", stateClass: "state-2" },
+            { num: 3, btn: "3. スパム防止", desc: "<strong>3. 不正受信の抑制</strong><br>外部ボットネットからのスパム受信を低減します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正規経路", desc: "<strong>4. 正規サーバは許可</strong><br>固定 IP 等の正規送信元は別途許可設定が可能です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "SMTP:25", res: "Blocked" }
+    },
+    dkim: {
+        source: "情報処理安全確保支援士試験・R5春・午前II問15",
+        diagramTitle: "DKIM 電子署名認証（シミュレーター）",
+        text: "DKIM（DomainKeys Identified Mail）の説明はどれか。",
+        options: [
+            { key: "ア", text: "送信メールサーバがメールヘッダにデジタル署名を付加し，受信メールサーバが公開鍵を用いてそのデジタル署名を検証する仕組み。", correct: true },
+            { key: "イ", text: "送信メールサーバで利用者認証を行った場合にのみ，メールの送信を許可する仕組み。", correct: false },
+            { key: "ウ", text: "メールヘッダと配送経路情報から得られる送信者情報を用いて，メール送信者の IP アドレスを検証する仕組み。", correct: false },
+            { key: "エ", text: "内部ネットワークから外部メールサーバの TCP ポート番号 25 への直接通信を禁止するネットワーク機器の仕組み。", correct: false }
+        ],
+        explanation: `<p><strong>正解は「ア」です。</strong></p><br><p>DKIM は送信側がヘッダに<strong>デジタル署名</strong>を付与し，受信側が DNS の<strong>公開鍵</strong>で検証します。イ=SMTP-AUTH，ウ=SPF，エ=OP25B。</p>`,
+        nodes: { left: { name: "送信SMTP", ip: "署名付与", icon: "fa-signature", color: "var(--primary)" }, center: { name: "DNS\n公開鍵", ip: "DKIMレコード", icon: "fa-key", color: "var(--secondary)" }, right: { name: "受信SMTP", ip: "署名検証", icon: "fa-check-double", color: "var(--success)" } },
+        steps: [
+            { num: 1, btn: "1. 署名付与", desc: "<strong>1. 送信サーバが DKIM 署名を付与</strong><br>メールヘッダにデジタル署名を追加します。", stateClass: "state-1" },
+            { num: 2, btn: "2. メール配送", desc: "<strong>2. メールが受信サーバへ配送</strong><br>署名付きメールが届きます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 公開鍵取得", desc: "<strong>3. DNS から公開鍵を取得</strong><br>署名ドメインの DNS レコードを参照します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 検証", desc: "<strong>4. 署名を検証</strong><br>正当な署名なら認証成功，改ざん・なりすましを検出できます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "Signed Mail", res: "Verify OK" }
+    },
+    imaps: {
+        source: "情報処理安全確保支援士試験・R5秋・午前II問16",
+        diagramTitle: "IMAPS 暗号化メール受信（シミュレーター）",
+        text: "電子メールをスマートフォンのメールアプリケーションプログラムで受信する際のメールサーバとスマートフォンとの間の通信を，メール本文を含めて暗号化するプロトコルはどれか。",
+        options: [
+            { key: "ア", text: "APOP", correct: false },
+            { key: "イ", text: "IMAPS", correct: true },
+            { key: "ウ", text: "POP3", correct: false },
+            { key: "エ", text: "SMTP Submission", correct: false }
+        ],
+        explanation: `<p><strong>正解は「イ」です。</strong></p><br><p><strong>IMAPS</strong>（IMAP over TLS）はメール本文を含む通信全体を暗号化します。APOP は認証のみ，POP3 は平文，SMTP Submission は送信用途です。</p>`,
+        nodes: { left: { name: "スマートフォン\nメールアプリ", ip: "IMAPS:993", icon: "fa-mobile-screen", color: "var(--primary)" }, center: { name: "TLS\n暗号化", ip: "通信保護", icon: "fa-lock", color: "var(--secondary)" }, right: { name: "メールサーバ", ip: "IMAP", icon: "fa-server", color: "var(--success)" } },
+        steps: [
+            { num: 1, btn: "1. TLS接続", desc: "<strong>1. IMAPS（993）で TLS 接続</strong><br>クライアントとサーバ間の通信路を暗号化します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 認証", desc: "<strong>2. 暗号化された認証</strong><br>ID・パスワードも暗号化された経路で送信されます。", stateClass: "state-2" },
+            { num: 3, btn: "3. メール取得", desc: "<strong>3. メール本文の取得</strong><br>メール本文も暗号化された通信で受信します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 盗聴防止", desc: "<strong>4. 盗聴・改ざんの防止</strong><br>平文 POP3 と異なりパケットキャプチャから内容を読めません。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "IMAPS", res: "Encrypted" }
+    },
+    op25b: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問17",
+        diagramTitle: "OP25B（アウトバウンドポート25遮断）（シミュレーター）",
+        text: "ISP が，OP25B を導入する目的の一つはどれか。",
+        options: [
+            { key: "ア", text: "ISP 管理下のネットワークから ISP 管理外のネットワークに対する ICMP パケットを用いた DDoS 攻撃を遮断する。", correct: false },
+            { key: "イ", text: "ISP 管理下のネットワークから ISP 管理外のネットワークに送信されるスパムメールを制限する。", correct: true },
+            { key: "ウ", text: "ISP 管理外のネットワークから ISP 管理下のネットワークに対する ICMP パケットを用いた DDoS 攻撃を遮断する。", correct: false },
+            { key: "エ", text: "ISP 管理外のネットワークから ISP 管理下のネットワークに送信されるスパムメールを制限する。", correct: false }
+        ],
+        explanation: `<p><strong>正解は「イ」です。</strong></p><br><p><strong>OP25B</strong>は自ネットワークの動的 IP から外部ポート 25 への直接 SMTP を遮断し，ボットネット等による<strong>スパム送信</strong>を制限します。エは IP25B に近い説明です。</p>`,
+        nodes: { left: { name: "感染PC\n(動的IP)", ip: "スパム送信", icon: "fa-virus", color: "var(--accent)" }, center: { name: "ISP\nOP25B", ip: "Port25遮断", icon: "fa-ban", color: "var(--secondary)" }, right: { name: "外部\nメールサーバ", ip: ":25到達不可", icon: "fa-globe", color: "var(--primary)" } },
+        steps: [
+            { num: 1, btn: "1. ボット送信", desc: "<strong>1. 感染 PC から外部へ SMTP</strong><br>ISP 管理下の動的 IP からポート 25 へ直接送信を試みます。", stateClass: "state-1" },
+            { num: 2, btn: "2. OP25B", desc: "<strong>2. OP25B による遮断</strong><br>ISP がアウトバウンドのポート 25 をブロックします。", stateClass: "state-2" },
+            { num: 3, btn: "3. 正規経路", desc: "<strong>3. 正規ユーザーは 587 等を利用</strong><br>Submission ポート＋SMTP-AUTH で正規送信します。", stateClass: "state-3" },
+            { num: 4, btn: "4. スパム抑制", desc: "<strong>4. スパム大量送信の抑制</strong><br>ボットネット経由のスパム送信を大幅に低減できます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "SMTP:25", res: "Blocked" }
+    },
+    submission587: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問19",
+        diagramTitle: "Submission ポート 587（シミュレーター）",
+        text: "TCP のサブミッションポート（ポート番号 587）の説明として，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "FTP サービスで，制御用コネクションのポート番号 21 とは別にデータ転送用に使用する。", correct: false },
+            { key: "イ", text: "Web サービスで，ポート番号 80 の HTTP 要求とは別に，サブミットボタンをクリックした際の入力フォームのデータ送信に使用する。", correct: false },
+            { key: "ウ", text: "コマンド操作の遠隔ログインで，通信内容を暗号化するために TELNET のポート番号 23 の代わりに使用する。", correct: false },
+            { key: "エ", text: "電子メールサービスで，迷惑メール対策などのために SMTP のポート番号 25 の代わりに使用する。", correct: true }
+        ],
+        explanation: `<p><strong>正解は「エ」です。</strong></p><br><p>ポート <strong>587</strong> はメールクライアントの<strong>Submission</strong>用ポートで，SMTP-AUTH と TLS を組み合わせ，OP25B 下でも正規送信を可能にします。</p>`,
+        nodes: { left: { name: "メール\nクライアント", ip: "Port 587", icon: "fa-laptop", color: "var(--primary)" }, center: { name: "SMTP-AUTH\n+TLS", ip: "認証投稿", icon: "fa-lock", color: "var(--secondary)" }, right: { name: "メールサーバ", ip: "MSA/MTA", icon: "fa-server", color: "var(--success)" } },
+        steps: [
+            { num: 1, btn: "1. 587接続", desc: "<strong>1. Submission ポート 587 に接続</strong><br>クライアントがポート 25 ではなく 587 を使用します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 認証", desc: "<strong>2. SMTP-AUTH で認証</strong><br>利用者 ID・パスワードで認証します。", stateClass: "state-2" },
+            { num: 3, btn: "3. TLS暗号化", desc: "<strong>3. TLS で通信暗号化</strong><br>認証情報とメール内容を保護します。", stateClass: "state-3" },
+            { num: 4, btn: "4. メール投稿", desc: "<strong>4. サーバへメール投稿</strong><br>認証済みの正規経路でメールが送信されます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "AUTH+MAIL", res: "Submitted" }
+    },
+    smtpauth: {
+        source: "情報処理安全確保支援士試験・R4秋・午前II問14",
+        diagramTitle: "SMTP-AUTH（シミュレーター）",
+        text: "SMTP-AUTH の特徴はどれか。",
+        options: [
+            { key: "ア", text: "ISP 管理下の動的 IP アドレスから管理外ネットワークのメールサーバへの SMTP 接続を禁止する。", correct: false },
+            { key: "イ", text: "電子メール送信元のメールサーバが送信元ドメインの DNS に登録されていることを確認してから，電子メールを受信する。", correct: false },
+            { key: "ウ", text: "メールクライアントからメールサーバへの電子メール送信時に，利用者 ID とパスワードによる利用者認証を行う。", correct: true },
+            { key: "エ", text: "メールクライアントからメールサーバへの電子メール送信は，POP 接続で利用者認証済みの場合にだけ許可する。", correct: false }
+        ],
+        explanation: `<p><strong>正解は「ウ」です。</strong></p><br><p>SMTP-AUTH は送信時に<strong>利用者 ID・パスワード</strong>で認証します。ア=OP25B，イ=SPF，エ=POP before SMTP。</p>`,
+        nodes: { left: { name: "メール\nクライアント", ip: "AUTH送信", icon: "fa-user", color: "var(--primary)" }, center: { name: "SMTP\nサーバ", ip: "ID/Pass認証", icon: "fa-key", color: "var(--secondary)" }, right: { name: "送信許可", ip: "認証後投稿", icon: "fa-check", color: "var(--success)" } },
+        steps: [
+            { num: 1, btn: "1. 接続", desc: "<strong>1. SMTP サーバへ接続</strong><br>クライアントがメールサーバに接続します。", stateClass: "state-1" },
+            { num: 2, btn: "2. AUTH", desc: "<strong>2. SMTP-AUTH 認証</strong><br>利用者 ID とパスワードを送信します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 認証成功", desc: "<strong>3. 認証成功後に送信許可</strong><br>正規ユーザーのみ MAIL FROM が許可されます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 中継防止", desc: "<strong>4. 第三者中継の防止</strong><br>無認証の不正送信・オープンリレー悪用を防ぎます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "AUTH", res: "235 OK" }
+    },
+    dmarc: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問10",
+        diagramTitle: "DMARC 認証失敗時の処理方針（シミュレーター）",
+        text: "電子メールの受信者側のメールサーバでの送信ドメイン認証が失敗したときの処理方針を，送信側のドメイン管理者が指定するための仕組みはどれか。",
+        options: [
+            { key: "ア", text: "DKIM", correct: false },
+            { key: "イ", text: "DMARC", correct: true },
+            { key: "ウ", text: "SMTP-AUTH", correct: false },
+            { key: "エ", text: "SPF", correct: false }
+        ],
+        explanation: `<p><strong>正解は「イ」です。</strong></p><br><p><strong>DMARC</strong>は SPF/DKIM 認証失敗時の処理（none/quarantine/reject）をドメイン管理者が DNS で指定し，レポートも受け取れます。</p>`,
+        nodes: { left: { name: "送信ドメイン\n管理者", ip: "DMARC DNS", icon: "fa-user-shield", color: "var(--primary)" }, center: { name: "受信SMTP", ip: "SPF/DKIM検証", icon: "fa-envelope", color: "var(--secondary)" }, right: { name: "処理方針", ip: "拒否/隔離", icon: "fa-filter", color: "var(--accent)" } },
+        steps: [
+            { num: 1, btn: "1. ポリシー設定", desc: "<strong>1. DMARC ポリシーを DNS 登録</strong><br>認証失敗時の処理方針を指定します。", stateClass: "state-1" },
+            { num: 2, btn: "2. SPF/DKIM", desc: "<strong>2. 受信側が SPF/DKIM を検証</strong><br>送信元ドメイン認証を実施します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 失敗時", desc: "<strong>3. 認証失敗時に DMARC 参照</strong><br>ポリシーに従い隔離・拒否等を実施します。", stateClass: "state-3" },
+            { num: 4, btn: "4. レポート", desc: "<strong>4. 集計レポート送信</strong><br>なりすまし試行の可視化にも活用します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "Auth Fail", res: "Policy" }
     }
 };

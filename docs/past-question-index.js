@@ -60,7 +60,16 @@ const pastQuestionIndex = [
     { no: 41, format: 'simulator', category: 'dns', key: 'dnswater',    source: 'H29春 午前II問6',  title: 'DNSウォータートーチャ' },
     { no: 42, format: 'simulator', category: 'dns', key: 'dnsdmz',      source: 'H25春 午前II問12', title: 'DMZ共用DNSとポイズニング' },
     { no: 43, format: 'simulator', category: 'dns', key: 'dnskaminsky', source: 'R7春 午前II問4',   title: 'Kaminsky攻撃対策' },
-    { no: 48, format: 'simulator', category: 'network', key: 'dhcparp', source: 'R5秋 午前II問20', title: 'DHCPとARP（アドレス競合確認）' }
+    { no: 48, format: 'simulator', category: 'network', key: 'dhcparp', source: 'R5秋 午前II問20', title: 'DHCPとARP（アドレス競合確認）' },
+    // --- メールセキュリティ (8) ---
+    { no: 49, format: 'simulator', category: 'mail', key: 'spf', source: 'R4秋 午前II問15', title: 'SPF ドメイン認証' },
+    { no: 50, format: 'simulator', category: 'mail', key: 'ip25b', source: 'R2秋 午前II問17', title: 'IP25B' },
+    { no: 51, format: 'simulator', category: 'mail', key: 'dkim', source: 'R5春 午前II問15', title: 'DKIM' },
+    { no: 52, format: 'simulator', category: 'mail', key: 'imaps', source: 'R5秋 午前II問16', title: 'IMAPS 暗号化受信' },
+    { no: 53, format: 'simulator', category: 'mail', key: 'op25b', source: 'R7春 午前II問17', title: 'OP25B' },
+    { no: 54, format: 'simulator', category: 'mail', key: 'submission587', source: 'R6春 午前II問19', title: 'Submission ポート 587' },
+    { no: 55, format: 'simulator', category: 'mail', key: 'smtpauth', source: 'R4秋 午前II問14', title: 'SMTP-AUTH' },
+    { no: 56, format: 'simulator', category: 'mail', key: 'dmarc', source: 'R6秋 午前II問10', title: 'DMARC' }
 ];
 
 const pastQuestionCategoryLabels = {
@@ -70,6 +79,7 @@ const pastQuestionCategoryLabels = {
     malware: 'マルウェア・脅威',
     fundamentals: '基礎・管理',
     network: 'ネットワーク',
+    mail: 'メールセキュリティ',
     cloud: 'クラウド・VDI',
     zerotrust: 'ゼロトラスト',
     threat: '脅威・キルチェーン',

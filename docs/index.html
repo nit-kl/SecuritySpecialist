@@ -1283,7 +1283,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 48 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 56 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1296,13 +1296,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（48問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（56問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（48問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（56問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1455,6 +1455,44 @@
             </details>
 
             <details class="sidebar-group">
+                <summary><i class="fa-solid fa-envelope" style="color:#34d399;"></i> メールセキュリティ（8問）</summary>
+                <div class="question-list">
+                <button class="question-tab-btn" onclick="switchQuestion('spf', this)">
+                    <span class="btn-meta">問49: R4秋 午前II問15</span>
+                    <span class="btn-title">SPF ドメイン認証</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('ip25b', this)">
+                    <span class="btn-meta">問50: R2秋 午前II問17</span>
+                    <span class="btn-title">IP25B</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('dkim', this)">
+                    <span class="btn-meta">問51: R5春 午前II問15</span>
+                    <span class="btn-title">DKIM</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('imaps', this)">
+                    <span class="btn-meta">問52: R5秋 午前II問16</span>
+                    <span class="btn-title">IMAPS 暗号化受信</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('op25b', this)">
+                    <span class="btn-meta">問53: R7春 午前II問17</span>
+                    <span class="btn-title">OP25B</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('submission587', this)">
+                    <span class="btn-meta">問54: R6春 午前II問19</span>
+                    <span class="btn-title">Submission ポート 587</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('smtpauth', this)">
+                    <span class="btn-meta">問55: R4秋 午前II問14</span>
+                    <span class="btn-title">SMTP-AUTH</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('dmarc', this)">
+                    <span class="btn-meta">問56: R6秋 午前II問10</span>
+                    <span class="btn-title">DMARC</span>
+                </button>
+                </div>
+            </details>
+
+            <details class="sidebar-group">
                 <summary><i class="fa-solid fa-cloud" style="color:#818cf8;"></i> クラウド・VDI（3問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('ismap', this)">
@@ -1574,7 +1612,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（152問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（162問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1591,6 +1629,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToNetworkCheck()">ネットワーク基礎（13問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToPortScanCheck()">ポートスキャン（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToDnsCheck()">DNS 攻撃（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCloudCheck()">クラウド・VDI（10問）</button>
@@ -1624,22 +1663,22 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>48</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>152+</strong><span>Check! 基礎知識</span></div>
-                    <div class="overview-stat"><strong>14</strong><span>カテゴリ</span></div>
+                    <div class="overview-stat"><strong>56</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>162+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 48 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 48 問（重複なし）</div>
+                        <p>過去問 56 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 56 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全48問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全48問（14カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全56問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全56問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1651,7 +1690,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">44問</div>
+                        <div class="card-meta">54問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1668,9 +1707,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（48問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（56問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 48 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 56 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1678,7 +1717,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（48問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（56問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -1968,6 +2007,169 @@
                     </ul>
                 </div>
                 <div class="accordion" id="accordion-tcpipsec-list"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! メールセキュリティ) -->
+            <section class="content-section" id="section-mailsec-check">
+                <h2 class="section-title"><i class="fa-solid fa-envelope-circle-check"></i>基礎知識: Check! 解説（メールセキュリティ）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    スパム対策、OP25B/IP25B、送信元ドメイン認証（SPF/DKIM/DMARC）、STARTTLS、POP3 の脆弱性などを確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>スパムメールが可能となる主な原因は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>第三者中継を防ぐ有効な方法は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>OP25B の必要性と仕組みを挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>Submission ポート経由のメール送信の必要性と仕組みを挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>送信元ドメイン認証によって何が可能となるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>IP アドレスによる送信元ドメイン認証と，電子署名による送信元ドメイン認証の特徴を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>DMARC について説明せよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>STARTTLS について説明せよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>POP3 の脆弱性を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q10】</span>インターネットからメールサーバに安全にアクセスしてメールを受信する方法にはどのようなものがあるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-mailsec-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">SPF を用いたドメイン認証を実施する場合，送信元の電子メールアドレスのドメイン所有者が SPF の導入時に行う設定はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>DNS サーバに SPF レコードを登録する。</span></li>
+                        <li><span class="opt-key">イ</span><span>DNS クエリを受け付けるポート番号を変更する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>メールサーバにデジタル証明書をインストールする。</span></li>
+                        <li><span class="opt-key">エ</span><span>メールサーバの TCP ポート 25 を使用不可にする。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R4 秋・午前Ⅱ問 15］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>SPF（Sender Policy Framework）</strong>は送信者のなりすましを拒否する仕組みで，送信元ドメインの DNS サーバに<strong>SPF レコード</strong>（許可する SMTP サーバの IP アドレス）を事前登録する。受信側 SMTP サーバは MAIL FROM のドメインと送信サーバ IP の整合性を DNS で確認し，正当なら受け入れ，そうでなければ拒否する。したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">インターネットサービスプロバイダ（ISP）が，スパムメール対策として導入する IP25B に該当するものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>自社 ISP ネットワークの動的 IP アドレスから，他 ISP が管理するメールサーバへの SMTP 通信を制限する。</span></li>
+                        <li><span class="opt-key">イ</span><span>自社 ISP のメールサーバが受信した電子メールのうち，スパムメールのシグネチャに合致するものを隔離する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>他 ISP ネットワークの動的 IP アドレスから，自社 ISP のメールサーバへの SMTP 通信を制限する。</span></li>
+                        <li><span class="opt-key">エ</span><span>第三者中継の脆弱性をもつ他 ISP のメールサーバから自社 ISP のメールサーバへ送信された電子メールを隔離する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R2 秋・午前Ⅱ問 17］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>IP25B（Inbound Port 25 Blocking）</strong>は，ISP が<strong>他 ISP の動的 IP アドレス</strong>から自社管理下のメールサーバ（ポート 25）への SMTP 通信を遮断する対策である。したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">DKIM（DomainKeys Identified Mail）の説明はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>送信メールサーバがメールヘッダにデジタル署名を付加し，受信メールサーバが公開鍵を用いてそのデジタル署名を検証する仕組み。</span></li>
+                        <li><span class="opt-key">イ</span><span>送信メールサーバで利用者認証を行った場合にのみ，メールの送信を許可する仕組み。</span></li>
+                        <li><span class="opt-key">ウ</span><span>メールヘッダと配送経路情報から得られる送信者情報を用いて，メール送信者の IP アドレスを検証する仕組み。</span></li>
+                        <li><span class="opt-key">エ</span><span>内部ネットワークから外部メールサーバの TCP ポート番号 25 への直接通信を禁止するネットワーク機器の仕組み。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 春・午前Ⅱ問 15］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>DKIM</strong>は送信 SMTP サーバがメールヘッダにデジタル署名を付加し，受信側が DNS に登録された公開鍵で検証する仕組みである。したがって<strong>ア</strong>が正解。イは SMTP-AUTH，ウは SPF，エは OP25B の説明。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">電子メールをスマートフォンのメールアプリケーションプログラムで受信する際のメールサーバとスマートフォンとの間の通信を，メール本文を含めて暗号化するプロトコルはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>APOP</span></li>
+                        <li><span class="opt-key">イ</span><span>IMAPS</span></li>
+                        <li><span class="opt-key">ウ</span><span>POP3</span></li>
+                        <li><span class="opt-key">エ</span><span>SMTP Submission</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 秋・午前Ⅱ問 16］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>IMAPS</strong>（IMAP over TLS）はメール本文を含む通信全体を暗号化する。したがって<strong>イ</strong>が正解。APOP は認証情報のみ，POP3 は平文，SMTP Submission は送信用途。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">ISP が，OP25B を導入する目的の一つはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>ISP 管理下のネットワークから ISP 管理外のネットワークに対する ICMP パケットを用いた DDoS 攻撃を遮断する。</span></li>
+                        <li><span class="opt-key">イ</span><span>ISP 管理下のネットワークから ISP 管理外のネットワークに送信されるスパムメールを制限する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>ISP 管理外のネットワークから ISP 管理下のネットワークに対する ICMP パケットを用いた DDoS 攻撃を遮断する。</span></li>
+                        <li><span class="opt-key">エ</span><span>ISP 管理外のネットワークから ISP 管理下のネットワークに送信されるスパムメールを制限する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R7 春・午前Ⅱ問 17］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>OP25B</strong>は ISP 管理下の動的 IP から外部ネットワークのポート 25 への直接 SMTP 通信を遮断し，<strong>自ネットワークからのスパム送信</strong>を制限する。したがって<strong>イ</strong>が正解。エは IP25B の説明に近い。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">TCP のサブミッションポート（ポート番号 587）の説明として，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>FTP サービスで，制御用コネクションのポート番号 21 とは別にデータ転送用に使用する。</span></li>
+                        <li><span class="opt-key">イ</span><span>Web サービスで，ポート番号 80 の HTTP 要求とは別に，サブミットボタンをクリックした際の入力フォームのデータ送信に使用する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>コマンド操作の遠隔ログインで，通信内容を暗号化するために TELNET のポート番号 23 の代わりに使用する。</span></li>
+                        <li><span class="opt-key">エ</span><span>電子メールサービスで，迷惑メール対策などのために SMTP のポート番号 25 の代わりに使用する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ問 19］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>ポート <strong>587</strong> はメールクライアントが認証付きでメールを投稿する <strong>Submission ポート</strong>であり，OP25B 環境下での正規送信経路として SMTP のポート 25 の代替に用いられる。したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">SMTP-AUTH の特徴はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>ISP 管理下の動的 IP アドレスから管理外ネットワークのメールサーバへの SMTP 接続を禁止する。</span></li>
+                        <li><span class="opt-key">イ</span><span>電子メール送信元のメールサーバが送信元ドメインの DNS に登録されていることを確認してから，電子メールを受信する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>メールクライアントからメールサーバへの電子メール送信時に，利用者 ID とパスワードによる利用者認証を行う。</span></li>
+                        <li><span class="opt-key">エ</span><span>メールクライアントからメールサーバへの電子メール送信は，POP 接続で利用者認証済みの場合にだけ許可する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R4 秋・午前Ⅱ問 14］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>SMTP-AUTH</strong>は SMTP 送信時に利用者 ID・パスワードで認証する仕組みである。したがって<strong>ウ</strong>が正解。アは OP25B，イは SPF，エは POP before SMTP。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">電子メールの受信者側のメールサーバでの送信ドメイン認証が失敗したときの処理方針を，送信側のドメイン管理者が指定するための仕組みはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>DKIM</span></li>
+                        <li><span class="opt-key">イ</span><span>DMARC</span></li>
+                        <li><span class="opt-key">ウ</span><span>SMTP-AUTH</span></li>
+                        <li><span class="opt-key">エ</span><span>SPF</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ問 10］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>DMARC</strong>は SPF・DKIM 認証失敗時の処理方針（拒否・隔離等）を送信側ドメイン管理者が DNS で指定する仕組みである。したがって<strong>イ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題 8 問は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="mail-simulator-bridge"></div>
             </section>
 
             <!-- 基礎知識の解説セクション (Check! ポートスキャン) -->
@@ -2383,6 +2585,7 @@
 
     <script src="simulator-questions-extra.js"></script>
     <script src="malware-check-data.js"></script>
+    <script src="mail-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
         // 問題データ
@@ -6657,6 +6860,7 @@
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
+            renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
             renderAccordionList(checkPortScanData, 'accordion-portscan-list');
             renderAccordionList(checkCloudData, 'accordion-cloud-list');
             renderAccordionList(checkTeleworkData, 'accordion-telework-list');
@@ -6679,7 +6883,7 @@
             if (typeof pastQuestionIndex === 'undefined') return;
             const filterContainer = document.getElementById('question-index-filters');
             if (!filterContainer) return;
-            const filterKeys = ['all', 'dos', 'web', 'malware', 'fundamentals', 'network', 'cloud', 'zerotrust', 'threat', 'bof', 'vuln', 'password', 'session', 'dns'];
+            const filterKeys = ['all', 'dos', 'web', 'malware', 'fundamentals', 'network', 'mail', 'cloud', 'zerotrust', 'threat', 'bof', 'vuln', 'password', 'session', 'dns'];
             filterContainer.innerHTML = filterKeys.map(key => {
                 const count = key === 'all' ? pastQuestionIndex.length : pastQuestionIndex.filter(q => q.category === key).length;
                 const label = pastQuestionCategoryLabels[key] || key;
@@ -6690,6 +6894,7 @@
             renderSimulatorBridge('web-simulator-bridge', 'web');
             renderSimulatorBridge('fundamentals-simulator-bridge', 'fundamentals');
             renderSimulatorBridge('network-simulator-bridge', 'network');
+            renderSimulatorBridge('mail-simulator-bridge', 'mail');
             renderSimulatorBridge('cloud-simulator-bridge', 'cloud');
             renderSimulatorBridge('zerotrust-simulator-bridge', 'zerotrust');
             renderSimulatorBridge('threat-simulator-bridge', 'threat');
@@ -6810,6 +7015,7 @@
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
+            renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
             renderAccordionList(checkPortScanData, 'accordion-portscan-list');
             renderAccordionList(checkCloudData, 'accordion-cloud-list');
             renderAccordionList(checkTeleworkData, 'accordion-telework-list');
@@ -6887,6 +7093,10 @@
 
         function scrollToTcpIpSecCheck() {
             document.getElementById('section-tcpipsec-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToMailSecCheck() {
+            document.getElementById('section-mailsec-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToPortScanCheck() {
