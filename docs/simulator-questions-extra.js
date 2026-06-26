@@ -804,5 +804,186 @@ const questionDataExtra = {
             { num: 4, btn: "4. キャッシュ保護", desc: "<strong>4. 偽情報のキャッシュ防止</strong><br>Kaminsky攻撃による偽情報のキャッシュが困難になり、DNSの信頼性が保たれます。", stateClass: "state-4" }
         ],
         packetLabels: { req: "DNS Query", res: "Random Port" }
+    },
+    cwe: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問9",
+        diagramTitle: "CWE（共通弱点一覧）の位置づけ（シミュレーター）",
+        text: "JVN などの脆弱性対策ポータルサイトで採用されている CWE はどれか。",
+        options: [
+            { key: "ア", text: "IT 製品の脆弱性を評価する手法", correct: false },
+            { key: "イ", text: "製品を識別するためのプラットフォーム名の一覧", correct: false },
+            { key: "ウ", text: "セキュリティに関連する設定項目を識別するための識別子", correct: false },
+            { key: "エ", text: "ソフトウェア及びハードウェアの脆弱性の種類の一覧", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>CWE（Common Weakness Enumeration）</strong>は，ソフトウェア及びハードウェアの脆弱性の<strong>種類（弱点タイプ）</strong>を識別するための共通基準です。SQL インジェクション、クロスサイトスクリプティング、バッファオーバーフローなどを体系化して提供しています。</p>
+            <div class="check-grid-2" style="margin-top:1rem;">
+                <div class="check-compare-item bad"><strong>ア CVSS</strong> 脆弱性の深刻度を数値評価する手法</div>
+                <div class="check-compare-item bad"><strong>イ CPE</strong> 製品・プラットフォームを識別する一覧</div>
+                <div class="check-compare-item bad"><strong>ウ CCE</strong> セキュリティ設定項目を識別する識別子</div>
+                <div class="check-compare-item good"><strong>エ CWE ✅</strong> 脆弱性の種類（弱点タイプ）の一覧</div>
+            </div>
+        `,
+        nodes: {
+            left: { name: "JVN\nポータル", ip: "脆弱性情報", icon: "fa-globe", color: "var(--primary)" },
+            center: { name: "CWE\n(弱点タイプ)", ip: "SQLi/XSS/BOF等", icon: "fa-sitemap", color: "var(--secondary)" },
+            right: { name: "CVE\n(個別脆弱性)", ip: "具体的事例", icon: "fa-bug", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 弱点発見", desc: "<strong>1. ソフトウェアの弱点（Weakness）の存在</strong><br>設計・実装上の弱点タイプ（SQLi、XSS 等）が存在します。", stateClass: "state-1" },
+            { num: 2, btn: "2. CWE分類", desc: "<strong>2. CWE による弱点タイプの体系化</strong><br>CWE は弱点の「種類」を ID 付きで一覧化し、共通言語として提供します。", stateClass: "state-2" },
+            { num: 3, btn: "3. CVE公表", desc: "<strong>3. 具体的事例として CVE 公表</strong><br>特定製品の特定脆弱性は CVE として JVN 等で公開されます。", stateClass: "state-3" },
+            { num: 4, btn: "4. JVN連携", desc: "<strong>4. JVN での CWE 参照</strong><br>JVN 等のポータルサイトでは CVE 情報とともに CWE による弱点タイプ分類が利用されます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "弱点タイプ", res: "CWE-ID" }
+    },
+    scap: {
+        source: "情報処理安全確保支援士試験・R5秋・午前II問12",
+        diagramTitle: "SCAP 構成要素（シミュレーター）",
+        text: "脆弱性管理，測定，評価を自動化するために NIST が策定した基準はどれか。",
+        options: [
+            { key: "ア", text: "FIPS（Federal Information Processing Standards）", correct: false },
+            { key: "イ", text: "SCAP（Security Content Automation Protocol）", correct: true },
+            { key: "ウ", text: "SIEM（Security Information and Event Management）", correct: false },
+            { key: "エ", text: "SOAR（Security Orchestration, Automation and Response）", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p><strong>SCAP（Security Content Automation Protocol）</strong>は、NIST が策定した、脆弱性管理・測定・評価の<strong>自動化と標準化</strong>を目的としたプロトコル群です。6 つの標準仕様から構成されます。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>CVE</strong>：脆弱性の識別</li>
+                    <li><strong>CCE</strong>：セキュリティ設定の識別</li>
+                    <li><strong>CPE</strong>：製品・プラットフォームの識別</li>
+                    <li><strong>CVSS</strong>：脆弱性の深刻度評価</li>
+                    <li><strong>XCCDF</strong>：セキュリティ設定チェックリストの記述</li>
+                    <li><strong>OVAL</strong>：脆弱性・設定の検査言語</li>
+                </ul>
+            </div>
+            <div class="check-grid-2" style="margin-top:1rem;">
+                <div class="check-compare-item bad"><strong>ア FIPS</strong> 連邦政府の情報処理標準</div>
+                <div class="check-compare-item bad"><strong>ウ SIEM</strong> ログ収集・相関分析ツール</div>
+                <div class="check-compare-item bad"><strong>エ SOAR</strong> セキュリティオーケストレーション</div>
+            </div>
+        `,
+        nodes: {
+            left: { name: "NIST\n(標準化)", ip: "SCAP策定", icon: "fa-landmark", color: "var(--primary)" },
+            center: { name: "SCAP\n(6仕様)", ip: "CVE/CCE/CPE\nCVSS/XCCDF/OVAL", icon: "fa-gears", color: "var(--secondary)" },
+            right: { name: "VA ツール\n(自動化)", ip: "脆弱性スキャン", icon: "fa-magnifying-glass", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. NIST策定", desc: "<strong>1. NIST による SCAP 策定</strong><br>米国 NIST が情報セキュリティ対策の自動化・標準化のために SCAP を策定しました。", stateClass: "state-1" },
+            { num: 2, btn: "2. 6仕様", desc: "<strong>2. 6 つの標準仕様の統合</strong><br>CVE・CCE・CPE・CVSS・XCCDF・OVAL が SCAP を構成します。", stateClass: "state-2" },
+            { num: 3, btn: "3. チェックリスト", desc: "<strong>3. XCCDF/OVAL による自動検査</strong><br>セキュリティ設定チェックリストと検査言語で設定・脆弱性を自動チェックします。", stateClass: "state-3" },
+            { num: 4, btn: "4. VA自動化", desc: "<strong>4. 脆弱性管理の自動化</strong><br>VA ツール等が SCAP コンテンツを用いて脆弱性の管理・測定・評価を自動化します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "SCAP Content", res: "Scan Result" }
+    },
+    exploit: {
+        source: "情報処理安全確保支援士試験・R2秋・午前II問3",
+        diagramTitle: "エクスプロイトコードの役割（シミュレーター）",
+        text: "エクスプロイトコードの説明はどれか。",
+        options: [
+            { key: "ア", text: "攻撃コードとも呼ばれ、ソフトウェアの脆弱性を悪用するコードのことであり、使い方によっては脆弱性の検証に役立つこともある。", correct: true },
+            { key: "イ", text: "マルウェア定義ファイルとも呼ばれ、マルウェアを特定するための特徴的なコードのことであり、マルウェア対策ソフトによるマルウェアの検知に用いられる。", correct: false },
+            { key: "ウ", text: "メッセージとシークレットデータから計算されるハッシュコードのことであり、メッセージの改ざん検知に用いられる。", correct: false },
+            { key: "エ", text: "ログインのたびに変化する認証コードのことであり、窃取されても再利用できないので不正アクセスを防ぐ。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>エクスプロイトコード（exploit code）</strong>は攻撃コードとも呼ばれ、ソフトウェアやハードウェアの<strong>脆弱性を悪用</strong>して攻撃するために作成されたコードです。ペネトレーションテストや脆弱性検証にも利用されます。</p>
+            <div class="check-grid-2" style="margin-top:1rem;">
+                <div class="check-compare-item good"><strong>ア エクスプロイト ✅</strong> 脆弱性を悪用する攻撃コード</div>
+                <div class="check-compare-item bad"><strong>イ シグネチャ</strong> マルウェア検知用の定義ファイル</div>
+                <div class="check-compare-item bad"><strong>ウ HMAC等</strong> メッセージ改ざん検知用ハッシュ</div>
+                <div class="check-compare-item bad"><strong>エ OTP</strong> ワンタイムパスワード</div>
+            </div>
+        `,
+        nodes: {
+            left: { name: "攻撃者\n/検証者", ip: "exploit code", icon: "fa-user-secret", color: "var(--accent)" },
+            center: { name: "脆弱性\n(CVE/CWE)", ip: "弱点を突く", icon: "fa-bug", color: "var(--secondary)" },
+            right: { name: "対象\nソフトウェア", ip: "権限奪取等", icon: "fa-server", color: "var(--primary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 脆弱性存在", desc: "<strong>1. ソフトウェアに脆弱性が存在</strong><br>バッファオーバーフロー等の弱点がソフトウェアに存在します。", stateClass: "state-1" },
+            { num: 2, btn: "2. コード作成", desc: "<strong>2. エクスプロイトコードの作成</strong><br>脆弱性を悪用する攻撃コード（エクスプロイト）が作成されます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 悪用/検証", desc: "<strong>3. 攻撃または脆弱性検証</strong><br>攻撃に悪用されるほか、ペンテスト等で脆弱性の存在確認にも使われます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 対策", desc: "<strong>4. パッチ適用等の対策</strong><br>脆弱性が確認されたらパッチ適用や回避策の実施が求められます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "Exploit", res: "Shell Access" }
+    },
+    sbom: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問17",
+        diagramTitle: "SBOM による脆弱性管理（シミュレーター）",
+        text: "ソフトウェアの脆弱性管理のためのツールとしても利用される SBOM（Software Bill of Materials）はどれか。",
+        options: [
+            { key: "ア", text: "ソフトウェアの脆弱性に対する、ベンダーに依存しないオープンで汎用的な深刻度の評価方法", correct: false },
+            { key: "イ", text: "ソフトウェアのセキュリティアップデートを行うときに推奨される管理プロセス、組織体制などをまとめたガイドライン", correct: false },
+            { key: "ウ", text: "ソフトウェアを構成するコンポーネント、互いの依存関係などのリスト", correct: true },
+            { key: "エ", text: "米国の非営利団体 MITRE によって策定された、ソフトウェアにおけるセキュリティ上の弱点の種類を識別するための基準", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p><strong>SBOM（Software Bill of Materials）</strong>は、ソフトウェアを構成する<strong>コンポーネント・依存関係・ライセンス</strong>等を示すリストです。Log4j 等の問題コンポーネントを含む製品を迅速に特定し、脆弱性管理に活用できます。</p>
+            <div class="check-grid-2" style="margin-top:1rem;">
+                <div class="check-compare-item bad"><strong>ア CVSS</strong> 脆弱性深刻度の評価方法</div>
+                <div class="check-compare-item bad"><strong>イ ガイドライン</strong> パッチ管理プロセス等</div>
+                <div class="check-compare-item good"><strong>ウ SBOM ✅</strong> コンポーネント・依存関係のリスト</div>
+                <div class="check-compare-item bad"><strong>エ CWE</strong> 弱点タイプ識別基準</div>
+            </div>
+        `,
+        nodes: {
+            left: { name: "ソフトウェア\n製品", ip: "アプリ/OSS", icon: "fa-cube", color: "var(--primary)" },
+            center: { name: "SBOM\n(部品表)", ip: "コンポーネント\n依存関係", icon: "fa-list", color: "var(--secondary)" },
+            right: { name: "脆弱性\n管理", ip: "影響範囲特定", icon: "fa-shield-virus", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. SBOM生成", desc: "<strong>1. ソフトウェアの SBOM 作成</strong><br>製品を構成する OSS・ライブラリ等の一覧（SBOM）を作成します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 脆弱性公表", desc: "<strong>2. コンポーネントの脆弱性公表</strong><br>特定ライブラリ（例：Log4j）に CVE が公表されます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 影響調査", desc: "<strong>3. SBOM による影響範囲の特定</strong><br>SBOM と照合し、問題コンポーネントを含む製品・システムを即座に特定します。", stateClass: "state-3" },
+            { num: 4, btn: "4. パッチ適用", desc: "<strong>4. 迅速なパッチ・更新</strong><br>影響を受けるシステムに優先的にセキュリティアップデートを適用します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "Component", res: "CVE Match" }
+    },
+    dhcparp: {
+        source: "情報処理安全確保支援士試験・R5秋・午前II問20",
+        diagramTitle: "DHCP アドレス競合確認（ARP）（シミュレーター）",
+        text: "DHCP のクライアントが，サーバから配布された IPv4 アドレスを，クライアント自身のホストアドレスとして設定する際に，そのアドレスが他のホストに使用されていないことを，クライアント自身でも確認することが推奨されている。この確認に使用するプロトコルとして，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "ARP", correct: true },
+            { key: "イ", text: "DNS", correct: false },
+            { key: "ウ", text: "ICMP", correct: false },
+            { key: "エ", text: "RARP", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>DHCP クライアントは割り当てられた IP アドレスを設定したうえで<strong>ARP リクエスト</strong>を送信し、他ホストからの応答がないことを確認します（アドレス競合検出）。ARP は IP アドレスから MAC アドレスを解決するプロトコルです。</p>
+            <div class="check-diagram" style="margin-top:1rem;">
+                <div class="check-diagram-title"><i class="fa-solid fa-network-wired"></i> アドレス競合確認の流れ</div>
+                <div class="check-flow check-flow-vertical">
+                    <div class="check-node browser"><strong>1. DHCP Offer/ACK</strong><br>サーバから IP アドレスを受け取る</div>
+                    <div class="check-node server"><strong>2. IP 設定＋ARP Request</strong><br>割当 IP で「この IP の MAC は？」とブロードキャスト</div>
+                    <div class="check-node safe"><strong>3. 応答なし → 使用可能</strong><br>他ホストが同 IP を使っていなければ ARP Reply なし</div>
+                </div>
+            </div>
+            <div class="check-grid-2" style="margin-top:1rem;">
+                <div class="check-compare-item bad"><strong>イ DNS</strong> 名前解決プロトコル</div>
+                <div class="check-compare-item bad"><strong>ウ ICMP</strong> 到達確認（ping）等</div>
+                <div class="check-compare-item bad"><strong>エ RARP</strong> MAC → IP（逆方向）</div>
+            </div>
+        `,
+        nodes: {
+            left: { name: "DHCP\nクライアント", ip: "IP割当受信", icon: "fa-laptop", color: "var(--primary)" },
+            center: { name: "ARP\nRequest", ip: "競合確認", icon: "fa-broadcast-tower", color: "var(--secondary)" },
+            right: { name: "同一LAN\n他ホスト", ip: "応答の有無", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. IP割当", desc: "<strong>1. DHCP サーバから IP アドレスを受信</strong><br>クライアントは DHCP で IPv4 アドレスの割り当てを受けます。", stateClass: "state-1" },
+            { num: 2, btn: "2. IP設定", desc: "<strong>2. 割当 IP をホストに設定</strong><br>受け取った IP アドレスを自身のインタフェースに設定します。", stateClass: "state-2" },
+            { num: 3, btn: "3. ARP送信", desc: "<strong>3. ARP リクエストで競合確認</strong><br>その IP アドレスに対して ARP リクエストをブロードキャストし、他ホストの応答を確認します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 使用開始", desc: "<strong>4. 応答がなければ使用開始</strong><br>どのホストからも ARP 応答がなければ、その IP は未使用と判断して利用を開始します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "ARP Req", res: "No Reply" }
     }
 };

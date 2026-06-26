@@ -889,6 +889,84 @@
         .badge-session { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
         .badge-dns { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
         .badge-dos { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+        .badge-vuln { background: rgba(220, 38, 38, 0.2); color: #f87171; }
+
+        /* 確認問題（教科書スタイル） */
+        .review-question-box {
+            position: relative;
+            border: 2px solid #92400e;
+            border-radius: 0 10px 10px 10px;
+            padding: 3rem 1.5rem 1.5rem;
+            margin-bottom: 2rem;
+            background: rgba(127, 29, 29, 0.12);
+        }
+        .review-question-tab {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            background: #92400e;
+            color: #fff;
+            padding: 0.45rem 1.1rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 6px 6px 0 0;
+            letter-spacing: 0.5px;
+        }
+        .review-question-text {
+            font-weight: 600;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .review-question-options {
+            list-style: none;
+            margin: 0 0 0.75rem;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .review-question-options li {
+            display: flex;
+            gap: 0.5rem;
+            line-height: 1.55;
+        }
+        .review-question-options .opt-key {
+            font-weight: 700;
+            color: #fbbf24;
+            flex-shrink: 0;
+        }
+        .review-question-source {
+            text-align: right;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+        .review-answer-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            color: #f87171;
+            margin-bottom: 0.75rem;
+        }
+        .review-answer-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ef4444;
+            flex-shrink: 0;
+        }
+        .review-answer-body {
+            color: #e2e8f0;
+            line-height: 1.75;
+        }
+        .review-answer-body ul {
+            margin: 0.75rem 0 0 1.25rem;
+        }
+        .review-answer-body li {
+            margin-bottom: 0.35rem;
+        }
 
         /* 学習ガイド・カテゴリナビ */
         .sidebar-nav-btn {
@@ -1205,7 +1283,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 43 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 48 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1218,13 +1296,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（43問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（48問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（43問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（48問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1343,7 +1421,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（6問）</summary>
+                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（7問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('vlan', this)">
                     <span class="btn-meta">問23: H31春 午前II問12</span>
@@ -1368,6 +1446,10 @@
                 <button class="question-tab-btn" onclick="switchQuestion('handshake', this)">
                     <span class="btn-meta">問28: H30秋 午前II問18</span>
                     <span class="btn-title">3ウェイハンドシェイク</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('dhcparp', this)">
+                    <span class="btn-meta">問48: R5秋 午前II問20</span>
+                    <span class="btn-title">DHCPとARP（アドレス競合確認）</span>
                 </button>
                 </div>
             </details>
@@ -1425,6 +1507,28 @@
             </details>
 
             <details class="sidebar-group">
+                <summary><i class="fa-solid fa-shield-virus" style="color:#f87171;"></i> 脆弱性（4問）</summary>
+                <div class="question-list">
+                <button class="question-tab-btn" onclick="switchQuestion('cwe', this)">
+                    <span class="btn-meta">問44: R6春 午前II問9</span>
+                    <span class="btn-title">CWE（共通弱点一覧）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('scap', this)">
+                    <span class="btn-meta">問45: R5秋 午前II問12</span>
+                    <span class="btn-title">SCAP（脆弱性管理自動化）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('exploit', this)">
+                    <span class="btn-meta">問46: R2秋 午前II問3</span>
+                    <span class="btn-title">エクスプロイトコード</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('sbom', this)">
+                    <span class="btn-meta">問47: R6春 午前II問17</span>
+                    <span class="btn-title">SBOM</span>
+                </button>
+                </div>
+            </details>
+
+            <details class="sidebar-group">
                 <summary><i class="fa-solid fa-key" style="color:#fcd34d;"></i> パスワード（2問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('pth', this)">
@@ -1470,7 +1574,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（140問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（152問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1484,7 +1588,9 @@
             <details class="sidebar-group">
                 <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク・インフラ</summary>
                 <div class="sidebar-link-list">
-                    <button class="sidebar-link-btn" onclick="scrollToNetworkCheck()">ネットワーク基礎（13問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToNetworkCheck()">ネットワーク基礎（13問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToPortScanCheck()">ポートスキャン（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToDnsCheck()">DNS 攻撃（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCloudCheck()">クラウド・VDI（10問）</button>
@@ -1497,6 +1603,7 @@
                 <summary><i class="fa-solid fa-skull-crossbones" style="color:#f87171;"></i> 攻撃・脅威・対策</summary>
                 <div class="sidebar-link-list">
                     <button class="sidebar-link-btn" onclick="scrollToThreatCheck()">脅威・キルチェーン（13問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToVulnCheck()">脆弱性（6問＋確認4問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToDosCheck()">DoS 攻撃 Check!（5問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToBofCheck()">バッファオーバーフロー（10問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCheck()">Web 脆弱性 Check!（16問）</button>
@@ -1517,22 +1624,22 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>43</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>140+</strong><span>Check! 基礎知識</span></div>
-                    <div class="overview-stat"><strong>13</strong><span>カテゴリ</span></div>
+                    <div class="overview-stat"><strong>48</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>152+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>14</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 43 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 43 問（重複なし）</div>
+                        <p>過去問 48 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 48 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全43問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全43問（13カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全48問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全48問（14カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1544,13 +1651,13 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">38問</div>
+                        <div class="card-meta">44問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
                         <h3>攻撃・脅威・対策</h3>
                         <p>DoS、BOF、Web 脆弱性、マルウェア、パスワード・セッション攻撃など実践的な脅威と対策。</p>
-                        <div class="card-meta">80問超（Check! 解説）</div>
+                        <div class="card-meta">86問超（Check! 解説）</div>
                     </div>
                 </div>
                 <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.85rem;">
@@ -1561,9 +1668,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（43問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（48問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 43 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 48 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1571,7 +1678,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（43問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（48問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -1795,12 +1902,72 @@
                 </div>
                 <div class="accordion" id="accordion-network-list"></div>
 
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">DHCP のクライアントが，サーバから配布された IPv4 アドレスを，クライアント自身のホストアドレスとして設定する際に，そのアドレスが他のホストに使用されていないことを，クライアント自身でも確認することが推奨されている。この確認に使用するプロトコルとして，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>ARP</span></li>
+                        <li><span class="opt-key">イ</span><span>DNS</span></li>
+                        <li><span class="opt-key">ウ</span><span>ICMP</span></li>
+                        <li><span class="opt-key">エ</span><span>RARP</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 秋・午前Ⅱ問 20］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>DHCP サーバから割り当てられた IP アドレスが他のホストで使用されていないかをクライアントが確認する際には <strong>ARP（Address Resolution Protocol）</strong>が用いられる。ARP は IP アドレスから MAC アドレスを得るために使われるプロトコルであり，DHCP クライアントは，サーバから割り当てられた IP アドレスをセットして ARP リクエストを送り，応答の有無を確認する。その結果，どのホストからも応答がなければ他のホストがその IP アドレスを使用していないことが確認できる。したがって<strong>ア</strong>が正解。</p>
+                        <ul>
+                            <li><strong>イ DNS</strong>：ドメイン名と IP アドレスの名前解決</li>
+                            <li><strong>ウ ICMP</strong>：到達確認（ping）等。本問の典型的な確認手法ではない</li>
+                            <li><strong>エ RARP</strong>：MAC アドレスから IP アドレスを取得（逆方向）</li>
+                        </ul>
+                    </div>
+                </div>
+
                                 <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
                     <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
                 </h3>
-                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">ネットワークの過去問 6 問は<strong>過去問シミュレーター</strong>に統合しています。</p>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">ネットワークの過去問 7 問（確認問題 1 問含む）は<strong>過去問シミュレーター</strong>に統合しています。</p>
                 <div id="network-simulator-bridge"></div>
 
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
+            <section class="content-section" id="section-netsec-check">
+                <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    脆弱なネットワークの特徴と、機密性・完全性・可用性を高めるネットワーク構成を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>どのようなネットワークが脆弱なのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>ネットワークの機密性や完全性を高めるにはどのような構成が望ましいか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>ネットワークの可用性を高めるにはどのような構成が望ましいか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-netsec-list"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! TCP/IP セキュリティ) -->
+            <section class="content-section" id="section-tcpipsec-check">
+                <h2 class="section-title"><i class="fa-solid fa-ethernet"></i>基礎知識: Check! 解説（TCP/IP セキュリティ）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    TCP/IP プロトコル群の脆弱性、TCP のセキュリティ上の特徴、TCP/UDP/ICMP の比較を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>TCP/IP プロトコルにはどのような脆弱性があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>セキュリティの面から見た TCP の特徴として何が挙げられるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>セキュリティの面で TCP, UDP, ICMP を比較するとどうなるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-tcpipsec-list"></div>
             </section>
 
             <!-- 基礎知識の解説セクション (Check! ポートスキャン) -->
@@ -1927,6 +2094,125 @@
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">脅威・キルチェーンの過去問 2 問は<strong>過去問シミュレーター</strong>に統合しています。</p>
                 <div id="threat-simulator-bridge"></div>
 
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 脆弱性) -->
+            <section class="content-section" id="section-vuln-check">
+                <h2 class="section-title"><i class="fa-solid fa-shield-virus"></i>基礎知識: Check! 解説（脆弱性）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    脆弱性の定義・分類、ゼロデイ攻撃、CVSS/EPSS/KEV、SBOM、効果的なセキュリティ対策の着眼点を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>脆弱性とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>脆弱性にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>ゼロデイ攻撃とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>CVSS, EPSS, KEV の概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>SBOM によって何が可能となるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>効果的な情報セキュリティ対策を実施するにはどのような点に着目する必要があるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-vuln-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">JVN などの脆弱性対策ポータルサイトで採用されている CWE はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>IT 製品の脆弱性を評価する手法</span></li>
+                        <li><span class="opt-key">イ</span><span>製品を識別するためのプラットフォーム名の一覧</span></li>
+                        <li><span class="opt-key">ウ</span><span>セキュリティに関連する設定項目を識別するための識別子</span></li>
+                        <li><span class="opt-key">エ</span><span>ソフトウェア及びハードウェアの脆弱性の種類の一覧</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ問 9］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>CWE（Common Weakness Enumeration）</strong>は，ソフトウェア及びハードウェアの脆弱性の種類を識別するための共通基準である。CWE では，SQL インジェクション，クロスサイトスクリプティングなど，脆弱性の種類（脆弱性タイプ）の一覧を体系化して提供している。したがって<strong>エ</strong>が正解。</p>
+                        <ul>
+                            <li><strong>ア</strong>：CVSS（脆弱性の深刻度評価）に該当</li>
+                            <li><strong>イ</strong>：CPE（製品・プラットフォーム識別）に該当</li>
+                            <li><strong>ウ</strong>：CCE（セキュリティ設定項目識別）に該当</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">脆弱性管理，測定，評価を自動化するために NIST が策定した基準はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>FIPS（Federal Information Processing Standards）</span></li>
+                        <li><span class="opt-key">イ</span><span>SCAP（Security Content Automation Protocol）</span></li>
+                        <li><span class="opt-key">ウ</span><span>SIEM（Security Information and Event Management）</span></li>
+                        <li><span class="opt-key">エ</span><span>SOAR（Security Orchestration, Automation and Response）</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 秋・午前Ⅱ問 12］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>問題文に該当するのは <strong>SCAP（Security Content Automation Protocol：セキュリティ設定共通化手順）</strong>である。NIST（National Institute of Standards and Technology：米国国立標準技術研究所）は情報セキュリティ対策の自動化と標準化を目指して SCAP を策定した。SCAP は次の 6 つの標準仕様から構成されている。</p>
+                        <ul>
+                            <li><strong>CVE</strong>（Common Vulnerabilities and Exposures：共通脆弱性識別子）— 脆弱性を識別</li>
+                            <li><strong>CCE</strong>（Common Configuration Enumeration：共通セキュリティ設定一覧）— セキュリティ設定を識別</li>
+                            <li><strong>CPE</strong>（Common Platform Enumeration：共通プラットフォーム一覧）— 製品を識別</li>
+                            <li><strong>CVSS</strong>（Common Vulnerability Scoring System：共通脆弱性評価システム）— 脆弱性の深刻度を評価</li>
+                            <li><strong>XCCDF</strong>（eXtensible Configuration Checklist Description Format：セキュリティ設定チェックリスト記述形式）— チェックリストを記述</li>
+                            <li><strong>OVAL</strong>（Open Vulnerability and Assessment Language：セキュリティ検査言語）— 脆弱性やセキュリティ設定をチェック</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>イ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">エクスプロイトコードの説明はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>攻撃コードとも呼ばれ、ソフトウェアの脆弱性を悪用するコードのことであり、使い方によっては脆弱性の検証に役立つこともある。</span></li>
+                        <li><span class="opt-key">イ</span><span>マルウェア定義ファイルとも呼ばれ、マルウェアを特定するための特徴的なコードのことであり、マルウェア対策ソフトによるマルウェアの検知に用いられる。</span></li>
+                        <li><span class="opt-key">ウ</span><span>メッセージとシークレットデータから計算されるハッシュコードのことであり、メッセージの改ざん検知に用いられる。</span></li>
+                        <li><span class="opt-key">エ</span><span>ログインのたびに変化する認証コードのことであり、窃取されても再利用できないので不正アクセスを防ぐ。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R2 秋・午前Ⅱ問 3］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>エクスプロイトコード（exploit code）</strong>は攻撃コードとも呼ばれ、ソフトウェアやハードウェアの脆弱性を悪用して攻撃するために作成されたコードである。エクスプロイトコードは脆弱性の検証にも用いられる。したがって<strong>ア</strong>が正解。</p>
+                        <ul>
+                            <li><strong>イ</strong>：マルウェアのシグネチャ（定義ファイル）に該当</li>
+                            <li><strong>ウ</strong>：HMAC 等のメッセージ認証コードに該当</li>
+                            <li><strong>エ</strong>：ワンタイムパスワード（OTP）に該当</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">ソフトウェアの脆弱性管理のためのツールとしても利用される SBOM（Software Bill of Materials）はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>ソフトウェアの脆弱性に対する、ベンダーに依存しないオープンで汎用的な深刻度の評価方法</span></li>
+                        <li><span class="opt-key">イ</span><span>ソフトウェアのセキュリティアップデートを行うときに推奨される管理プロセス、組織体制などをまとめたガイドライン</span></li>
+                        <li><span class="opt-key">ウ</span><span>ソフトウェアを構成するコンポーネント、互いの依存関係などのリスト</span></li>
+                        <li><span class="opt-key">エ</span><span>米国の非営利団体 MITRE によって策定された、ソフトウェアにおけるセキュリティ上の弱点の種類を識別するための基準</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ問 17］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>SBOM</strong>とは、ソフトウェアを構成する各部品（コンポーネント）を誰が作り、何が含まれ、どのような構成となっているか等を示すリストである。SBOM により、ソフトウェアの構成情報を詳細に把握することができるため、脆弱性情報の即時の特定等が可能となる。したがって<strong>ウ</strong>が正解。</p>
+                        <ul>
+                            <li><strong>ア</strong>：CVSS（脆弱性深刻度評価）に該当</li>
+                            <li><strong>イ</strong>：パッチ管理のガイドラインに該当</li>
+                            <li><strong>エ</strong>：CWE（弱点タイプ識別基準）に該当</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題 4 問は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="vuln-simulator-bridge"></div>
             </section>
 
             <!-- 基礎知識の解説セクション (Check! BOF) -->
@@ -4140,6 +4426,250 @@
             }
         ];
 
+        // Check! 基礎知識の解説データ (ネットワークセキュリティ 3問)
+        const checkNetSecData = [
+            {
+                q: "【Q1】 どのようなネットワークが脆弱なのか。",
+                ans: `
+                    <span class="check-category-badge badge-network">脆弱なネットワーク</span>
+                    <div class="check-grid-2">
+                        <div class="check-measure-box">
+                            <h4>構成・分離の欠如</h4>
+                            <ul>
+                                <li><strong>フラットネットワーク</strong>：セグメント分離がなく全端末が同一ネットワーク</li>
+                                <li>重要系と一般系の<strong>混在</strong>（サーバと PC が同一セグメント）</li>
+                                <li>インターネットと内部ネットワークの<strong>境界が不明確</strong></li>
+                                <li>DMZ 等の<strong>多層防御がない</strong>構成</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4>アクセス制御・通信の弱点</h4>
+                            <ul>
+                                <li>セグメント間の<strong>ファイアウォール・ACL が未整備</strong></li>
+                                <li>通信の<strong>暗号化がない</strong>（平文プロトコルの使用）</li>
+                                <li>不要な<strong>ポート・サービスが開放</strong>されている</li>
+                                <li>認証なしの<strong>無線 LAN</strong>、デフォルト設定のまま</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box" style="grid-column:1/-1;">
+                            <h4>可用性・運用上の弱点</h4>
+                            <ul>
+                                <li><strong>単一障害点（SPOF）</strong>：ルータ・回線・DNS が1系統のみ</li>
+                                <li>パッチ未適用、設定変更管理の欠如</li>
+                                <li>ネットワーク機器の<strong>管理インタフェースが外部から到達可能</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                q: "【Q2】 ネットワークの機密性や完全性を高めるにはどのような構成が望ましいか。",
+                ans: `
+                    <span class="check-category-badge badge-network">機密性・完全性の確保</span>
+                    <div class="check-grid-2">
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-diagram-project"></i> ネットワーク分離</h4>
+                            <ul>
+                                <li><strong>VLAN・サブネット</strong>による論理的分離</li>
+                                <li><strong>DMZ</strong>：公開サーバを内部ネットワークから分離</li>
+                                <li>重要システム用の<strong>専用セグメント</strong></li>
+                                <li>管理用ネットワークの<strong>分離</strong>（Out-of-Band 管理等）</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-fire-flame-curved"></i> アクセス制御</h4>
+                            <ul>
+                                <li>セグメント間の<strong>ファイアウォール・ACL</strong></li>
+                                <li><strong>最小権限</strong>：必要な通信のみ許可（デフォルト deny）</li>
+                                <li><strong>IDS/IPS</strong>による不正通信の検知・遮断</li>
+                                <li>802.1X 等による<strong>端末認証</strong></li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-lock"></i> 通信の保護</h4>
+                            <ul>
+                                <li><strong>VPN（IPsec/SSL-VPN）</strong>による暗号化通信</li>
+                                <li>TLS/HTTPS 等の<strong>暗号化プロトコル</strong>の利用</li>
+                                <li>Wi-Fi の <strong>WPA3</strong> 等の強固な暗号化</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-eye"></i> 監視・検証</h4>
+                            <ul>
+                                <li>通信ログ・フロー分析による<strong>異常検知</strong></li>
+                                <li>ネットワーク機器の<strong>設定ベースライン</strong>管理</li>
+                                <li>ARP スプーフィング対策（DAI 等）</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                q: "【Q3】 ネットワークの可用性を高めるにはどのような構成が望ましいか。",
+                ans: `
+                    <span class="check-category-badge badge-network">可用性の確保</span>
+                    <div class="check-grid-2">
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-arrows-rotate"></i> 冗長化</h4>
+                            <ul>
+                                <li>ルータ・スイッチ・ファイアウォールの<strong>二重化（HA）</strong></li>
+                                <li>回線・ISP の<strong>多重化</strong>（マルチホーム）</li>
+                                <li>サーバ・DNS の<strong>冗長構成</strong></li>
+                                <li>電源・UPS の冗長化</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-scale-balanced"></i> 負荷分散</h4>
+                            <ul>
+                                <li><strong>ロードバランサ（L4/L7）</strong>によるトラフィック分散</li>
+                                <li><strong>Anycast</strong>による地理的分散</li>
+                                <li>リンクアグリゲーション（LACP）による帯域・冗長確保</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-shield-virus"></i> DoS/DDoS 対策</h4>
+                            <ul>
+                                <li>帯域の確保、<strong>DDoS 対策サービス</strong>の利用</li>
+                                <li>レート制限、異常トラフィックのフィルタリング</li>
+                                <li>CDN 等による分散吸収</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-screwdriver-wrench"></i> 運用・設計</h4>
+                            <ul>
+                                <li><strong>ルーティングプロトコル</strong>（OSPF/BGP）による経路冗長</li>
+                                <li>障害時の<strong>自動フェイルオーバー</strong></li>
+                                <li>定期的な<strong>バックアップ回線テスト</strong></li>
+                                <li>キャパシティプランニング（帯域・機器の余裕）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size:0.9rem;color:var(--text-muted);margin-top:1rem;">CIA のうち、Q2 が<strong>機密性・完全性</strong>、Q3 が<strong>可用性</strong>に対応します。多層防御で3要素をバランスよく確保することが重要です。</p>
+                `
+            }
+        ];
+
+        // Check! 基礎知識の解説データ (TCP/IP セキュリティ 3問)
+        const checkTcpIpSecData = [
+            {
+                q: "【Q1】 TCP/IP プロトコルにはどのような脆弱性があるか。",
+                ans: `
+                    <span class="check-category-badge badge-network">TCP/IP の脆弱性</span>
+                    <p>TCP/IP はもともと<strong>信頼できる閉じたネットワーク</strong>を前提に設計されており、認証・暗号化が組み込まれていません。そのため、各層に特有の脆弱性が存在します。</p>
+                    <div class="check-grid-2" style="margin-top:1rem;">
+                        <div class="check-measure-box">
+                            <h4>IP 層・下位層</h4>
+                            <ul>
+                                <li><strong>IP スプーフィング</strong>：送信元 IP の偽装</li>
+                                <li><strong>ARP スプーフィング</strong>：MAC アドレスの偽装（認証なし）</li>
+                                <li>ルーティングプロトコル（BGP 等）の<strong>経路乗っ取り</strong></li>
+                                <li>フラグメンテーション攻撃</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4>TCP 層</h4>
+                            <ul>
+                                <li><strong>SYN Flood</strong>：半開き接続の枯渇</li>
+                                <li><strong>セッションハイジャック</strong>：シーケンス番号の推測・乗っ取り</li>
+                                <li><strong>RST 攻撃</strong>：接続の強制切断</li>
+                                <li>TCP シーケンス番号の予測可能性（古い実装）</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4>UDP / ICMP</h4>
+                            <ul>
+                                <li>UDP：<strong>増幅攻撃</strong>（DNS/NTP 等の反射）、スプーフィング悪用</li>
+                                <li>ICMP：<strong>Flood 攻撃</strong>（ping flood）、Smurf 攻撃</li>
+                                <li>ICMP による<strong>ネットワーク情報の収集</strong>（ping, traceroute）</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4>アプリケーション層</h4>
+                            <ul>
+                                <li>DNS：<strong>キャッシュポイズニング</strong>、増幅攻撃の踏み台</li>
+                                <li>平文プロトコル（FTP, Telnet 等）の<strong>盗聴・改ざん</strong></li>
+                                <li>プロトコル仕様の解釈差による攻撃</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size:0.9rem;color:var(--text-muted);margin-top:1rem;">対策として IPsec、TLS、ファイアウォール、IDS/IPS、プロトコル強化（DNSSEC 等）が用いられます。</p>
+                `
+            },
+            {
+                q: "【Q2】 セキュリティの面から見た TCP の特徴として何が挙げられるか。",
+                ans: `
+                    <span class="check-category-badge badge-network">TCP のセキュリティ上の特徴</span>
+                    <div class="check-grid-2">
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-triangle-exclamation"></i> リスク要因</h4>
+                            <ul>
+                                <li><strong>コネクション指向</strong>：3-way ハンドシェイクを悪用した SYN Flood</li>
+                                <li><strong>ステートフル</strong>：接続状態を保持 → 状態テーブル枯渇攻撃</li>
+                                <li><strong>シーケンス番号</strong>：予測可能だとセッションハイジャックのリスク</li>
+                                <li><strong>RST フラグ</strong>：正規の切断パケットで接続を強制終了可能</li>
+                                <li>デフォルトでは<strong>暗号化・認証なし</strong>（平文通信）</li>
+                                <li>ポート番号によるサービス識別 → ポートスキャンの標的</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-shield-halved"></i> セキュリティ上の利点</h4>
+                            <ul>
+                                <li><strong>ステートフル FW</strong>で接続を追跡・制御しやすい</li>
+                                <li>確立済み接続のみ通過（デフォルト deny との相性が良い）</li>
+                                <li>IDS/IPS が<strong>接続の文脈</strong>で異常検知しやすい</li>
+                                <li>TLS 等で<strong>上位層の暗号化</strong>と組み合わせ可能</li>
+                                <li>SYN Cookie 等の<strong>対策技術</strong>が確立されている</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size:0.9rem;color:var(--text-muted);margin-top:1rem;">TCP は信頼性のために状態を持つが、その状態管理が攻撃面にもなる点がセキュリティ上の特徴です。</p>
+                `
+            },
+            {
+                q: "【Q3】 セキュリティの面で TCP, UDP, ICMP を比較するとどうなるか。",
+                ans: `
+                    <span class="check-category-badge badge-network">TCP / UDP / ICMP の比較</span>
+                    <div class="check-compare" style="margin-top:1rem;">
+                        <div class="check-compare-item good">
+                            <strong><i class="fa-solid fa-link"></i> TCP</strong>
+                            <ul style="margin-left:1rem;margin-top:0.4rem;">
+                                <li><strong>コネクション指向</strong>・ステートフル</li>
+                                <li>SYN Flood、セッションハイジャック、RST 攻撃</li>
+                                <li>ステートフル FW・IDS で<strong>追跡・制御しやすい</strong></li>
+                                <li>接続状態テーブルの枯渇がリスク</li>
+                            </ul>
+                        </div>
+                        <div class="check-compare-item good">
+                            <strong><i class="fa-solid fa-paper-plane"></i> UDP</strong>
+                            <ul style="margin-left:1rem;margin-top:0.4rem;">
+                                <li><strong>コネクションレス</strong>・ステートレス</li>
+                                <li>IP スプーフィングと組み合わせた<strong>反射・増幅攻撃</strong>に悪用</li>
+                                <li>接続確立がないため<strong>ステートフル検査が困難</strong></li>
+                                <li>DNS・NTP 等のサービスが増幅攻撃の踏み台に</li>
+                            </ul>
+                        </div>
+                        <div class="check-compare-item good">
+                            <strong><i class="fa-solid fa-circle-dot"></i> ICMP</strong>
+                            <ul style="margin-left:1rem;margin-top:0.4rem;">
+                                <li>制御・診断メッセージ（ping, traceroute 等）</li>
+                                <li><strong>Flood 攻撃</strong>（ping flood）、Smurf 攻撃</li>
+                                <li>ネットワークの<strong>存在確認・情報収集</strong>（偵察）に利用</li>
+                                <li>境界 FW で<strong>制限・遮断</strong>されることが多い</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="check-measure-box" style="margin-top:1rem;">
+                        <h4>まとめ</h4>
+                        <ul>
+                            <li><strong>TCP</strong>：状態を持つため防御（ステートフル FW）はしやすいが、状態枯渇攻撃の標的</li>
+                            <li><strong>UDP</strong>：検知・追跡が難しく、スプーフィング＋増幅攻撃に弱い</li>
+                            <li><strong>ICMP</strong>：DoS と偵察に悪用されやすく、境界でのフィルタリングが一般的</li>
+                        </ul>
+                    </div>
+                `
+            }
+        ];
+
         // Check! 基礎知識の解説データ (ポートスキャン 3問)
         const checkPortScanData = [
             {
@@ -4950,6 +5480,189 @@
                         </div>
                     </div>
                     <p style="font-size:0.9rem;color:var(--text-muted);margin-top:1rem;">ATT&CK は「攻撃者がどう攻めるか」の知識、脅威インテリジェンスは「誰が・何を・なぜ攻めるか」の文脈を提供します。</p>
+                `
+            }
+        ];
+
+        // Check! 基礎知識の解説データ (脆弱性 6問)
+        const checkVulnData = [
+            {
+                q: "【Q1】 脆弱性とは何か。",
+                ans: `
+                    <span class="check-category-badge badge-vuln">脆弱性の定義</span>
+                    <p><strong>脆弱性（Vulnerability）</strong>とは、情報システムやソフトウェア・ハードウェア・プロトコル等に存在する<strong>弱点・欠陥</strong>のことです。攻撃者がこれを悪用（エクスプロイト）することで、機密性・完全性・可用性が損なわれる可能性があります。</p>
+                    <div class="check-diagram">
+                        <div class="check-diagram-title"><i class="fa-solid fa-sitemap"></i> リスクの3要素</div>
+                        <div class="check-flow">
+                            <div class="check-node danger"><i class="fa-solid fa-bug"></i>脆弱性<br>（弱点）</div>
+                            <span class="check-arrow">×</span>
+                            <div class="check-node attacker"><i class="fa-solid fa-user-secret"></i>脅威<br>（攻撃者）</div>
+                            <span class="check-arrow">→</span>
+                            <div class="check-node danger"><i class="fa-solid fa-triangle-exclamation"></i>リスク<br>（被害）</div>
+                        </div>
+                    </div>
+                    <div class="check-measure-box" style="margin-top:1rem;">
+                        <ul>
+                            <li><strong>脆弱性</strong>：システム側の弱点（対策可能な要因）</li>
+                            <li><strong>脅威</strong>：脆弱性を悪用しうる攻撃者・災害等</li>
+                            <li><strong>リスク</strong>：脆弱性 × 脅威 × 影響度</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                q: "【Q2】 脆弱性にはどのような種類があるか。",
+                ans: `
+                    <span class="check-category-badge badge-vuln">脆弱性の分類</span>
+                    <div class="check-grid-2">
+                        <div class="check-measure-box">
+                            <h4>発生原因による分類</h4>
+                            <ul>
+                                <li><strong>実装ミス</strong>：バッファオーバーフロー、入力検証不備等</li>
+                                <li><strong>設計上の欠陥</strong>：認証・認可設計の不備</li>
+                                <li><strong>設定ミス</strong>：デフォルトパスワード、不要ポート開放</li>
+                                <li><strong>運用上の問題</strong>：パッチ未適用、古いソフトウェアの使用</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4>対象による分類</h4>
+                            <ul>
+                                <li><strong>ソフトウェア</strong>：OS、アプリ、ミドルウェア</li>
+                                <li><strong>ハードウェア</strong>：ファームウェア、IoT 機器</li>
+                                <li><strong>プロトコル</strong>：通信仕様の欠陥</li>
+                                <li><strong>人的・物理的</strong>：ソーシャルエンジニアリング等</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box" style="grid-column:1/-1;">
+                            <h4>公開状況による分類</h4>
+                            <ul>
+                                <li><strong>既知の脆弱性</strong>：CVE 等で公開され、パッチや回避策が存在する場合がある</li>
+                                <li><strong>未知の脆弱性（ゼロデイ）</strong>：ベンダー・公表前で対策が未整備</li>
+                            </ul>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                q: "【Q3】 ゼロデイ攻撃とは何か。",
+                ans: `
+                    <span class="check-category-badge badge-vuln">ゼロデイ攻撃</span>
+                    <p><strong>ゼロデイ（Zero-day）攻撃</strong>とは、<strong>ベンダーが修正プログラム（パッチ）を提供する前</strong>、または<strong>脆弱性が公表される前</strong>に、その脆弱性を悪用して行われる攻撃です。</p>
+                    <div class="check-diagram">
+                        <div class="check-diagram-title"><i class="fa-solid fa-timeline"></i> ゼロデイ攻撃のタイムライン</div>
+                        <div class="check-flow check-flow-vertical" style="margin-top:1rem;">
+                            <div class="check-node danger"><strong>1. 脆弱性の存在</strong>（開発者・ベンダー未認識）</div>
+                            <div class="check-node attacker"><strong>2. 攻撃者による発見・悪用</strong>（ゼロデイ攻撃）</div>
+                            <div class="check-node server"><strong>3. 脆弱性の公表</strong>（CVE 等）</div>
+                            <div class="check-node safe"><strong>4. パッチ提供</strong>（以降は「N 日攻撃」）</div>
+                        </div>
+                    </div>
+                    <div class="check-measure-box" style="margin-top:1rem;">
+                        <h4>特徴と対策の着眼点</h4>
+                        <ul>
+                            <li>既知脆弱性へのパッチ適用だけでは<strong>防げない</strong></li>
+                            <li>多層防御（WAF、EDR、ネットワーク分離等）が重要</li>
+                            <li>異常検知・振る舞いベースの防御が有効</li>
+                            <li>パッチ公開後も<strong>迅速な適用</strong>（ウィンドウオブエクスプロイテーション）が必要</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                q: "【Q4】 CVSS, EPSS, KEV の概要について述べよ。",
+                ans: `
+                    <span class="check-category-badge badge-vuln">脆弱性評価・優先度付け</span>
+                    <div class="check-grid-2">
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-gauge-high"></i> CVSS</h4>
+                            <p><strong>Common Vulnerability Scoring System</strong>（共通脆弱性評価システム）</p>
+                            <ul>
+                                <li>脆弱性の<strong>深刻度</strong>を 0.0〜10.0 の数値で標準化</li>
+                                <li>基本評価（Base）・時間経過（Temporal）・環境（Environmental）の指標</li>
+                                <li>Critical / High / Medium / Low 等の区分に利用</li>
+                                <li>CVE と組み合わせて広く参照される</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4><i class="fa-solid fa-chart-line"></i> EPSS</h4>
+                            <p><strong>Exploit Prediction Scoring System</strong>（エクスプロイト予測評価システム）</p>
+                            <ul>
+                                <li>脆弱性が<strong>実際に悪用される確率</strong>を 0〜1（0〜100%）で推定</li>
+                                <li>CVSS の深刻度だけでなく<strong>悪用可能性</strong>を考慮した優先度付けに活用</li>
+                                <li>FIRST 等が提供するデータフィード</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box" style="grid-column:1/-1;">
+                            <h4><i class="fa-solid fa-list-ul"></i> KEV</h4>
+                            <p><strong>Known Exploited Vulnerabilities</strong>（既知の悪用脆弱性カタログ）</p>
+                            <ul>
+                                <li>米国 CISA が維持する、<strong>実際に悪用が確認された</strong>脆弱性のリスト</li>
+                                <li>連邦政府機関に対し<strong>パッチ適用期限</strong>を設定</li>
+                                <li>CVSS が高くても未悪用、低くても実悪用あり — <strong>実績ベース</strong>の優先対応指標</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p style="font-size:0.9rem;color:var(--text-muted);margin-top:1rem;">試験では、CVSS＝深刻度、EPSS＝悪用予測、KEV＝実悪用確認、と整理しておくとよいです。</p>
+                `
+            },
+            {
+                q: "【Q5】 SBOM によって何が可能となるか。",
+                ans: `
+                    <span class="check-category-badge badge-vuln">SBOM</span>
+                    <p><strong>SBOM（Software Bill of Materials）</strong>とは、ソフトウェアを構成する<strong>部品（コンポーネント）の一覧</strong>です。名称・バージョン・ライセンス・依存関係等を機械可読形式（SPDX、CycloneDX 等）で記述します。</p>
+                    <div class="check-measure-box">
+                        <h4>SBOM によって可能となること</h4>
+                        <ul>
+                            <li><strong>サプライチェーンの可視化</strong>：OSS・ライブラリ等の依存関係を把握</li>
+                            <li><strong>脆弱性の迅速な特定</strong>：Log4j 等の問題コンポーネントを含む製品を特定</li>
+                            <li><strong>パッチ優先度の判断</strong>：影響を受けるシステムを素早く洗い出し</li>
+                            <li><strong>ライセンスコンプライアンス</strong>：使用 OSS のライセンス条件を確認</li>
+                            <li><strong>インシデント対応の効率化</strong>：影響範囲の特定と対策の迅速な実施</li>
+                        </ul>
+                    </div>
+                    <p style="font-size:0.9rem;color:var(--text-muted);margin-top:1rem;">米国の EO（Executive Order）14028 等を契機に、ソフトウェア調達時の SBOM 提供が求められる動きが強まっています。</p>
+                `
+            },
+            {
+                q: "【Q6】 効果的な情報セキュリティ対策を実施するにはどのような点に着目する必要があるか。",
+                ans: `
+                    <span class="check-category-badge badge-vuln">効果的なセキュリティ対策</span>
+                    <div class="check-grid-2">
+                        <div class="check-measure-box">
+                            <h4>リスクベースのアプローチ</h4>
+                            <ul>
+                                <li>資産の<strong>重要度</strong>と<strong>脅威・脆弱性</strong>を分析</li>
+                                <li>CVSS・EPSS・KEV 等で<strong>優先度</strong>を付けた対策</li>
+                                <li>全てを均等に扱わず、<strong>限られたリソース</strong>を重点配分</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4>多層防御（Defense in Depth）</h4>
+                            <ul>
+                                <li>単一対策に依存せず、<strong>複数の防御層</strong>を構築</li>
+                                <li>予防・検知・応答・復旧の<strong>4機能</strong>をバランスよく</li>
+                                <li>技術的・物理的・管理的・人的対策の<strong>組み合わせ</strong></li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4>脆弱性管理の継続</h4>
+                            <ul>
+                                <li><strong>パッチ管理</strong>の迅速な実施（SLA 設定）</li>
+                                <li>脆弱性スキャン（VA）・ペネトレーションテスト</li>
+                                <li>SBOM による<strong>コンポーネント管理</strong></li>
+                                <li>設定のベースライン維持・変更管理</li>
+                            </ul>
+                        </div>
+                        <div class="check-measure-box">
+                            <h4>運用・組織面</h4>
+                            <ul>
+                                <li><strong>PDCA</strong>・ISMS による継続的改善</li>
+                                <li>インシデント対応計画・訓練</li>
+                                <li>セキュリティ教育・意識向上</li>
+                                <li>サプライチェーン全体のセキュリティ確保</li>
+                            </ul>
+                        </div>
+                    </div>
                 `
             }
         ];
@@ -5942,11 +6655,14 @@
             renderAccordionList(checkInfoSecData, 'accordion-infosec-list');
             renderAccordionList(checkIsmsData, 'accordion-isms-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
+            renderAccordionList(checkNetSecData, 'accordion-netsec-list');
+            renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkPortScanData, 'accordion-portscan-list');
             renderAccordionList(checkCloudData, 'accordion-cloud-list');
             renderAccordionList(checkTeleworkData, 'accordion-telework-list');
             renderAccordionList(checkZeroTrustData, 'accordion-zerotrust-list');
             renderAccordionList(checkThreatData, 'accordion-threat-list');
+            renderAccordionList(checkVulnData, 'accordion-vuln-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
             renderAccordionList(checkData, 'accordion-list');
             renderAccordionList(checkMalwareData, 'accordion-malware-list');
@@ -5963,7 +6679,7 @@
             if (typeof pastQuestionIndex === 'undefined') return;
             const filterContainer = document.getElementById('question-index-filters');
             if (!filterContainer) return;
-            const filterKeys = ['all', 'dos', 'web', 'malware', 'fundamentals', 'network', 'cloud', 'zerotrust', 'threat', 'bof', 'password', 'session', 'dns'];
+            const filterKeys = ['all', 'dos', 'web', 'malware', 'fundamentals', 'network', 'cloud', 'zerotrust', 'threat', 'bof', 'vuln', 'password', 'session', 'dns'];
             filterContainer.innerHTML = filterKeys.map(key => {
                 const count = key === 'all' ? pastQuestionIndex.length : pastQuestionIndex.filter(q => q.category === key).length;
                 const label = pastQuestionCategoryLabels[key] || key;
@@ -5978,6 +6694,7 @@
             renderSimulatorBridge('zerotrust-simulator-bridge', 'zerotrust');
             renderSimulatorBridge('threat-simulator-bridge', 'threat');
             renderSimulatorBridge('bof-simulator-bridge', 'bof');
+            renderSimulatorBridge('vuln-simulator-bridge', 'vuln');
             renderSimulatorBridgeByKeys('malware-extra-simulator-bridge', ['rootkit']);
             renderSimulatorBridge('password-simulator-bridge', 'password');
             renderSimulatorBridge('session-simulator-bridge', 'session');
@@ -6091,11 +6808,14 @@
             renderAccordionList(checkInfoSecData, 'accordion-infosec-list');
             renderAccordionList(checkIsmsData, 'accordion-isms-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
+            renderAccordionList(checkNetSecData, 'accordion-netsec-list');
+            renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkPortScanData, 'accordion-portscan-list');
             renderAccordionList(checkCloudData, 'accordion-cloud-list');
             renderAccordionList(checkTeleworkData, 'accordion-telework-list');
             renderAccordionList(checkZeroTrustData, 'accordion-zerotrust-list');
             renderAccordionList(checkThreatData, 'accordion-threat-list');
+            renderAccordionList(checkVulnData, 'accordion-vuln-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
             renderAccordionList(checkData, 'accordion-list');
             renderAccordionList(checkMalwareData, 'accordion-malware-list');
@@ -6161,6 +6881,14 @@
             document.getElementById('section-network-check').scrollIntoView({ behavior: 'smooth' });
         }
 
+        function scrollToNetSecCheck() {
+            document.getElementById('section-netsec-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTcpIpSecCheck() {
+            document.getElementById('section-tcpipsec-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
         function scrollToPortScanCheck() {
             document.getElementById('section-portscan-check').scrollIntoView({ behavior: 'smooth' });
         }
@@ -6179,6 +6907,10 @@
 
         function scrollToThreatCheck() {
             document.getElementById('section-threat-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToVulnCheck() {
+            document.getElementById('section-vuln-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToBofCheck() {

@@ -45,6 +45,11 @@ const pastQuestionIndex = [
     { no: 34, format: 'simulator', category: 'threat', key: 'killchain', source: 'R4春 午前II問5', title: 'サイバーキルチェーン' },
     // --- BOF (1) ---
     { no: 35, format: 'simulator', category: 'bof', key: 'bofstack', source: 'H24秋 高度共通 午前I問3', title: 'スタック領域' },
+    // --- 脆弱性 (4) ---
+    { no: 44, format: 'simulator', category: 'vuln', key: 'cwe',    source: 'R6春 午前II問9',  title: 'CWE（共通弱点一覧）' },
+    { no: 45, format: 'simulator', category: 'vuln', key: 'scap',   source: 'R5秋 午前II問12', title: 'SCAP（脆弱性管理自動化）' },
+    { no: 46, format: 'simulator', category: 'vuln', key: 'exploit', source: 'R2秋 午前II問3',  title: 'エクスプロイトコード' },
+    { no: 47, format: 'simulator', category: 'vuln', key: 'sbom',   source: 'R6春 午前II問17', title: 'SBOM' },
     // --- パスワード (2) ---
     { no: 37, format: 'simulator', category: 'password', key: 'pth',   source: 'R5春 午前II問14', title: 'Pass the Hash' },
     { no: 38, format: 'simulator', category: 'password', key: 'spray', source: 'R4秋 午前II問14', title: 'パスワードスプレー攻撃' },
@@ -54,7 +59,8 @@ const pastQuestionIndex = [
     { no: 40, format: 'simulator', category: 'dns', key: 'dnspoison',   source: 'H31春 午前II問11', title: 'DNSキャッシュポイズニング対策' },
     { no: 41, format: 'simulator', category: 'dns', key: 'dnswater',    source: 'H29春 午前II問6',  title: 'DNSウォータートーチャ' },
     { no: 42, format: 'simulator', category: 'dns', key: 'dnsdmz',      source: 'H25春 午前II問12', title: 'DMZ共用DNSとポイズニング' },
-    { no: 43, format: 'simulator', category: 'dns', key: 'dnskaminsky', source: 'R7春 午前II問4',   title: 'Kaminsky攻撃対策' }
+    { no: 43, format: 'simulator', category: 'dns', key: 'dnskaminsky', source: 'R7春 午前II問4',   title: 'Kaminsky攻撃対策' },
+    { no: 48, format: 'simulator', category: 'network', key: 'dhcparp', source: 'R5秋 午前II問20', title: 'DHCPとARP（アドレス競合確認）' }
 ];
 
 const pastQuestionCategoryLabels = {
@@ -68,6 +74,7 @@ const pastQuestionCategoryLabels = {
     zerotrust: 'ゼロトラスト',
     threat: '脅威・キルチェーン',
     bof: 'BOF',
+    vuln: '脆弱性',
     password: 'パスワード',
     session: 'セッション',
     dns: 'DNS'
