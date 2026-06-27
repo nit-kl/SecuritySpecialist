@@ -1283,7 +1283,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 56 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 57 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1296,13 +1296,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（56問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（57問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（56問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（57問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1591,7 +1591,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-server" style="color:#86efac;"></i> DNS（4問）</summary>
+                <summary><i class="fa-solid fa-server" style="color:#86efac;"></i> DNS（5問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('dnspoison', this)">
                     <span class="btn-meta">問40: H31春 午前II問11</span>
@@ -1609,10 +1609,14 @@
                     <span class="btn-meta">問43: R7春 午前II問4</span>
                     <span class="btn-title">Kaminsky攻撃対策</span>
                 </button>
+                <button class="question-tab-btn" onclick="switchQuestion('dnssec', this)">
+                    <span class="btn-meta">問57: R5秋 午前II問13</span>
+                    <span class="btn-title">DNSSEC 署名検証</span>
+                </button>
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（162問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（167問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1631,6 +1635,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToPortScanCheck()">ポートスキャン（3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToDnsSecCheck()">DNS セキュリティ（5問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToDnsCheck()">DNS 攻撃（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCloudCheck()">クラウド・VDI（10問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTeleworkCheck()">テレワーク（3問）</button>
@@ -1663,22 +1668,22 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>56</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>162+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>57</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>167+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 56 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 56 問（重複なし）</div>
+                        <p>過去問 57 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 57 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全56問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全56問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全57問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全57問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1690,7 +1695,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">54問</div>
+                        <div class="card-meta">59問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1707,9 +1712,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（56問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（57問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 56 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 57 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1717,7 +1722,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（56問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（57問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -2558,6 +2563,57 @@
 
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! DNSセキュリティ) -->
+            <section class="content-section" id="section-dnssec-check">
+                <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（DNSセキュリティ）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    DNS の脆弱性とその影響、DNSSEC、セキュアな DNS 構成、512 オクテット制限と EDNS0 を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>DNS の主な脆弱性を 3 点挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>Q1 で挙げた脆弱性を狙った攻撃を受けた場合の影響について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>DNSSEC の仕組みと導入による効果について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>セキュリティを考慮した DNS サーバの構成，設定について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>DNS の 512 オクテット制限と EDNS0 について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-dnssec-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">DNSSEC に関する記述のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>権威 DNS サーバが，DNS 問合せに対する応答時に，リソースレコードを公開鍵暗号方式で暗号化することによって，通信経路上の盗聴を防ぐ。</span></li>
+                        <li><span class="opt-key">イ</span><span>権威 DNS サーバが，リソースレコードの受信時にデジタル署名を検証することによって，データの作成元の正当性とデータの完全性を確認する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>リゾルバが，DNS 問合せに対する応答時に，リソースレコードを公開鍵暗号方式で暗号化することによって，通信経路上の盗聴を防ぐ。</span></li>
+                        <li><span class="opt-key">エ</span><span>リゾルバが，リソースレコードの受信時にデジタル署名を検証することによって，データの作成元の正当性とデータの完全性を確認する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 秋・午前Ⅱ 問 13］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>DNSSEC</strong>は DNS のセキュリティ拡張であり，次の機能によりリソースレコードの作成元の正当性とデータの完全性を検証する。</p>
+                        <ul>
+                            <li>名前解決要求に対する応答を返す DNS サーバが，自らの<strong>秘密鍵</strong>を用いてリソースレコードに<strong>デジタル署名</strong>を付加して送信する</li>
+                            <li>リソースレコードを受信した<strong>リゾルバ</strong>が，送信元 DNS サーバの<strong>公開鍵</strong>を用いてデジタル署名を検証する</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">DNSSEC は<strong>暗号化（機密性）</strong>ではなく<strong>署名（真正性・完全性）</strong>を提供する点に注意。したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="dnssec-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! DNS攻撃) -->
             <section class="content-section" id="section-dns-check">
                 <h2 class="section-title"><i class="fa-solid fa-server"></i>基礎知識: Check! 解説（DNS攻撃）</h2>
@@ -2577,7 +2633,7 @@
                                 <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
                     <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
                 </h3>
-                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">DNS 攻撃の過去問 4 問は<strong>過去問シミュレーター</strong>に統合しています。</p>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">DNS 関連の過去問 5 問は<strong>過去問シミュレーター</strong>に統合しています。</p>
                 <div id="dns-simulator-bridge"></div>
             </section>
         </div>
@@ -2586,6 +2642,7 @@
     <script src="simulator-questions-extra.js"></script>
     <script src="malware-check-data.js"></script>
     <script src="mail-check-data.js"></script>
+    <script src="dns-sec-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
         // 問題データ
@@ -6862,6 +6919,7 @@
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
             renderAccordionList(checkPortScanData, 'accordion-portscan-list');
+            renderAccordionList(checkDnsSecData, 'accordion-dnssec-list');
             renderAccordionList(checkCloudData, 'accordion-cloud-list');
             renderAccordionList(checkTeleworkData, 'accordion-telework-list');
             renderAccordionList(checkZeroTrustData, 'accordion-zerotrust-list');
@@ -6904,6 +6962,7 @@
             renderSimulatorBridge('password-simulator-bridge', 'password');
             renderSimulatorBridge('session-simulator-bridge', 'session');
             renderSimulatorBridge('dns-simulator-bridge', 'dns');
+            renderSimulatorBridgeByKeys('dnssec-simulator-bridge', ['dnssec']);
         }
 
 
@@ -7017,6 +7076,7 @@
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
             renderAccordionList(checkPortScanData, 'accordion-portscan-list');
+            renderAccordionList(checkDnsSecData, 'accordion-dnssec-list');
             renderAccordionList(checkCloudData, 'accordion-cloud-list');
             renderAccordionList(checkTeleworkData, 'accordion-telework-list');
             renderAccordionList(checkZeroTrustData, 'accordion-zerotrust-list');
@@ -7141,6 +7201,10 @@
 
         function scrollToSessionCheck() {
             document.getElementById('section-session-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToDnsSecCheck() {
+            document.getElementById('section-dnssec-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToDnsCheck() {

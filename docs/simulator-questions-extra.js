@@ -805,6 +805,46 @@ const questionDataExtra = {
         ],
         packetLabels: { req: "DNS Query", res: "Random Port" }
     },
+    dnssec: {
+        source: "情報処理安全確保支援士試験・R5秋・午前II問13",
+        diagramTitle: "DNSSEC 署名検証（シミュレーター）",
+        text: "DNSSEC に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "権威 DNS サーバが，DNS 問合せに対する応答時に，リソースレコードを公開鍵暗号方式で暗号化することによって，通信経路上の盗聴を防ぐ。", correct: false },
+            { key: "イ", text: "権威 DNS サーバが，リソースレコードの受信時にデジタル署名を検証することによって，データの作成元の正当性とデータの完全性を確認する。", correct: false },
+            { key: "ウ", text: "リゾルバが，DNS 問合せに対する応答時に，リソースレコードを公開鍵暗号方式で暗号化することによって，通信経路上の盗聴を防ぐ。", correct: false },
+            { key: "エ", text: "リゾルバが，リソースレコードの受信時にデジタル署名を検証することによって，データの作成元の正当性とデータの完全性を確認する。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>DNSSEC</strong>は DNS のセキュリティ拡張であり，次の機能によりリソースレコードの作成元の正当性とデータの完全性を検証します。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li>権威 DNS サーバが自らの<strong>秘密鍵</strong>で RR に<strong>デジタル署名</strong>（RRSIG）を付加して送信</li>
+                    <li><strong>リゾルバ</strong>が送信元の<strong>公開鍵</strong>（DNSKEY）で署名を検証</li>
+                    <li>DNSSEC は<strong>暗号化（機密性）</strong>ではなく<strong>署名（真正性・完全性）</strong>を提供</li>
+                </ul>
+            </div>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア・ウ</strong>：暗号化による盗聴防止は DNSSEC の目的ではない ❌</li>
+                    <li><strong>イ</strong>：署名の検証はリゾルバ側の役割 ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "権威DNS\nサーバ", ip: "秘密鍵で署名", icon: "fa-server", color: "var(--primary)" },
+            center: { name: "DNSSEC\nRRSIG", ip: "デジタル署名", icon: "fa-signature", color: "var(--secondary)" },
+            right: { name: "リゾルバ", ip: "公開鍵で検証", icon: "fa-shield-halved", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. RR署名", desc: "<strong>1. 権威 DNS が RR に署名</strong><br>権威 DNS サーバが秘密鍵を用いてリソースレコードにデジタル署名（RRSIG）を付加します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 応答送信", desc: "<strong>2. 署名付き RR を応答</strong><br>DNS 問合せに対し，署名付きリソースレコードと DNSKEY を返します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 署名検証", desc: "<strong>3. リゾルバが署名を検証</strong><br>リゾルバが公開鍵を用いてデジタル署名を検証し，真正性・完全性を確認します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 検証結果", desc: "<strong>4. 検証成功/失敗</strong><br>検証に成功した RR のみ利用し，失敗時は応答を拒否します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "DNS Query", res: "RRSIG" }
+    },
     cwe: {
         source: "情報処理安全確保支援士試験・R6春・午前II問9",
         diagramTitle: "CWE（共通弱点一覧）の位置づけ（シミュレーター）",

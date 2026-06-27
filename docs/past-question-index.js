@@ -55,11 +55,12 @@ const pastQuestionIndex = [
     { no: 38, format: 'simulator', category: 'password', key: 'spray', source: 'R4秋 午前II問14', title: 'パスワードスプレー攻撃' },
     // --- セッション (1) ---
     { no: 39, format: 'simulator', category: 'session', key: 'mitm', source: 'H22春 午前II問13', title: '中間者攻撃（MITM）' },
-    // --- DNS (4) ---
+    // --- DNS (5) ---
     { no: 40, format: 'simulator', category: 'dns', key: 'dnspoison',   source: 'H31春 午前II問11', title: 'DNSキャッシュポイズニング対策' },
     { no: 41, format: 'simulator', category: 'dns', key: 'dnswater',    source: 'H29春 午前II問6',  title: 'DNSウォータートーチャ' },
     { no: 42, format: 'simulator', category: 'dns', key: 'dnsdmz',      source: 'H25春 午前II問12', title: 'DMZ共用DNSとポイズニング' },
     { no: 43, format: 'simulator', category: 'dns', key: 'dnskaminsky', source: 'R7春 午前II問4',   title: 'Kaminsky攻撃対策' },
+    { no: 57, format: 'simulator', category: 'dns', key: 'dnssec',      source: 'R5秋 午前II問13',  title: 'DNSSEC 署名検証' },
     { no: 48, format: 'simulator', category: 'network', key: 'dhcparp', source: 'R5秋 午前II問20', title: 'DHCPとARP（アドレス競合確認）' },
     // --- メールセキュリティ (8) ---
     { no: 49, format: 'simulator', category: 'mail', key: 'spf', source: 'R4秋 午前II問15', title: 'SPF ドメイン認証' },
