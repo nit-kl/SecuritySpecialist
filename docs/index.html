@@ -888,6 +888,7 @@
         .badge-password { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
         .badge-session { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
         .badge-dns { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+        .badge-web { background: rgba(129, 140, 248, 0.2); color: #818cf8; }
         .badge-dos { background: rgba(239, 68, 68, 0.2); color: #f87171; }
         .badge-vuln { background: rgba(220, 38, 38, 0.2); color: #f87171; }
 
@@ -1283,7 +1284,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 57 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 58 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1296,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（57問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（58問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（57問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（58問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1347,7 +1348,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-globe" style="color:#818cf8;"></i> Web 脆弱性（6問）</summary>
+                <summary><i class="fa-solid fa-globe" style="color:#818cf8;"></i> Web 脆弱性（7問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('clickjack', this)">
                     <span class="btn-meta">問10: R6秋 午前II問14</span>
@@ -1372,6 +1373,10 @@
                 <button class="question-tab-btn" onclick="switchQuestion('oscmdlog', this)">
                     <span class="btn-meta">問15: R4春 午前II問1</span>
                     <span class="btn-title">CGIログ解析（OSコマンド）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('csrf', this)">
+                    <span class="btn-meta">問58: R6春 午前II問1</span>
+                    <span class="btn-title">CSRF 対策</span>
                 </button>
                 </div>
             </details>
@@ -1616,7 +1621,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（167問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（175問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1650,6 +1655,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToVulnCheck()">脆弱性（6問＋確認4問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToDosCheck()">DoS 攻撃 Check!（5問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToBofCheck()">バッファオーバーフロー（10問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToWebSecCheck()">Web セキュリティ（8問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCheck()">Web 脆弱性 Check!（16問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMalwareCheck()">マルウェア・脅威（23問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToPasswordCheck()">パスワード攻撃（7問）</button>
@@ -1668,22 +1674,22 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>57</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>167+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>58</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>175+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 57 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 57 問（重複なし）</div>
+                        <p>過去問 58 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 58 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全57問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全57問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全58問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全58問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1701,7 +1707,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
                         <h3>攻撃・脅威・対策</h3>
                         <p>DoS、BOF、Web 脆弱性、マルウェア、パスワード・セッション攻撃など実践的な脅威と対策。</p>
-                        <div class="card-meta">86問超（Check! 解説）</div>
+                        <div class="card-meta">94問超（Check! 解説）</div>
                     </div>
                 </div>
                 <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.85rem;">
@@ -1712,9 +1718,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（57問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（58問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 57 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 58 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1722,7 +1728,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（57問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（58問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -2453,6 +2459,64 @@
 
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! Webセキュリティ) -->
+            <section class="content-section" id="section-websec-check">
+                <h2 class="section-title"><i class="fa-solid fa-globe"></i>基礎知識: Check! 解説（Webセキュリティ）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    セッション管理、CSRF、HTTP プロトコル、Web サーバ・アプリケーションの脆弱性と情報漏えいを確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>セッション管理に関する脆弱性にはどのようなものがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>セキュリティを考慮したセッション管理とはどのようなものか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>CSRF によってどのような問題が発生し、どのような対策があるのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>HTTP のプロトコルの仕様にはどのような脆弱性があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>Web サーバの実装や設定の不備による脆弱性にはどのようなものがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>Web サーバに対する不正アクセスを防ぐためにはどのような対策が有効か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>Web アプリケーションの仕様や実装による脆弱性にはどのようなものがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>Web アプリケーションによる情報漏えいとしてどのようなケースが想定されるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-websec-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">クロスサイトリクエストフォージェリ攻撃の対策として，効果がないものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>Web サイトでの決済などの重要な操作の都度，利用者のパスワードを入力させる。</span></li>
+                        <li><span class="opt-key">イ</span><span>Web サイトへのログイン後，毎回異なる値を HTTP レスポンスボディに含め，Web ブラウザからのリクエストごとに送付されるその値を，Web サーバ側で照合する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>Web ブラウザからのリクエスト中の Referer によって正しいリンク元からの遷移であることを確認する。</span></li>
+                        <li><span class="opt-key">エ</span><span>Web ブラウザからのリクエストを Web サーバで受け付けた際に，リクエストに含まれる「&lt;」「&gt;」などの特殊文字を，「&amp;lt;」「&amp;gt;」などの文字列に置き換える。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ 問 1］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>CSRF（Cross-Site Request Forgeries）</strong>は，Web アプリケーションのユーザ認証やセッション管理の不備を突いて，サイトの利用者に Web アプリケーションに対する不正な処理要求を行わせる手法である。</p>
+                        <p style="margin-top:0.75rem;">CSRF 対策の例：</p>
+                        <ul>
+                            <li>ログイン後，HTTP レスポンスに毎回異なる値（CSRF トークン）を含め，サーバ側で照合する（<strong>イ</strong>）</li>
+                            <li>重要な操作の直前で再度パスワードを入力させる（<strong>ア</strong>）</li>
+                            <li>Referer を用いてリンク元の正当性を確認する（<strong>ウ</strong>）</li>
+                            <li>重要な操作後に登録アドレスへメール送信する</li>
+                            <li>Cookie の SameSite 属性（Strict / Lax）で異なるサイト間での Cookie 送信を制限する</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;"><strong>エ</strong>は HTML エスケープによる<strong>クロスサイトスクリプティング（XSS）対策</strong>であり，CSRF 対策としては効果がない。したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="csrf-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! Webアプリケーション脆弱性) -->
             <section class="content-section" id="section-check-knowledge">
                 <h2 class="section-title"><i class="fa-solid fa-list-check"></i>基礎知識: Check! 解説（Webアプリケーション脆弱性）</h2>
@@ -2487,7 +2551,7 @@
                 <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
                     <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
                 </h3>
-                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Web 脆弱性の過去問 6 問は<strong>過去問シミュレーター</strong>に統合しています。</p>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">Web 脆弱性の過去問 7 問は<strong>過去問シミュレーター</strong>に統合しています。</p>
                 <div id="web-simulator-bridge"></div>
             </section>
 
@@ -2643,6 +2707,7 @@
     <script src="malware-check-data.js"></script>
     <script src="mail-check-data.js"></script>
     <script src="dns-sec-check-data.js"></script>
+    <script src="web-sec-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
         // 問題データ
@@ -6926,6 +6991,7 @@
             renderAccordionList(checkThreatData, 'accordion-threat-list');
             renderAccordionList(checkVulnData, 'accordion-vuln-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
+            renderAccordionList(checkWebSecData, 'accordion-websec-list');
             renderAccordionList(checkData, 'accordion-list');
             renderAccordionList(checkMalwareData, 'accordion-malware-list');
             renderAccordionList(checkPasswordData, 'accordion-password-list');
@@ -6963,6 +7029,7 @@
             renderSimulatorBridge('session-simulator-bridge', 'session');
             renderSimulatorBridge('dns-simulator-bridge', 'dns');
             renderSimulatorBridgeByKeys('dnssec-simulator-bridge', ['dnssec']);
+            renderSimulatorBridgeByKeys('csrf-simulator-bridge', ['csrf']);
         }
 
 
@@ -7083,6 +7150,7 @@
             renderAccordionList(checkThreatData, 'accordion-threat-list');
             renderAccordionList(checkVulnData, 'accordion-vuln-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
+            renderAccordionList(checkWebSecData, 'accordion-websec-list');
             renderAccordionList(checkData, 'accordion-list');
             renderAccordionList(checkMalwareData, 'accordion-malware-list');
             renderAccordionList(checkPasswordData, 'accordion-password-list');
@@ -7185,6 +7253,10 @@
 
         function scrollToBofCheck() {
             document.getElementById('section-bof-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToWebSecCheck() {
+            document.getElementById('section-websec-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToCheck() {

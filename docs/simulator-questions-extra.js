@@ -1185,5 +1185,40 @@ const questionDataExtra = {
             { num: 4, btn: "4. レポート", desc: "<strong>4. 集計レポート送信</strong><br>なりすまし試行の可視化にも活用します。", stateClass: "state-4" }
         ],
         packetLabels: { req: "Auth Fail", res: "Policy" }
+    },
+    csrf: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問1",
+        diagramTitle: "CSRF 対策（シミュレーター）",
+        text: "クロスサイトリクエストフォージェリ攻撃の対策として，効果がないものはどれか。",
+        options: [
+            { key: "ア", text: "Web サイトでの決済などの重要な操作の都度，利用者のパスワードを入力させる。", correct: false },
+            { key: "イ", text: "Web サイトへのログイン後，毎回異なる値を HTTP レスポンスボディに含め，Web ブラウザからのリクエストごとに送付されるその値を，Web サーバ側で照合する。", correct: false },
+            { key: "ウ", text: "Web ブラウザからのリクエスト中の Referer によって正しいリンク元からの遷移であることを確認する。", correct: false },
+            { key: "エ", text: "Web ブラウザからのリクエストを Web サーバで受け付けた際に，リクエストに含まれる \"<\", \">\" などの特殊文字を，\"&lt;\", \"&gt;\" などの文字列に置き換える。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>CSRF</strong>は認証済みユーザーのブラウザから意図しないリクエストを送らせる攻撃です。有効な対策は CSRF トークン、Referer 検証、再パスワード入力、SameSite Cookie 等です。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：重要操作前の再認証 → CSRF 対策 ✅</li>
+                    <li><strong>イ</strong>：CSRF トークン（ワンタイムトークン）→ CSRF 対策 ✅</li>
+                    <li><strong>ウ</strong>：Referer 検証 → CSRF 対策 ✅</li>
+                    <li><strong>エ</strong>：HTML エスケープ → <strong>XSS 対策</strong>であり CSRF 対策としては無効 ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "攻撃者\nサイト", ip: "偽フォーム", icon: "fa-user-secret", color: "var(--accent)" },
+            center: { name: "被害者\nブラウザ", ip: "Cookie自動送信", icon: "fa-laptop", color: "var(--primary)" },
+            right: { name: "正規\nWebサイト", ip: "CSRFトークン検証", icon: "fa-shield-halved", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. ログイン", desc: "<strong>1. 被害者が正規サイトにログイン</strong><br>セッション Cookie がブラウザに保存されます。", stateClass: "state-1" },
+            { num: 2, btn: "2. 偽ページ", desc: "<strong>2. 攻撃者サイトを閲覧</strong><br>攻撃者のページから正規サイトへ自動 POST 等が実行されます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 自動送信", desc: "<strong>3. Cookie が自動送信</strong><br>ブラウザがセッション Cookie を付けてリクエストを送信します。", stateClass: "state-3" },
+            { num: 4, btn: "4. トークン検証", desc: "<strong>4. CSRF トークンで防御</strong><br>レスポンスに含めたトークンの照合により不正リクエストを拒否します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "偽POST", res: "Token NG" }
     }
 };

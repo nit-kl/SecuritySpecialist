@@ -10,13 +10,14 @@ const pastQuestionIndex = [
     { no: 7,  format: 'simulator', category: 'dos',     key: 'services',    source: 'R3春 午前II問1',   title: '悪用されるサービス' },
     { no: 8,  format: 'simulator', category: 'dos',     key: 'notice',      source: 'R5秋 午前II問10',  title: 'IoT調査 "NOTICE"' },
     { no: 9,  format: 'simulator', category: 'dos',     key: 'drdos',       source: 'R7春 午前II問1',   title: 'DRDoS攻撃の定義' },
-    // --- Web (6) ---
+    // --- Web (7) ---
     { no: 10, format: 'simulator', category: 'web',     key: 'clickjack',   source: 'R6秋 午前II問14',  title: 'クリックジャッキング' },
     { no: 11, format: 'simulator', category: 'web',     key: 'oscmd',       source: 'R5秋 午前II問1',   title: 'OSコマンドインジェクション' },
     { no: 12, format: 'simulator', category: 'web',     key: 'sqlicounter', source: 'R5春 午前II問17',  title: 'SQLi対策の組合せ' },
     { no: 13, format: 'simulator', category: 'web',     key: 'attackpair',  source: 'R3春 午前II問12',  title: '攻撃と対策の組合せ' },
     { no: 14, format: 'simulator', category: 'web',     key: 'dirtraversal',source: 'H27春 午前I問15',  title: 'ディレクトリトラバーサル' },
     { no: 15, format: 'simulator', category: 'web',     key: 'oscmdlog',    source: 'R4春 午前II問1',   title: 'CGIログ解析（OSコマンド）' },
+    { no: 58, format: 'simulator', category: 'web',     key: 'csrf',        source: 'R6春 午前II問1',   title: 'CSRF 対策' },
     // --- マルウェア・高度脅威 (7) ---
     { no: 16, format: 'simulator', category: 'malware', key: 'ioc',         source: 'R7春 午前II問13',  title: 'IoC（侵害指標）' },
     { no: 17, format: 'simulator', category: 'malware', key: 'connectback', source: 'R7春 午前II問8',   title: 'コネクトバック' },
