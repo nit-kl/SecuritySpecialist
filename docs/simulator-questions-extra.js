@@ -1220,5 +1220,85 @@ const questionDataExtra = {
             { num: 4, btn: "4. トークン検証", desc: "<strong>4. CSRF トークンで防御</strong><br>レスポンスに含めたトークンの照合により不正リクエストを拒否します。", stateClass: "state-4" }
         ],
         packetLabels: { req: "偽POST", res: "Token NG" }
+    },
+    riskident: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問10",
+        diagramTitle: "JIS Q 27000 用語（シミュレーター）",
+        text: "JIS Q 27000：2019（情報セキュリティマネジメントシステム－用語）の用語に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "脅威とは，一つ以上の要因によって付け込まれる可能性がある，資産又は管理策の弱点のことである。", correct: false },
+            { key: "イ", text: "脆弱性（ぜいじゃくせい）とは，システム又は組織に損害を与える可能性がある，望ましくないインシデントの潜在的な原因のことである。", correct: false },
+            { key: "ウ", text: "リスク対応とは，リスクの大きさが，受容可能か又は許容可能かを決定するために，リスク分析の結果をリスク基準と比較するプロセスのことである。", correct: false },
+            { key: "エ", text: "リスク特定とは，リスクを発見，認識及び記述するプロセスのことであり，リスク源，事象，それらの原因及び起こり得る結果の特定が含まれる。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>JIS Q 27000：2019 の用語定義の対応関係：</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>の記述 → <strong>脆弱性</strong>の定義 ❌</li>
+                    <li><strong>イ</strong>の記述 → <strong>脅威</strong>の定義 ❌</li>
+                    <li><strong>ウ</strong>の記述 → <strong>リスク評価</strong>の定義（リスク対応ではない）❌</li>
+                    <li><strong>エ</strong>の記述 → <strong>リスク特定</strong>の定義 ✅</li>
+                </ul>
+            </div>
+            <p style="margin-top:0.75rem;">リスク特定には過去データ，理論分析，専門家意見，ステークホルダーニーズ等を含むことがあります。</p>
+        `,
+        nodes: {
+            left: { name: "資産・脅威\n脆弱性", ip: "リスク源", icon: "fa-database", color: "var(--primary)" },
+            center: { name: "リスク特定", ip: "発見・記述", icon: "fa-magnifying-glass", color: "var(--secondary)" },
+            right: { name: "リスク分析\n評価", ip: "基準と比較", icon: "fa-scale-balanced", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 文脈確立", desc: "<strong>1. リスクアセスメントの文脈確立</strong><br>スコープとリスク許容基準を設定します。", stateClass: "state-1" },
+            { num: 2, btn: "2. リスク特定", desc: "<strong>2. リスクの発見・認識・記述</strong><br>リスク源，事象，原因，起こり得る結果を特定します。", stateClass: "state-2" },
+            { num: 3, btn: "3. リスク分析", desc: "<strong>3. 発生可能性と影響度の見積もり</strong><br>定性的・定量的にリスクを分析します。", stateClass: "state-3" },
+            { num: 4, btn: "4. リスク評価", desc: "<strong>4. リスク基準との比較</strong><br>許容可能かを判断し，対応の優先度を決定します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "リスク源", res: "特定結果" }
+    },
+    riskdetail: {
+        source: "情報処理安全確保支援士試験・H23秋・午前II問25",
+        diagramTitle: "詳細リスク分析（シミュレーター）",
+        text: "ISMS におけるリスク分析手法の一つである「詳細リスク分析」で行う作業はどれか。",
+        options: [
+            { key: "ア", text: "情報セキュリティポリシの作成", correct: false },
+            { key: "イ", text: "セーフガードの選択", correct: false },
+            { key: "ウ", text: "リスクの評価", correct: true },
+            { key: "エ", text: "リスクの容認", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>ISMS における<strong>詳細リスク分析</strong>の作業フロー：</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ol>
+                    <li>情報資産の識別</li>
+                    <li>情報資産価値の評価及び資産間の依存性の確立</li>
+                    <li>脅威の評価</li>
+                    <li>脆弱性の評価</li>
+                    <li>既存及び計画中のセーフガードの識別</li>
+                    <li><strong>リスクの評価</strong></li>
+                </ol>
+            </div>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：ポリシ策定 ❌</li>
+                    <li><strong>イ</strong>：リスク対応（管理策選定）❌</li>
+                    <li><strong>エ</strong>：リスク受容 ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "情報資産\n識別", ip: "資産価値評価", icon: "fa-database", color: "var(--primary)" },
+            center: { name: "脅威・脆弱性\nセーフガード", ip: "分析", icon: "fa-magnifying-glass-chart", color: "var(--secondary)" },
+            right: { name: "リスクの\n評価", ip: "最終作業", icon: "fa-scale-balanced", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 資産識別", desc: "<strong>1. 情報資産の識別</strong><br>保護対象となる情報資産を洗い出します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 価値・依存性", desc: "<strong>2. 資産価値の評価と依存性の確立</strong><br>資産の重要度と資産間の依存関係を評価します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 脅威・脆弱性", desc: "<strong>3. 脅威と脆弱性の評価</strong><br>想定される脅威と脆弱性を分析します。", stateClass: "state-3" },
+            { num: 4, btn: "4. リスク評価", desc: "<strong>4. セーフガード識別とリスクの評価</strong><br>既存・計画中のセーフガードを踏まえ，リスクを評価します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "分析", res: "評価結果" }
     }
 };
