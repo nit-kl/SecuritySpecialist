@@ -1335,5 +1335,41 @@ const questionDataExtra = {
             { num: 4, btn: "4. 回避完了", desc: "<strong>4. リスク回避の完了</strong><br>漏えいリスクの根本原因がなくなり，回避が成立します。", stateClass: "state-4" }
         ],
         packetLabels: { req: "個人情報", res: "消去・禁止" }
+    },
+    secpolicy: {
+        source: "情報処理安全確保支援士試験・H25秋・高度共通 午前I問14",
+        diagramTitle: "情報セキュリティ基本方針（シミュレーター）",
+        text: "ISMS において定義することが求められている情報セキュリティ基本方針に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "重要な基本方針を定めた機密文書であり，社内の関係者以外の目に触れないようにする。", correct: false },
+            { key: "イ", text: "情報セキュリティの基本方針を述べたものであり，ビジネス環境や技術が変化しても変更してはならない。", correct: false },
+            { key: "ウ", text: "情報セキュリティのための経営陣の方向性及び支持を規定する。", correct: true },
+            { key: "エ", text: "特定のシステムについてリスク分析を行い，そのセキュリティ対策とシステム運用の詳細を記述する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>情報セキュリティ<strong>基本方針</strong>は，事業要求と法規制に従い，情報セキュリティに対する<strong>経営陣の方向性及び支持</strong>を示すものです（ISO/IEC 27001 付録 A 5.1）。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li>経営層の承認を得て発行し，従業員・関係者に通知する</li>
+                    <li>定期的または重大な変化時に<strong>見直し</strong>する</li>
+                    <li><strong>ア</strong>：機密限定 → 不適切 ❌</li>
+                    <li><strong>イ</strong>：変更禁止 → 不適切 ❌</li>
+                    <li><strong>エ</strong>：特定システムの詳細 → 基本方針ではない ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "経営陣", ip: "方向性・支持", icon: "fa-user-tie", color: "var(--primary)" },
+            center: { name: "基本方針", ip: "承認・発布", icon: "fa-file-shield", color: "var(--secondary)" },
+            right: { name: "従業員\n関係者", ip: "周知・遵守", icon: "fa-users", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 経営承認", desc: "<strong>1. 経営層が基本方針を承認</strong><br>情報セキュリティに対する経営陣の方向性と支持を示します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 発布", desc: "<strong>2. 方針を発行・周知</strong><br>従業員及び関係者に通知します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 運用", desc: "<strong>3. 組織全体で遵守</strong><br>下位ポリシ・管理策の根拠となります。", stateClass: "state-3" },
+            { num: 4, btn: "4. 見直し", desc: "<strong>4. 定期的・変化時に見直し</strong><br>有効性と適切性を維持します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "方針", res: "承認" }
     }
 };
