@@ -1284,7 +1284,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 60 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 61 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（60問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（61問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（60問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（61問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1416,7 +1416,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（3問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（4問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1429,6 +1429,10 @@
                 <button class="question-tab-btn" onclick="switchQuestion('riskdetail', this)">
                     <span class="btn-meta">問60: H23秋 午前II問25</span>
                     <span class="btn-title">詳細リスク分析</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('riskavoid', this)">
+                    <span class="btn-meta">問61: H29春 午前II問9</span>
+                    <span class="btn-title">リスク回避</span>
                 </button>
                 </div>
             </details>
@@ -1629,7 +1633,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（182問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（188問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1638,6 +1642,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToInfoSecCheck()">情報セキュリティ特性（10問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToIsmsCheck()">PDCA・ISMS（15問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToRiskCheck()">リスクアセスメント（7問＋確認2問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToRiskMgmtCheck()">リスクマネジメント（6問＋確認1問）</button>
                 </div>
             </details>
 
@@ -1683,28 +1688,28 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>60</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>182+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>61</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>188+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 60 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 60 問（重複なし）</div>
+                        <p>過去問 61 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 61 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全60問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全60問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全61問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全61問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
                         <h3>基礎・管理</h3>
                         <p>セキュリティの定義、CIA 三要素、PDCA・ISMS など試験の土台となる概念を Check! 形式で確認。</p>
-                        <div class="card-meta">36問（4＋10＋15＋7）</div>
+                        <div class="card-meta">42問（4＋10＋15＋7＋6）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-network')">
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -1727,9 +1732,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（60問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（61問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 60 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 61 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1737,7 +1742,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（60問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（61問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -2008,6 +2013,60 @@
                 </h3>
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題 2 問は<strong>過去問シミュレーター</strong>でも解けます。</p>
                 <div id="risk-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! リスクマネジメント) -->
+            <section class="content-section" id="section-riskmgmt-check">
+                <h2 class="section-title"><i class="fa-solid fa-scale-balanced"></i>基礎知識: Check! 解説（リスクマネジメント）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    リスクマネジメントのプロセス、リスク対応、リスクコントロールとリスクファイナンシング、リスク受容を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>リスクマネジメントの四つのプロセスを挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>リスク対応で考慮すべきことは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>リスクコントロールとリスクファイナンシングの概要を説明せよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>リスクコントロールにおけるリスク対応手法の種類とその具体例を述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>リスクファイナンシングにおけるリスク対応手法の種類とその具体例を述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>リスクの受容とは何か。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-riskmgmt-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">個人情報の漏えいに関するリスク対応のうち，リスク回避に該当するものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>個人情報の重要性と対策費用を勘案し，あえて対策をとらない。</span></li>
+                        <li><span class="opt-key">イ</span><span>個人情報の保管場所に外部の者が侵入できないように，入退室をより厳密に管理する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>個人情報を含む情報資産を外部のデータセンタに預託する。</span></li>
+                        <li><span class="opt-key">エ</span><span>収集済みの個人情報を消去し，新たな収集を禁止する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・H29 春・午前Ⅱ 問 9］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>リスク回避</strong>とは，リスク発生の根本原因（作業，事象など）を排除することによってリスクを処理する方法である。例えば，インターネットからのサイバー攻撃を受けるリスクを処理するために，インターネットへの接続自体を取りやめることなどがリスク回避に該当する。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：リスク<strong>受容</strong>に該当する ❌</li>
+                            <li><strong>イ</strong>：リスク<strong>低減</strong>に該当する ❌</li>
+                            <li><strong>ウ</strong>：リスク<strong>移転</strong>に該当する ❌</li>
+                            <li><strong>エ</strong>：個人情報というリスク源そのものを排除する → リスク<strong>回避</strong> ✅</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="riskavoid-simulator-bridge"></div>
             </section>
 
             <div class="category-banner" id="category-network">
@@ -2798,6 +2857,7 @@
     <script src="dns-sec-check-data.js"></script>
     <script src="web-sec-check-data.js"></script>
     <script src="risk-check-data.js"></script>
+    <script src="risk-mgmt-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
         // 問題データ
@@ -7070,6 +7130,7 @@
             renderAccordionList(checkInfoSecData, 'accordion-infosec-list');
             renderAccordionList(checkIsmsData, 'accordion-isms-list');
             renderAccordionList(checkRiskData, 'accordion-risk-list');
+            renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
@@ -7122,6 +7183,7 @@
             renderSimulatorBridgeByKeys('dnssec-simulator-bridge', ['dnssec']);
             renderSimulatorBridgeByKeys('csrf-simulator-bridge', ['csrf']);
             renderSimulatorBridgeByKeys('risk-simulator-bridge', ['riskident', 'riskdetail']);
+            renderSimulatorBridgeByKeys('riskavoid-simulator-bridge', ['riskavoid']);
         }
 
 
@@ -7231,6 +7293,7 @@
             renderAccordionList(checkInfoSecData, 'accordion-infosec-list');
             renderAccordionList(checkIsmsData, 'accordion-isms-list');
             renderAccordionList(checkRiskData, 'accordion-risk-list');
+            renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
@@ -7306,6 +7369,10 @@
 
         function scrollToRiskCheck() {
             document.getElementById('section-risk-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToRiskMgmtCheck() {
+            document.getElementById('section-riskmgmt-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetworkCheck() {

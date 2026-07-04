@@ -1300,5 +1300,40 @@ const questionDataExtra = {
             { num: 4, btn: "4. リスク評価", desc: "<strong>4. セーフガード識別とリスクの評価</strong><br>既存・計画中のセーフガードを踏まえ，リスクを評価します。", stateClass: "state-4" }
         ],
         packetLabels: { req: "分析", res: "評価結果" }
+    },
+    riskavoid: {
+        source: "情報処理安全確保支援士試験・H29春・午前II問9",
+        diagramTitle: "リスク回避（シミュレーター）",
+        text: "個人情報の漏えいに関するリスク対応のうち，リスク回避に該当するものはどれか。",
+        options: [
+            { key: "ア", text: "個人情報の重要性と対策費用を勘案し，あえて対策をとらない。", correct: false },
+            { key: "イ", text: "個人情報の保管場所に外部の者が侵入できないように，入退室をより厳密に管理する。", correct: false },
+            { key: "ウ", text: "個人情報を含む情報資産を外部のデータセンタに預託する。", correct: false },
+            { key: "エ", text: "収集済みの個人情報を消去し，新たな収集を禁止する。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>リスク回避</strong>は，リスク発生の根本原因（作業・事象など）を排除してリスクを処理する方法です。個人情報の収集・保管そのものをやめることが該当します。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：リスク<strong>受容</strong> ❌</li>
+                    <li><strong>イ</strong>：リスク<strong>低減</strong>（入退室管理）❌</li>
+                    <li><strong>ウ</strong>：リスク<strong>移転</strong>（外部預託）❌</li>
+                    <li><strong>エ</strong>：リスク源の排除 → <strong>回避</strong> ✅</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "個人情報\n収集・保管", ip: "リスク源", icon: "fa-id-card", color: "var(--accent)" },
+            center: { name: "リスク回避", ip: "根本原因の排除", icon: "fa-ban", color: "var(--secondary)" },
+            right: { name: "漏えい\nリスクなし", ip: "収集禁止", icon: "fa-shield-halved", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. リスク源", desc: "<strong>1. 個人情報の保有がリスク源</strong><br>収集・保管している個人情報が漏えいリスクの根本原因です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 消去", desc: "<strong>2. 収集済み個人情報を消去</strong><br>既存の個人情報を削除し，リスク源を取り除きます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 収集禁止", desc: "<strong>3. 新たな収集を禁止</strong><br>今後の収集も禁止し，リスク源の再発生を防ぎます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 回避完了", desc: "<strong>4. リスク回避の完了</strong><br>漏えいリスクの根本原因がなくなり，回避が成立します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "個人情報", res: "消去・禁止" }
     }
 };
