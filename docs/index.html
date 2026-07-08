@@ -1284,7 +1284,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 63 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 64 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（63問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（64問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（63問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（64問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1416,7 +1416,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（6問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（7問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1441,6 +1441,10 @@
                 <button class="question-tab-btn" onclick="switchQuestion('secorg', this)">
                     <span class="btn-meta">問63: オリジナル問題</span>
                     <span class="btn-title">情報セキュリティマネジメント体制</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('tpm', this)">
+                    <span class="btn-meta">問64: H29春 午前II問4</span>
+                    <span class="btn-title">TPM（鍵ペア生成）</span>
                 </button>
                 </div>
             </details>
@@ -1641,7 +1645,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（193問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（202問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1651,6 +1655,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToIsmsCheck()">PDCA・ISMS（15問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToSecPolicyCheck()">情報セキュリティポリシ（3問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToSecOrgCheck()">情報セキュリティマネジメント体制（2問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToAssetCheck()">情報資産管理（9問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToRiskCheck()">リスクアセスメント（7問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToRiskMgmtCheck()">リスクマネジメント（6問＋確認1問）</button>
                 </div>
@@ -1698,28 +1703,28 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>63</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>193+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>64</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>202+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 63 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 63 問（重複なし）</div>
+                        <p>過去問 64 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 64 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全63問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全63問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全64問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全64問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
                         <h3>基礎・管理</h3>
                         <p>セキュリティの定義、CIA 三要素、PDCA・ISMS など試験の土台となる概念を Check! 形式で確認。</p>
-                        <div class="card-meta">47問（4＋10＋15＋3＋2＋7＋6）</div>
+                        <div class="card-meta">56問（4＋10＋15＋3＋2＋9＋7＋6）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-network')">
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -1742,9 +1747,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（63問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（64問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 63 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 64 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1752,7 +1757,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（63問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（64問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -2048,6 +2053,63 @@
                 </h3>
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
                 <div id="secorg-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 情報資産管理) -->
+            <section class="content-section" id="section-asset-check">
+                <h2 class="section-title"><i class="fa-solid fa-boxes-stacked"></i>基礎知識: Check! 解説（情報資産管理）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    情報資産・個人情報・情報システムの洗出し、分類・ラベル付け、ライフサイクル、クライアント PC 管理を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>情報資産の洗出しにおいて記入すべき項目を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>個人情報の洗出しにおいて記入すべき項目を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>情報システムの洗出しにおいて記入すべき項目を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>情報資産を分類する目的は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>情報資産のラベル付けを行う目的は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>情報資産のライフサイクルとは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>情報資産のライフサイクルにおいて，情報セキュリティの観点から特に留意すべき事項を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>個人情報の取扱いにおいて留意すべき点を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>クライアント PC の管理において，情報セキュリティの観点から明確にしておくべき事項を挙げよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-asset-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">PC などに内蔵されるセキュリティチップ（TPM: Trusted Platform Module）がもつ機能はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>TPM 間での共通鍵の交換</span></li>
+                        <li><span class="opt-key">イ</span><span>鍵ペアの生成</span></li>
+                        <li><span class="opt-key">ウ</span><span>デジタル証明書の発行</span></li>
+                        <li><span class="opt-key">エ</span><span>ネットワーク経由の乱数送信</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・H29 春・午前Ⅱ 問 4］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>TPM</strong>は，耐タンパ性に優れたセキュリティチップであり，通常マザーボードに直付けする形で PC に搭載されている。TPM は，暗号化に用いる<strong>鍵ペアの生成・格納</strong>，暗号化・復号処理の実行などの機能をもつ。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：TPM 間での共通鍵交換 → TPM の主機能ではない ❌</li>
+                            <li><strong>イ</strong>：鍵ペアの生成 → 正しい ✅</li>
+                            <li><strong>ウ</strong>：デジタル証明書の発行 → CA の役割 ❌</li>
+                            <li><strong>エ</strong>：ネットワーク経由の乱数送信 → TPM の主機能ではない ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>イ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="tpm-simulator-bridge"></div>
             </section>
 
             <!-- 基礎知識の解説セクション (Check! リスクアセスメント) -->
@@ -2975,6 +3037,7 @@
     <script src="risk-mgmt-check-data.js"></script>
     <script src="sec-policy-check-data.js"></script>
     <script src="sec-org-check-data.js"></script>
+    <script src="asset-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
         // 問題データ
@@ -7248,6 +7311,7 @@
             renderAccordionList(checkIsmsData, 'accordion-isms-list');
             renderAccordionList(checkSecPolicyData, 'accordion-secpolicy-list');
             renderAccordionList(checkSecOrgData, 'accordion-secorg-list');
+            renderAccordionList(checkAssetData, 'accordion-asset-list');
             renderAccordionList(checkRiskData, 'accordion-risk-list');
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
@@ -7305,6 +7369,7 @@
             renderSimulatorBridgeByKeys('riskavoid-simulator-bridge', ['riskavoid']);
             renderSimulatorBridgeByKeys('secpolicy-simulator-bridge', ['secpolicy']);
             renderSimulatorBridgeByKeys('secorg-simulator-bridge', ['secorg']);
+            renderSimulatorBridgeByKeys('tpm-simulator-bridge', ['tpm']);
         }
 
 
@@ -7415,6 +7480,7 @@
             renderAccordionList(checkIsmsData, 'accordion-isms-list');
             renderAccordionList(checkSecPolicyData, 'accordion-secpolicy-list');
             renderAccordionList(checkSecOrgData, 'accordion-secorg-list');
+            renderAccordionList(checkAssetData, 'accordion-asset-list');
             renderAccordionList(checkRiskData, 'accordion-risk-list');
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
@@ -7496,6 +7562,10 @@
 
         function scrollToSecOrgCheck() {
             document.getElementById('section-secorg-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToAssetCheck() {
+            document.getElementById('section-asset-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToRiskCheck() {

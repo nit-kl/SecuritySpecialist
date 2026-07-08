@@ -1405,5 +1405,39 @@ const questionDataExtra = {
             { num: 4, btn: "4. 組織全体", desc: "<strong>4. 組織全体で推進</strong><br>特定部署・個人に依存しない体制を構築します。", stateClass: "state-4" }
         ],
         packetLabels: { req: "体制構築", res: "全体推進" }
+    },
+    tpm: {
+        source: "情報処理安全確保支援士試験・H29春・午前II問4",
+        diagramTitle: "TPM（Trusted Platform Module）（シミュレーター）",
+        text: "PC などに内蔵されるセキュリティチップ（TPM: Trusted Platform Module）がもつ機能はどれか。",
+        options: [
+            { key: "ア", text: "TPM 間での共通鍵の交換", correct: false },
+            { key: "イ", text: "鍵ペアの生成", correct: true },
+            { key: "ウ", text: "デジタル証明書の発行", correct: false },
+            { key: "エ", text: "ネットワーク経由の乱数送信", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p><strong>TPM</strong>は耐タンパ性に優れたセキュリティチップで，通常マザーボードに直付けされます。暗号化に用いる<strong>鍵ペアの生成・格納</strong>，暗号化・復号処理などの機能をもちます。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：TPM 間の共通鍵交換 → 主機能ではない ❌</li>
+                    <li><strong>ウ</strong>：デジタル証明書の発行 → CA の役割 ❌</li>
+                    <li><strong>エ</strong>：ネットワーク経由の乱数送信 → 主機能ではない ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "PC / OS", ip: "暗号化要求", icon: "fa-laptop", color: "var(--primary)" },
+            center: { name: "TPM\nチップ", ip: "耐タンパ領域", icon: "fa-microchip", color: "var(--secondary)" },
+            right: { name: "鍵ペア", ip: "生成・格納", icon: "fa-key", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. TPM搭載", desc: "<strong>1. マザーボードに TPM を搭載</strong><br>耐タンパ性に優れたセキュリティチップが内蔵されます。", stateClass: "state-1" },
+            { num: 2, btn: "2. 鍵生成", desc: "<strong>2. 鍵ペアを生成</strong><br>暗号化に用いる公開鍵・秘密鍵のペアを TPM 内で生成します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 鍵格納", desc: "<strong>3. 秘密鍵を安全に格納</strong><br>秘密鍵は TPM 内に保持され，外部への漏洩を防ぎます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 暗号処理", desc: "<strong>4. 暗号化・復号を実行</strong><br>必要に応じて TPM が暗号化・復号処理を担います。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "鍵要求", res: "鍵ペア" }
     }
 };
