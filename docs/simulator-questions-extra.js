@@ -1371,5 +1371,39 @@ const questionDataExtra = {
             { num: 4, btn: "4. 見直し", desc: "<strong>4. 定期的・変化時に見直し</strong><br>有効性と適切性を維持します。", stateClass: "state-4" }
         ],
         packetLabels: { req: "方針", res: "承認" }
+    },
+    secorg: {
+        source: "オリジナル問題",
+        diagramTitle: "情報セキュリティマネジメント体制（シミュレーター）",
+        text: "情報セキュリティマネジメント体制に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "情報セキュリティマネジメントに複数の人間がかかわると意見調整に時間を費やしてしまうので，担当者を 1 名選出し，推進をすべて任せるのが望ましい。", correct: false },
+            { key: "イ", text: "情報セキュリティマネジメントの推進に当たっては，組織の様々な部署から広く必要な人材を招集するのが望ましい。", correct: true },
+            { key: "ウ", text: "情報セキュリティマネジメントの推進においては，経営者の意見が最も重要なので，取締役会に一任するのが望ましい。", correct: false },
+            { key: "エ", text: "情報セキュリティマネジメントの推進においては，情報システム部門の意見が最も重要なので，情報システム部門にすべて任せるのが望ましい。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p>情報セキュリティは<strong>組織全体</strong>にかかわる重要事項です。特定の部署や担当者 1 名にすべてを任せるべきではなく，関連部署から広く人材を招集して推進するのが望ましいです。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：1 名に一任 → 不適切 ❌</li>
+                    <li><strong>ウ</strong>：取締役会に一任 → 不適切 ❌</li>
+                    <li><strong>エ</strong>：情報システム部門に一任 → 不適切 ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "経営層", ip: "方向性・支持", icon: "fa-user-tie", color: "var(--primary)" },
+            center: { name: "情報セキュリティ\n委員会", ip: "横断的推進", icon: "fa-users-gear", color: "var(--secondary)" },
+            right: { name: "各部門\n情報管理者", ip: "現場の実施", icon: "fa-building", color: "var(--success)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 人材招集", desc: "<strong>1. 関連部署から人材を招集</strong><br>組織の様々な部署から必要な人材を集めます。", stateClass: "state-1" },
+            { num: 2, btn: "2. 委員会設置", desc: "<strong>2. 横断的な推進体制</strong><br>情報セキュリティ委員会等で方針・計画を推進します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 部門連携", desc: "<strong>3. 各部門の情報管理者と連携</strong><br>現場での対策実施を各部門で担います。", stateClass: "state-3" },
+            { num: 4, btn: "4. 組織全体", desc: "<strong>4. 組織全体で推進</strong><br>特定部署・個人に依存しない体制を構築します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "体制構築", res: "全体推進" }
     }
 };
