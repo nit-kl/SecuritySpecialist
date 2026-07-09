@@ -1439,5 +1439,39 @@ const questionDataExtra = {
             { num: 4, btn: "4. 暗号処理", desc: "<strong>4. 暗号化・復号を実行</strong><br>必要に応じて TPM が暗号化・復号処理を担います。", stateClass: "state-4" }
         ],
         packetLabels: { req: "鍵要求", res: "鍵ペア" }
+    },
+    tempest: {
+        source: "情報処理安全確保支援士試験・R3秋・午前II問13",
+        diagramTitle: "TEMPEST 攻撃（シミュレーター）",
+        text: "テンペスト攻撃を説明したものはどれか。",
+        options: [
+            { key: "ア", text: "故意に暗号化演算を誤動作させ，正しい処理結果との差異を解析する。", correct: false },
+            { key: "イ", text: "処理時間の差異を計測して解析する。", correct: false },
+            { key: "ウ", text: "処理中に機器から放射される電磁波を観測して解析する。", correct: true },
+            { key: "エ", text: "チップ内の信号線などに探針を直接当て，処理中のデータを観測して解析する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p><strong>TEMPEST</strong>攻撃は，ディスプレイやケーブル等から放射される<strong>微弱な電磁波</strong>を傍受・解析し，入力文字や画面表示情報を盗む手法です。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：故障注入攻撃 ❌</li>
+                    <li><strong>イ</strong>：タイミング攻撃 ❌</li>
+                    <li><strong>エ</strong>：プローブによる直接観測 ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "PC / ディスプレイ", ip: "電磁波放射", icon: "fa-desktop", color: "var(--primary)" },
+            center: { name: "傍受・解析", ip: "TEMPEST", icon: "fa-satellite-dish", color: "var(--accent)" },
+            right: { name: "攻撃者", ip: "情報窃取", icon: "fa-user-secret", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 電磁波放射", desc: "<strong>1. 機器から電磁波が放射</strong><br>ディスプレイやケーブルから微弱な電磁波が漏洩します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 傍受", desc: "<strong>2. 攻撃者が電磁波を傍受</strong><br>専用機器等で近傍から電磁波を受信します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 解析", desc: "<strong>3. 信号を解析</strong><br>受信した電磁波から画面表示や入力内容を復元します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 情報窃取", desc: "<strong>4. 機密情報の窃取</strong><br>物理的に隔離された環境の情報も漏洩し得ます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "電磁波", res: "復元データ" }
     }
 };
