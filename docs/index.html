@@ -1649,7 +1649,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（208問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（211問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1661,6 +1661,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToSecOrgCheck()">情報セキュリティマネジメント体制（2問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToAssetCheck()">情報資産管理（9問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToPhysicalSecCheck()">物理セキュリティ（6問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToHumanSecCheck()">人的セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToRiskCheck()">リスクアセスメント（7問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToRiskMgmtCheck()">リスクマネジメント（6問＋確認1問）</button>
                 </div>
@@ -1709,7 +1710,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>65</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>208+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>211+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1729,7 +1730,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
                         <h3>基礎・管理</h3>
                         <p>セキュリティの定義、CIA 三要素、PDCA・ISMS など試験の土台となる概念を Check! 形式で確認。</p>
-                        <div class="card-meta">62問（4＋10＋15＋3＋2＋9＋6＋7＋6）</div>
+                        <div class="card-meta">65問（4＋10＋15＋3＋2＋9＋6＋3＋7＋6）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-network')">
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -2169,6 +2170,23 @@
                 </h3>
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
                 <div id="tempest-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 人的セキュリティ) -->
+            <section class="content-section" id="section-humansec-check">
+                <h2 class="section-title"><i class="fa-solid fa-users-gear"></i>基礎知識: Check! 解説（人的セキュリティ）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    内部犯罪対策、教育・訓練、委託先管理など、人の意識・行動面の対策を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>内部犯罪を防ぐ上で有効な人的セキュリティ対策は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>教育・訓練の計画及び実施における要点を述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>委託先の管理における要点を述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-humansec-list"></div>
             </section>
 
             <!-- 基礎知識の解説セクション (Check! リスクアセスメント) -->
@@ -3098,6 +3116,7 @@
     <script src="sec-org-check-data.js"></script>
     <script src="asset-check-data.js"></script>
     <script src="physical-sec-check-data.js"></script>
+    <script src="human-sec-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
         // 問題データ
@@ -7373,6 +7392,7 @@
             renderAccordionList(checkSecOrgData, 'accordion-secorg-list');
             renderAccordionList(checkAssetData, 'accordion-asset-list');
             renderAccordionList(checkPhysicalSecData, 'accordion-physicalsec-list');
+            renderAccordionList(checkHumanSecData, 'accordion-humansec-list');
             renderAccordionList(checkRiskData, 'accordion-risk-list');
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
@@ -7544,6 +7564,7 @@
             renderAccordionList(checkSecOrgData, 'accordion-secorg-list');
             renderAccordionList(checkAssetData, 'accordion-asset-list');
             renderAccordionList(checkPhysicalSecData, 'accordion-physicalsec-list');
+            renderAccordionList(checkHumanSecData, 'accordion-humansec-list');
             renderAccordionList(checkRiskData, 'accordion-risk-list');
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
@@ -7633,6 +7654,10 @@
 
         function scrollToPhysicalSecCheck() {
             document.getElementById('section-physicalsec-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToHumanSecCheck() {
+            document.getElementById('section-humansec-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToRiskCheck() {
