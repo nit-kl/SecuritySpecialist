@@ -1284,7 +1284,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 65 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 69 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（65問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（69問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（65問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（69問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1416,7 +1416,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（8問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（12問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1449,6 +1449,22 @@
                 <button class="question-tab-btn" onclick="switchQuestion('tempest', this)">
                     <span class="btn-meta">問65: R3秋 午前II問13</span>
                     <span class="btn-title">TEMPEST 攻撃</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('probmgmt', this)">
+                    <span class="btn-meta">問66: R5春 午前II問24</span>
+                    <span class="btn-title">問題管理</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('forensic', this)">
+                    <span class="btn-meta">問67: R7春 午前II問15</span>
+                    <span class="btn-title">証拠保全の優先順位（RFC 3227）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('sim3', this)">
+                    <span class="btn-meta">問68: R6春 午前II問8</span>
+                    <span class="btn-title">SIM3</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('soar', this)">
+                    <span class="btn-meta">問69: R6秋 午前II問11</span>
+                    <span class="btn-title">SOAR</span>
                 </button>
                 </div>
             </details>
@@ -1649,7 +1665,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（211問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（219問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1664,6 +1680,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToHumanSecCheck()">人的セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToRiskCheck()">リスクアセスメント（7問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToRiskMgmtCheck()">リスクマネジメント（6問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToIncidentCheck()">インシデント対応（8問＋確認4問）</button>
                 </div>
             </details>
 
@@ -1709,28 +1726,28 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>65</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>211+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>69</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>219+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 65 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 65 問（重複なし）</div>
+                        <p>過去問 69 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 69 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全65問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全65問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全69問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全69問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
                         <h3>基礎・管理</h3>
                         <p>セキュリティの定義、CIA 三要素、PDCA・ISMS など試験の土台となる概念を Check! 形式で確認。</p>
-                        <div class="card-meta">65問（4＋10＋15＋3＋2＋9＋6＋3＋7＋6）</div>
+                        <div class="card-meta">73問（4＋10＋15＋3＋2＋9＋6＋3＋7＋6＋8）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-network')">
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -1753,9 +1770,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（65問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（69問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 65 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 69 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1763,7 +1780,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（65問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（69問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -2321,6 +2338,139 @@
                 </h3>
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
                 <div id="riskavoid-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! インシデント対応) -->
+            <section class="content-section" id="section-incident-check">
+                <h2 class="section-title"><i class="fa-solid fa-headset"></i>基礎知識: Check! 解説（インシデント対応）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    インシデント対応の各フェーズ、サイバーレジリエンス、OODA ループを確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>インシデント発生に備えた対応において行うべき事項と留意点について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>インシデント検知／連絡受付における留意点について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>インシデントのトリアージ／対応要否の決定における留意点について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>脅威の封じ込め／影響範囲の特定／応急処理における留意点について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>対応策（復旧措置・連絡・広報など）の決定／実施における留意点について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>インシデント収束後の対応における留意点について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>サイバーレジリエンスとは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>PDCA に対する OODA の特徴と実施内容について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-incident-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">サービスマネジメントにおける問題管理において実施する活動はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>インシデントの発生後に暫定的にサービスを復旧させ，業務を継続できるようにする。</span></li>
+                        <li><span class="opt-key">イ</span><span>インシデントの発生後に未知の根本原因を特定し，恒久的な解決策を策定する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>インシデントの発生に備えて，復旧のための設計をする。</span></li>
+                        <li><span class="opt-key">エ</span><span>インシデントの発生を記録し，関係する部署に状況を連絡する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 春・午前Ⅱ 問 24］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>サービスマネジメントにおける<strong>問題管理</strong>は，インシデントをはじめ，IT サービスにおける問題の<strong>根本原因を特定</strong>して解決するとともに，<strong>恒久的な解決策</strong>を策定することを目的としている。問題を特定するためにインシデントのデータや傾向を分析したり，インシデントにつながる可能性のある事象や予兆について管理し，問題の発生を未然に防いだりすることも重要である。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：インシデント管理（暫定復旧）❌</li>
+                            <li><strong>イ</strong>：根本原因の特定と恒久対策 → 問題管理 ✅</li>
+                            <li><strong>ウ</strong>：可用性・継続性の設計などに近い ❌</li>
+                            <li><strong>エ</strong>：インシデント管理（記録・連絡）❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>イ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">マルウェア感染の調査対象のPCに対して，電源を切る前に全ての証拠保全を行いたい。ARPキャッシュを取得した後に保全すべき情報のうち，最も優先して保全すべきものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>調査対象のPCで動的に追加されたルーティングテーブル</span></li>
+                        <li><span class="opt-key">イ</span><span>調査対象のPCに増設されたHDDにある個人情報を格納したテキストファイル</span></li>
+                        <li><span class="opt-key">ウ</span><span>調査対象のPCのVPN接続情報を記録しているVPNサーバ内のログ</span></li>
+                        <li><span class="opt-key">エ</span><span>調査対象のPCのシステムログファイル</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R7 春・午前Ⅱ 問 15］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>デジタルフォレンジックスで証拠を収集する際には，<strong>揮発性の高いものから順</strong>に進める必要がある。RFC 3227「証拠収集とアーカイビングのためのガイドライン」によれば，揮発性の順序はおおむね次のとおりである（上のものほど揮発性が高い）。</p>
+                        <ol style="margin-top:0.75rem;">
+                            <li>レジスタ，キャッシュ</li>
+                            <li>ルーティングテーブル，ARPキャッシュ，プロセステーブル，カーネル統計，メモリ</li>
+                            <li>テンポラリファイルシステム</li>
+                            <li>ディスク</li>
+                            <li>当該システムと関連する遠隔ロギングと監視データ</li>
+                            <li>物理的設定，ネットワークトポロジ</li>
+                            <li>アーカイブ用メディア</li>
+                        </ol>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：ARPキャッシュと同レベルの揮発性 → 次に優先 ✅</li>
+                            <li><strong>イ・エ</strong>：ディスク上の情報（揮発性は低い）❌</li>
+                            <li><strong>ウ</strong>：遠隔ログ（さらに後）❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">組織のセキュリティインシデント管理の成熟度を評価するために Open CSIRT Foundation が開発したモデルはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>CMMC</span></li>
+                        <li><span class="opt-key">イ</span><span>CMMI</span></li>
+                        <li><span class="opt-key">ウ</span><span>SAMM</span></li>
+                        <li><span class="opt-key">エ</span><span>SIM3</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ 問 8］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>問題文に該当するのは<strong>SIM3</strong>（Security Incident Management Maturity Model）である。SIM3は，「組織（O：Organization）」「人材（H：Human）」「ツール（T：Tools）」「プロセス（P：Processes）」の4つのカテゴリ，44分類の評価項目が設定されており，CSIRT の成熟度をレベル0〜5で評価する。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：CMMC（サイバーセキュリティ成熟度モデル認証）❌</li>
+                            <li><strong>イ</strong>：CMMI（プロセス改善の成熟度モデル）❌</li>
+                            <li><strong>ウ</strong>：SAMM（ソフトウェア保証成熟度モデル）❌</li>
+                            <li><strong>エ</strong>：SIM3 ✅</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">SOAR（Security Orchestration, Automation and Response）の説明はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>脅威インテリジェンスの活用，セキュリティ運用の自動化及びインシデント対応の効率化を行う技術</span></li>
+                        <li><span class="opt-key">イ</span><span>全ての利用者，デバイス，接続元を信頼できないものとして捉え，重要な情報資産やシステムに対するアクセスの正当性や安全性の検証を自動化することによって脅威を防ぐ考え方</span></li>
+                        <li><span class="opt-key">ウ</span><span>組織間でサイバー攻撃に関する情報を効率的に交換するために，脅威情報構造化記述形式で記述された情報の交換を自動化するためのプロトコル仕様</span></li>
+                        <li><span class="opt-key">エ</span><span>ファイアウォール，マルウェア対策製品，侵入検知製品など複数のセキュリティ製品のログの集約及び相関分析を自動化するための専用装置</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 11］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>SOAR</strong>は，セキュリティ運用の自動化，インシデント対応の効率化を実現する技術である。あらかじめ定義した「プレイブック」と呼ばれるワークフローに沿って，各種セキュリティ機器からの情報や外部の脅威インテリジェンス等も活用することで，検知の精度を高めたり，インシデント対応を効率化したりすることが可能となる。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：SOAR の説明 ✅</li>
+                            <li><strong>イ</strong>：ゼロトラスト ❌</li>
+                            <li><strong>ウ</strong>：TAXII などに近い説明 ❌</li>
+                            <li><strong>エ</strong>：SIEM ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題 4 問は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="probmgmt-simulator-bridge"></div>
             </section>
 
             <div class="category-banner" id="category-network">
@@ -3117,6 +3267,7 @@
     <script src="asset-check-data.js"></script>
     <script src="physical-sec-check-data.js"></script>
     <script src="human-sec-check-data.js"></script>
+    <script src="incident-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
         // 問題データ
@@ -7395,6 +7546,7 @@
             renderAccordionList(checkHumanSecData, 'accordion-humansec-list');
             renderAccordionList(checkRiskData, 'accordion-risk-list');
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
+            renderAccordionList(checkIncidentData, 'accordion-incident-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
@@ -7452,6 +7604,7 @@
             renderSimulatorBridgeByKeys('secorg-simulator-bridge', ['secorg']);
             renderSimulatorBridgeByKeys('tpm-simulator-bridge', ['tpm']);
             renderSimulatorBridgeByKeys('tempest-simulator-bridge', ['tempest']);
+            renderSimulatorBridgeByKeys('probmgmt-simulator-bridge', ['probmgmt', 'forensic', 'sim3', 'soar']);
         }
 
 
@@ -7567,6 +7720,7 @@
             renderAccordionList(checkHumanSecData, 'accordion-humansec-list');
             renderAccordionList(checkRiskData, 'accordion-risk-list');
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
+            renderAccordionList(checkIncidentData, 'accordion-incident-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
@@ -7666,6 +7820,10 @@
 
         function scrollToRiskMgmtCheck() {
             document.getElementById('section-riskmgmt-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToIncidentCheck() {
+            document.getElementById('section-incident-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetworkCheck() {

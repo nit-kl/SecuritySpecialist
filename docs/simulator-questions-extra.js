@@ -1473,5 +1473,149 @@ const questionDataExtra = {
             { num: 4, btn: "4. 情報窃取", desc: "<strong>4. 機密情報の窃取</strong><br>物理的に隔離された環境の情報も漏洩し得ます。", stateClass: "state-4" }
         ],
         packetLabels: { req: "電磁波", res: "復元データ" }
+    },
+    probmgmt: {
+        source: "情報処理安全確保支援士試験・R5春・午前II問24",
+        diagramTitle: "問題管理（シミュレーター）",
+        text: "サービスマネジメントにおける問題管理において実施する活動はどれか。",
+        options: [
+            { key: "ア", text: "インシデントの発生後に暫定的にサービスを復旧させ，業務を継続できるようにする。", correct: false },
+            { key: "イ", text: "インシデントの発生後に未知の根本原因を特定し，恒久的な解決策を策定する。", correct: true },
+            { key: "ウ", text: "インシデントの発生に備えて，復旧のための設計をする。", correct: false },
+            { key: "エ", text: "インシデントの発生を記録し，関係する部署に状況を連絡する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p>サービスマネジメントにおける<strong>問題管理</strong>は，インシデントをはじめ IT サービスにおける問題の<strong>根本原因を特定</strong>して解決するとともに，<strong>恒久的な解決策</strong>を策定することを目的とします。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：インシデント管理（暫定復旧）❌</li>
+                    <li><strong>ウ</strong>：可用性管理・継続性設計などに近い ❌</li>
+                    <li><strong>エ</strong>：インシデント管理（記録・連絡）❌</li>
+                </ul>
+            </div>
+            <p style="margin-top:0.75rem;">傾向分析や予兆管理により問題の<strong>未然防止</strong>を図ることも重要です。</p>
+        `,
+        nodes: {
+            left: { name: "インシデント", ip: "複数発生", icon: "fa-triangle-exclamation", color: "var(--secondary)" },
+            center: { name: "問題管理", ip: "根本原因分析", icon: "fa-magnifying-glass-chart", color: "var(--primary)" },
+            right: { name: "恒久対策", ip: "再発防止", icon: "fa-shield-halved", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. インシデント", desc: "<strong>1. インシデントが発生</strong><br>サービス障害などが繰り返し／未知の原因で発生します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 分析", desc: "<strong>2. 根本原因を特定</strong><br>インシデントデータや傾向を分析し，問題（Problem）を特定します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 恒久策", desc: "<strong>3. 恒久的解決策を策定</strong><br>暫定対応ではなく，再発を防ぐ恒久対策を決めます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 再発防止", desc: "<strong>4. 実施と未然防止</strong><br>対策を適用し，予兆管理により今後の発生も防ぎます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "インシデント", res: "根本原因" }
+    },
+    forensic: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問15",
+        diagramTitle: "証拠保全の優先順位（シミュレーター）",
+        text: "マルウェア感染の調査対象のPCに対して，電源を切る前に全ての証拠保全を行いたい。ARPキャッシュを取得した後に保全すべき情報のうち，最も優先して保全すべきものはどれか。",
+        options: [
+            { key: "ア", text: "調査対象のPCで動的に追加されたルーティングテーブル", correct: true },
+            { key: "イ", text: "調査対象のPCに増設されたHDDにある個人情報を格納したテキストファイル", correct: false },
+            { key: "ウ", text: "調査対象のPCのVPN接続情報を記録しているVPNサーバ内のログ", correct: false },
+            { key: "エ", text: "調査対象のPCのシステムログファイル", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>デジタルフォレンジックスでは<strong>揮発性の高いものから順</strong>に証拠を保全します（RFC 3227）。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ol>
+                    <li>レジスタ，キャッシュ</li>
+                    <li>ルーティングテーブル，ARPキャッシュ，プロセステーブル，カーネル統計，メモリ</li>
+                    <li>テンポラリファイルシステム</li>
+                    <li>ディスク</li>
+                    <li>遠隔ロギングと監視データ</li>
+                    <li>物理的設定，ネットワークトポロジ</li>
+                    <li>アーカイブ用メディア</li>
+                </ol>
+            </div>
+            <p style="margin-top:0.75rem;">ARPキャッシュ取得後，同レベルの<strong>ルーティングテーブル</strong>（ア）を優先します。イ・エはディスク，ウは遠隔ログで揮発性が低いです。</p>
+        `,
+        nodes: {
+            left: { name: "揮発性高", ip: "メモリ／ARP", icon: "fa-memory", color: "var(--secondary)" },
+            center: { name: "証拠保全", ip: "RFC 3227", icon: "fa-fingerprint", color: "var(--primary)" },
+            right: { name: "揮発性低", ip: "ディスク／遠隔", icon: "fa-hard-drive", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 原則", desc: "<strong>1. 揮発性の高い順に保全</strong><br>電源断で消える情報から先に取得します。", stateClass: "state-1" },
+            { num: 2, btn: "2. ARP取得", desc: "<strong>2. ARPキャッシュを取得済み</strong><br>次は同レベルのルーティングテーブル等を保全します。", stateClass: "state-2" },
+            { num: 3, btn: "3. ルーティング", desc: "<strong>3. ルーティングテーブルを保全</strong><br>動的に追加された経路情報はメモリ上にあり優先度が高いです。", stateClass: "state-3" },
+            { num: 4, btn: "4. その後", desc: "<strong>4. ディスク・遠隔ログへ</strong><br>HDD上のファイルや遠隔サーバのログは後回しにします。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "揮発データ", res: "証拠" }
+    },
+    sim3: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問8",
+        diagramTitle: "SIM3（シミュレーター）",
+        text: "組織のセキュリティインシデント管理の成熟度を評価するために Open CSIRT Foundation が開発したモデルはどれか。",
+        options: [
+            { key: "ア", text: "CMMC", correct: false },
+            { key: "イ", text: "CMMI", correct: false },
+            { key: "ウ", text: "SAMM", correct: false },
+            { key: "エ", text: "SIM3", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>SIM3</strong>（Security Incident Management Maturity Model）は，Open CSIRT Foundation が開発した，セキュリティインシデント管理の成熟度評価モデルです。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li>カテゴリ：<strong>O</strong>（Organization）／<strong>H</strong>（Human）／<strong>T</strong>（Tools）／<strong>P</strong>（Processes）</li>
+                    <li>44分類の評価項目，レベル0〜5で CSIRT 成熟度を評価</li>
+                    <li><strong>ア</strong> CMMC：米国のサイバーセキュリティ成熟度モデル認証 ❌</li>
+                    <li><strong>イ</strong> CMMI：プロセス改善の成熟度モデル ❌</li>
+                    <li><strong>ウ</strong> SAMM：ソフトウェア保証成熟度モデル ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "CSIRT", ip: "インシデント管理", icon: "fa-users", color: "var(--primary)" },
+            center: { name: "SIM3", ip: "成熟度評価", icon: "fa-chart-simple", color: "var(--accent)" },
+            right: { name: "O/H/T/P", ip: "レベル0〜5", icon: "fa-layer-group", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 対象", desc: "<strong>1. CSIRT の成熟度を評価</strong><br>組織のインシデント管理能力を測ります。", stateClass: "state-1" },
+            { num: 2, btn: "2. 4カテゴリ", desc: "<strong>2. O／H／T／P で評価</strong><br>組織・人材・ツール・プロセスの観点です。", stateClass: "state-2" },
+            { num: 3, btn: "3. レベル", desc: "<strong>3. レベル0〜5</strong><br>44分類の項目で段階的に成熟度を判定します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 改善", desc: "<strong>4. 改善に活用</strong><br>弱点を可視化し，CSIRT 能力の向上につなげます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "現状", res: "成熟度" }
+    },
+    soar: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問11",
+        diagramTitle: "SOAR（シミュレーター）",
+        text: "SOAR（Security Orchestration, Automation and Response）の説明はどれか。",
+        options: [
+            { key: "ア", text: "脅威インテリジェンスの活用，セキュリティ運用の自動化及びインシデント対応の効率化を行う技術", correct: true },
+            { key: "イ", text: "全ての利用者，デバイス，接続元を信頼できないものとして捉え，重要な情報資産やシステムに対するアクセスの正当性や安全性の検証を自動化することによって脅威を防ぐ考え方", correct: false },
+            { key: "ウ", text: "組織間でサイバー攻撃に関する情報を効率的に交換するために，脅威情報構造化記述形式で記述された情報の交換を自動化するためのプロトコル仕様", correct: false },
+            { key: "エ", text: "ファイアウォール，マルウェア対策製品，侵入検知製品など複数のセキュリティ製品のログの集約及び相関分析を自動化するための専用装置", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>SOAR</strong>は，セキュリティ運用の自動化とインシデント対応の効率化を実現する技術です。定義した<strong>プレイブック</strong>に沿って，各種セキュリティ機器の情報や脅威インテリジェンスを活用し，検知精度向上や対応効率化を図ります。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>イ</strong>：ゼロトラスト ❌</li>
+                    <li><strong>ウ</strong>：TAXII などに近い説明 ❌</li>
+                    <li><strong>エ</strong>：SIEM ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "セキュリティ機器", ip: "アラート／ログ", icon: "fa-server", color: "var(--primary)" },
+            center: { name: "SOAR", ip: "プレイブック", icon: "fa-gears", color: "var(--accent)" },
+            right: { name: "自動化対応", ip: "効率化", icon: "fa-bolt", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 収集", desc: "<strong>1. 機器・脅威情報を収集</strong><br>セキュリティ製品や脅威インテリジェンスを取り込みます。", stateClass: "state-1" },
+            { num: 2, btn: "2. オーケストレーション", desc: "<strong>2. プレイブックで連携</strong><br>定義したワークフローに沿って各製品を連携させます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 自動化", desc: "<strong>3. 対応を自動化</strong><br>定型的な調査・封じ込め作業を自動実行します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 効率化", desc: "<strong>4. インシデント対応を効率化</strong><br>人手を減らし，迅速かつ一貫した対応を実現します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "アラート", res: "自動対応" }
     }
 };
