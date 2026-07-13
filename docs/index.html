@@ -1284,7 +1284,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 69 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 71 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（69問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（71問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（69問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（71問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1416,7 +1416,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（12問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（14問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1465,6 +1465,14 @@
                 <button class="question-tab-btn" onclick="switchQuestion('soar', this)">
                     <span class="btn-meta">問69: R6秋 午前II問11</span>
                     <span class="btn-title">SOAR</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('contingency', this)">
+                    <span class="btn-meta">問70: H21秋 午前II問4</span>
+                    <span class="btn-title">コンティンジェンシープラン</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('rpo', this)">
+                    <span class="btn-meta">問71: H26秋 高度共通 午前I問21</span>
+                    <span class="btn-title">RPO（目標復旧時点）</span>
                 </button>
                 </div>
             </details>
@@ -1665,7 +1673,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（219問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（222問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1681,6 +1689,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToRiskCheck()">リスクアセスメント（7問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToRiskMgmtCheck()">リスクマネジメント（6問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToIncidentCheck()">インシデント対応（8問＋確認4問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToBcmCheck()">BCM・BCP（3問＋確認2問）</button>
                 </div>
             </details>
 
@@ -1726,28 +1735,28 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>69</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>219+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>71</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>222+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 69 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 69 問（重複なし）</div>
+                        <p>過去問 71 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 71 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全69問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全69問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全71問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全71問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
                         <h3>基礎・管理</h3>
                         <p>セキュリティの定義、CIA 三要素、PDCA・ISMS など試験の土台となる概念を Check! 形式で確認。</p>
-                        <div class="card-meta">73問（4＋10＋15＋3＋2＋9＋6＋3＋7＋6＋8）</div>
+                        <div class="card-meta">76問（4＋10＋15＋3＋2＋9＋6＋3＋7＋6＋8＋3）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-network')">
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -1770,9 +1779,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（69問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（71問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 69 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 71 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1780,7 +1789,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（69問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（71問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -2471,6 +2480,83 @@
                 </h3>
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題 4 問は<strong>過去問シミュレーター</strong>でも解けます。</p>
                 <div id="probmgmt-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! BCM・BCP) -->
+            <section class="content-section" id="section-bcm-check">
+                <h2 class="section-title"><i class="fa-solid fa-building-circle-arrow-right"></i>基礎知識: Check! 解説（BCM・BCP）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    BCM の確立、RTO／RPO、BCP における復旧の段階を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>BCM 確立における要点について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>RTO, RPO について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>BCP における復旧までの四つの段階について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-bcm-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">コンティンジェンシープランにおける留意点はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>企業のすべてのシステムを対象とするのではなく，システムの復旧の重要性と緊急性を勘案して対象を決定する。</span></li>
+                        <li><span class="opt-key">イ</span><span>災害などへの対応のために，すぐに使用できるよう，バックアップデータをコンピュータ室内又はセンタ内に保存しておく。</span></li>
+                        <li><span class="opt-key">ウ</span><span>バックアップの対象は，機密情報の中から機密度を勘案して選択する。</span></li>
+                        <li><span class="opt-key">エ</span><span>被害状況のシナリオを作成し，これに基づく "予防策策定手順" と "バックアップ対策とその手順" を策定する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報セキュリティスペシャリスト試験・H21 秋・午前Ⅱ 問 4］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>コンティンジェンシープランでは，復旧の重要性や緊急性を勘案して対象となるシステムを選定し，次のような内容を策定する。</p>
+                        <ol style="margin-top:0.75rem;">
+                            <li><strong>不測事態の予防措置</strong>：発生回避のための平時の活動</li>
+                            <li><strong>不測事態の検知</strong>：発生時に速やかに発見するための活動</li>
+                            <li><strong>不測事態への対処</strong>：発生時の対応方法</li>
+                        </ol>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：重要性・緊急性に応じて対象を選定 ✅</li>
+                            <li><strong>イ</strong>：バックアップは遠隔地保管が基本 ❌</li>
+                            <li><strong>ウ</strong>：対象選定は業務継続上の重要性で行う ❌</li>
+                            <li><strong>エ</strong>：シナリオに基づくのは主に対処・復旧（表現が不適切）❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">目標復旧時点（RPO）を 24 時間に定めているのはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>業務アプリケーションをリリースするための中断時間は，24 時間以内とする。</span></li>
+                        <li><span class="opt-key">イ</span><span>業務データの復旧は，障害発生時点から 24 時間以内に完了させる。</span></li>
+                        <li><span class="opt-key">ウ</span><span>障害発生時点の 24 時間前の業務データの復旧を保証する。</span></li>
+                        <li><span class="opt-key">エ</span><span>中断した IT サービスを 24 時間以内に復旧させる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・H26 秋・午前Ⅰ 問 21］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>目標復旧時点（RPO）</strong>とは，業務中断からさかのぼって，いつの時点の状態まで戻すのかを示す指標である。これに対し<strong>目標復旧時間（RTO）</strong>とは，業務中断後，いつまでに業務を復旧させるのかを示す指標である。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア・イ・エ</strong>：いずれも「何時間以内に復旧」→ <strong>RTO</strong> ❌</li>
+                            <li><strong>ウ</strong>：「何時間前のデータまで保証」→ <strong>RPO</strong> ✅</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題 2 問は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="bcm-simulator-bridge"></div>
             </section>
 
             <div class="category-banner" id="category-network">
@@ -3268,6 +3354,7 @@
     <script src="physical-sec-check-data.js"></script>
     <script src="human-sec-check-data.js"></script>
     <script src="incident-check-data.js"></script>
+    <script src="bcm-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
         // 問題データ
@@ -7547,6 +7634,7 @@
             renderAccordionList(checkRiskData, 'accordion-risk-list');
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkIncidentData, 'accordion-incident-list');
+            renderAccordionList(checkBcmData, 'accordion-bcm-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
@@ -7605,6 +7693,7 @@
             renderSimulatorBridgeByKeys('tpm-simulator-bridge', ['tpm']);
             renderSimulatorBridgeByKeys('tempest-simulator-bridge', ['tempest']);
             renderSimulatorBridgeByKeys('probmgmt-simulator-bridge', ['probmgmt', 'forensic', 'sim3', 'soar']);
+            renderSimulatorBridgeByKeys('bcm-simulator-bridge', ['contingency', 'rpo']);
         }
 
 
@@ -7721,6 +7810,7 @@
             renderAccordionList(checkRiskData, 'accordion-risk-list');
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkIncidentData, 'accordion-incident-list');
+            renderAccordionList(checkBcmData, 'accordion-bcm-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
@@ -7824,6 +7914,10 @@
 
         function scrollToIncidentCheck() {
             document.getElementById('section-incident-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToBcmCheck() {
+            document.getElementById('section-bcm-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetworkCheck() {

@@ -1617,5 +1617,67 @@ const questionDataExtra = {
             { num: 4, btn: "4. 効率化", desc: "<strong>4. インシデント対応を効率化</strong><br>人手を減らし，迅速かつ一貫した対応を実現します。", stateClass: "state-4" }
         ],
         packetLabels: { req: "アラート", res: "自動対応" }
+    },
+    contingency: {
+        source: "情報セキュリティスペシャリスト試験・H21秋・午前II問4",
+        diagramTitle: "コンティンジェンシープラン（シミュレーター）",
+        text: "コンティンジェンシープランにおける留意点はどれか。",
+        options: [
+            { key: "ア", text: "企業のすべてのシステムを対象とするのではなく，システムの復旧の重要性と緊急性を勘案して対象を決定する。", correct: true },
+            { key: "イ", text: "災害などへの対応のために，すぐに使用できるよう，バックアップデータをコンピュータ室内又はセンタ内に保存しておく。", correct: false },
+            { key: "ウ", text: "バックアップの対象は，機密情報の中から機密度を勘案して選択する。", correct: false },
+            { key: "エ", text: "被害状況のシナリオを作成し，これに基づく \"予防策策定手順\" と \"バックアップ対策とその手順\" を策定する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>コンティンジェンシープランでは，復旧の<strong>重要性・緊急性</strong>を勘案して対象システムを選定し，予防措置・検知・対処の内容を策定します。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>イ</strong>：バックアップは遠隔地保管が基本（同一室内は災害で同時喪失）❌</li>
+                    <li><strong>ウ</strong>：バックアップ対象は業務継続上の重要性で選ぶ（機密性のみではない）❌</li>
+                    <li><strong>エ</strong>：シナリオに基づくのは主に対処・復旧手順（予防策策定手順という表現は不適切）❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "全システム", ip: "対象候補", icon: "fa-server", color: "var(--primary)" },
+            center: { name: "優先度判定", ip: "重要性・緊急性", icon: "fa-filter", color: "var(--accent)" },
+            right: { name: "対象選定", ip: "プラン策定", icon: "fa-file-shield", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 洗い出し", desc: "<strong>1. システムを洗い出す</strong><br>すべてのシステムを一律対象にはしません。", stateClass: "state-1" },
+            { num: 2, btn: "2. 優先度", desc: "<strong>2. 重要性・緊急性を評価</strong><br>復旧の優先順位を業務影響から決めます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 対象決定", desc: "<strong>3. 対象を絞り込み</strong><br>優先度の高いシステムをプラン対象にします。", stateClass: "state-3" },
+            { num: 4, btn: "4. 手順策定", desc: "<strong>4. 予防・検知・対処を策定</strong><br>対象ごとに不測事態への備えを文書化します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "候補", res: "対象" }
+    },
+    rpo: {
+        source: "情報処理技術者試験 高度共通・H26秋・午前I問21",
+        diagramTitle: "RPO（シミュレーター）",
+        text: "目標復旧時点（RPO）を 24 時間に定めているのはどれか。",
+        options: [
+            { key: "ア", text: "業務アプリケーションをリリースするための中断時間は，24 時間以内とする。", correct: false },
+            { key: "イ", text: "業務データの復旧は，障害発生時点から 24 時間以内に完了させる。", correct: false },
+            { key: "ウ", text: "障害発生時点の 24 時間前の業務データの復旧を保証する。", correct: true },
+            { key: "エ", text: "中断した IT サービスを 24 時間以内に復旧させる。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p><strong>RPO</strong>（Recovery Point Objective：目標復旧時点）は，業務中断からさかのぼって<strong>いつの時点の状態まで戻すか</strong>を示す指標です。</p>
+            <p style="margin-top:0.75rem;"><strong>RTO</strong>（目標復旧時間）は，中断後<strong>いつまでに復旧させるか</strong>の指標です。ア・イ・エはいずれも時間内に復旧させる＝RTO の説明です。</p>
+        `,
+        nodes: {
+            left: { name: "障害発生", ip: "中断", icon: "fa-bolt", color: "var(--secondary)" },
+            center: { name: "RPO 24h", ip: "復旧時点", icon: "fa-clock-rotate-left", color: "var(--primary)" },
+            right: { name: "24時間前データ", ip: "保証", icon: "fa-database", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 障害", desc: "<strong>1. 業務が中断</strong><br>障害によりサービスやデータ処理が止まります。", stateClass: "state-1" },
+            { num: 2, btn: "2. RPO確認", desc: "<strong>2. RPO＝24時間を確認</strong><br>いつの時点のデータまで戻すかを決めます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 復旧点", desc: "<strong>3. 24時間前のデータを保証</strong><br>最大で1日分のデータ損失を許容する設定です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 区別", desc: "<strong>4. RTO と区別</strong><br>「何時間以内に復旧」は RTO，「何時間前のデータ」は RPO です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "障害", res: "復旧点" }
     }
 };
