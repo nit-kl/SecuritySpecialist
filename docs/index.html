@@ -1689,7 +1689,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（249問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（252問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1716,6 +1716,7 @@
                 <div class="sidebar-link-list">
                     <button class="sidebar-link-btn" onclick="scrollToNetworkCheck()">ネットワーク基礎（13問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToHostHardeningCheck()">ホストの要塞化（5問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToTrustedOsCheck()">Trusted OS（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1756,7 +1757,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>75</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>249+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>252+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1782,7 +1783,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">64問</div>
+                        <div class="card-meta">67問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -2806,6 +2807,23 @@
                 <div class="accordion" id="accordion-host-hardening-list"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! Trusted OS) -->
+            <section class="content-section" id="section-trustedos-check">
+                <h2 class="section-title"><i class="fa-solid fa-lock"></i>基礎知識: Check! 解説（Trusted OS）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Trusted OS の定義、通常 OS との違い、SELinux の特徴を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>Trusted OS とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>通常の OS とはどのような点が異なるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>SELinux は通常の Linux とどのような点が異なるのか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-trustedos-list"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -3564,6 +3582,7 @@
     <script src="audit-check-data.js"></script>
     <script src="control-func-check-data.js"></script>
     <script src="host-hardening-check-data.js"></script>
+    <script src="trusted-os-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -7849,6 +7868,7 @@
             renderAccordionList(checkAuditData, 'accordion-audit-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
+            renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8031,6 +8051,7 @@
             renderAccordionList(checkAuditData, 'accordion-audit-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
+            renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8154,6 +8175,10 @@
 
         function scrollToHostHardeningCheck() {
             document.getElementById('section-host-hardening-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTrustedOsCheck() {
+            document.getElementById('section-trustedos-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {
