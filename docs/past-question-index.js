@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 43問）
+// 過去問一覧（すべてシミュレーター 75問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -41,6 +41,10 @@ const pastQuestionIndex = [
     { no: 69, format: 'simulator', category: 'fundamentals', key: 'soar', source: 'R6秋 午前II問11', title: 'SOAR' },
     { no: 70, format: 'simulator', category: 'fundamentals', key: 'contingency', source: 'H21秋 午前II問4', title: 'コンティンジェンシープラン' },
     { no: 71, format: 'simulator', category: 'fundamentals', key: 'rpo', source: 'H26秋 高度共通 午前I問21', title: 'RPO（目標復旧時点）' },
+    { no: 72, format: 'simulator', category: 'fundamentals', key: 'dbdirect', source: 'R5秋 午前II問25', title: 'DB直接修正の監査指摘' },
+    { no: 73, format: 'simulator', category: 'fundamentals', key: 'auditrec', source: 'H29春 高度共通 午前I問22', title: '改善勧告の記載' },
+    { no: 74, format: 'simulator', category: 'fundamentals', key: 'audittec', source: 'R元秋 高度共通 午前I問22', title: '監査手続の技法' },
+    { no: 75, format: 'simulator', category: 'fundamentals', key: 'masteravail', source: 'R3春 高度共通 午前I問21', title: 'マスタファイル管理と可用性' },
     // --- ネットワーク (6) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },

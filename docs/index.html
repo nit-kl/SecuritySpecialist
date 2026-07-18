@@ -1284,7 +1284,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 71 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 75 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（71問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（75問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（71問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（75問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1416,7 +1416,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（14問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（18問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1473,6 +1473,22 @@
                 <button class="question-tab-btn" onclick="switchQuestion('rpo', this)">
                     <span class="btn-meta">問71: H26秋 高度共通 午前I問21</span>
                     <span class="btn-title">RPO（目標復旧時点）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('dbdirect', this)">
+                    <span class="btn-meta">問72: R5秋 午前II問25</span>
+                    <span class="btn-title">DB直接修正の監査指摘</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('auditrec', this)">
+                    <span class="btn-meta">問73: H29春 高度共通 午前I問22</span>
+                    <span class="btn-title">改善勧告の記載</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('audittec', this)">
+                    <span class="btn-meta">問74: R元秋 高度共通 午前I問22</span>
+                    <span class="btn-title">監査手続の技法</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('masteravail', this)">
+                    <span class="btn-meta">問75: R3春 高度共通 午前I問21</span>
+                    <span class="btn-title">マスタファイル管理と可用性</span>
                 </button>
                 </div>
             </details>
@@ -1673,13 +1689,14 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（222問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（249問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
                 <div class="sidebar-link-list">
                     <button class="sidebar-link-btn" onclick="scrollToSecurityCheck()">セキュリティ基礎（4問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToInfoSecCheck()">情報セキュリティ特性（10問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToControlFuncCheck()">対策の機能（4問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToIsmsCheck()">PDCA・ISMS（15問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToSecPolicyCheck()">情報セキュリティポリシ（3問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToSecOrgCheck()">情報セキュリティマネジメント体制（2問＋確認1問）</button>
@@ -1690,6 +1707,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToRiskMgmtCheck()">リスクマネジメント（6問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToIncidentCheck()">インシデント対応（8問＋確認4問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToBcmCheck()">BCM・BCP（3問＋確認2問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToAuditCheck()">情報セキュリティ監査・システム監査（8問＋確認3問）</button>
                 </div>
             </details>
 
@@ -1697,6 +1715,7 @@
                 <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク・インフラ</summary>
                 <div class="sidebar-link-list">
                     <button class="sidebar-link-btn" onclick="scrollToNetworkCheck()">ネットワーク基礎（13問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToHostHardeningCheck()">ホストの要塞化（5問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1714,6 +1733,7 @@
                 <div class="sidebar-link-list">
                     <button class="sidebar-link-btn" onclick="scrollToThreatCheck()">脅威・キルチェーン（13問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToVulnCheck()">脆弱性（6問＋確認4問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToVulnAssessmentCheck()">脆弱性診断（10問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToDosCheck()">DoS 攻撃 Check!（5問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToBofCheck()">バッファオーバーフロー（10問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToWebSecCheck()">Web セキュリティ（8問＋確認1問）</button>
@@ -1735,40 +1755,40 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>71</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>222+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>75</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>249+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 71 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 71 問（重複なし）</div>
+                        <p>過去問 75 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 75 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全71問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全71問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全75問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全75問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
                         <h3>基礎・管理</h3>
                         <p>セキュリティの定義、CIA 三要素、PDCA・ISMS など試験の土台となる概念を Check! 形式で確認。</p>
-                        <div class="card-meta">76問（4＋10＋15＋3＋2＋9＋6＋3＋7＋6＋8＋3）</div>
+                        <div class="card-meta">88問（4＋10＋4＋15＋3＋2＋9＋6＋3＋7＋6＋8＋3＋8）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-network')">
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">59問</div>
+                        <div class="card-meta">64問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
                         <h3>攻撃・脅威・対策</h3>
                         <p>DoS、BOF、Web 脆弱性、マルウェア、パスワード・セッション攻撃など実践的な脅威と対策。</p>
-                        <div class="card-meta">94問超（Check! 解説）</div>
+                        <div class="card-meta">104問超（Check! 解説）</div>
                     </div>
                 </div>
                 <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.85rem;">
@@ -1779,9 +1799,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（71問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（75問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 71 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 75 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1789,7 +1809,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（71問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（75問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -1951,6 +1971,56 @@
                 </h3>
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">基礎・管理の過去問は<strong>過去問シミュレーター</strong>で解けます。</p>
                 <div id="fundamentals-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 対策の機能) -->
+            <section class="content-section" id="section-controlfunc-check">
+                <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（対策の機能）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    予防・防止／防御・検知／追跡・回復の各働きをする対策を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>予防の働きをする対策にはどのようなものがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>防止・防御の働きをする対策にはどのようなものがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>検知・追跡の働きをする対策にはどのようなものがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>回復の働きをする対策にはどのようなものがあるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-controlfunc-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">マスタファイル管理に関するシステム監査項目のうち，可用性に該当するものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>マスタファイルが置かれているサーバを二重化し，耐障害性の向上を図っていること</span></li>
+                        <li><span class="opt-key">イ</span><span>マスタファイルのデータを複数件まとめて検索・加工するための機能が，システムに盛り込まれていること</span></li>
+                        <li><span class="opt-key">ウ</span><span>マスタファイルのメンテナンスは，特権アカウントを付与された者だけに許されていること</span></li>
+                        <li><span class="opt-key">エ</span><span>マスタファイルへのデータ入力チェック機能が，システムに盛り込まれていること</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・R3 春・午前 I 問 21］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>可用性（availability）は，情報システムが必要なときにいつでも正常に利用できるようにすることであり，対策としては，サーバを二重化し，耐障害性の向上を図ること等が該当する。したがって<strong>ア</strong>が正解。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>イ</strong>：利便性・効率性に近い（CIA の可用性ではない）❌</li>
+                            <li><strong>ウ</strong>：機密性（アクセス制御）❌</li>
+                            <li><strong>エ</strong>：完全性（入力チェック）❌</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="controlfunc-simulator-bridge"></div>
             </section>
 
             <!-- 基礎知識の解説セクション (Check! PDCA・ISMS) -->
@@ -2559,6 +2629,99 @@
                 <div id="bcm-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! 情報セキュリティ監査・システム監査) -->
+            <section class="content-section" id="section-audit-check">
+                <h2 class="section-title"><i class="fa-solid fa-clipboard-list"></i>基礎知識: Check! 解説（情報セキュリティ監査・システム監査）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    情報セキュリティ監査・システム監査の効果，管理基準／監査基準，保証型・助言型，ISMS との使い分けを確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>情報セキュリティ監査によって期待される効果について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>情報セキュリティ管理基準の概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>情報セキュリティ監査基準の概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>保証型監査、助言型監査について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>ISMS適合性評価制度と情報セキュリティ監査制度の有効な活用方法について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>システム監査の目的とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>システム監査基準の概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>システム管理基準の概要について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-audit-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">データベースの直接修正に関して，監査人が，システム監査報告書で報告すべき指摘事項はどれか。ここで，直接修正とは，アプリケーションソフトウェアの機能を経由せずに，特権IDを使用してデータを追加，変更又は削除することをいう。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>更新ログ上は，アプリケーションソフトウェアの機能を経由したデータ更新として記録していた。</span></li>
+                        <li><span class="opt-key">イ</span><span>事前のデータ変更申請の承認，及び事後のデータ変更結果の承認を行っていた。</span></li>
+                        <li><span class="opt-key">ウ</span><span>直接修正の作業終了時には，直接修正用の特権IDを無効にしていた。</span></li>
+                        <li><span class="opt-key">エ</span><span>利用部門からのデータ変更依頼に基づいて，システム部門が直接修正を実施していた。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 秋・午前II 問 25］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>更新ログを加工し，アプリケーションの機能を経由した正常な処理によるログとして残していたとすれば，ログの改ざん行為であり，重大な指摘事項に該当する。したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">システム監査人が監査報告書に記載する改善勧告に関する説明のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>改善の実現可能性は考慮せず，監査人が改善の必要があると判断した事項だけを記載する。</span></li>
+                        <li><span class="opt-key">イ</span><span>監査証拠による裏付けの有無にかかわらず，監査人が改善の必要があると判断した事項を記載する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>監査人が改善の必要があると判断した事項のうち，被監査部門の責任者が承認した事項だけを記載する。</span></li>
+                        <li><span class="opt-key">エ</span><span>調査結果に事実誤認がないことを被監査部門に確認した上で，監査人が改善の必要があると判断した事項を記載する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・H29 春・午前I 問 22］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <ul>
+                            <li><strong>ア</strong>：システム監査人は，改善の実現可能性を考慮する必要がある ❌</li>
+                            <li><strong>イ</strong>：改善勧告の内容は監査証拠に裏付けられたものでなければならない ❌</li>
+                            <li><strong>ウ</strong>：被監査部門の承認を受ける必要はない ❌</li>
+                            <li><strong>エ</strong>：適切な記述である ✅</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">システム監査基準(平成30年)における監査手続の実施に際して利用する技法に関する記述のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>インタビュー法とは，システム監査人が，直接，関係者に口頭で問い合わせ，回答を入手する技法をいう。</span></li>
+                        <li><span class="opt-key">イ</span><span>現地調査法は，システム監査人が監査対象部門に直接赴いて，自ら観察・調査するものなので，当該部門の業務時間外に実施しなければならない。</span></li>
+                        <li><span class="opt-key">ウ</span><span>コンピュータ支援監査技法は，システム監査上使用頻度の高い機能に特化した，しかも非常に簡単な操作で利用できる専用ソフトウェアによらなければならない。</span></li>
+                        <li><span class="opt-key">エ</span><span>チェックリスト法とは，監査対象部門がチェックリストを作成及び利用して，監査対象部門の見解を取りまとめた結果をシステム監査人が点検する技法をいう。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・R 元秋・午前I 問 22］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <ul>
+                            <li><strong>ア</strong>：正しい記述である ✅</li>
+                            <li><strong>イ</strong>：システム監査人が監査対象部門の業務時間内に直接赴いて，観察・調査する必要がある ❌</li>
+                            <li><strong>ウ</strong>：疑似的に対象システムへの侵入を試みて脆弱性の有無を調査する手法などもある ❌</li>
+                            <li><strong>エ</strong>：チェックリストを作成するのは監査対象部門ではなく，システム監査人である ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題 3 問は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="audit-simulator-bridge"></div>
+            </section>
+
             <div class="category-banner" id="category-network">
                 <h2><i class="fa-solid fa-network-wired"></i> ネットワーク・インフラ</h2>
                 <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなど、ネットワークと IT インフラの基礎を学びます。</p>
@@ -2622,6 +2785,25 @@
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">ネットワークの過去問 7 問（確認問題 1 問含む）は<strong>過去問シミュレーター</strong>に統合しています。</p>
                 <div id="network-simulator-bridge"></div>
 
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! ホストの要塞化) -->
+            <section class="content-section" id="section-host-hardening-check">
+                <h2 class="section-title"><i class="fa-solid fa-server"></i>基礎知識: Check! 解説（ホストの要塞化）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    ホスト要塞化の目的、具体的な実施項目、パッチ管理、アカウント・パスワード設定を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>ホストの要塞化とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>なぜ，ホストの要塞化が重要なのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>ホストの要塞化の具体的な実施項目として何があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>パッチ適用における注意事項として何があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>アカウント及びパスワードの設定における注意事項として何があるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-host-hardening-list"></div>
             </section>
 
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
@@ -3066,6 +3248,30 @@
                 <div id="vuln-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! 脆弱性診断) -->
+            <section class="content-section" id="section-vuln-assessment-check">
+                <h2 class="section-title"><i class="fa-solid fa-stethoscope"></i>基礎知識: Check! 解説（脆弱性診断）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    脆弱性診断の必要性・対象・留意点、ファジング、ASM、TLPT を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>なぜ、脆弱性診断を実施する必要があるのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>脆弱性診断を実施する対象となるのは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>OSや市販ソフトウェアの診断は、なぜ継続的に定期的に実施する必要があるのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>OSや市販ソフトウェアの診断を実施する際の留意点としては何があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>Webアプリケーションの診断を実施する際の留意点としては何があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>ファジングとは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>ASMの実施による効果として何があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>ASMと脆弱性診断の違いについて述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>TLPTの概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q10】</span>TLPTにおけるレッドチーム、ブルーチームの役割について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-vuln-assessment-list"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! BOF) -->
             <section class="content-section" id="section-bof-check">
                 <h2 class="section-title"><i class="fa-solid fa-memory"></i>基礎知識: Check! 解説（バッファオーバーフロー）</h2>
@@ -3355,6 +3561,10 @@
     <script src="human-sec-check-data.js"></script>
     <script src="incident-check-data.js"></script>
     <script src="bcm-check-data.js"></script>
+    <script src="audit-check-data.js"></script>
+    <script src="control-func-check-data.js"></script>
+    <script src="host-hardening-check-data.js"></script>
+    <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
         // 問題データ
@@ -7625,6 +7835,7 @@
             renderAccordionList(checkDosData, 'accordion-dos-list');
             renderAccordionList(checkSecurityData, 'accordion-security-list');
             renderAccordionList(checkInfoSecData, 'accordion-infosec-list');
+            renderAccordionList(checkControlFuncData, 'accordion-controlfunc-list');
             renderAccordionList(checkIsmsData, 'accordion-isms-list');
             renderAccordionList(checkSecPolicyData, 'accordion-secpolicy-list');
             renderAccordionList(checkSecOrgData, 'accordion-secorg-list');
@@ -7635,7 +7846,9 @@
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkIncidentData, 'accordion-incident-list');
             renderAccordionList(checkBcmData, 'accordion-bcm-list');
+            renderAccordionList(checkAuditData, 'accordion-audit-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
+            renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -7646,6 +7859,7 @@
             renderAccordionList(checkZeroTrustData, 'accordion-zerotrust-list');
             renderAccordionList(checkThreatData, 'accordion-threat-list');
             renderAccordionList(checkVulnData, 'accordion-vuln-list');
+            renderAccordionList(checkVulnAssessmentData, 'accordion-vuln-assessment-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
             renderAccordionList(checkWebSecData, 'accordion-websec-list');
             renderAccordionList(checkData, 'accordion-list');
@@ -7694,6 +7908,8 @@
             renderSimulatorBridgeByKeys('tempest-simulator-bridge', ['tempest']);
             renderSimulatorBridgeByKeys('probmgmt-simulator-bridge', ['probmgmt', 'forensic', 'sim3', 'soar']);
             renderSimulatorBridgeByKeys('bcm-simulator-bridge', ['contingency', 'rpo']);
+            renderSimulatorBridgeByKeys('audit-simulator-bridge', ['dbdirect', 'auditrec', 'audittec']);
+            renderSimulatorBridgeByKeys('controlfunc-simulator-bridge', ['masteravail']);
         }
 
 
@@ -7801,6 +8017,7 @@
             renderAccordionList(checkDosData, 'accordion-dos-list');
             renderAccordionList(checkSecurityData, 'accordion-security-list');
             renderAccordionList(checkInfoSecData, 'accordion-infosec-list');
+            renderAccordionList(checkControlFuncData, 'accordion-controlfunc-list');
             renderAccordionList(checkIsmsData, 'accordion-isms-list');
             renderAccordionList(checkSecPolicyData, 'accordion-secpolicy-list');
             renderAccordionList(checkSecOrgData, 'accordion-secorg-list');
@@ -7811,7 +8028,9 @@
             renderAccordionList(checkRiskMgmtData, 'accordion-riskmgmt-list');
             renderAccordionList(checkIncidentData, 'accordion-incident-list');
             renderAccordionList(checkBcmData, 'accordion-bcm-list');
+            renderAccordionList(checkAuditData, 'accordion-audit-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
+            renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -7822,6 +8041,7 @@
             renderAccordionList(checkZeroTrustData, 'accordion-zerotrust-list');
             renderAccordionList(checkThreatData, 'accordion-threat-list');
             renderAccordionList(checkVulnData, 'accordion-vuln-list');
+            renderAccordionList(checkVulnAssessmentData, 'accordion-vuln-assessment-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
             renderAccordionList(checkWebSecData, 'accordion-websec-list');
             renderAccordionList(checkData, 'accordion-list');
@@ -7880,6 +8100,10 @@
             document.getElementById('section-infosec-check').scrollIntoView({ behavior: 'smooth' });
         }
 
+        function scrollToControlFuncCheck() {
+            document.getElementById('section-controlfunc-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
         function scrollToIsmsCheck() {
             document.getElementById('section-isms-check').scrollIntoView({ behavior: 'smooth' });
         }
@@ -7920,8 +8144,16 @@
             document.getElementById('section-bcm-check').scrollIntoView({ behavior: 'smooth' });
         }
 
+        function scrollToAuditCheck() {
+            document.getElementById('section-audit-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
         function scrollToNetworkCheck() {
             document.getElementById('section-network-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToHostHardeningCheck() {
+            document.getElementById('section-host-hardening-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {
@@ -7958,6 +8190,10 @@
 
         function scrollToVulnCheck() {
             document.getElementById('section-vuln-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToVulnAssessmentCheck() {
+            document.getElementById('section-vuln-assessment-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToBofCheck() {

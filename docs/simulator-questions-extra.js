@@ -1679,5 +1679,140 @@ const questionDataExtra = {
             { num: 4, btn: "4. 区別", desc: "<strong>4. RTO と区別</strong><br>「何時間以内に復旧」は RTO，「何時間前のデータ」は RPO です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "障害", res: "復旧点" }
+    },
+    dbdirect: {
+        source: "情報処理安全確保支援士試験・R5秋・午前II問25",
+        diagramTitle: "データベース直接修正の監査指摘（シミュレーター）",
+        text: "データベースの直接修正に関して，監査人が，システム監査報告書で報告すべき指摘事項はどれか。ここで，直接修正とは，アプリケーションソフトウェアの機能を経由せずに，特権IDを使用してデータを追加，変更又は削除することをいう。",
+        options: [
+            { key: "ア", text: "更新ログ上は，アプリケーションソフトウェアの機能を経由したデータ更新として記録していた。", correct: true },
+            { key: "イ", text: "事前のデータ変更申請の承認，及び事後のデータ変更結果の承認を行っていた。", correct: false },
+            { key: "ウ", text: "直接修正の作業終了時には，直接修正用の特権IDを無効にしていた。", correct: false },
+            { key: "エ", text: "利用部門からのデータ変更依頼に基づいて，システム部門が直接修正を実施していた。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>更新ログを加工し，アプリケーションの機能を経由した正常な処理によるログとして残していたとすれば，<strong>ログの改ざん</strong>であり，重大な指摘事項に該当します。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>イ・ウ</strong>：承認や特権IDの無効化は適切な統制 ✅（指摘対象ではない）</li>
+                    <li><strong>エ</strong>：依頼に基づく実施自体は手続としてあり得る（ログ改ざんほど重大ではない）</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "特権ID", ip: "直接修正", icon: "fa-user-shield", color: "var(--secondary)" },
+            center: { name: "更新ログ", ip: "改ざん", icon: "fa-file-pen", color: "var(--accent)" },
+            right: { name: "監査指摘", ip: "重大事項", icon: "fa-clipboard-list", color: "var(--primary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 直接修正", desc: "<strong>1. 特権IDで直接修正</strong><br>アプリ機能を経由せずデータを追加・変更・削除します。", stateClass: "state-1" },
+            { num: 2, btn: "2. ログ加工", desc: "<strong>2. 更新ログを加工</strong><br>アプリ経由の正常更新であるかのように記録します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 監査発見", desc: "<strong>3. 監査人が発見</strong><br>実態とログの不一致が明らかになります。", stateClass: "state-3" },
+            { num: 4, btn: "4. 指摘", desc: "<strong>4. 報告書で指摘</strong><br>ログ改ざんは重大な指摘事項として報告します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "直接修正", res: "改ざんログ" }
+    },
+    auditrec: {
+        source: "情報処理技術者試験 高度共通・H29春・午前I問22",
+        diagramTitle: "改善勧告の記載（シミュレーター）",
+        text: "システム監査人が監査報告書に記載する改善勧告に関する説明のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "改善の実現可能性は考慮せず，監査人が改善の必要があると判断した事項だけを記載する。", correct: false },
+            { key: "イ", text: "監査証拠による裏付けの有無にかかわらず，監査人が改善の必要があると判断した事項を記載する。", correct: false },
+            { key: "ウ", text: "監査人が改善の必要があると判断した事項のうち，被監査部門の責任者が承認した事項だけを記載する。", correct: false },
+            { key: "エ", text: "調査結果に事実誤認がないことを被監査部門に確認した上で，監査人が改善の必要があると判断した事項を記載する。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>改善勧告は，事実誤認がないことを被監査部門に確認したうえで，監査人が必要と判断した事項を記載します。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：実現可能性も考慮する必要がある ❌</li>
+                    <li><strong>イ</strong>：監査証拠による裏付けが必要 ❌</li>
+                    <li><strong>ウ</strong>：被監査部門の承認は不要 ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "監査証拠", ip: "調査結果", icon: "fa-folder-open", color: "var(--primary)" },
+            center: { name: "事実確認", ip: "被監査部門", icon: "fa-comments", color: "var(--accent)" },
+            right: { name: "改善勧告", ip: "報告書", icon: "fa-file-lines", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 証拠収集", desc: "<strong>1. 監査証拠を収集</strong><br>改善の必要性は証拠に裏付けられる必要があります。", stateClass: "state-1" },
+            { num: 2, btn: "2. 事実確認", desc: "<strong>2. 被監査部門に事実確認</strong><br>調査結果に事実誤認がないかを確認します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 判断", desc: "<strong>3. 監査人が改善要否を判断</strong><br>実現可能性も考慮しつつ記載対象を決めます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 記載", desc: "<strong>4. 報告書に改善勧告を記載</strong><br>被監査部門の承認は不要です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "証拠", res: "勧告" }
+    },
+    audittec: {
+        source: "情報処理技術者試験 高度共通・R元秋・午前I問22",
+        diagramTitle: "監査手続の技法（シミュレーター）",
+        text: "システム監査基準(平成30年)における監査手続の実施に際して利用する技法に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "インタビュー法とは，システム監査人が，直接，関係者に口頭で問い合わせ，回答を入手する技法をいう。", correct: true },
+            { key: "イ", text: "現地調査法は，システム監査人が監査対象部門に直接赴いて，自ら観察・調査するものなので，当該部門の業務時間外に実施しなければならない。", correct: false },
+            { key: "ウ", text: "コンピュータ支援監査技法は，システム監査上使用頻度の高い機能に特化した，しかも非常に簡単な操作で利用できる専用ソフトウェアによらなければならない。", correct: false },
+            { key: "エ", text: "チェックリスト法とは，監査対象部門がチェックリストを作成及び利用して，監査対象部門の見解を取りまとめた結果をシステム監査人が点検する技法をいう。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>インタビュー法</strong>は，システム監査人が関係者に直接口頭で問い合わせ，回答を入手する技法です。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>イ</strong>：現地調査は業務時間<strong>内</strong>に実施する ❌</li>
+                    <li><strong>ウ</strong>：CAAT は専用ソフトに限定されない（侵入試験的手法等もある）❌</li>
+                    <li><strong>エ</strong>：チェックリストを作成するのは<strong>システム監査人</strong> ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "システム監査人", ip: "口頭問合せ", icon: "fa-user-tie", color: "var(--primary)" },
+            center: { name: "インタビュー法", ip: "直接確認", icon: "fa-comments", color: "var(--accent)" },
+            right: { name: "関係者", ip: "回答入手", icon: "fa-users", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 対象選定", desc: "<strong>1. 関係者を選定</strong><br>監査手続に必要な情報をもつ担当者を特定します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 問合せ", desc: "<strong>2. 口頭で問い合わせ</strong><br>監査人が直接質問し，回答を入手します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 記録", desc: "<strong>3. 回答を記録・評価</strong><br>得られた情報を監査証拠として整理します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 他技法と併用", desc: "<strong>4. 他の技法と組み合わせ</strong><br>現地調査・チェックリスト・CAAT などと併用します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "質問", res: "回答" }
+    },
+    masteravail: {
+        source: "情報処理技術者試験 高度共通・R3春・午前I問21",
+        diagramTitle: "マスタファイル管理と可用性（シミュレーター）",
+        text: "マスタファイル管理に関するシステム監査項目のうち，可用性に該当するものはどれか。",
+        options: [
+            { key: "ア", text: "マスタファイルが置かれているサーバを二重化し，耐障害性の向上を図っていること", correct: true },
+            { key: "イ", text: "マスタファイルのデータを複数件まとめて検索・加工するための機能が，システムに盛り込まれていること", correct: false },
+            { key: "ウ", text: "マスタファイルのメンテナンスは，特権アカウントを付与された者だけに許されていること", correct: false },
+            { key: "エ", text: "マスタファイルへのデータ入力チェック機能が，システムに盛り込まれていること", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>可用性（availability）</strong>は，情報システムが必要なときにいつでも正常に利用できるようにすることです。サーバ二重化による耐障害性向上は可用性の典型例です。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>イ</strong>：利便性・効率性（CIA の可用性ではない）❌</li>
+                    <li><strong>ウ</strong>：機密性（アクセス制御）❌</li>
+                    <li><strong>エ</strong>：完全性（入力チェック）❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "マスタファイル", ip: "重要データ", icon: "fa-database", color: "var(--primary)" },
+            center: { name: "サーバ二重化", ip: "耐障害性", icon: "fa-server", color: "var(--accent)" },
+            right: { name: "可用性", ip: "いつでも利用可", icon: "fa-clock", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 対象", desc: "<strong>1. マスタファイルの管理を監査</strong><br>可用性・機密性・完全性の観点で項目を分類します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 二重化", desc: "<strong>2. サーバを二重化</strong><br>障害時もサービスを継続できる構成にします。", stateClass: "state-2" },
+            { num: 3, btn: "3. 耐障害性", desc: "<strong>3. 耐障害性が向上</strong><br>単一障害点を減らし，利用不能時間を抑えます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 可用性", desc: "<strong>4. 可用性に該当</strong><br>必要なときに利用できる状態の確保＝可用性です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "障害", res: "継続運用" }
     }
 };
