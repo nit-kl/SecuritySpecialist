@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 75問）
+// 過去問一覧（すべてシミュレーター 81問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -45,7 +45,7 @@ const pastQuestionIndex = [
     { no: 73, format: 'simulator', category: 'fundamentals', key: 'auditrec', source: 'H29春 高度共通 午前I問22', title: '改善勧告の記載' },
     { no: 74, format: 'simulator', category: 'fundamentals', key: 'audittec', source: 'R元秋 高度共通 午前I問22', title: '監査手続の技法' },
     { no: 75, format: 'simulator', category: 'fundamentals', key: 'masteravail', source: 'R3春 高度共通 午前I問21', title: 'マスタファイル管理と可用性' },
-    // --- ネットワーク (6) ---
+    // --- ネットワーク (13) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },
     { no: 25, format: 'simulator', category: 'network', key: 'cache',      source: 'R6春 午前II問20',  title: 'Cache-Control' },
@@ -80,6 +80,12 @@ const pastQuestionIndex = [
     { no: 43, format: 'simulator', category: 'dns', key: 'dnskaminsky', source: 'R7春 午前II問4',   title: 'Kaminsky攻撃対策' },
     { no: 57, format: 'simulator', category: 'dns', key: 'dnssec',      source: 'R5秋 午前II問13',  title: 'DNSSEC 署名検証' },
     { no: 48, format: 'simulator', category: 'network', key: 'dhcparp', source: 'R5秋 午前II問20', title: 'DHCPとARP（アドレス競合確認）' },
+    { no: 76, format: 'simulator', category: 'network', key: 'fwping', source: 'H28春 午前II問15', title: 'ping遮断（ICMP）' },
+    { no: 77, format: 'simulator', category: 'network', key: 'spi', source: 'R3秋 午前II問6', title: 'ステートフルパケットインスペクション' },
+    { no: 78, format: 'simulator', category: 'network', key: 'spidef', source: 'R3春 午前II問6', title: 'SPI方式の定義' },
+    { no: 79, format: 'simulator', category: 'network', key: 'fwdbmove', source: 'R5秋 午前II問17', title: 'DBサーバ移設とFWルール' },
+    { no: 80, format: 'simulator', category: 'network', key: 'fwdmz', source: 'H22秋 午前II問6', title: 'DMZと内部のFW設定' },
+    { no: 81, format: 'simulator', category: 'network', key: 'falseneg', source: 'H29春 午前II問13', title: 'フォールスネガティブ' },
     // --- メールセキュリティ (8) ---
     { no: 49, format: 'simulator', category: 'mail', key: 'spf', source: 'R4秋 午前II問15', title: 'SPF ドメイン認証' },
     { no: 50, format: 'simulator', category: 'mail', key: 'ip25b', source: 'R2秋 午前II問17', title: 'IP25B' },

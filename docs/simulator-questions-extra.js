@@ -1814,5 +1814,209 @@ const questionDataExtra = {
             { num: 4, btn: "4. 可用性", desc: "<strong>4. 可用性に該当</strong><br>必要なときに利用できる状態の確保＝可用性です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "障害", res: "継続運用" }
+    },
+    fwping: {
+        source: "情報処理安全確保支援士試験・H28春・午前II問15",
+        diagramTitle: "ping 遮断と ICMP（シミュレーター）",
+        text: "インターネットから DMZ 上のコンピュータへの ping による応答がないようにしたい。ファイアウォールで通過を禁止するように設定するものはどれか。",
+        options: [
+            { key: "ア", text: "ICMP", correct: true },
+            { key: "イ", text: "TCP のポート番号 21", correct: false },
+            { key: "ウ", text: "TCP のポート番号 110", correct: false },
+            { key: "エ", text: "UDP のポート番号 123", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>ping</strong>は ICMP を用いて到達確認を行うため，応答させないには <strong>ICMP</strong> の通過を禁止します。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>イ</strong>：FTP（TCP 21）❌</li>
+                    <li><strong>ウ</strong>：POP3（TCP 110）❌</li>
+                    <li><strong>エ</strong>：NTP（UDP 123）❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "インターネット", ip: "ping", icon: "fa-globe", color: "var(--secondary)" },
+            center: { name: "ファイアウォール", ip: "ICMP 禁止", icon: "fa-shield-halved", color: "var(--primary)" },
+            right: { name: "DMZ ホスト", ip: "無応答", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. ping", desc: "<strong>1. 外部から ping</strong><br>到達確認のため ICMP Echo Request が送られます。", stateClass: "state-1" },
+            { num: 2, btn: "2. 判定", desc: "<strong>2. FW がプロトコルを判定</strong><br>ping は ICMP であるため，ICMP ルールが適用されます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 遮断", desc: "<strong>3. ICMP を禁止</strong><br>通過禁止により Echo Reply も返りません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 結果", desc: "<strong>4. 応答なし</strong><br>外部からはホストが応答しない状態になります。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "ICMP Echo", res: "遮断" }
+    },
+    spi: {
+        source: "情報処理安全確保支援士試験・R3秋・午前II問6",
+        diagramTitle: "ステートフルパケットインスペクション（シミュレーター）",
+        text: "ファイアウォールにおけるステートフルパケットインスペクションの特徴はどれか。",
+        options: [
+            { key: "ア", text: "IPアドレスの変換が行われることによって，内部のネットワーク構成を外部から隠蔽できる。", correct: false },
+            { key: "イ", text: "暗号化されたパケットのデータ部を復号して，許可された通信かどうかを判断できる。", correct: false },
+            { key: "ウ", text: "過去に通過したリクエストパケットに対応付けられる戻りのパケットを通過させることができる。", correct: true },
+            { key: "エ", text: "パケットのデータ部をチェックして，アプリケーション層での不正なアクセスを防止できる。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>SPI（ダイナミックパケットフィルタ）はセッション状態を管理し，許可した要求に対応する<strong>戻りパケットを動的に通過</strong>させます。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：NAT／NAPT ❌</li>
+                    <li><strong>イ</strong>：復号機能は持たない ❌</li>
+                    <li><strong>エ</strong>：アプリゲートウェイ／WAF 寄り ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "内部ホスト", ip: "要求", icon: "fa-laptop", color: "var(--primary)" },
+            center: { name: "SPI FW", ip: "状態管理", icon: "fa-shield-halved", color: "var(--accent)" },
+            right: { name: "外部サーバ", ip: "応答", icon: "fa-server", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 要求", desc: "<strong>1. 内部から要求パケット</strong><br>接続開始方向の通信を許可ルールで通します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 状態記録", desc: "<strong>2. セッションを記録</strong><br>ステートテーブルに通信状態を保持します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 戻り許可", desc: "<strong>3. 戻りパケットを動的許可</strong><br>対応する応答のみ通過させます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 終了", desc: "<strong>4. 一時ルールを破棄</strong><br>セッション終了後は動的ルールを削除します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "要求", res: "戻り" }
+    },
+    spidef: {
+        source: "情報処理安全確保支援士試験・R3春・午前II問6",
+        diagramTitle: "SPI 方式の定義（シミュレーター）",
+        text: "ステートフルパケットインスペクション方式のファイアウォールの特徴はどれか。",
+        options: [
+            { key: "ア", text: "WebクライアントとWebサーバとの間に配置され，リバースプロキシサーバとして動作する方式であり，通信を中継する際に不正なデータがないかどうかを検査する。", correct: false },
+            { key: "イ", text: "アプリケーションプロトコルごとにプロキシソフトウェアを用意する方式であり，クライアントからの通信を目的のサーバに中継する際に不正なデータがないかどうかを検査する。", correct: false },
+            { key: "ウ", text: "特定のアプリケーションプロトコルだけを通過させるゲートウェイソフトウェアを利用する方式であり，クライアントからのコネクション要求を受け付けて目的のサーバに改めてコネクションを要求することによってアクセスを制御する。", correct: false },
+            { key: "エ", text: "パケットフィルタリングを拡張した方式であり，過去に通過したパケットから通信セッションを認識し，受け付けたパケットを通信セッションの状態に照らし合わせて通過させるか遮断するかを判断する。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>SPI はパケットフィルタリングを拡張し，<strong>セッション状態</strong>に基づいて通過／遮断を判断する方式です。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：WAF／リバースプロキシ ❌</li>
+                    <li><strong>イ</strong>：アプリケーションゲートウェイ ❌</li>
+                    <li><strong>ウ</strong>：サーキットレベルゲートウェイ ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "パケット", ip: "受信", icon: "fa-network-wired", color: "var(--primary)" },
+            center: { name: "状態テーブル", ip: "セッション照合", icon: "fa-table", color: "var(--accent)" },
+            right: { name: "通過／遮断", ip: "動的判定", icon: "fa-traffic-light", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 拡張", desc: "<strong>1. パケットフィルタを拡張</strong><br>ヘッダ判定に加え状態管理を行います。", stateClass: "state-1" },
+            { num: 2, btn: "2. 認識", desc: "<strong>2. セッションを認識</strong><br>過去パケットから通信状態を把握します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 照合", desc: "<strong>3. 状態と照合</strong><br>受信パケットをセッション情報と照らし合わせます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 判定", desc: "<strong>4. 通過または遮断</strong><br>整合しないパケットは遮断します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "パケット", res: "判定" }
+    },
+    fwdbmove: {
+        source: "情報処理安全確保支援士試験・R5秋・午前II問17",
+        diagramTitle: "DB サーバ移設と FW ルール（シミュレーター）",
+        text: "DBサーバをDMZから内部ネットワークに移動するとき，ステートフルパケットインスペクション型FWで必要となるフィルタリングルール変更の一つはどれか。",
+        options: [
+            { key: "ア", text: "削除：インターネット → WebAPサーバ，HTTPS，許可", correct: false },
+            { key: "イ", text: "削除：運用管理PC → 変更前のDBサーバ，SSH，許可", correct: true },
+            { key: "ウ", text: "追加：WebAPサーバ → 変更後のDBサーバ，SSH，許可", correct: false },
+            { key: "エ", text: "追加：インターネット → WebAPサーバ，ODBC，許可", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p>移設後，運用管理PCとDBは同じ内部ネットワークになり，SSH は FW を経由しません。不要ルールは削除します。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア</strong>：インターネット→WebAP の HTTPS は継続して必要 ❌</li>
+                    <li><strong>ウ</strong>：WebAP→DB は SSH ではなく ODBC ❌</li>
+                    <li><strong>エ</strong>：インターネット→WebAP の ODBC は不要 ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "DMZ", ip: "変更前 DB", icon: "fa-server", color: "var(--secondary)" },
+            center: { name: "FW", ip: "ルール見直し", icon: "fa-shield-halved", color: "var(--primary)" },
+            right: { name: "内部NW", ip: "変更後 DB", icon: "fa-building", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 移設", desc: "<strong>1. DB を内部へ移設</strong><br>DMZ から内部ネットワークへ移動します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 経路変化", desc: "<strong>2. 管理PCとの経路が変化</strong><br>同一内部網となり FW 経由が不要になります。", stateClass: "state-2" },
+            { num: 3, btn: "3. 削除", desc: "<strong>3. SSH 許可ルールを削除</strong><br>運用管理PC→旧DB の SSH 許可を外します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 最小権限", desc: "<strong>4. 必要通信だけ残す</strong><br>条件どおり最小限の許可に整えます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "SSH", res: "ルール削除" }
+    },
+    fwdmz: {
+        source: "情報セキュリティスペシャリスト試験・H22秋・午前II問6",
+        diagramTitle: "DMZ と内部の FW 設定（シミュレーター）",
+        text: "DMZのWebサーバが受けた入力を内部のDBサーバに格納する構成で，インターネットからDMZ経由の不正侵入を防ぐため，DMZと内部の間のFW設定として最も適切なものはどれか。",
+        options: [
+            { key: "ア", text: "DBサーバの宛先ポート番号を固定し，Webサーバからその宛先ポート番号への通信だけを許可する。", correct: true },
+            { key: "イ", text: "DMZからDBサーバへの通信だけを許可する。", correct: false },
+            { key: "ウ", text: "Webサーバは任意の送信元ポートを使い，終了済み接続と同じ送信元ポートの通信を拒否する。", correct: false },
+            { key: "エ", text: "Webサーバの送信元ポート番号を固定し，その送信元ポートからの通信だけを許可する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>許可すべきは <strong>Webサーバ → DB の特定宛先ポート</strong>のみです。送信元IP・宛先IP／ポートで最小限に絞ります。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>イ</strong>：DMZ 内の DNS 等からも通ってしまう ❌</li>
+                    <li><strong>ウ・エ</strong>：送信元ポートによる識別は不適切 ❌</li>
+                </ul>
+            </div>
+        `,
+        nodes: {
+            left: { name: "DMZ Web", ip: "送信元限定", icon: "fa-globe", color: "var(--primary)" },
+            center: { name: "FW", ip: "宛先ポート固定", icon: "fa-shield-halved", color: "var(--accent)" },
+            right: { name: "内部 DB", ip: "受信ポート", icon: "fa-database", color: "var(--secondary)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 要件", desc: "<strong>1. Web→DB のみ必要</strong><br>業務上必要な通信を特定します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 送信元", desc: "<strong>2. 送信元を Web に限定</strong><br>DMZ 全体許可は避けます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 宛先", desc: "<strong>3. DB の宛先ポートを固定</strong><br>待ち受けポートだけ許可します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 防御", desc: "<strong>4. 不正侵入経路を抑制</strong><br>インターネット→DMZ→内部の横展開を難しくします。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "Web→DB", res: "許可" }
+    },
+    falseneg: {
+        source: "情報処理安全確保支援士試験・H29春・午前II問13",
+        diagramTitle: "フォールスネガティブ（シミュレーター）",
+        text: "ウイルス対策ソフトでの，フォールスネガティブに該当するものはどれか。",
+        options: [
+            { key: "ア", text: "ウイルスに感染していないファイルを，ウイルスに感染していないと判断する。", correct: false },
+            { key: "イ", text: "ウイルスに感染していないファイルを，ウイルスに感染していると判断する。", correct: false },
+            { key: "ウ", text: "ウイルスに感染しているファイルを，ウイルスに感染していないと判断する。", correct: true },
+            { key: "エ", text: "ウイルスに感染しているファイルを，ウイルスに感染していると判断する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p><strong>フォールスネガティブ</strong>（False Negative）は，本来検知すべき悪意ある活動を，誤って害のないものとして分類すること＝<strong>検知漏れ</strong>です。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>ア・エ</strong>：正しい判断 ❌</li>
+                    <li><strong>イ</strong>：フォールス<strong>ポジティブ</strong>（誤検知）❌</li>
+                    <li><strong>ウ</strong>：感染ファイルを未感染と判断 → フォールスネガティブ ✅</li>
+                </ul>
+            </div>
+            <p style="margin-top:0.75rem;">IDS／IPS でも同様に，見逃し（FN）と誤検知（FP）のバランスが重要です。</p>
+        `,
+        nodes: {
+            left: { name: "感染ファイル", ip: "実際は有害", icon: "fa-virus", color: "var(--secondary)" },
+            center: { name: "AV / IDS", ip: "判定", icon: "fa-shield-virus", color: "var(--primary)" },
+            right: { name: "誤判定", ip: "未感染と判断", icon: "fa-circle-xmark", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 実際", desc: "<strong>1. ファイルは感染している</strong><br>本来は検知・隔離すべき対象です。", stateClass: "state-1" },
+            { num: 2, btn: "2. スキャン", desc: "<strong>2. ウイルス対策が判定</strong><br>シグネチャやヒューリスティックで分析します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 見逃し", desc: "<strong>3. 未感染と誤判断</strong><br>検知漏れ＝フォールスネガティブです。", stateClass: "state-3" },
+            { num: 4, btn: "4. リスク", desc: "<strong>4. マルウェアが実行され得る</strong><br>FN は致命的リスクにつながります。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "感染", res: "見逃し" }
     }
 };

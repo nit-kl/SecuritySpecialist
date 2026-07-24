@@ -1284,7 +1284,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 75 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 80 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（75問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（81問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（75問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（81問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1494,7 +1494,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（7問）</summary>
+                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（13問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('vlan', this)">
                     <span class="btn-meta">問23: H31春 午前II問12</span>
@@ -1523,6 +1523,30 @@
                 <button class="question-tab-btn" onclick="switchQuestion('dhcparp', this)">
                     <span class="btn-meta">問48: R5秋 午前II問20</span>
                     <span class="btn-title">DHCPとARP（アドレス競合確認）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('fwping', this)">
+                    <span class="btn-meta">問76: H28春 午前II問15</span>
+                    <span class="btn-title">ping遮断（ICMP）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('spi', this)">
+                    <span class="btn-meta">問77: R3秋 午前II問6</span>
+                    <span class="btn-title">ステートフルパケットインスペクション</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('spidef', this)">
+                    <span class="btn-meta">問78: R3春 午前II問6</span>
+                    <span class="btn-title">SPI方式の定義</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('fwdbmove', this)">
+                    <span class="btn-meta">問79: R5秋 午前II問17</span>
+                    <span class="btn-title">DBサーバ移設とFWルール</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('fwdmz', this)">
+                    <span class="btn-meta">問80: H22秋 午前II問6</span>
+                    <span class="btn-title">DMZと内部のFW設定</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('falseneg', this)">
+                    <span class="btn-meta">問81: H29春 午前II問13</span>
+                    <span class="btn-title">フォールスネガティブ</span>
                 </button>
                 </div>
             </details>
@@ -1689,7 +1713,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（252問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（264問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1717,6 +1741,8 @@
                     <button class="sidebar-link-btn" onclick="scrollToNetworkCheck()">ネットワーク基礎（13問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToHostHardeningCheck()">ホストの要塞化（5問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTrustedOsCheck()">Trusted OS（3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToFirewallCheck()">ファイアウォール（12問＋確認5問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToIdsCheck()">IDS（5問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1756,22 +1782,22 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>75</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>252+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>80</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>269+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 75 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 75 問（重複なし）</div>
+                        <p>過去問 80 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 80 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全75問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全75問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全81問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全81問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1783,7 +1809,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">67問</div>
+                        <div class="card-meta">84問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1800,9 +1826,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（75問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（81問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 75 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 80 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1810,7 +1836,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（75問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（81問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -2824,6 +2850,209 @@
                 <div class="accordion" id="accordion-trustedos-list"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! ファイアウォール) -->
+            <section class="content-section" id="section-firewall-check">
+                <h2 class="section-title"><i class="fa-solid fa-filter"></i>基礎知識: Check! 解説（ファイアウォール）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    ファイアウォールの役割・種類・配置、パケットフィルタと SPI、NAT／NAPT、UTM を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>ファイアウォールとは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>ファイアウォールに求められる役割は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>ファイアウォールにはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>ファイアウォールはネットワーク上のどこに配置するのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>ファイアウォールでどのような攻撃を防ぐことができるのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>パケットフィルタリング型ファイアウォールはどのようなところが脆弱なのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>パケットフィルタリング型とダイナミックパケットフィルタリング型の違いは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>NAT と NAPT の違いは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>ファイアウォールで防げない攻撃にはどのようなものがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q10】</span>ファイアウォールの可用性を高めるにはどのような方法があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q11】</span>UTM 製品とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q12】</span>UTM 製品を導入することによるメリットとデメリットとして何があるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-firewall-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">インターネットから DMZ 上のコンピュータへの ping による応答がないようにしたい。ファイアウォールで通過を禁止するように設定するものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>ICMP</span></li>
+                        <li><span class="opt-key">イ</span><span>TCP のポート番号 21</span></li>
+                        <li><span class="opt-key">ウ</span><span>TCP のポート番号 110</span></li>
+                        <li><span class="opt-key">エ</span><span>UDP のポート番号 123</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・H28 春・午前Ⅱ 問 15］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>ping</strong>は ICMP を用いて到達確認を行う。したがって通過を禁止するのは <strong>ICMP</strong> である。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：ICMP ✅</li>
+                            <li><strong>イ</strong>：FTP（TCP 21）❌</li>
+                            <li><strong>ウ</strong>：POP3（TCP 110）❌</li>
+                            <li><strong>エ</strong>：NTP（UDP 123）❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">ファイアウォールにおけるステートフルパケットインスペクションの特徴はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>IPアドレスの変換が行われることによって，内部のネットワーク構成を外部から隠蔽できる。</span></li>
+                        <li><span class="opt-key">イ</span><span>暗号化されたパケットのデータ部を復号して，許可された通信かどうかを判断できる。</span></li>
+                        <li><span class="opt-key">ウ</span><span>過去に通過したリクエストパケットに対応付けられる戻りのパケットを通過させることができる。</span></li>
+                        <li><span class="opt-key">エ</span><span>パケットのデータ部をチェックして，アプリケーション層での不正なアクセスを防止できる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R3 秋・午前Ⅱ 問 6］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>SPI（ダイナミックパケットフィルタ）はセッション状態を管理し，許可した要求に対応する<strong>戻りパケットを動的に通過</strong>させる。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：NAT／NAPT ❌</li>
+                            <li><strong>イ</strong>：復号機能は持たない ❌</li>
+                            <li><strong>ウ</strong>：SPI の特徴 ✅</li>
+                            <li><strong>エ</strong>：アプリゲートウェイ／WAF 寄り ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">ステートフルパケットインスペクション方式のファイアウォールの特徴はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>WebクライアントとWebサーバとの間に配置され，リバースプロキシサーバとして動作する方式であり，通信を中継する際に不正なデータがないかどうかを検査する。</span></li>
+                        <li><span class="opt-key">イ</span><span>アプリケーションプロトコルごとにプロキシソフトウェアを用意する方式であり，クライアントからの通信を目的のサーバに中継する際に不正なデータがないかどうかを検査する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>特定のアプリケーションプロトコルだけを通過させるゲートウェイソフトウェアを利用する方式であり，クライアントからのコネクション要求を受け付けて目的のサーバに改めてコネクションを要求することによってアクセスを制御する。</span></li>
+                        <li><span class="opt-key">エ</span><span>パケットフィルタリングを拡張した方式であり，過去に通過したパケットから通信セッションを認識し，受け付けたパケットを通信セッションの状態に照らし合わせて通過させるか遮断するかを判断する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R3 春・午前Ⅱ 問 6］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>SPI はパケットフィルタリングを拡張し，<strong>セッション状態</strong>に基づいて通過／遮断を判断する方式である。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：WAF／リバースプロキシ ❌</li>
+                            <li><strong>イ</strong>：アプリケーションゲートウェイ ❌</li>
+                            <li><strong>ウ</strong>：サーキットレベルゲートウェイ ❌</li>
+                            <li><strong>エ</strong>：SPI の定義 ✅</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">DBサーバをDMZから内部ネットワークに移動するとき，ステートフルパケットインスペクション型FWで必要となるフィルタリングルール変更の一つはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>削除：インターネット → WebAPサーバ，HTTPS，許可</span></li>
+                        <li><span class="opt-key">イ</span><span>削除：運用管理PC → 変更前のDBサーバ，SSH，許可</span></li>
+                        <li><span class="opt-key">ウ</span><span>追加：WebAPサーバ → 変更後のDBサーバ，SSH，許可</span></li>
+                        <li><span class="opt-key">エ</span><span>追加：インターネット → WebAPサーバ，ODBC，許可</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 秋・午前Ⅱ 問 17］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>移設後，運用管理PCとDBは同じ内部ネットワークとなり，SSH は FW を経由しない。不要な許可ルールは削除する。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：インターネット→WebAP の HTTPS は継続して必要 ❌</li>
+                            <li><strong>イ</strong>：管理PC→旧DB の SSH 許可は削除 ✅</li>
+                            <li><strong>ウ</strong>：WebAP→DB は SSH ではなく ODBC ❌</li>
+                            <li><strong>エ</strong>：インターネット→WebAP の ODBC は不要 ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>イ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">DMZのWebサーバが受けた入力を内部のDBサーバに格納する構成で，インターネットからDMZ経由の不正侵入を防ぐため，DMZと内部の間のFW設定として最も適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>DBサーバの宛先ポート番号を固定し，Webサーバからその宛先ポート番号への通信だけを許可する。</span></li>
+                        <li><span class="opt-key">イ</span><span>DMZからDBサーバへの通信だけを許可する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>Webサーバは任意の送信元ポートを使い，終了済み接続と同じ送信元ポートの通信を拒否する。</span></li>
+                        <li><span class="opt-key">エ</span><span>Webサーバの送信元ポート番号を固定し，その送信元ポートからの通信だけを許可する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報セキュリティスペシャリスト試験・H22 秋・午前Ⅱ 問 6］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>許可すべきは <strong>Webサーバ → DB の特定宛先ポート</strong>のみである。送信元IPと宛先IP／ポートで最小限に絞る。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：送信元を Web に限定し，宛先ポートを固定 ✅</li>
+                            <li><strong>イ</strong>：DMZ 内の他サーバからも通ってしまう ❌</li>
+                            <li><strong>ウ・エ</strong>：送信元ポートによる識別は不適切 ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題 5 問は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="firewall-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! IDS) -->
+            <section class="content-section" id="section-ids-check">
+                <h2 class="section-title"><i class="fa-solid fa-eye"></i>基礎知識: Check! 解説（IDS）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    侵入検知システム（IDS）の概要、NIDS と HIDS の検知対象と違い、検知困難な攻撃と対策を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>IDS とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>NIDS でどのような事象が検知できるのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>HIDS でどのような事象が検知できるのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>NIDS と HIDS はどう違うのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>IDS が検知できない攻撃とは何か，それについてはどのような解決策が考えられるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-ids-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">ウイルス対策ソフトでの，フォールスネガティブに該当するものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>ウイルスに感染していないファイルを，ウイルスに感染していないと判断する。</span></li>
+                        <li><span class="opt-key">イ</span><span>ウイルスに感染していないファイルを，ウイルスに感染していると判断する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>ウイルスに感染しているファイルを，ウイルスに感染していないと判断する。</span></li>
+                        <li><span class="opt-key">エ</span><span>ウイルスに感染しているファイルを，ウイルスに感染していると判断する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・H29 春・午前Ⅱ 問 13］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>フォールスネガティブ</strong>（False Negative）は，本来検知すべき悪意ある活動を，誤って害のないものとして分類すること＝<strong>検知漏れ</strong>です。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア・エ</strong>：正しい判断 ❌</li>
+                            <li><strong>イ</strong>：フォールス<strong>ポジティブ</strong>（誤検知）❌</li>
+                            <li><strong>ウ</strong>：感染ファイルを未感染と判断 → フォールスネガティブ ✅</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="ids-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -3583,6 +3812,8 @@
     <script src="control-func-check-data.js"></script>
     <script src="host-hardening-check-data.js"></script>
     <script src="trusted-os-check-data.js"></script>
+    <script src="firewall-check-data.js"></script>
+    <script src="ids-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -7869,6 +8100,8 @@
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
+            renderAccordionList(checkFirewallData, 'accordion-firewall-list');
+            renderAccordionList(checkIdsData, 'accordion-ids-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -7930,6 +8163,8 @@
             renderSimulatorBridgeByKeys('bcm-simulator-bridge', ['contingency', 'rpo']);
             renderSimulatorBridgeByKeys('audit-simulator-bridge', ['dbdirect', 'auditrec', 'audittec']);
             renderSimulatorBridgeByKeys('controlfunc-simulator-bridge', ['masteravail']);
+            renderSimulatorBridgeByKeys('firewall-simulator-bridge', ['fwping', 'spi', 'spidef', 'fwdbmove', 'fwdmz']);
+            renderSimulatorBridgeByKeys('ids-simulator-bridge', ['falseneg']);
         }
 
 
@@ -8052,6 +8287,8 @@
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
+            renderAccordionList(checkFirewallData, 'accordion-firewall-list');
+            renderAccordionList(checkIdsData, 'accordion-ids-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8179,6 +8416,14 @@
 
         function scrollToTrustedOsCheck() {
             document.getElementById('section-trustedos-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToFirewallCheck() {
+            document.getElementById('section-firewall-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToIdsCheck() {
+            document.getElementById('section-ids-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {
