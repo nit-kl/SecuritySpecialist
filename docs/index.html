@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（81問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（83問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（81問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（83問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1494,7 +1494,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（13問）</summary>
+                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（15問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('vlan', this)">
                     <span class="btn-meta">問23: H31春 午前II問12</span>
@@ -1547,6 +1547,14 @@
                 <button class="question-tab-btn" onclick="switchQuestion('falseneg', this)">
                     <span class="btn-meta">問81: H29春 午前II問13</span>
                     <span class="btn-title">フォールスネガティブ</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('ipsinline', this)">
+                    <span class="btn-meta">問82: R6秋 午前II問13</span>
+                    <span class="btn-title">インライン・アノマリ型IPS</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('waffp', this)">
+                    <span class="btn-meta">問83: R6秋 午前II問12</span>
+                    <span class="btn-title">WAFのフォールスポジティブ</span>
                 </button>
                 </div>
             </details>
@@ -1743,6 +1751,8 @@
                     <button class="sidebar-link-btn" onclick="scrollToTrustedOsCheck()">Trusted OS（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToFirewallCheck()">ファイアウォール（12問＋確認5問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToIdsCheck()">IDS（5問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToIpsCheck()">IPS（5問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToWafCheck()">WAF（5問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1783,7 +1793,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>80</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>269+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>279+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1796,8 +1806,8 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全81問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全81問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全83問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全83問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1809,7 +1819,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">84問</div>
+                        <div class="card-meta">94問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1826,7 +1836,7 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（81問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（83問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
                     過去問 80 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
@@ -1836,7 +1846,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（81問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（83問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -3053,6 +3063,119 @@
                 <div id="ids-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! IPS) -->
+            <section class="content-section" id="section-ips-check">
+                <h2 class="section-title"><i class="fa-solid fa-ban"></i>基礎知識: Check! 解説（IPS）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    侵入防止システム（IPS）の概要、NIDS との違い、遮断の仕組み、運用上の課題を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>IPS とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>IPS と NIDS とは何が違うのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>IPS を用いることで何ができるのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>IPS ではどのようにしてパケットを遮断するのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>IPS の運用上考慮すべき課題として何があるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-ips-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">インラインモードで動作するアノマリ型 IPS はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>IPS が監視対象の通信経路を流れる全ての通信パケットを経路外からキャプチャできるように通信経路上のスイッチのミラーポートに接続される。異常な通信を定義し，それと合致する通信を不正と判断して遮断する。</span></li>
+                        <li><span class="opt-key">イ</span><span>IPS が監視対象の通信経路を流れる全ての通信パケットを経路外からキャプチャできるように通信経路上のスイッチのミラーポートに接続される。通常時の通信を定義し，それから外れた通信を不正と判断して遮断する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>IPS が監視対象の通信を通過させるように通信経路上に設置される。異常な通信を定義し，それと合致する通信を不正と判断して遮断する。</span></li>
+                        <li><span class="opt-key">エ</span><span>IPS が監視対象の通信を通過させるように通信経路上に設置される。通常時の通信を定義し，それから外れた通信を不正と判断して遮断する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 13］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>IPS や NIDS は，シグネチャとのパターンマッチング，異常検知（アノマリ検知）という二つの手法を用いて攻撃や不正アクセスを検知する。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>シグネチャ型</strong>：異常な通信を定義し，それと合致する通信を不正と判断</li>
+                            <li><strong>アノマリ型</strong>：通常時の通信を定義し，それから外れた通信を不正と判断</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;"><strong>インラインモード</strong>は，監視対象の通信を通過させるように経路上に設置する方式である。ミラーポート接続はプロミスキャスモードである。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア・イ</strong>：プロミスキャスモード ❌</li>
+                            <li><strong>ウ</strong>：インラインだがシグネチャ型 ❌</li>
+                            <li><strong>エ</strong>：インライン＋アノマリ型 ✅</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="ips-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! WAF) -->
+            <section class="content-section" id="section-waf-check">
+                <h2 class="section-title"><i class="fa-solid fa-globe"></i>基礎知識: Check! 解説（WAF）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Web Application Firewall の概要、種類、効果、遮断の仕組み、導入・運用上の課題を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>WAF とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>WAF にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>WAF を用いることで何ができるのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>WAF ではどのようにして攻撃を遮断するのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>WAF の導入や運用において考慮すべき課題としては何があるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-waf-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">WAF におけるフォールスポジティブに該当するものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>HTML の特殊文字 "&lt;" を検出したときに通信を遮断するように WAF を設定した場合，数式を入力する Web サイトに "&lt;" を数式の一部として含んだ HTTP リクエストが送信されたとき，WAF が攻撃として検知し，遮断する。</span></li>
+                        <li><span class="opt-key">イ</span><span>HTTP リクエストのうち，RFC などに定義されておらず，Web アプリケーションソフトウェアの開発者が独自に追加したフィールドについては WAF が検査しないという仕様を悪用して，攻撃の命令を埋め込んだ HTTP リクエストが送信されたとき，WAF が遮断しない。</span></li>
+                        <li><span class="opt-key">ウ</span><span>HTTP リクエストのパラメータ中に許可しない文字列を検出したときに通信を遮断するように WAF を設定した場合，許可しない文字列をパラメータ中に含んだ不正な HTTP リクエストが送信されたとき，WAF が攻撃として検知し，遮断する。</span></li>
+                        <li><span class="opt-key">エ</span><span>悪意のある通信を正常な通信と見せかけ，HTTP リクエストを分割して送信されたとき，WAF が遮断しない。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 12］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>WAF は XSS・SQL インジェクション・OS コマンドインジェクションなどの攻撃を検知・排除し，Web アプリケーションの安全な運用を実現する製品である。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>フォールスポジティブ</strong>：本来検知不要な無害な事象を，誤って攻撃として検知すること（誤検知）</li>
+                            <li><strong>フォールスネガティブ</strong>：攻撃や不正要求を見逃すこと（検知漏れ）</li>
+                        </ul>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：正規の数式入力を攻撃と誤検知 → フォールスポジティブ ✅</li>
+                            <li><strong>イ・エ</strong>：攻撃を遮断できない → フォールスネガティブ ❌</li>
+                            <li><strong>ウ</strong>：正しい遮断（正常動作）❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="waf-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -3814,6 +3937,8 @@
     <script src="trusted-os-check-data.js"></script>
     <script src="firewall-check-data.js"></script>
     <script src="ids-check-data.js"></script>
+    <script src="ips-check-data.js"></script>
+    <script src="waf-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -8102,6 +8227,8 @@
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
             renderAccordionList(checkFirewallData, 'accordion-firewall-list');
             renderAccordionList(checkIdsData, 'accordion-ids-list');
+            renderAccordionList(checkIpsData, 'accordion-ips-list');
+            renderAccordionList(checkWafData, 'accordion-waf-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8165,6 +8292,8 @@
             renderSimulatorBridgeByKeys('controlfunc-simulator-bridge', ['masteravail']);
             renderSimulatorBridgeByKeys('firewall-simulator-bridge', ['fwping', 'spi', 'spidef', 'fwdbmove', 'fwdmz']);
             renderSimulatorBridgeByKeys('ids-simulator-bridge', ['falseneg']);
+            renderSimulatorBridgeByKeys('ips-simulator-bridge', ['ipsinline']);
+            renderSimulatorBridgeByKeys('waf-simulator-bridge', ['waffp']);
         }
 
 
@@ -8289,6 +8418,8 @@
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
             renderAccordionList(checkFirewallData, 'accordion-firewall-list');
             renderAccordionList(checkIdsData, 'accordion-ids-list');
+            renderAccordionList(checkIpsData, 'accordion-ips-list');
+            renderAccordionList(checkWafData, 'accordion-waf-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8424,6 +8555,14 @@
 
         function scrollToIdsCheck() {
             document.getElementById('section-ids-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToIpsCheck() {
+            document.getElementById('section-ips-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToWafCheck() {
+            document.getElementById('section-waf-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {

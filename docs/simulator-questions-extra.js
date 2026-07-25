@@ -2018,5 +2018,82 @@ const questionDataExtra = {
             { num: 4, btn: "4. リスク", desc: "<strong>4. マルウェアが実行され得る</strong><br>FN は致命的リスクにつながります。", stateClass: "state-4" }
         ],
         packetLabels: { req: "感染", res: "見逃し" }
+    },
+    ipsinline: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問13",
+        diagramTitle: "インライン・アノマリ型 IPS（シミュレーター）",
+        text: "インラインモードで動作するアノマリ型 IPS はどれか。",
+        options: [
+            { key: "ア", text: "IPS が監視対象の通信経路を流れる全ての通信パケットを経路外からキャプチャできるように通信経路上のスイッチのミラーポートに接続される。異常な通信を定義し，それと合致する通信を不正と判断して遮断する。", correct: false },
+            { key: "イ", text: "IPS が監視対象の通信経路を流れる全ての通信パケットを経路外からキャプチャできるように通信経路上のスイッチのミラーポートに接続される。通常時の通信を定義し，それから外れた通信を不正と判断して遮断する。", correct: false },
+            { key: "ウ", text: "IPS が監視対象の通信を通過させるように通信経路上に設置される。異常な通信を定義し，それと合致する通信を不正と判断して遮断する。", correct: false },
+            { key: "エ", text: "IPS が監視対象の通信を通過させるように通信経路上に設置される。通常時の通信を定義し，それから外れた通信を不正と判断して遮断する。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>IPS／NIDS の検知手法は大きく<strong>シグネチャ型</strong>と<strong>アノマリ型</strong>の二つです。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>シグネチャ型</strong>：異常・攻撃パターンを定義し，合致した通信を不正と判断</li>
+                    <li><strong>アノマリ型</strong>：通常時（正常）の通信を定義し，それから外れたものを不正と判断</li>
+                </ul>
+            </div>
+            <p style="margin-top:0.75rem;"><strong>インラインモード</strong>は，監視対象の通信を通過させるよう経路上に IPS を置く方式です。ミラーポート接続はプロミスキャスモードです。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア・イ</strong>：ミラーポート接続＝プロミスキャス ❌</li>
+                <li><strong>ウ</strong>：インラインだがシグネチャ型 ❌</li>
+                <li><strong>エ</strong>：インライン＋アノマリ型 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "通信経路", ip: "通過させる", icon: "fa-route", color: "var(--secondary)" },
+            center: { name: "IPS", ip: "インライン", icon: "fa-shield-halved", color: "var(--primary)" },
+            right: { name: "アノマリ", ip: "正常から逸脱", icon: "fa-chart-line", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 配置", desc: "<strong>1. 経路上に設置</strong><br>通信を通過させるインライン配置です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 正常", desc: "<strong>2. 通常時通信を定義</strong><br>アノマリ型は正常パターンを基準にします。", stateClass: "state-2" },
+            { num: 3, btn: "3. 逸脱", desc: "<strong>3. 逸脱を不正と判断</strong><br>仕様やベースラインから外れた通信を検知します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 遮断", desc: "<strong>4. 不正パケットを遮断</strong><br>インラインなので確実にドロップできます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "通信", res: "遮断" }
+    },
+    waffp: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問12",
+        diagramTitle: "WAF のフォールスポジティブ（シミュレーター）",
+        text: "WAF におけるフォールスポジティブに該当するものはどれか。",
+        options: [
+            { key: "ア", text: "HTML の特殊文字 \"<\" を検出したときに通信を遮断するように WAF を設定した場合，数式を入力する Web サイトに \"<\" を数式の一部として含んだ HTTP リクエストが送信されたとき，WAF が攻撃として検知し，遮断する。", correct: true },
+            { key: "イ", text: "HTTP リクエストのうち，RFC などに定義されておらず，Web アプリケーションソフトウェアの開発者が独自に追加したフィールドについては WAF が検査しないという仕様を悪用して，攻撃の命令を埋め込んだ HTTP リクエストが送信されたとき，WAF が遮断しない。", correct: false },
+            { key: "ウ", text: "HTTP リクエストのパラメータ中に許可しない文字列を検出したときに通信を遮断するように WAF を設定した場合，許可しない文字列をパラメータ中に含んだ不正な HTTP リクエストが送信されたとき，WAF が攻撃として検知し，遮断する。", correct: false },
+            { key: "エ", text: "悪意のある通信を正常な通信と見せかけ，HTTP リクエストを分割して送信されたとき，WAF が遮断しない。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>WAF は XSS・SQL インジェクション・OS コマンドインジェクションなどの攻撃を検知・排除し，Web アプリケーションの安全な運用を実現する製品です。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>フォールスポジティブ</strong>：本来検知不要な無害な事象を，誤って攻撃として検知すること（誤検知）</li>
+                    <li><strong>フォールスネガティブ</strong>：攻撃や不正要求を見逃すこと（検知漏れ）</li>
+                </ul>
+            </div>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：正規の数式入力を攻撃と誤検知 → フォールスポジティブ ✅</li>
+                <li><strong>イ・エ</strong>：攻撃を遮断できない → フォールスネガティブ ❌</li>
+                <li><strong>ウ</strong>：正しい遮断（正常動作）❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "正規リクエスト", ip: "数式の <", icon: "fa-file-code", color: "var(--secondary)" },
+            center: { name: "WAF", ip: "誤検知", icon: "fa-shield-halved", color: "var(--primary)" },
+            right: { name: "遮断", ip: "FP", icon: "fa-ban", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 入力", desc: "<strong>1. 正規の数式に \"&lt;\" を含む</strong><br>攻撃ではなく業務上の正当な入力です。", stateClass: "state-1" },
+            { num: 2, btn: "2. ルール", desc: "<strong>2. WAF が \"&lt;\" を攻撃パターンと判定</strong><br>XSS 対策などのシグネチャに合致します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 誤遮断", desc: "<strong>3. 無害な通信を遮断</strong><br>これがフォールスポジティブです。", stateClass: "state-3" },
+            { num: 4, btn: "4. 影響", desc: "<strong>4. 業務が阻害される</strong><br>チューニングで FP／FN のバランスを取ります。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "正規", res: "誤遮断" }
     }
 };
