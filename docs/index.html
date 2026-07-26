@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（83問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（84問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（83問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（84問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1494,7 +1494,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（15問）</summary>
+                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（16問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('vlan', this)">
                     <span class="btn-meta">問23: H31春 午前II問12</span>
@@ -1555,6 +1555,10 @@
                 <button class="question-tab-btn" onclick="switchQuestion('waffp', this)">
                     <span class="btn-meta">問83: R6秋 午前II問12</span>
                     <span class="btn-title">WAFのフォールスポジティブ</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('sandbox', this)">
+                    <span class="btn-meta">問84: H29春 午前II問16</span>
+                    <span class="btn-title">サンドボックスの仕組み</span>
                 </button>
                 </div>
             </details>
@@ -1753,6 +1757,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToIdsCheck()">IDS（5問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToIpsCheck()">IPS（5問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToWafCheck()">WAF（5問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToSandboxCheck()">サンドボックス（4問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1793,7 +1798,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>80</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>279+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>283+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1806,8 +1811,8 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全83問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全83問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全84問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全84問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1819,7 +1824,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">94問</div>
+                        <div class="card-meta">98問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1836,7 +1841,7 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（83問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（84問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
                     過去問 80 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
@@ -1846,7 +1851,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（83問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（84問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -3176,6 +3181,58 @@
                 <div id="waf-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! サンドボックス) -->
+            <section class="content-section" id="section-sandbox-check">
+                <h2 class="section-title"><i class="fa-solid fa-box"></i>基礎知識: Check! 解説（サンドボックス）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    サンドボックスの概要、製品の種類、期待できる効果、検知／遮断における課題を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>サンドボックスとは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>サンドボックス製品にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>サンドボックス製品によってどのような効果が期待できるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>サンドボックス製品の検知／遮断における課題として何があるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-sandbox-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">サンドボックスの仕組みに関する記述のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>Web アプリケーションの脆弱性を悪用する攻撃に含まれる可能性が高い文字列を定義し，攻撃であると判定した場合には，その通信を遮断する。</span></li>
+                        <li><span class="opt-key">イ</span><span>クラウド上で動作する複数の仮想マシン（ゲストOS）間で，お互いの操作ができるように制御する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>プログラムの影響がシステム全体に及ばないように，プログラムが実行できる機能やアクセスできるリソースを制限して動作させる。</span></li>
+                        <li><span class="opt-key">エ</span><span>プログラムのソースコードで SQL 文の雛形の中に変数の場所を示す記号を置いた後，実際の値を割り当てる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・H29 春・午前Ⅱ 問 16］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>サンドボックスとは，システムの実環境に影響が及ばないように，機能やアクセスできるリソースを制限したプログラム実行環境である。仮想環境上のサンドボックスで不審なプログラムを実行させ，その振る舞いからマルウェアかどうかを判定するなどの用途で使用されている。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：WAF の説明 ❌</li>
+                            <li><strong>イ</strong>：隔離とは逆の相互操作 ❌</li>
+                            <li><strong>ウ</strong>：リソース制限による隔離実行 ✅</li>
+                            <li><strong>エ</strong>：プリペアドステートメントの説明 ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="sandbox-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -3939,6 +3996,7 @@
     <script src="ids-check-data.js"></script>
     <script src="ips-check-data.js"></script>
     <script src="waf-check-data.js"></script>
+    <script src="sandbox-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -8229,6 +8287,7 @@
             renderAccordionList(checkIdsData, 'accordion-ids-list');
             renderAccordionList(checkIpsData, 'accordion-ips-list');
             renderAccordionList(checkWafData, 'accordion-waf-list');
+            renderAccordionList(checkSandboxData, 'accordion-sandbox-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8294,6 +8353,7 @@
             renderSimulatorBridgeByKeys('ids-simulator-bridge', ['falseneg']);
             renderSimulatorBridgeByKeys('ips-simulator-bridge', ['ipsinline']);
             renderSimulatorBridgeByKeys('waf-simulator-bridge', ['waffp']);
+            renderSimulatorBridgeByKeys('sandbox-simulator-bridge', ['sandbox']);
         }
 
 
@@ -8420,6 +8480,7 @@
             renderAccordionList(checkIdsData, 'accordion-ids-list');
             renderAccordionList(checkIpsData, 'accordion-ips-list');
             renderAccordionList(checkWafData, 'accordion-waf-list');
+            renderAccordionList(checkSandboxData, 'accordion-sandbox-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8563,6 +8624,10 @@
 
         function scrollToWafCheck() {
             document.getElementById('section-waf-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToSandboxCheck() {
+            document.getElementById('section-sandbox-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {

@@ -2095,5 +2095,38 @@ const questionDataExtra = {
             { num: 4, btn: "4. 影響", desc: "<strong>4. 業務が阻害される</strong><br>チューニングで FP／FN のバランスを取ります。", stateClass: "state-4" }
         ],
         packetLabels: { req: "正規", res: "誤遮断" }
+    },
+    sandbox: {
+        source: "情報処理安全確保支援士試験・H29春・午前II問16",
+        diagramTitle: "サンドボックスの仕組み（シミュレーター）",
+        text: "サンドボックスの仕組みに関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "Web アプリケーションの脆弱性を悪用する攻撃に含まれる可能性が高い文字列を定義し，攻撃であると判定した場合には，その通信を遮断する。", correct: false },
+            { key: "イ", text: "クラウド上で動作する複数の仮想マシン（ゲストOS）間で，お互いの操作ができるように制御する。", correct: false },
+            { key: "ウ", text: "プログラムの影響がシステム全体に及ばないように，プログラムが実行できる機能やアクセスできるリソースを制限して動作させる。", correct: true },
+            { key: "エ", text: "プログラムのソースコードで SQL 文の雛形の中に変数の場所を示す記号を置いた後，実際の値を割り当てる。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>サンドボックスとは，システムの実環境に影響が及ばないように，機能やアクセスできるリソースを制限した<strong>プログラム実行環境</strong>です。仮想環境上で不審なプログラムを実行し，その振る舞いからマルウェアかどうかを判定する用途などに使われます。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：WAF の説明 ❌</li>
+                <li><strong>イ</strong>：隔離とは逆の相互操作 ❌</li>
+                <li><strong>ウ</strong>：リソース制限による隔離実行 ✅</li>
+                <li><strong>エ</strong>：プリペアドステートメントの説明 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "不審プログラム", ip: "実行対象", icon: "fa-bug", color: "var(--secondary)" },
+            center: { name: "サンドボックス", ip: "リソース制限", icon: "fa-box", color: "var(--primary)" },
+            right: { name: "実環境", ip: "影響なし", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 隔離", desc: "<strong>1. 制限された実行環境を用意</strong><br>機能やリソースへのアクセスを制限します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 実行", desc: "<strong>2. 不審プログラムを実行</strong><br>実環境とは切り離して動かします。", stateClass: "state-2" },
+            { num: 3, btn: "3. 観察", desc: "<strong>3. 振る舞いを解析</strong><br>ファイル書込み・通信などから判定します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 判定", desc: "<strong>4. マルウェアなら遮断・隔離</strong><br>実環境への影響を防ぎます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "実行", res: "隔離" }
     }
 };

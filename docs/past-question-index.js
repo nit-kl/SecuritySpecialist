@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 83問）
+// 過去問一覧（すべてシミュレーター 84問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -45,7 +45,7 @@ const pastQuestionIndex = [
     { no: 73, format: 'simulator', category: 'fundamentals', key: 'auditrec', source: 'H29春 高度共通 午前I問22', title: '改善勧告の記載' },
     { no: 74, format: 'simulator', category: 'fundamentals', key: 'audittec', source: 'R元秋 高度共通 午前I問22', title: '監査手続の技法' },
     { no: 75, format: 'simulator', category: 'fundamentals', key: 'masteravail', source: 'R3春 高度共通 午前I問21', title: 'マスタファイル管理と可用性' },
-    // --- ネットワーク (15) ---
+    // --- ネットワーク (16) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },
     { no: 25, format: 'simulator', category: 'network', key: 'cache',      source: 'R6春 午前II問20',  title: 'Cache-Control' },
@@ -88,6 +88,7 @@ const pastQuestionIndex = [
     { no: 81, format: 'simulator', category: 'network', key: 'falseneg', source: 'H29春 午前II問13', title: 'フォールスネガティブ' },
     { no: 82, format: 'simulator', category: 'network', key: 'ipsinline', source: 'R6秋 午前II問13', title: 'インライン・アノマリ型IPS' },
     { no: 83, format: 'simulator', category: 'network', key: 'waffp', source: 'R6秋 午前II問12', title: 'WAFのフォールスポジティブ' },
+    { no: 84, format: 'simulator', category: 'network', key: 'sandbox', source: 'H29春 午前II問16', title: 'サンドボックスの仕組み' },
     // --- メールセキュリティ (8) ---
     { no: 49, format: 'simulator', category: 'mail', key: 'spf', source: 'R4秋 午前II問15', title: 'SPF ドメイン認証' },
     { no: 50, format: 'simulator', category: 'mail', key: 'ip25b', source: 'R2秋 午前II問17', title: 'IP25B' },
