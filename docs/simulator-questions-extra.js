@@ -2128,5 +2128,144 @@ const questionDataExtra = {
             { num: 4, btn: "4. 判定", desc: "<strong>4. マルウェアなら遮断・隔離</strong><br>実環境への影響を防ぎます。", stateClass: "state-4" }
         ],
         packetLabels: { req: "実行", res: "隔離" }
+    },
+    fidopasskey: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問7",
+        diagramTitle: "FIDO パスキーと生体情報（シミュレーター）",
+        text: "IdP がパスキー認証に対応している。利用者 A がスマートフォンの生体認証機能を FIDO オーセンティケータとして登録した。利用者 A がブラウザ経由で IdP を用いて Web サーバ B にアクセスするとき，利用者 A の生体情報が送信されるものはどれか。",
+        options: [
+            { key: "ア", text: "利用者 A の Web ブラウザ，Web サーバ B，IdP のいずれにも送信されない。", correct: true },
+            { key: "イ", text: "利用者 A の Web ブラウザだけに送信される。", correct: false },
+            { key: "ウ", text: "IdP だけに送信される。", correct: false },
+            { key: "エ", text: "Web サーバ B と IdP に送信される。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>FIDO</strong>はパスワードレス認証の標準です。利用者のデバイス（スマートフォン）がオーセンティケータとなり，<strong>端末内でローカルに本人確認</strong>します。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li>ネットワークに送られるのは検証結果（署名など）であり，生体情報そのものではない</li>
+                    <li>生体情報は利用者端末内にのみ保持され，サーバには保存・送信されない</li>
+                </ul>
+            </div>
+            <p style="margin-top:0.75rem;">したがってブラウザ・Web サーバ・IdP のいずれにも生体情報は送信されません。</p>
+        `,
+        nodes: {
+            left: { name: "スマホ", ip: "生体は端末内", icon: "fa-mobile-screen", color: "var(--secondary)" },
+            center: { name: "ブラウザ", ip: "署名のみ転送", icon: "fa-globe", color: "var(--primary)" },
+            right: { name: "IdP", ip: "生体は受信しない", icon: "fa-id-card", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. ローカル", desc: "<strong>1. 端末内で生体認証</strong><br>指紋・顔などはスマホ内で検証します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 署名", desc: "<strong>2. 秘密鍵で署名を生成</strong><br>検証成功後にチャレンジへ署名します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 送信", desc: "<strong>3. 署名結果だけを送信</strong><br>生体データ自体はネットワークに出ません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 検証", desc: "<strong>4. IdP が署名を検証</strong><br>公開鍵で正当性を確認します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "署名", res: "OK" }
+    },
+    threedsecure: {
+        source: "情報処理安全確保支援士試験・R2秋・午前II問9",
+        diagramTitle: "3Dセキュア（シミュレーター）",
+        text: "オンラインショッピングにおけるクレジットカードの不正使用対策である 3D セキュアの説明として，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "クレジットカードの暗証番号（PIN）を入力させる。", correct: false },
+            { key: "イ", text: "クレジットカードのセキュリティコード（カード記載の 3 桁又は 4 桁の番号）を入力させる。", correct: false },
+            { key: "ウ", text: "クレジットカードの有効期限を入力させる。", correct: false },
+            { key: "エ", text: "カード会社にあらかじめ登録しておいた，本人だけが知るパスワードを入力させる。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>3D セキュア</strong>は，オンライン決済時にカード会社へあらかじめ登録したパスワード等で<strong>本人確認</strong>を行う仕組みです。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：対面・ATM 等の PIN 入力に近い ❌</li>
+                <li><strong>イ</strong>：セキュリティコード（CVV 等）の入力 ❌</li>
+                <li><strong>ウ</strong>：有効期限の入力（カード情報の一部）❌</li>
+                <li><strong>エ</strong>：カード会社登録の本人パスワード ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "利用者", ip: "本人パスワード", icon: "fa-user", color: "var(--secondary)" },
+            center: { name: "加盟店", ip: "決済要求", icon: "fa-cart-shopping", color: "var(--primary)" },
+            right: { name: "カード会社", ip: "3Dセキュア認証", icon: "fa-building-columns", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 購入", desc: "<strong>1. ネットでカード決済を開始</strong><br>加盟店サイトで購入手続きを行います。", stateClass: "state-1" },
+            { num: 2, btn: "2. 認証画面", desc: "<strong>2. カード会社の認証へ誘導</strong><br>3D セキュアの本人確認画面が表示されます。", stateClass: "state-2" },
+            { num: 3, btn: "3. パスワード", desc: "<strong>3. 登録済みパスワードを入力</strong><br>本人だけが知る情報で確認します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 完了", desc: "<strong>4. 認証成功で決済継続</strong><br>不正利用リスクを低減します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "認証", res: "承認" }
+    },
+    fidouaf: {
+        source: "情報処理安全確保支援士試験・R元秋・午前II問1",
+        diagramTitle: "FIDO UAF 1.1（シミュレーター）",
+        text: "FIDO UAF 1.1 に準拠した認証の処理はどれか。",
+        options: [
+            { key: "ア", text: "SaaS への接続時の認証において，PIN コードとトークンが表示するワンタイムパスワードを PC から認証サーバへ送信した。", correct: false },
+            { key: "イ", text: "SaaS への接続時の認証において，スマートフォンで顔認証を行った後，スマートフォン内の秘密鍵を用いてデジタル署名を生成し，そのデジタル署名を認証サーバへ送信した。", correct: true },
+            { key: "ウ", text: "インターネットバンキングへの接続時の認証において，PC に接続したカードリーダでキャッシュカード内のクライアント証明書を読み取り，そのクライアント証明書を認証サーバへ送信した。", correct: false },
+            { key: "エ", text: "インターネットバンキングへの接続時の認証において，スマートフォンで指紋情報を読み取り，その指紋情報を認証サーバへ送信した。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p>FIDO では，端末（Authenticator）がローカルで本人確認し，<strong>秘密鍵による署名結果</strong>をサーバへ送ります。生体情報などの認証情報自体はネットワークに送られません。</p>
+            <div class="check-measure-box" style="margin-top:1rem;">
+                <ul>
+                    <li><strong>UAF</strong>：パスワードレス認証</li>
+                    <li><strong>U2F</strong>：第二要素としてのセキュリティキー等</li>
+                </ul>
+            </div>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：PIN＋OTP をサーバ送信（従来型）❌</li>
+                <li><strong>イ</strong>：端末内で顔認証→秘密鍵署名を送信＝UAF ✅</li>
+                <li><strong>ウ</strong>：クライアント証明書の送信 ❌</li>
+                <li><strong>エ</strong>：指紋情報そのものを送信（FIDO に反する）❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "スマホ", ip: "顔認証＋署名", icon: "fa-mobile-screen-button", color: "var(--secondary)" },
+            center: { name: "Authenticator", ip: "秘密鍵は端末内", icon: "fa-key", color: "var(--primary)" },
+            right: { name: "認証サーバ", ip: "署名を検証", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 生体", desc: "<strong>1. 端末内で顔認証</strong><br>生体データは端末の外に出ません。", stateClass: "state-1" },
+            { num: 2, btn: "2. 署名", desc: "<strong>2. 秘密鍵でデジタル署名</strong><br>認証成功後に署名を生成します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 送信", desc: "<strong>3. 署名だけをサーバへ</strong><br>指紋・顔データは送信しません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 検証", desc: "<strong>4. サーバが署名を検証</strong><br>これが FIDO UAF の流れです。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "署名", res: "検証OK" }
+    },
+    pwtotal: {
+        source: "テクニカルエンジニア（情報セキュリティ）試験・H19春・午前問46",
+        diagramTitle: "パスワード総数の求め方（シミュレーター）",
+        text: "パスワードに使用できる文字の種類の数を M，パスワードの文字数を n とするとき，設定できるパスワードの総数を求める数式はどれか。",
+        options: [
+            { key: "ア", text: "Mⁿ", correct: true },
+            { key: "イ", text: "M! / (M−n)!", correct: false },
+            { key: "ウ", text: "M! / (n!(M−n)!)", correct: false },
+            { key: "エ", text: "(M+n−1)! / (n!(M−1)!)", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>パスワードでは同一文字の繰り返しが許されるため，各桁で M 通り選べます。文字数が n なので総数は <strong>Mⁿ</strong> です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：重複を許す順列（各桁独立）＝ Mⁿ ✅</li>
+                <li><strong>イ</strong>：重複を許さない順列 ❌</li>
+                <li><strong>ウ</strong>：組合せ（C(M,n)）❌</li>
+                <li><strong>エ</strong>：重複組合せ ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "文字種 M", ip: "各桁の選択肢", icon: "fa-font", color: "var(--secondary)" },
+            center: { name: "長さ n", ip: "桁を並べる", icon: "fa-ruler-horizontal", color: "var(--primary)" },
+            right: { name: "総数", ip: "Mⁿ", icon: "fa-calculator", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 1桁目", desc: "<strong>1. 1桁目は M 通り</strong><br>使用可能な文字種から選びます。", stateClass: "state-1" },
+            { num: 2, btn: "2. 各桁", desc: "<strong>2. 各桁も同じく M 通り</strong><br>同じ文字の再利用ができます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 乗算", desc: "<strong>3. n 桁ぶん掛ける</strong><br>M × M × … × M（n 回）です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 結果", desc: "<strong>4. 総数は Mⁿ</strong><br>文字種と長さが増えると急激に増えます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "M,n", res: "Mⁿ" }
     }
 };

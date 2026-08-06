@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 84問）
+// 過去問一覧（すべてシミュレーター 88問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -26,7 +26,7 @@ const pastQuestionIndex = [
     { no: 20, format: 'simulator', category: 'malware', key: 'cryptojack',  source: 'R7春 午前II問5',   title: 'クリプトジャッキング' },
     { no: 21, format: 'simulator', category: 'malware', key: 'mitb',        source: 'R5秋 午前II問7',   title: 'MITB・トランザクション署名' },
     { no: 36, format: 'simulator', category: 'malware', key: 'rootkit',     source: 'R3秋 午前II問14',  title: 'ルートキット' },
-    // --- 基礎・管理 (14) ---
+    // --- 基礎・管理 (21) ---
     { no: 22, format: 'simulator', category: 'fundamentals', key: 'failsafe', source: 'H31春 高度共通 午前I問16', title: 'フェールセーフ' },
     { no: 59, format: 'simulator', category: 'fundamentals', key: 'riskident', source: 'R7春 午前II問10', title: 'JIS Q 27000 用語（リスク特定）' },
     { no: 60, format: 'simulator', category: 'fundamentals', key: 'riskdetail', source: 'H23秋 午前II問25', title: '詳細リスク分析' },
@@ -45,6 +45,9 @@ const pastQuestionIndex = [
     { no: 73, format: 'simulator', category: 'fundamentals', key: 'auditrec', source: 'H29春 高度共通 午前I問22', title: '改善勧告の記載' },
     { no: 74, format: 'simulator', category: 'fundamentals', key: 'audittec', source: 'R元秋 高度共通 午前I問22', title: '監査手続の技法' },
     { no: 75, format: 'simulator', category: 'fundamentals', key: 'masteravail', source: 'R3春 高度共通 午前I問21', title: 'マスタファイル管理と可用性' },
+    { no: 85, format: 'simulator', category: 'fundamentals', key: 'fidopasskey', source: 'R6秋 午前II問7', title: 'FIDOパスキーと生体情報' },
+    { no: 86, format: 'simulator', category: 'fundamentals', key: 'threedsecure', source: 'R2秋 午前II問9', title: '3Dセキュア' },
+    { no: 87, format: 'simulator', category: 'fundamentals', key: 'fidouaf', source: 'R元秋 午前II問1', title: 'FIDO UAF 1.1' },
     // --- ネットワーク (16) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },
@@ -68,9 +71,10 @@ const pastQuestionIndex = [
     { no: 45, format: 'simulator', category: 'vuln', key: 'scap',   source: 'R5秋 午前II問12', title: 'SCAP（脆弱性管理自動化）' },
     { no: 46, format: 'simulator', category: 'vuln', key: 'exploit', source: 'R2秋 午前II問3',  title: 'エクスプロイトコード' },
     { no: 47, format: 'simulator', category: 'vuln', key: 'sbom',   source: 'R6春 午前II問17', title: 'SBOM' },
-    // --- パスワード (2) ---
+    // --- パスワード (3) ---
     { no: 37, format: 'simulator', category: 'password', key: 'pth',   source: 'R5春 午前II問14', title: 'Pass the Hash' },
     { no: 38, format: 'simulator', category: 'password', key: 'spray', source: 'R4秋 午前II問14', title: 'パスワードスプレー攻撃' },
+    { no: 88, format: 'simulator', category: 'password', key: 'pwtotal', source: 'H19春 TE情報セキュリティ 午前問46', title: 'パスワード総数（Mⁿ）' },
     // --- セッション (1) ---
     { no: 39, format: 'simulator', category: 'session', key: 'mitm', source: 'H22春 午前II問13', title: '中間者攻撃（MITM）' },
     // --- DNS (5) ---

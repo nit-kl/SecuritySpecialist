@@ -1284,7 +1284,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 80 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 88 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（84問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（88問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（84問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（88問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1416,7 +1416,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（18問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（21問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1489,6 +1489,18 @@
                 <button class="question-tab-btn" onclick="switchQuestion('masteravail', this)">
                     <span class="btn-meta">問75: R3春 高度共通 午前I問21</span>
                     <span class="btn-title">マスタファイル管理と可用性</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('fidopasskey', this)">
+                    <span class="btn-meta">問85: R6秋 午前II問7</span>
+                    <span class="btn-title">FIDOパスキーと生体情報</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('threedsecure', this)">
+                    <span class="btn-meta">問86: R2秋 午前II問9</span>
+                    <span class="btn-title">3Dセキュア</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('fidouaf', this)">
+                    <span class="btn-meta">問87: R元秋 午前II問1</span>
+                    <span class="btn-title">FIDO UAF 1.1</span>
                 </button>
                 </div>
             </details>
@@ -1676,7 +1688,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-key" style="color:#fcd34d;"></i> パスワード（2問）</summary>
+                <summary><i class="fa-solid fa-key" style="color:#fcd34d;"></i> パスワード（3問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('pth', this)">
                     <span class="btn-meta">問37: R5春 午前II問14</span>
@@ -1685,6 +1697,10 @@
                 <button class="question-tab-btn" onclick="switchQuestion('spray', this)">
                     <span class="btn-meta">問38: R4秋 午前II問14</span>
                     <span class="btn-title">パスワードスプレー攻撃</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('pwtotal', this)">
+                    <span class="btn-meta">問88: H19春 TE情報セキュリティ 午前問46</span>
+                    <span class="btn-title">パスワード総数（Mⁿ）</span>
                 </button>
                 </div>
             </details>
@@ -1725,7 +1741,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（264問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（308問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1758,6 +1774,11 @@
                     <button class="sidebar-link-btn" onclick="scrollToIpsCheck()">IPS（5問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToWafCheck()">WAF（5問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToSandboxCheck()">サンドボックス（4問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToLogCheck()">ログ分析（4問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToAvailabilityCheck()">可用性（RAID／クラスタ）（3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToAccessControlCheck()">アクセス制御（8問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToAuthCheck()">認証（7問＋確認3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToFixedPasswordCheck()">固定式パスワード（3問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1797,22 +1818,22 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>80</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>283+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>88</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>308+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 80 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 80 問（重複なし）</div>
+                        <p>過去問 88 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 88 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全84問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全84問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全88問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全88問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1824,7 +1845,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">98問</div>
+                        <div class="card-meta">127問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1841,9 +1862,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（84問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（88問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 80 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 88 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1851,7 +1872,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（84問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（88問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -3233,6 +3254,243 @@
                 <div id="sandbox-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! ログ分析) -->
+            <section class="content-section" id="section-log-check">
+                <h2 class="section-title"><i class="fa-solid fa-file-lines"></i>基礎知識: Check! 解説（ログ分析）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    ログ分析で発見できる事象、なりすましの検知、安全な保存方法、分析時の留意点を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>ログ分析によってどのような事象を発見することが可能となるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>ログ分析によってなりすまし行為を発見するためにはどのような方法があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>ログを安全に保存するための対策として，どのような方法があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>ログの分析における留意点について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-log-list"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 可用性) -->
+            <section class="content-section" id="section-availability-check">
+                <h2 class="section-title"><i class="fa-solid fa-arrows-rotate"></i>基礎知識: Check! 解説（可用性／RAID・クラスタ）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    可用性を高める考え方、RAID の種類、クラスタリングシステムの概要を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>可用性を向上させる対策にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>RAID にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>クラスタリングシステムとはどのようなシステムか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-availability-list"></div>
+            </section>
+
+            <!-- 確認問題（SNMPv3） -->
+            <section class="content-section" id="section-snmpv3-check">
+                <h2 class="section-title"><i class="fa-solid fa-network-wired"></i>確認問題: SNMPv3（Trap に使われる PDU）</h2>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">ネットワーク管理プロトコルである SNMPv3 で使われる PDU のうち，事象の発生をエージェントから管理局に通報するために使われるものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>GetRequest-PDU</span></li>
+                        <li><span class="opt-key">イ</span><span>Response-PDU</span></li>
+                        <li><span class="opt-key">ウ</span><span>SetRequest-PDU</span></li>
+                        <li><span class="opt-key">エ</span><span>SNMPv2-Trap-PDU</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・H31 春・午前II 問 20］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>
+                            SNMP は，ネットワーク上に存在する管理対象の機器（エージェント）と，その管理を行う管理局（マネージャ）との間で，管理情報をやり取りするための通信プロトコルであり，通常は UDP を用いる。
+                            SNMPv3 では，事象の発生をエージェントが自発的に管理局へ通知するための PDU として <strong>SNMPv2-Trap</strong> が用いられる。
+                        </p>
+                        <div class="check-measure-box" style="margin-top:1rem;">
+                            <ul>
+                                <li>GetRequest</li>
+                                <li>GetNextRequest</li>
+                                <li>Response</li>
+                                <li>SetRequest</li>
+                                <li>GetBulkRequest</li>
+                                <li><strong>SNMPv2-Trap</strong></li>
+                                <li>Report</li>
+                            </ul>
+                        </div>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! アクセス制御) -->
+            <section class="content-section" id="section-access-control-check">
+                <h2 class="section-title"><i class="fa-solid fa-user-lock"></i>基礎知識: Check! 解説（アクセス制御）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    アクセス制御の必要性、実施プロセス、認可、実施場所、方式（DAC／MAC／RBAC）、MLS、手順と注意事項を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>アクセス制御は，なぜ必要なのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>アクセス制御の実施プロセスについて述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>「認可」とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>アクセス制御はどのような場所で実施する必要があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>アクセス制御にはどのような方式があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>MLS はどのような考え方でアクセス制御を行うのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>アクセス制御はどのような手順で実施する必要があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>アクセス制御を実施する上で特に注意すべき事項としては何があるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-access-control-list"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 認証) -->
+            <section class="content-section" id="section-auth-check">
+                <h2 class="section-title"><i class="fa-solid fa-fingerprint"></i>基礎知識: Check! 解説（認証）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    認証の種類と長短、端末情報確認、二要素／二段階、リスクベース認証、FIDO／FIDO2、CAPTCHA を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>認証にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>個人認証の各方式の長所と短所は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>端末情報確認がユーザにもたらす利点は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>二要素（多要素）認証と二段階認証について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>リスクベース認証とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>FIDO と FIDO2 について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>CAPTCHA について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-auth-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">IdP がパスキー認証に対応している。利用者 A がスマートフォンの生体認証機能を FIDO オーセンティケータとして登録した。利用者 A がブラウザ経由で IdP を用いて Web サーバ B にアクセスするとき，利用者 A の生体情報が送信されるものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>利用者 A の Web ブラウザ，Web サーバ B，IdP のいずれにも送信されない。</span></li>
+                        <li><span class="opt-key">イ</span><span>利用者 A の Web ブラウザだけに送信される。</span></li>
+                        <li><span class="opt-key">ウ</span><span>IdP だけに送信される。</span></li>
+                        <li><span class="opt-key">エ</span><span>Web サーバ B と IdP に送信される。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 7］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>FIDO では，利用者のデバイスがオーセンティケータとなり，端末内でローカルに本人確認を行う。ネットワークに送られるのは検証結果（署名など）であり，生体情報そのものは送信・サーバ保存されない。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">オンラインショッピングにおけるクレジットカードの不正使用対策である 3D セキュアの説明として，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>クレジットカードの暗証番号（PIN）を入力させる。</span></li>
+                        <li><span class="opt-key">イ</span><span>クレジットカードのセキュリティコード（カード記載の 3 桁又は 4 桁の番号）を入力させる。</span></li>
+                        <li><span class="opt-key">ウ</span><span>クレジットカードの有効期限を入力させる。</span></li>
+                        <li><span class="opt-key">エ</span><span>カード会社にあらかじめ登録しておいた，本人だけが知るパスワードを入力させる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R2 秋・午前Ⅱ 問 9］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>3D セキュアは，オンライン決済時にカード会社へあらかじめ登録したパスワード等で本人確認を行う仕組みである。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア〜ウ</strong>：PIN・セキュリティコード・有効期限の入力であり，3D セキュアの本質ではない ❌</li>
+                            <li><strong>エ</strong>：カード会社登録の本人パスワード ✅</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">FIDO UAF 1.1 に準拠した認証の処理はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>SaaS への接続時の認証において，PIN コードとトークンが表示するワンタイムパスワードを PC から認証サーバへ送信した。</span></li>
+                        <li><span class="opt-key">イ</span><span>SaaS への接続時の認証において，スマートフォンで顔認証を行った後，スマートフォン内の秘密鍵を用いてデジタル署名を生成し，そのデジタル署名を認証サーバへ送信した。</span></li>
+                        <li><span class="opt-key">ウ</span><span>インターネットバンキングへの接続時の認証において，PC に接続したカードリーダでキャッシュカード内のクライアント証明書を読み取り，そのクライアント証明書を認証サーバへ送信した。</span></li>
+                        <li><span class="opt-key">エ</span><span>インターネットバンキングへの接続時の認証において，スマートフォンで指紋情報を読み取り，その指紋情報を認証サーバへ送信した。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R 元 秋・午前Ⅱ 問 1］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>FIDO では端末がローカルで本人確認し，秘密鍵による署名結果をサーバへ送る。生体情報自体はネットワークに送らない。UAF はパスワードレス認証，U2F は第二要素の仕様である。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：PIN＋OTP をサーバ送信 ❌</li>
+                            <li><strong>イ</strong>：端末内顔認証→秘密鍵署名を送信＝UAF ✅</li>
+                            <li><strong>ウ</strong>：クライアント証明書送信 ❌</li>
+                            <li><strong>エ</strong>：指紋情報そのものを送信（FIDO に反する）❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>イ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題 3 問は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="auth-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 固定式パスワード) -->
+            <section class="content-section" id="section-fixed-password-check">
+                <h2 class="section-title"><i class="fa-solid fa-lock"></i>基礎知識: Check! 解説（固定式パスワード）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    破られやすいパスワード、設定・管理面の対策、実装面の脆弱性を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>どのようなパスワードが破られやすいのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>固定式パスワードの設定及び管理面での対策を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>固定式パスワードによる認証システムの実装面での脆弱性とは何か。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-fixed-password-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">パスワードに使用できる文字の種類の数を M，パスワードの文字数を n とするとき，設定できるパスワードの総数を求める数式はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>M<sup>n</sup></span></li>
+                        <li><span class="opt-key">イ</span><span>M! / (M−n)!</span></li>
+                        <li><span class="opt-key">ウ</span><span>M! / (n!(M−n)!)</span></li>
+                        <li><span class="opt-key">エ</span><span>(M+n−1)! / (n!(M−1)!)</span></li>
+                    </ul>
+                    <p class="review-question-source">［テクニカルエンジニア（情報セキュリティ）試験・H19 春・午前 問 46］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>パスワードでは同一文字の繰り返しが許されるため，各桁で M 通り選べる。文字数が n なので総数は <strong>M<sup>n</sup></strong> である。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：重複を許す順列（各桁独立）＝ M<sup>n</sup> ✅</li>
+                            <li><strong>イ</strong>：重複を許さない順列 ❌</li>
+                            <li><strong>ウ</strong>：組合せ ❌</li>
+                            <li><strong>エ</strong>：重複組合せ ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="fixed-password-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -3997,6 +4255,11 @@
     <script src="ips-check-data.js"></script>
     <script src="waf-check-data.js"></script>
     <script src="sandbox-check-data.js"></script>
+    <script src="log-check-data.js"></script>
+    <script src="availability-check-data.js"></script>
+    <script src="access-control-check-data.js"></script>
+    <script src="auth-check-data.js"></script>
+    <script src="fixed-password-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -8288,6 +8551,11 @@
             renderAccordionList(checkIpsData, 'accordion-ips-list');
             renderAccordionList(checkWafData, 'accordion-waf-list');
             renderAccordionList(checkSandboxData, 'accordion-sandbox-list');
+            renderAccordionList(checkLogData, 'accordion-log-list');
+            renderAccordionList(checkAvailabilityData, 'accordion-availability-list');
+            renderAccordionList(checkAccessControlData, 'accordion-access-control-list');
+            renderAccordionList(checkAuthData, 'accordion-auth-list');
+            renderAccordionList(checkFixedPasswordData, 'accordion-fixed-password-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8354,6 +8622,8 @@
             renderSimulatorBridgeByKeys('ips-simulator-bridge', ['ipsinline']);
             renderSimulatorBridgeByKeys('waf-simulator-bridge', ['waffp']);
             renderSimulatorBridgeByKeys('sandbox-simulator-bridge', ['sandbox']);
+            renderSimulatorBridgeByKeys('auth-simulator-bridge', ['fidopasskey', 'threedsecure', 'fidouaf']);
+            renderSimulatorBridgeByKeys('fixed-password-simulator-bridge', ['pwtotal']);
         }
 
 
@@ -8481,6 +8751,11 @@
             renderAccordionList(checkIpsData, 'accordion-ips-list');
             renderAccordionList(checkWafData, 'accordion-waf-list');
             renderAccordionList(checkSandboxData, 'accordion-sandbox-list');
+            renderAccordionList(checkLogData, 'accordion-log-list');
+            renderAccordionList(checkAvailabilityData, 'accordion-availability-list');
+            renderAccordionList(checkAccessControlData, 'accordion-access-control-list');
+            renderAccordionList(checkAuthData, 'accordion-auth-list');
+            renderAccordionList(checkFixedPasswordData, 'accordion-fixed-password-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8628,6 +8903,26 @@
 
         function scrollToSandboxCheck() {
             document.getElementById('section-sandbox-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToLogCheck() {
+            document.getElementById('section-log-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToAvailabilityCheck() {
+            document.getElementById('section-availability-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToAccessControlCheck() {
+            document.getElementById('section-access-control-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToAuthCheck() {
+            document.getElementById('section-auth-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToFixedPasswordCheck() {
+            document.getElementById('section-fixed-password-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {
