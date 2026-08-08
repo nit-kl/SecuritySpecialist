@@ -2267,5 +2267,76 @@ const questionDataExtra = {
             { num: 4, btn: "4. 結果", desc: "<strong>4. 総数は Mⁿ</strong><br>文字種と長さが増えると急激に増えます。", stateClass: "state-4" }
         ],
         packetLabels: { req: "M,n", res: "Mⁿ" }
+    },
+    skey: {
+        source: "情報セキュリティスペシャリスト試験・H22春・午前II問4",
+        diagramTitle: "S/Key ワンタイムパスワード（シミュレーター）",
+        text: "S/KEY ワンタイムパスワードに関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "クライアントは認証要求のたびに，サーバへシーケンス番号と種（Seed）からなるチャレンジデータを送信する。", correct: false },
+            { key: "イ", text: "サーバはクライアントから送られた使い捨てパスワードを演算し，サーバで記憶している前回の使い捨てパスワードと比較することによって，クライアントを認証する。", correct: true },
+            { key: "ウ", text: "時刻認証を基にパスワードを生成し，クライアント，サーバ間でパスワードを時刻で同期させる。", correct: false },
+            { key: "エ", text: "利用者が設定したパスフレーズは 1 回ごとに使い捨てる。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p>S/Key では，クライアントから送られた使い捨てパスワードをサーバがさらに演算（ハッシュ）し，記憶している<strong>前回の使い捨てパスワード</strong>と比較することで認証します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：チャレンジを送るのは主にサーバ側の役割であり，記述が不適切 ❌</li>
+                <li><strong>イ</strong>：前回 OTP との比較による認証 ✅</li>
+                <li><strong>ウ</strong>：時間同期式トークンの説明 ❌</li>
+                <li><strong>エ</strong>：パスフレーズ自体を毎回捨てるわけではない ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "クライアント", ip: "今回の OTP", icon: "fa-laptop", color: "var(--secondary)" },
+            center: { name: "サーバ", ip: "ハッシュして比較", icon: "fa-server", color: "var(--primary)" },
+            right: { name: "前回 OTP", ip: "記憶値", icon: "fa-database", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 送信", desc: "<strong>1. 使い捨てパスワードを送信</strong><br>クライアントが OTP を送ります。", stateClass: "state-1" },
+            { num: 2, btn: "2. 演算", desc: "<strong>2. サーバがハッシュ演算</strong><br>受け取った OTP をさらに計算します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 比較", desc: "<strong>3. 前回 OTP と比較</strong><br>一致すれば正当なクライアントです。", stateClass: "state-3" },
+            { num: 4, btn: "4. 更新", desc: "<strong>4. 記憶値を更新</strong><br>次回認証に備えて保持値を差し替えます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "OTP", res: "認証" }
+    },
+    challenge: {
+        source: "情報処理技術者試験 高度共通・H28秋・午前I問13",
+        diagramTitle: "チャレンジレスポンス認証（シミュレーター）",
+        text: "チャレンジレスポンス認証方式の特徴はどれか。",
+        options: [
+            { key: "ア", text: "TLS によって，クライアント側で固定パスワードを暗号化して送信する。", correct: false },
+            { key: "イ", text: "端末のシリアル番号を，クライアント側で秘密鍵を使って暗号化して送信する。", correct: false },
+            { key: "ウ", text: "トークンという装置が表示する毎回異なったデータを，パスワードとして送信する。", correct: false },
+            { key: "エ", text: "利用者が入力したパスワードと，サーバから送られてきたランダムなデータとをクライアント側で演算し，その結果を送信する。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>チャレンジレスポンス方式の流れは次のとおりです。</p>
+            <ol style="margin-top:0.75rem;">
+                <li>サーバが乱数（チャレンジ）をクライアントへ送る</li>
+                <li>クライアントはチャレンジとパスワードを演算（例：ハッシュ）し，レスポンスを返す</li>
+                <li>サーバも同様に計算し，レスポンスと比較して認証する</li>
+            </ol>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：TLS で固定パスワードを送るだけ ❌</li>
+                <li><strong>イ</strong>：端末シリアル番号の暗号化送信 ❌</li>
+                <li><strong>ウ</strong>：時間／イベント同期型トークンに近い ❌</li>
+                <li><strong>エ</strong>：チャレンジとパスワードを演算して送信 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "サーバ", ip: "チャレンジ送信", icon: "fa-server", color: "var(--secondary)" },
+            center: { name: "クライアント", ip: "演算して応答", icon: "fa-laptop-code", color: "var(--primary)" },
+            right: { name: "レスポンス", ip: "比較・認証", icon: "fa-check-double", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. チャレンジ", desc: "<strong>1. サーバが乱数を送信</strong><br>チャレンジと呼ばれるランダムデータです。", stateClass: "state-1" },
+            { num: 2, btn: "2. 演算", desc: "<strong>2. パスワードと組み合わせて演算</strong><br>クライアント側でレスポンスを作ります。", stateClass: "state-2" },
+            { num: 3, btn: "3. 送信", desc: "<strong>3. レスポンスを返す</strong><br>固定パスワードそのものは送りません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 照合", desc: "<strong>4. サーバが同じ計算で照合</strong><br>一致すれば認証成功です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "Challenge", res: "Response" }
     }
 };

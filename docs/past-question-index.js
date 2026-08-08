@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 88問）
+// 過去問一覧（すべてシミュレーター 90問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -71,10 +71,12 @@ const pastQuestionIndex = [
     { no: 45, format: 'simulator', category: 'vuln', key: 'scap',   source: 'R5秋 午前II問12', title: 'SCAP（脆弱性管理自動化）' },
     { no: 46, format: 'simulator', category: 'vuln', key: 'exploit', source: 'R2秋 午前II問3',  title: 'エクスプロイトコード' },
     { no: 47, format: 'simulator', category: 'vuln', key: 'sbom',   source: 'R6春 午前II問17', title: 'SBOM' },
-    // --- パスワード (3) ---
+    // --- パスワード (5) ---
     { no: 37, format: 'simulator', category: 'password', key: 'pth',   source: 'R5春 午前II問14', title: 'Pass the Hash' },
     { no: 38, format: 'simulator', category: 'password', key: 'spray', source: 'R4秋 午前II問14', title: 'パスワードスプレー攻撃' },
     { no: 88, format: 'simulator', category: 'password', key: 'pwtotal', source: 'H19春 TE情報セキュリティ 午前問46', title: 'パスワード総数（Mⁿ）' },
+    { no: 89, format: 'simulator', category: 'password', key: 'skey', source: 'H22春 午前II問4', title: 'S/Keyワンタイムパスワード' },
+    { no: 90, format: 'simulator', category: 'password', key: 'challenge', source: 'H28秋 高度共通 午前I問13', title: 'チャレンジレスポンス認証' },
     // --- セッション (1) ---
     { no: 39, format: 'simulator', category: 'session', key: 'mitm', source: 'H22春 午前II問13', title: '中間者攻撃（MITM）' },
     // --- DNS (5) ---
