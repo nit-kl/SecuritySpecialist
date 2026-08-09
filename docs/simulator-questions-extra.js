@@ -2338,5 +2338,38 @@ const questionDataExtra = {
             { num: 4, btn: "4. 照合", desc: "<strong>4. サーバが同じ計算で照合</strong><br>一致すれば認証成功です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "Challenge", res: "Response" }
+    },
+    irisauth: {
+        source: "情報処理安全確保支援士試験・H30春・午前II問9",
+        diagramTitle: "認証デバイスと虹彩認証（シミュレーター）",
+        text: "認証デバイスに関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "USB メモリにデジタル証明書を組み込み，認証デバイスとする場合は，その USB メモリを接続する PC の MAC アドレスを組み込む必要がある。", correct: false },
+            { key: "イ", text: "成人の虹彩は，経年変化がなく，虹彩認証では，認証デバイスでのパターン更新がほとんど不要である。", correct: true },
+            { key: "ウ", text: "静電容量方式の指紋認証デバイスは，LED 照明を設置した室内では正常に認証できなくなる可能性が高くなる。", correct: false },
+            { key: "エ", text: "認証に利用する接触型 IC カードは，カード内のコイルの誘導起電力を利用している。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p>バイオメトリクス認証には指紋・掌紋・顔・虹彩・声紋・筆跡などがあります。いずれも経年変化が少ないことが特徴ですが，特に<strong>成人の虹彩は経年変化がなく</strong>，認証デバイスでのパターン更新がほとんど不要です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：証明書を USB に入れる場合に MAC アドレス組込みは必須ではない ❌</li>
+                <li><strong>イ</strong>：成人虹彩は経年変化がなく更新がほぼ不要 ✅</li>
+                <li><strong>ウ</strong>：静電容量方式は照明の影響を受けにくい（光学方式の話に近い）❌</li>
+                <li><strong>エ</strong>：コイルの誘導起電力は主に非接触 IC カード ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "虹彩", ip: "経年変化なし", icon: "fa-eye", color: "var(--secondary)" },
+            center: { name: "認証デバイス", ip: "パターン照合", icon: "fa-fingerprint", color: "var(--primary)" },
+            right: { name: "更新", ip: "ほぼ不要", icon: "fa-rotate", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 特徴", desc: "<strong>1. 生体特徴を登録</strong><br>指紋・虹彩などをテンプレート化します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 虹彩", desc: "<strong>2. 成人の虹彩は安定</strong><br>経年変化がほとんどありません。", stateClass: "state-2" },
+            { num: 3, btn: "3. 照合", desc: "<strong>3. デバイスでパターン照合</strong><br>登録テンプレートと比較します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 運用", desc: "<strong>4. パターン更新はほぼ不要</strong><br>これが虹彩認証の運用上の利点です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "虹彩", res: "認証OK" }
     }
 };

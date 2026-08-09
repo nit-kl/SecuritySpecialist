@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 90問）
+// 過去問一覧（すべてシミュレーター 91問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -26,7 +26,7 @@ const pastQuestionIndex = [
     { no: 20, format: 'simulator', category: 'malware', key: 'cryptojack',  source: 'R7春 午前II問5',   title: 'クリプトジャッキング' },
     { no: 21, format: 'simulator', category: 'malware', key: 'mitb',        source: 'R5秋 午前II問7',   title: 'MITB・トランザクション署名' },
     { no: 36, format: 'simulator', category: 'malware', key: 'rootkit',     source: 'R3秋 午前II問14',  title: 'ルートキット' },
-    // --- 基礎・管理 (21) ---
+    // --- 基礎・管理 (22) ---
     { no: 22, format: 'simulator', category: 'fundamentals', key: 'failsafe', source: 'H31春 高度共通 午前I問16', title: 'フェールセーフ' },
     { no: 59, format: 'simulator', category: 'fundamentals', key: 'riskident', source: 'R7春 午前II問10', title: 'JIS Q 27000 用語（リスク特定）' },
     { no: 60, format: 'simulator', category: 'fundamentals', key: 'riskdetail', source: 'H23秋 午前II問25', title: '詳細リスク分析' },
@@ -48,6 +48,7 @@ const pastQuestionIndex = [
     { no: 85, format: 'simulator', category: 'fundamentals', key: 'fidopasskey', source: 'R6秋 午前II問7', title: 'FIDOパスキーと生体情報' },
     { no: 86, format: 'simulator', category: 'fundamentals', key: 'threedsecure', source: 'R2秋 午前II問9', title: '3Dセキュア' },
     { no: 87, format: 'simulator', category: 'fundamentals', key: 'fidouaf', source: 'R元秋 午前II問1', title: 'FIDO UAF 1.1' },
+    { no: 91, format: 'simulator', category: 'fundamentals', key: 'irisauth', source: 'H30春 午前II問9', title: '認証デバイス（虹彩）' },
     // --- ネットワーク (16) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },
