@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 91問）
+// 過去問一覧（すべてシミュレーター 97問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -26,7 +26,7 @@ const pastQuestionIndex = [
     { no: 20, format: 'simulator', category: 'malware', key: 'cryptojack',  source: 'R7春 午前II問5',   title: 'クリプトジャッキング' },
     { no: 21, format: 'simulator', category: 'malware', key: 'mitb',        source: 'R5秋 午前II問7',   title: 'MITB・トランザクション署名' },
     { no: 36, format: 'simulator', category: 'malware', key: 'rootkit',     source: 'R3秋 午前II問14',  title: 'ルートキット' },
-    // --- 基礎・管理 (22) ---
+    // --- 基礎・管理 (23) ---
     { no: 22, format: 'simulator', category: 'fundamentals', key: 'failsafe', source: 'H31春 高度共通 午前I問16', title: 'フェールセーフ' },
     { no: 59, format: 'simulator', category: 'fundamentals', key: 'riskident', source: 'R7春 午前II問10', title: 'JIS Q 27000 用語（リスク特定）' },
     { no: 60, format: 'simulator', category: 'fundamentals', key: 'riskdetail', source: 'H23秋 午前II問25', title: '詳細リスク分析' },
@@ -49,7 +49,8 @@ const pastQuestionIndex = [
     { no: 86, format: 'simulator', category: 'fundamentals', key: 'threedsecure', source: 'R2秋 午前II問9', title: '3Dセキュア' },
     { no: 87, format: 'simulator', category: 'fundamentals', key: 'fidouaf', source: 'R元秋 午前II問1', title: 'FIDO UAF 1.1' },
     { no: 91, format: 'simulator', category: 'fundamentals', key: 'irisauth', source: 'H30春 午前II問9', title: '認証デバイス（虹彩）' },
-    // --- ネットワーク (16) ---
+    { no: 92, format: 'simulator', category: 'fundamentals', key: 'timingatk', source: 'R7春 午前II問14', title: 'タイミング攻撃対策' },
+    // --- ネットワーク (21) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },
     { no: 25, format: 'simulator', category: 'network', key: 'cache',      source: 'R6春 午前II問20',  title: 'Cache-Control' },
@@ -96,6 +97,11 @@ const pastQuestionIndex = [
     { no: 82, format: 'simulator', category: 'network', key: 'ipsinline', source: 'R6秋 午前II問13', title: 'インライン・アノマリ型IPS' },
     { no: 83, format: 'simulator', category: 'network', key: 'waffp', source: 'R6秋 午前II問12', title: 'WAFのフォールスポジティブ' },
     { no: 84, format: 'simulator', category: 'network', key: 'sandbox', source: 'H29春 午前II問16', title: 'サンドボックスの仕組み' },
+    { no: 93, format: 'simulator', category: 'network', key: 'eaptls', source: 'R3秋 午前II問16', title: 'EAP-TLS（相互認証）' },
+    { no: 94, format: 'simulator', category: 'network', key: 'supplicant', source: 'R6春 午前II問14', title: 'IEEE 802.1Xのサプリカント' },
+    { no: 95, format: 'simulator', category: 'network', key: 'aaaacct', source: 'R6秋 午前II問1', title: 'AAAのAccounting' },
+    { no: 96, format: 'simulator', category: 'network', key: 'samlfeat', source: 'R7春 午前II問2', title: 'SAML認証の特徴' },
+    { no: 97, format: 'simulator', category: 'network', key: 'oasisaml', source: 'R6春 午前II問4', title: 'OASISが策定したSAML' },
     // --- メールセキュリティ (8) ---
     { no: 49, format: 'simulator', category: 'mail', key: 'spf', source: 'R4秋 午前II問15', title: 'SPF ドメイン認証' },
     { no: 50, format: 'simulator', category: 'mail', key: 'ip25b', source: 'R2秋 午前II問17', title: 'IP25B' },

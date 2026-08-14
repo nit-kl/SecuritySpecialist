@@ -1284,7 +1284,7 @@
         <div class="header-content">
             <span class="badge">情報処理安全確保支援士対策</span>
             <h1>過去問シミュレーター &amp; Check! 解説</h1>
-            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 91 問すべてをアニメーション付きシミュレーターで学習できます。</p>
+            <p>DoS/DDoS・Web 脆弱性・マルウェア・ネットワーク・ISMS など、試験範囲をカテゴリ別に整理。過去問 92 問すべてをアニメーション付きシミュレーターで学習できます。</p>
         </div>
     </header>
 
@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（91問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（97問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（91問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（97問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1416,7 +1416,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（22問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（23問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1506,11 +1506,15 @@
                     <span class="btn-meta">問91: H30春 午前II問9</span>
                     <span class="btn-title">認証デバイス（虹彩）</span>
                 </button>
+                <button class="question-tab-btn" onclick="switchQuestion('timingatk', this)">
+                    <span class="btn-meta">問92: R7春 午前II問14</span>
+                    <span class="btn-title">タイミング攻撃対策</span>
+                </button>
                 </div>
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（16問）</summary>
+                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（21問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('vlan', this)">
                     <span class="btn-meta">問23: H31春 午前II問12</span>
@@ -1575,6 +1579,26 @@
                 <button class="question-tab-btn" onclick="switchQuestion('sandbox', this)">
                     <span class="btn-meta">問84: H29春 午前II問16</span>
                     <span class="btn-title">サンドボックスの仕組み</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('eaptls', this)">
+                    <span class="btn-meta">問93: R3秋 午前II問16</span>
+                    <span class="btn-title">EAP-TLS（相互認証）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('supplicant', this)">
+                    <span class="btn-meta">問94: R6春 午前II問14</span>
+                    <span class="btn-title">IEEE 802.1Xのサプリカント</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('aaaacct', this)">
+                    <span class="btn-meta">問95: R6秋 午前II問1</span>
+                    <span class="btn-title">AAAのAccounting</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('samlfeat', this)">
+                    <span class="btn-meta">問96: R7春 午前II問2</span>
+                    <span class="btn-title">SAML認証の特徴</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('oasisaml', this)">
+                    <span class="btn-meta">問97: R6春 午前II問4</span>
+                    <span class="btn-title">OASISが策定したSAML</span>
                 </button>
                 </div>
             </details>
@@ -1753,7 +1777,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（320問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（345問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1793,6 +1817,9 @@
                     <button class="sidebar-link-btn" onclick="scrollToFixedPasswordCheck()">固定式パスワード（3問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToOtpCheck()">ワンタイムパスワード（9問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToBiometricsCheck()">バイオメトリクス認証（3問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToIcCardCheck()">ICカード（5問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToAaaCheck()">RADIUS／Kerberos／802.1X（12問＋確認3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToSsoCheck()">SSO／SAML（8問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1832,22 +1859,22 @@
                     情報処理安全確保支援士試験の学習コンテンツを<strong>3つのカテゴリ</strong>に整理しています。左サイドバーから目的のセクションへジャンプできます。
                 </p>
                 <div class="overview-stats">
-                    <div class="overview-stat"><strong>91</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>320+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
+                    <div class="overview-stat"><strong>345+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
                     <div class="overview-card" onclick="scrollToQuestionIndex()">
                         <div class="overview-card-icon"><i class="fa-solid fa-list-ol"></i></div>
                         <h3>過去問一覧</h3>
-                        <p>過去問 91 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">計 91 問（重複なし）</div>
+                        <p>過去問 92 問すべてをシミュレーター形式で一覧表示。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">計 92 問（重複なし）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全91問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全91問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全97問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全97問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1859,7 +1886,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">142問</div>
+                        <div class="card-meta">173問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1876,9 +1903,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（91問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（97問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 91 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 92 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1886,7 +1913,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（91問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（97問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -3634,6 +3661,232 @@
                 <div id="biometrics-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! ICカード) -->
+            <section class="content-section" id="section-iccard-check">
+                <h2 class="section-title"><i class="fa-solid fa-id-card"></i>基礎知識: Check! 解説（ICカード）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    IC カード認証の種類、耐タンパ性、PKI 活用、攻撃手法、セキュリティ対策を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>IC カードを用いた認証システムにはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>IC カードの耐タンパ性とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>IC カードは PKI においてどのように活用されているのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>IC カードへの攻撃にはどのようなものがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>IC カードのセキュリティを高めるための対策としてどのようなものがあるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-iccard-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">サイドチャネル攻撃の手法であるタイミング攻撃の対策として，最も適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>演算アルゴリズムに処理を追加して，秘密情報の違いによって演算の処理時間に差異が出ないようにする。</span></li>
+                        <li><span class="opt-key">イ</span><span>コンデンサを挿入して，電力消費量が時間的に均一になるようにする。</span></li>
+                        <li><span class="opt-key">ウ</span><span>ハードウェアを自ら診断することによって故障を検出する機構，及び故障を検出したら秘密情報を破壊する機構を設ける。</span></li>
+                        <li><span class="opt-key">エ</span><span>保護層を備えて，内部のデータが不正に書き換えられないようにする。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R7 春・午前Ⅱ 問 14］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>サイドチャネル攻撃は，IC カードや TPM など耐タンパ性を持つ装置から，破壊せずに外部から観測・制御できる情報を使って鍵などの秘密を盗む手法である。タイミング攻撃は，暗号化／復号に要する時間差を精密に測って鍵を推定する。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：処理時間の差異をなくす＝タイミング攻撃対策 ✅</li>
+                            <li><strong>イ</strong>：電力解析対策に近い ❌</li>
+                            <li><strong>ウ</strong>：故障検知・ゼロ化 ❌</li>
+                            <li><strong>エ</strong>：改ざん防止の保護層 ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="iccard-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! RADIUS／Kerberos／802.1X) -->
+            <section class="content-section" id="section-aaa-check">
+                <h2 class="section-title"><i class="fa-solid fa-user-shield"></i>基礎知識: Check! 解説（RADIUS／Kerberos／802.1X）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    RADIUS・Diameter・TACACS、Kerberos、ディレクトリサービス／LDAP、EAP、IEEE 802.1X を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>RADIUS は認証システムとして主にどのような目的で用いられるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>Diameter はどのような認証システムか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>TACACS，TACACS+ はどのような認証システムか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>Kerberos は認証システムとしてどのような基本的な考え方に基づいているか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>Kerberos 認証システムを構成するサーバの役割について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>Kerberos における利用者認証の手順について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>ディレクトリサービスとは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>ディレクトリサービスの導入によってどのような効果が期待できるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>LDAP プロトコルはどのような目的で用いられるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q10】</span>EAP プロトコルはどのような目的で用いられるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q11】</span>IEEE 802.1X とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q12】</span>EAP がサポートする各種認証方式のセキュリティ面での特徴について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-aaa-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">IEEE 802.1X で用いられる EAP-TLS によって実施される認証はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>CHAP を用いたチャレンジレスポンスによる利用者認証</span></li>
+                        <li><span class="opt-key">イ</span><span>事前に登録した共有鍵を用いたサーバ認証と，時刻同期のワンタイムパスワードを用いた利用者認証</span></li>
+                        <li><span class="opt-key">ウ</span><span>デジタル証明書を用いた認証サーバとクライアントの相互認証</span></li>
+                        <li><span class="opt-key">エ</span><span>利用者 ID とパスワードを用いた利用者認証</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R3 秋・午前Ⅱ 問 16］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>EAP-TLS は，サーバとクライアント（サプリカント）がデジタル証明書で相互認証する方式である。EAP は PPP の認証機能を拡張・強化した利用者認証プロトコルであり，無線 LAN や有線 LAN の IEEE 802.1X で広く使われる。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：CHAP によるチャレンジレスポンス ❌</li>
+                            <li><strong>イ</strong>：共有鍵＋時間同期 OTP ❌</li>
+                            <li><strong>ウ</strong>：証明書による相互認証 ✅</li>
+                            <li><strong>エ</strong>：ID／パスワード認証 ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">IEEE 802.1X におけるサプリカントはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>一度の認証で複数のサーバやアプリケーションを利用できる認証システム</span></li>
+                        <li><span class="opt-key">イ</span><span>クライアント側から送信された認証情報を受け取り，認証を行うシステム</span></li>
+                        <li><span class="opt-key">ウ</span><span>クライアント側と認証サーバの仲介役となり，クライアント側から送信された認証情報を受け取り，認証サーバに送信するネットワーク機器</span></li>
+                        <li><span class="opt-key">エ</span><span>認証を要求するクライアント側の装置やソフトウェア</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ 問 14］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>IEEE 802.1X はネットワーク環境でユーザ認証を行う規格である。準拠した認証システムは，クライアントであるサプリカント，アクセスポイントや LAN スイッチなど認証の窓口となるオーセンティケータ，認証サーバ（RADIUS サーバなど）から構成される。RADIUS を用いる場合，オーセンティケータが RADIUS クライアントとなる。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：SSO の説明 ❌</li>
+                            <li><strong>イ</strong>：認証サーバ ❌</li>
+                            <li><strong>ウ</strong>：オーセンティケータ ❌</li>
+                            <li><strong>エ</strong>：サプリカント ✅</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">RADIUS や Diameter が提供する AAA フレームワークの構成要素は，認証（Authentication），認可（Authorization）と，もう一つはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>Accounting</span></li>
+                        <li><span class="opt-key">イ</span><span>Activation</span></li>
+                        <li><span class="opt-key">ウ</span><span>Audit</span></li>
+                        <li><span class="opt-key">エ</span><span>Augmented Reality</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 1］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>RADIUS（Remote Authentication Dial-In User Service）やその後継となる Diameter は，認証（Authentication），認可（Authorization），課金（Accounting）を行うプロトコルである。なお，“diameter”（直径）は，単語の“radius”（半径）から付けられた名称である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="aaa-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! SSO／SAML) -->
+            <section class="content-section" id="section-sso-check">
+                <h2 class="section-title"><i class="fa-solid fa-right-to-bracket"></i>基礎知識: Check! 解説（SSO／SAML）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    シングルサインオンの方式比較、Cookie の制限、SAML／アサーション／Artifact、アイデンティティ管理を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>SSO とはどのような認証システムか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>SSO を導入することによってどのような効果が期待できるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>SSO はどのような方式によって実現されているか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>エージェント型とリバースプロキシ型のメリット・デメリットは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>Cookie を用いた SSO システムにおける制限事項として何があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>SAML，アサーション，Artifact とはそれぞれ何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>SAML を用いた SSO システムはどのような仕組みでユーザを認証するのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>アイデンティティ管理を実現する各システムの概要について説明せよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-sso-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">シングルサインオンの実装方式の一つである SAML 認証の特徴として，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>IdP (Identity Provider) が利用者認証を行い，認証成功後に発行されるアサーションを SP (Service Provider) が検証し，問題がなければクライアントは SP にアクセスできるようになる。</span></li>
+                        <li><span class="opt-key">イ</span><span>Web サーバに導入されたエージェントが認証サーバと連携して利用者認証を行い，クライアントは認証成功後に発行される cookie を使用して SP にアクセスできるようになる。</span></li>
+                        <li><span class="opt-key">ウ</span><span>認証サーバは Kerberos プロトコルを使って利用者認証を行い，クライアントは認証成功後に発行されるチケットを使用して SP にアクセスできるようになる。</span></li>
+                        <li><span class="opt-key">エ</span><span>リバースプロキシで利用者認証が行われ，クライアントは認証成功後にリバースプロキシ経由で SP にアクセスできるようになる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R7 春・午前Ⅱ 問 2］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>SAML によるシングルサインオンシステムは，ユーザのアカウント情報の管理及び認証を行う IdP と，ユーザにサービスを提供する SP によって構成される。IdP が SP からの認証要求によって利用者を認証してアサーションを発行する。SP が発行されたアサーションを検証し，問題がなければクライアントにアクセスを許可する。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：IdP 認証 → アサーション → SP 検証 ✅</li>
+                            <li><strong>イ</strong>：エージェント型（Cookie） ❌</li>
+                            <li><strong>ウ</strong>：Kerberos チケット方式 ❌</li>
+                            <li><strong>エ</strong>：リバースプロキシ型 ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">標準化団体 OASIS が，Web サイトなどを運営するオンラインビジネスパートナー間で認証，属性及び認可の情報を安全に交換するために策定したものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>SAML</span></li>
+                        <li><span class="opt-key">イ</span><span>SOAP</span></li>
+                        <li><span class="opt-key">ウ</span><span>XKMS</span></li>
+                        <li><span class="opt-key">エ</span><span>XML Signature</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ 問 4］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>問題文に該当するのは SAML（Security Assertion Markup Language）である。SAML とは，異なる Web サーバ間において，ユーザ ID・パスワード・公開鍵等の認証情報やアクセス制御情報，属性情報等を安全に交換するためのプロトコルである。XML 関連の標準化団体である OASIS によって策定された。SAML では，認証や認可に関する情報等を格納する XML ベースの証明書（Assertion）の仕様や，Assertion を交換するためのプロトコルを標準化することで，シングルサインオンのための基盤を提供している。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="sso-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -4405,6 +4658,9 @@
     <script src="fixed-password-check-data.js"></script>
     <script src="otp-check-data.js"></script>
     <script src="biometrics-check-data.js"></script>
+    <script src="ic-card-check-data.js"></script>
+    <script src="aaa-check-data.js"></script>
+    <script src="sso-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -8703,6 +8959,9 @@
             renderAccordionList(checkFixedPasswordData, 'accordion-fixed-password-list');
             renderAccordionList(checkOtpData, 'accordion-otp-list');
             renderAccordionList(checkBiometricsData, 'accordion-biometrics-list');
+            renderAccordionList(checkIcCardData, 'accordion-iccard-list');
+            renderAccordionList(checkAaaData, 'accordion-aaa-list');
+            renderAccordionList(checkSsoData, 'accordion-sso-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -8773,6 +9032,9 @@
             renderSimulatorBridgeByKeys('fixed-password-simulator-bridge', ['pwtotal']);
             renderSimulatorBridgeByKeys('otp-simulator-bridge', ['skey', 'challenge']);
             renderSimulatorBridgeByKeys('biometrics-simulator-bridge', ['irisauth']);
+            renderSimulatorBridgeByKeys('iccard-simulator-bridge', ['timingatk']);
+            renderSimulatorBridgeByKeys('aaa-simulator-bridge', ['eaptls', 'supplicant', 'aaaacct']);
+            renderSimulatorBridgeByKeys('sso-simulator-bridge', ['samlfeat', 'oasisaml']);
         }
 
 
@@ -8907,6 +9169,9 @@
             renderAccordionList(checkFixedPasswordData, 'accordion-fixed-password-list');
             renderAccordionList(checkOtpData, 'accordion-otp-list');
             renderAccordionList(checkBiometricsData, 'accordion-biometrics-list');
+            renderAccordionList(checkIcCardData, 'accordion-iccard-list');
+            renderAccordionList(checkAaaData, 'accordion-aaa-list');
+            renderAccordionList(checkSsoData, 'accordion-sso-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9082,6 +9347,18 @@
 
         function scrollToBiometricsCheck() {
             document.getElementById('section-biometrics-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToIcCardCheck() {
+            document.getElementById('section-iccard-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToAaaCheck() {
+            document.getElementById('section-aaa-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToSsoCheck() {
+            document.getElementById('section-sso-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {

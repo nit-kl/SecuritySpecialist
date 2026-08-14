@@ -2371,5 +2371,197 @@ const questionDataExtra = {
             { num: 4, btn: "4. 運用", desc: "<strong>4. パターン更新はほぼ不要</strong><br>これが虹彩認証の運用上の利点です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "虹彩", res: "認証OK" }
+    },
+    timingatk: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問14",
+        diagramTitle: "タイミング攻撃への対策（シミュレーター）",
+        text: "サイドチャネル攻撃の手法であるタイミング攻撃の対策として，最も適切なものはどれか。",
+        options: [
+            { key: "ア", text: "演算アルゴリズムに処理を追加して，秘密情報の違いによって演算の処理時間に差異が出ないようにする。", correct: true },
+            { key: "イ", text: "コンデンサを挿入して，電力消費量が時間的に均一になるようにする。", correct: false },
+            { key: "ウ", text: "ハードウェアを自ら診断することによって故障を検出する機構，及び故障を検出したら秘密情報を破壊する機構を設ける。", correct: false },
+            { key: "エ", text: "保護層を備えて，内部のデータが不正に書き換えられないようにする。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>サイドチャネル攻撃</strong>は，IC カードや TPM など耐タンパ性を持つ装置から，破壊せずに外部から観測・制御できる情報を使って鍵などの秘密を盗む手法です。</p>
+            <p style="margin-top:0.75rem;"><strong>タイミング攻撃</strong>は，暗号化／復号に要する時間差を精密に測って鍵を推定します。したがって，秘密情報の違いで処理時間に差が出ないようにすることが対策です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：処理時間の差異をなくす＝タイミング攻撃対策 ✅</li>
+                <li><strong>イ</strong>：電力解析（電力サイドチャネル）対策に近い ❌</li>
+                <li><strong>ウ</strong>：故障検知・ゼロ化（耐タンパの一形態）❌</li>
+                <li><strong>エ</strong>：改ざん防止の保護層 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "秘密鍵", ip: "演算入力", icon: "fa-key", color: "var(--secondary)" },
+            center: { name: "演算処理", ip: "時間を均一化", icon: "fa-microchip", color: "var(--primary)" },
+            right: { name: "攻撃者", ip: "時間差を観測不可", icon: "fa-user-secret", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 観測", desc: "<strong>1. 攻撃者は処理時間を測る</strong><br>秘密の違いが時間差に現れると推定されます。", stateClass: "state-1" },
+            { num: 2, btn: "2. 原因", desc: "<strong>2. アルゴリズム依存の時間差</strong><br>鍵ビットなどで処理経路が変わると危険です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 対策", desc: "<strong>3. 処理を追加して時間を均一化</strong><br>秘密に依らず処理時間が揃うようにします。", stateClass: "state-3" },
+            { num: 4, btn: "4. 効果", desc: "<strong>4. 時間差からの推測を困難に</strong><br>これがタイミング攻撃対策です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "演算", res: "均一時間" }
+    },
+    eaptls: {
+        source: "情報処理安全確保支援士試験・R3秋・午前II問16",
+        diagramTitle: "IEEE 802.1X の EAP-TLS（シミュレーター）",
+        text: "IEEE 802.1X で用いられる EAP-TLS によって実施される認証はどれか。",
+        options: [
+            { key: "ア", text: "CHAP を用いたチャレンジレスポンスによる利用者認証", correct: false },
+            { key: "イ", text: "事前に登録した共有鍵を用いたサーバ認証と，時刻同期のワンタイムパスワードを用いた利用者認証", correct: false },
+            { key: "ウ", text: "デジタル証明書を用いた認証サーバとクライアントの相互認証", correct: true },
+            { key: "エ", text: "利用者 ID とパスワードを用いた利用者認証", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p><strong>EAP-TLS</strong>は，サーバとクライアント（サプリカント）が<strong>デジタル証明書で相互認証</strong>する方式です。EAP は PPP の認証機能を拡張・強化した利用者認証プロトコルであり，無線 LAN や有線 LAN の IEEE 802.1X で広く使われます。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：CHAP によるチャレンジレスポンス ❌</li>
+                <li><strong>イ</strong>：共有鍵＋時間同期 OTP ❌</li>
+                <li><strong>ウ</strong>：証明書による相互認証 ✅</li>
+                <li><strong>エ</strong>：ID／パスワード認証 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "クライアント", ip: "クライアント証明書", icon: "fa-laptop", color: "var(--secondary)" },
+            center: { name: "EAP-TLS", ip: "相互認証", icon: "fa-certificate", color: "var(--primary)" },
+            right: { name: "認証サーバ", ip: "サーバ証明書", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 接続", desc: "<strong>1. 802.1X で認証開始</strong><br>サプリカントがネットワーク接続を要求します。", stateClass: "state-1" },
+            { num: 2, btn: "2. TLS", desc: "<strong>2. EAP-TLS を選択</strong><br>証明書ベースの認証方式です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 相互", desc: "<strong>3. 双方が証明書を提示</strong><br>サーバとクライアントを互いに確認します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 許可", desc: "<strong>4. 認証成功で通信許可</strong><br>ポートがオープンされます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "証明書", res: "相互OK" }
+    },
+    supplicant: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問14",
+        diagramTitle: "IEEE 802.1X のサプリカント（シミュレーター）",
+        text: "IEEE 802.1X におけるサプリカントはどれか。",
+        options: [
+            { key: "ア", text: "一度の認証で複数のサーバやアプリケーションを利用できる認証システム", correct: false },
+            { key: "イ", text: "クライアント側から送信された認証情報を受け取り，認証を行うシステム", correct: false },
+            { key: "ウ", text: "クライアント側と認証サーバの仲介役となり，クライアント側から送信された認証情報を受け取り，認証サーバに送信するネットワーク機器", correct: false },
+            { key: "エ", text: "認証を要求するクライアント側の装置やソフトウェア", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>IEEE 802.1X はネットワーク環境でユーザ認証を行う規格です。構成要素は次の三つです。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>サプリカント</strong>：認証を要求するクライアント側の装置やソフトウェア ✅（エ）</li>
+                <li><strong>オーセンティケータ</strong>：AP や LAN スイッチなど認証の窓口（ウ）</li>
+                <li><strong>認証サーバ</strong>：RADIUS など実際に認証するシステム（イ）</li>
+            </ul>
+            <p style="margin-top:0.75rem;">RADIUS を用いる場合，オーセンティケータが RADIUS クライアントになります。アは SSO の説明です。</p>
+        `,
+        nodes: {
+            left: { name: "サプリカント", ip: "クライアント", icon: "fa-laptop", color: "var(--secondary)" },
+            center: { name: "オーセンティケータ", ip: "AP／SW", icon: "fa-network-wired", color: "var(--primary)" },
+            right: { name: "認証サーバ", ip: "RADIUS", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 要求", desc: "<strong>1. サプリカントが認証要求</strong><br>クライアント側の装置／ソフトウェアです。", stateClass: "state-1" },
+            { num: 2, btn: "2. 仲介", desc: "<strong>2. オーセンティケータが転送</strong><br>AP やスイッチが窓口になります。", stateClass: "state-2" },
+            { num: 3, btn: "3. 認証", desc: "<strong>3. RADIUS 等が判定</strong><br>認証サーバが可否を決めます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 接続", desc: "<strong>4. 成功ならポート開放</strong><br>ネットワーク利用が可能になります。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "認証要求", res: "許可" }
+    },
+    aaaacct: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問1",
+        diagramTitle: "AAA フレームワーク（シミュレーター）",
+        text: "RADIUS や Diameter が提供する AAA フレームワークの構成要素は，認証（Authentication），認可（Authorization）と，もう一つはどれか。",
+        options: [
+            { key: "ア", text: "Accounting", correct: true },
+            { key: "イ", text: "Activation", correct: false },
+            { key: "ウ", text: "Audit", correct: false },
+            { key: "エ", text: "Augmented Reality", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>RADIUS やその後継の Diameter は，<strong>認証（Authentication）</strong>，<strong>認可（Authorization）</strong>，<strong>課金（Accounting）</strong>を行うプロトコルです。Diameter の名称は radius（半径）に対する diameter（直径）に由来します。</p>
+        `,
+        nodes: {
+            left: { name: "Authentication", ip: "認証", icon: "fa-user-check", color: "var(--secondary)" },
+            center: { name: "Authorization", ip: "認可", icon: "fa-user-lock", color: "var(--primary)" },
+            right: { name: "Accounting", ip: "課金", icon: "fa-file-invoice-dollar", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 認証", desc: "<strong>1. Authentication</strong><br>利用者／端末が本人かを確認します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 認可", desc: "<strong>2. Authorization</strong><br>何を許可するかを決めます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 課金", desc: "<strong>3. Accounting</strong><br>利用時間や通信量を記録します。", stateClass: "state-3" },
+            { num: 4, btn: "4. AAA", desc: "<strong>4. RADIUS／Diameter の枠組み</strong><br>3要素まとめて AAA と呼びます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "AAA", res: "Accounting" }
+    },
+    samlfeat: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問2",
+        diagramTitle: "SAML 認証の特徴（シミュレーター）",
+        text: "シングルサインオンの実装方式の一つである SAML 認証の特徴として，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "IdP (Identity Provider) が利用者認証を行い，認証成功後に発行されるアサーションを SP (Service Provider) が検証し，問題がなければクライアントは SP にアクセスできるようになる。", correct: true },
+            { key: "イ", text: "Web サーバに導入されたエージェントが認証サーバと連携して利用者認証を行い，クライアントは認証成功後に発行される cookie を使用して SP にアクセスできるようになる。", correct: false },
+            { key: "ウ", text: "認証サーバは Kerberos プロトコルを使って利用者認証を行い，クライアントは認証成功後に発行されるチケットを使用して SP にアクセスできるようになる。", correct: false },
+            { key: "エ", text: "リバースプロキシで利用者認証が行われ，クライアントは認証成功後にリバースプロキシ経由で SP にアクセスできるようになる。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>SAML によるシングルサインオンは，アカウント管理と認証を行う <strong>IdP</strong> と，サービスを提供する <strong>SP</strong> で構成されます。IdP が認証してアサーションを発行し，SP がそれを検証してアクセスを許可します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：IdP 認証 → アサーション → SP 検証 ✅</li>
+                <li><strong>イ</strong>：エージェント型（Cookie） ❌</li>
+                <li><strong>ウ</strong>：Kerberos チケット方式 ❌</li>
+                <li><strong>エ</strong>：リバースプロキシ型 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "クライアント", ip: "利用者", icon: "fa-laptop", color: "var(--secondary)" },
+            center: { name: "IdP", ip: "アサーション発行", icon: "fa-id-badge", color: "var(--primary)" },
+            right: { name: "SP", ip: "アサーション検証", icon: "fa-globe", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 要求", desc: "<strong>1. SP へアクセス</strong><br>利用者がサービスを利用しようとします。", stateClass: "state-1" },
+            { num: 2, btn: "2. IdP", desc: "<strong>2. IdP が利用者を認証</strong><br>認証成功後にアサーションを発行します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 検証", desc: "<strong>3. SP がアサーションを検証</strong><br>改ざんや有効期限などを確認します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 許可", desc: "<strong>4. 問題なければアクセス許可</strong><br>これが SAML 認証の流れです。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "認証要求", res: "アサーション" }
+    },
+    oasisaml: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問4",
+        diagramTitle: "OASIS が策定した SAML（シミュレーター）",
+        text: "標準化団体 OASIS が，Web サイトなどを運営するオンラインビジネスパートナー間で認証，属性及び認可の情報を安全に交換するために策定したものはどれか。",
+        options: [
+            { key: "ア", text: "SAML", correct: true },
+            { key: "イ", text: "SOAP", correct: false },
+            { key: "ウ", text: "XKMS", correct: false },
+            { key: "エ", text: "XML Signature", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>SAML</strong>（Security Assertion Markup Language）は，異なる Web サーバ間でユーザ ID・パスワード・公開鍵などの認証情報や，アクセス制御情報・属性情報を安全に交換するためのプロトコルです。XML 関連の標準化団体 <strong>OASIS</strong> が策定しました。認証・認可情報を格納する XML ベースの証明書（Assertion）と，それを交換するプロトコルを標準化し，SSO の基盤を提供します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>SOAP</strong>：XML ベースのメッセージ交換プロトコル ❌</li>
+                <li><strong>XKMS</strong>：XML 鍵管理 ❌</li>
+                <li><strong>XML Signature</strong>：XML 署名 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "OASIS", ip: "標準化団体", icon: "fa-building", color: "var(--secondary)" },
+            center: { name: "SAML", ip: "認証・属性・認可", icon: "fa-file-code", color: "var(--primary)" },
+            right: { name: "パートナー", ip: "安全に交換", icon: "fa-handshake", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. OASIS", desc: "<strong>1. OASIS が標準を策定</strong><br>オンラインパートナー間の情報交換が目的です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 対象", desc: "<strong>2. 認証・属性・認可</strong><br>これらを安全にやり取りします。", stateClass: "state-2" },
+            { num: 3, btn: "3. Assertion", desc: "<strong>3. XML のアサーション</strong><br>認証結果などを格納します。", stateClass: "state-3" },
+            { num: 4, btn: "4. SSO", desc: "<strong>4. シングルサインオンの基盤</strong><br>該当するのは SAML です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "交換", res: "SAML" }
     }
 };
