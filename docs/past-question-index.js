@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 97問）
+// 過去問一覧（すべてシミュレーター 99問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -50,7 +50,7 @@ const pastQuestionIndex = [
     { no: 87, format: 'simulator', category: 'fundamentals', key: 'fidouaf', source: 'R元秋 午前II問1', title: 'FIDO UAF 1.1' },
     { no: 91, format: 'simulator', category: 'fundamentals', key: 'irisauth', source: 'H30春 午前II問9', title: '認証デバイス（虹彩）' },
     { no: 92, format: 'simulator', category: 'fundamentals', key: 'timingatk', source: 'R7春 午前II問14', title: 'タイミング攻撃対策' },
-    // --- ネットワーク (21) ---
+    // --- ネットワーク (23) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },
     { no: 25, format: 'simulator', category: 'network', key: 'cache',      source: 'R6春 午前II問20',  title: 'Cache-Control' },
@@ -102,6 +102,8 @@ const pastQuestionIndex = [
     { no: 95, format: 'simulator', category: 'network', key: 'aaaacct', source: 'R6秋 午前II問1', title: 'AAAのAccounting' },
     { no: 96, format: 'simulator', category: 'network', key: 'samlfeat', source: 'R7春 午前II問2', title: 'SAML認証の特徴' },
     { no: 97, format: 'simulator', category: 'network', key: 'oasisaml', source: 'R6春 午前II問4', title: 'OASISが策定したSAML' },
+    { no: 98, format: 'simulator', category: 'network', key: 'oauthdef', source: 'R7春 午前II問16', title: 'OAuth 2.0の目的（認可）' },
+    { no: 99, format: 'simulator', category: 'network', key: 'oauthtoken', source: 'R6秋 午前II問16', title: 'OAuth 2.0のトークン発行' },
     // --- メールセキュリティ (8) ---
     { no: 49, format: 'simulator', category: 'mail', key: 'spf', source: 'R4秋 午前II問15', title: 'SPF ドメイン認証' },
     { no: 50, format: 'simulator', category: 'mail', key: 'ip25b', source: 'R2秋 午前II問17', title: 'IP25B' },

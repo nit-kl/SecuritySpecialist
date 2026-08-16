@@ -2563,5 +2563,71 @@ const questionDataExtra = {
             { num: 4, btn: "4. SSO", desc: "<strong>4. シングルサインオンの基盤</strong><br>該当するのは SAML です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "交換", res: "SAML" }
+    },
+    oauthdef: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問16",
+        diagramTitle: "OAuth 2.0 の目的（シミュレーター）",
+        text: "OAuth 2.0 に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "認可を行うためのプロトコルであり，認可サーバが，アクセスしてきた者が利用者（リソースオーナー）本人であるかどうかを確認するためのものである。", correct: false },
+            { key: "イ", text: "認可を行うためのプロトコルであり，認可サーバが，利用者（リソースオーナー）の許可を得て，サービス（クライアント）に対し，適切な権限を付与するためのものである。", correct: true },
+            { key: "ウ", text: "認証を行うためのプロトコルであり，認証サーバが，アクセスしてきた者が利用者（リソースオーナー）本人であるかどうかを確認するためのものである。", correct: false },
+            { key: "エ", text: "認証を行うためのプロトコルであり，認証サーバが，利用者（リソースオーナー）の許可を得て，サービス（クライアント）に対し，適切な権限を付与するためのものである。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p>OAuth 2.0 は，信頼関係にある複数のサービス間で，セキュアに<strong>認可情報</strong>をやり取りする仕組み（API）を提供します。認可サーバがリソースオーナーの許可を得て，クライアントにアクセストークンを発行し権限を付与します。本人確認（認証）が主目的ではありません。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：認可プロトコルだが，本人確認が目的ではない ❌</li>
+                <li><strong>イ</strong>：認可＋リソースオーナーの許可でクライアントへ権限付与 ✅</li>
+                <li><strong>ウ</strong>：認証プロトコルではない ❌</li>
+                <li><strong>エ</strong>：認証プロトコルではない ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "リソースオーナー", ip: "許可する", icon: "fa-user", color: "var(--secondary)" },
+            center: { name: "認可サーバ", ip: "トークン発行", icon: "fa-key", color: "var(--primary)" },
+            right: { name: "クライアント", ip: "権限を付与", icon: "fa-mobile-screen", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 認可", desc: "<strong>1. OAuth 2.0 は認可プロトコル</strong><br>認証（本人確認）が主目的ではありません。", stateClass: "state-1" },
+            { num: 2, btn: "2. 許可", desc: "<strong>2. リソースオーナーが許可</strong><br>どの範囲のアクセスを認めるかを決めます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 発行", desc: "<strong>3. 認可サーバがトークン発行</strong><br>クライアントへ権限を付与します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 利用", desc: "<strong>4. リソースサーバの API を利用</strong><br>限定されたアクセスが可能になります。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "許可", res: "トークン" }
+    },
+    oauthtoken: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問16",
+        diagramTitle: "OAuth 2.0 のアクセストークン発行（シミュレーター）",
+        text: "利用者Aが所有するリソースBが，WebサービスC上にある。OAuth 2.0において，利用者Aの認可の下，WebサービスDからリソースBへの限定されたアクセスを可能にするときのプロトコルの動作はどれか。ここでWebサービスCは，認可サーバを兼ねているものとする。",
+        options: [
+            { key: "ア", text: "Web サービス C が，アクセストークンを発行する。", correct: true },
+            { key: "イ", text: "Web サービス C が，利用者 A のデジタル証明書を Web サービス D に送信する。", correct: false },
+            { key: "ウ", text: "Web サービス D が，アクセストークンを発行する。", correct: false },
+            { key: "エ", text: "Web サービス D が，利用者 A のデジタル証明書を Web サービス C に送信する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>本問では Web サービス C がリソースサーバかつ認可サーバ，Web サービス D がクライアント，利用者 A がリソースオーナーです。利用者 A の認可の下で D が C 上のリソース B へ限定アクセスするとき，<strong>C が D にアクセストークンを発行</strong>します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：認可サーバ兼リソースサーバ C がトークン発行 ✅</li>
+                <li><strong>イ</strong>：デジタル証明書の送信ではない ❌</li>
+                <li><strong>ウ</strong>：クライアント D はトークンを発行しない ❌</li>
+                <li><strong>エ</strong>：証明書の送信ではない ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "利用者A", ip: "リソースオーナー", icon: "fa-user", color: "var(--secondary)" },
+            center: { name: "WebサービスC", ip: "RS＋認可サーバ", icon: "fa-server", color: "var(--primary)" },
+            right: { name: "WebサービスD", ip: "クライアント", icon: "fa-globe", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 役割", desc: "<strong>1. C＝リソースサーバ兼認可サーバ</strong><br>D はクライアント，A はリソースオーナーです。", stateClass: "state-1" },
+            { num: 2, btn: "2. 許可", desc: "<strong>2. 利用者 A が認可</strong><br>D による限定アクセスを認めます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 発行", desc: "<strong>3. C がアクセストークンを発行</strong><br>D に権限が付与されます。", stateClass: "state-3" },
+            { num: 4, btn: "4. アクセス", desc: "<strong>4. D がリソース B へ限定アクセス</strong><br>デジタル証明書の受け渡しではありません。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "認可", res: "トークン" }
     }
 };

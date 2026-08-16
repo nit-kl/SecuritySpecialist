@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（97問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（99問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（97問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（99問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1514,7 +1514,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（21問）</summary>
+                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（23問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('vlan', this)">
                     <span class="btn-meta">問23: H31春 午前II問12</span>
@@ -1599,6 +1599,14 @@
                 <button class="question-tab-btn" onclick="switchQuestion('oasisaml', this)">
                     <span class="btn-meta">問97: R6春 午前II問4</span>
                     <span class="btn-title">OASISが策定したSAML</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('oauthdef', this)">
+                    <span class="btn-meta">問98: R7春 午前II問16</span>
+                    <span class="btn-title">OAuth 2.0の目的（認可）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('oauthtoken', this)">
+                    <span class="btn-meta">問99: R6秋 午前II問16</span>
+                    <span class="btn-title">OAuth 2.0のトークン発行</span>
                 </button>
                 </div>
             </details>
@@ -1777,7 +1785,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（345問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（347問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1820,6 +1828,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToIcCardCheck()">ICカード（5問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToAaaCheck()">RADIUS／Kerberos／802.1X（12問＋確認3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToSsoCheck()">SSO／SAML（8問＋確認2問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToOauthCheck()">ID連携／OAuth（2問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1860,7 +1869,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>345+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>347+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1873,8 +1882,8 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全97問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全97問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全99問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全99問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1886,7 +1895,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">173問</div>
+                        <div class="card-meta">177問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1903,7 +1912,7 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（97問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（99問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
                     過去問 92 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
@@ -1913,7 +1922,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（97問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（99問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -3887,6 +3896,79 @@
                 <div id="sso-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! ID連携／OAuth) -->
+            <section class="content-section" id="section-oauth-check">
+                <h2 class="section-title"><i class="fa-solid fa-share-nodes"></i>基礎知識: Check! 解説（ID連携／OAuth）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    ID連携の考え方と，OAuth 2.0（認可）および OpenID Connect（認証）の違いを確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>ID連携とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>OAuth と OpenID Connect について説明せよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-oauth-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">OAuth 2.0 に関する記述のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>認可を行うためのプロトコルであり，認可サーバが，アクセスしてきた者が利用者（リソースオーナー）本人であるかどうかを確認するためのものである。</span></li>
+                        <li><span class="opt-key">イ</span><span>認可を行うためのプロトコルであり，認可サーバが，利用者（リソースオーナー）の許可を得て，サービス（クライアント）に対し，適切な権限を付与するためのものである。</span></li>
+                        <li><span class="opt-key">ウ</span><span>認証を行うためのプロトコルであり，認証サーバが，アクセスしてきた者が利用者（リソースオーナー）本人であるかどうかを確認するためのものである。</span></li>
+                        <li><span class="opt-key">エ</span><span>認証を行うためのプロトコルであり，認証サーバが，利用者（リソースオーナー）の許可を得て，サービス（クライアント）に対し，適切な権限を付与するためのものである。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R7 春・午前Ⅱ 問 16］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>OAuth 2.0 は，信頼関係にある複数のサービス間で，セキュアに認可情報をやり取りする仕組み（API）を提供する。OAuth 2.0 の API を提供しているサービスを「リソースサーバ」と呼ぶ。一方，リソースサーバが提供する API を利用するサービスを「クライアント」と呼ぶ。また，認可情報を付与する利用者を「リソースオーナー」，リソースオーナーの許可を得てクライアントに対してアクセストークンを発行して権限を付与するサーバを「認可サーバ」と呼ぶ。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：認可プロトコルだが，本人確認が目的ではない ❌</li>
+                            <li><strong>イ</strong>：認可＋リソースオーナーの許可でクライアントへ権限付与 ✅</li>
+                            <li><strong>ウ</strong>：認証プロトコルではない ❌</li>
+                            <li><strong>エ</strong>：認証プロトコルではない ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>イ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">利用者Aが所有するリソースBが，WebサービスC上にある。OAuth 2.0において，利用者Aの認可の下，WebサービスDからリソースBへの限定されたアクセスを可能にするときのプロトコルの動作はどれか。ここでWebサービスCは，認可サーバを兼ねているものとする。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>Web サービス C が，アクセストークンを発行する。</span></li>
+                        <li><span class="opt-key">イ</span><span>Web サービス C が，利用者 A のデジタル証明書を Web サービス D に送信する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>Web サービス D が，アクセストークンを発行する。</span></li>
+                        <li><span class="opt-key">エ</span><span>Web サービス D が，利用者 A のデジタル証明書を Web サービス C に送信する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 16］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>OAuth 2.0 は，信頼関係にある複数のサービス間で，セキュアに認可情報をやり取りする仕組み（API）を提供する。本問では Web サービス C がリソースサーバかつ認可サーバ，Web サービス D がクライアント，利用者 A がリソースオーナーである。利用者 A の認可の下，Web サービス D が Web サービス C 上のリソース B への限定的なアクセス権を取得しようとする際には，Web サービス C が Web サービス D に対してアクセストークンを発行する。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>ア</strong>：認可サーバ兼リソースサーバ C がトークン発行 ✅</li>
+                            <li><strong>イ</strong>：デジタル証明書の送信ではない ❌</li>
+                            <li><strong>ウ</strong>：クライアント D はトークンを発行しない ❌</li>
+                            <li><strong>エ</strong>：証明書の送信ではない ❌</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="oauth-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -4661,6 +4743,7 @@
     <script src="ic-card-check-data.js"></script>
     <script src="aaa-check-data.js"></script>
     <script src="sso-check-data.js"></script>
+    <script src="oauth-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -8962,6 +9045,7 @@
             renderAccordionList(checkIcCardData, 'accordion-iccard-list');
             renderAccordionList(checkAaaData, 'accordion-aaa-list');
             renderAccordionList(checkSsoData, 'accordion-sso-list');
+            renderAccordionList(checkOauthData, 'accordion-oauth-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9035,6 +9119,7 @@
             renderSimulatorBridgeByKeys('iccard-simulator-bridge', ['timingatk']);
             renderSimulatorBridgeByKeys('aaa-simulator-bridge', ['eaptls', 'supplicant', 'aaaacct']);
             renderSimulatorBridgeByKeys('sso-simulator-bridge', ['samlfeat', 'oasisaml']);
+            renderSimulatorBridgeByKeys('oauth-simulator-bridge', ['oauthdef', 'oauthtoken']);
         }
 
 
@@ -9172,6 +9257,7 @@
             renderAccordionList(checkIcCardData, 'accordion-iccard-list');
             renderAccordionList(checkAaaData, 'accordion-aaa-list');
             renderAccordionList(checkSsoData, 'accordion-sso-list');
+            renderAccordionList(checkOauthData, 'accordion-oauth-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9359,6 +9445,10 @@
 
         function scrollToSsoCheck() {
             document.getElementById('section-sso-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToOauthCheck() {
+            document.getElementById('section-oauth-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {
