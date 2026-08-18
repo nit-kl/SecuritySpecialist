@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 99問）
+// 過去問一覧（すべてシミュレーター 107問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -26,7 +26,7 @@ const pastQuestionIndex = [
     { no: 20, format: 'simulator', category: 'malware', key: 'cryptojack',  source: 'R7春 午前II問5',   title: 'クリプトジャッキング' },
     { no: 21, format: 'simulator', category: 'malware', key: 'mitb',        source: 'R5秋 午前II問7',   title: 'MITB・トランザクション署名' },
     { no: 36, format: 'simulator', category: 'malware', key: 'rootkit',     source: 'R3秋 午前II問14',  title: 'ルートキット' },
-    // --- 基礎・管理 (23) ---
+    // --- 基礎・管理 (31) ---
     { no: 22, format: 'simulator', category: 'fundamentals', key: 'failsafe', source: 'H31春 高度共通 午前I問16', title: 'フェールセーフ' },
     { no: 59, format: 'simulator', category: 'fundamentals', key: 'riskident', source: 'R7春 午前II問10', title: 'JIS Q 27000 用語（リスク特定）' },
     { no: 60, format: 'simulator', category: 'fundamentals', key: 'riskdetail', source: 'H23秋 午前II問25', title: '詳細リスク分析' },
@@ -50,6 +50,14 @@ const pastQuestionIndex = [
     { no: 87, format: 'simulator', category: 'fundamentals', key: 'fidouaf', source: 'R元秋 午前II問1', title: 'FIDO UAF 1.1' },
     { no: 91, format: 'simulator', category: 'fundamentals', key: 'irisauth', source: 'H30春 午前II問9', title: '認証デバイス（虹彩）' },
     { no: 92, format: 'simulator', category: 'fundamentals', key: 'timingatk', source: 'R7春 午前II問14', title: 'タイミング攻撃対策' },
+    { no: 100, format: 'simulator', category: 'fundamentals', key: 'ctrmode', source: 'R5春 午前II問7', title: 'CTRモード' },
+    { no: 101, format: 'simulator', category: 'fundamentals', key: 'hashcol', source: 'R5春 午前II問4', title: '衝突発見困難性' },
+    { no: 102, format: 'simulator', category: 'fundamentals', key: 'cryptrec', source: 'R4春 午前II問10', title: 'CRYPTRECの活動' },
+    { no: 103, format: 'simulator', category: 'fundamentals', key: 'qcrypto', source: 'R6秋 午前II問9', title: '量子暗号の特徴' },
+    { no: 104, format: 'simulator', category: 'fundamentals', key: 'pqc', source: 'R6秋 午前II問5', title: 'PQC（耐量子暗号）' },
+    { no: 105, format: 'simulator', category: 'fundamentals', key: 'fwdsec', source: 'R4秋 午前II問8', title: '前方秘匿性' },
+    { no: 106, format: 'simulator', category: 'fundamentals', key: 'macmsg', source: 'R6春 午前II問2', title: 'MACと完全性' },
+    { no: 107, format: 'simulator', category: 'fundamentals', key: 'sha512256', source: 'R7春 午前II問3', title: 'SHA-512/256' },
     // --- ネットワーク (23) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },

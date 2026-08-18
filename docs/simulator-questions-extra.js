@@ -2629,5 +2629,238 @@ const questionDataExtra = {
             { num: 4, btn: "4. アクセス", desc: "<strong>4. D がリソース B へ限定アクセス</strong><br>デジタル証明書の受け渡しではありません。", stateClass: "state-4" }
         ],
         packetLabels: { req: "認可", res: "トークン" }
+    },
+    ctrmode: {
+        source: "情報処理安全確保支援士試験・R5春・午前II問7",
+        diagramTitle: "CTR モード（シミュレーター）",
+        text: "ブロック暗号の暗号利用モードの一つである CTR (Counter) モードに関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "暗号化と復号の処理において，出力は，入力されたブロックと鍵ストリームとの排他的論理和である。", correct: true },
+            { key: "イ", text: "暗号化の処理において，平文のデータ長がブロック長の倍数でないときにパディングが必要である。", correct: false },
+            { key: "ウ", text: "ビット誤りがある暗号文を復号すると，ビット誤りのあるブロック全体と次のブロックの対応するビットが平文ではビット誤りになる。", correct: false },
+            { key: "エ", text: "複数ブロックの暗号化の処理は並列に実行できないが，複数ブロックの復号の処理は並列に実行できる。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>CTR モードは，nonce と 1 ずつ増加するカウンタから成る鍵ストリームを暗号化し，それと入力された平文ブロックとの<strong>排他的論理和（XOR）</strong>で暗号ブロックを生成します。各ブロックが独立なため，暗号化・復号ともに並列処理できます。パディングは必須ではありません。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：入力ブロックと鍵ストリームの XOR ✅</li>
+                <li><strong>イ</strong>：パディング必須ではない ❌</li>
+                <li><strong>ウ</strong>：CBC 等の誤り伝搬の説明に近い ❌</li>
+                <li><strong>エ</strong>：暗号化も復号も並列可能 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "カウンタ", ip: "nonce＋連番", icon: "fa-hashtag", color: "var(--secondary)" },
+            center: { name: "鍵ストリーム", ip: "ブロック暗号", icon: "fa-lock", color: "var(--primary)" },
+            right: { name: "XOR", ip: "平文／暗号文", icon: "fa-code-compare", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. カウンタ", desc: "<strong>1. nonce とカウンタを用意</strong><br>ブロックごとに 1 ずつ増やします。", stateClass: "state-1" },
+            { num: 2, btn: "2. 暗号化", desc: "<strong>2. カウンタをブロック暗号で暗号化</strong><br>鍵ストリームを生成します。", stateClass: "state-2" },
+            { num: 3, btn: "3. XOR", desc: "<strong>3. 平文と XOR</strong><br>暗号化も復号も同じ演算です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 並列", desc: "<strong>4. 各ブロックは独立</strong><br>暗号化・復号とも並列にできます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "カウンタ", res: "XOR" }
+    },
+    hashcol: {
+        source: "情報処理安全確保支援士試験・R5春・午前II問4",
+        diagramTitle: "衝突発見困難性（シミュレーター）",
+        text: "ハッシュ関数の性質の一つである衝突発見困難性に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "SHA-256 の衝突発見困難性を示す，ハッシュ値が一致する二つの元のメッセージの発見に要する最大の計算量は，256 の 2 乗である。", correct: false },
+            { key: "イ", text: "SHA-256 の衝突発見困難性を示す，ハッシュ値の元のメッセージの発見に要する最大の計算量は，2 の 256 乗である。", correct: false },
+            { key: "ウ", text: "衝突発見困難性とは，ハッシュ値が与えられたときに，元のメッセージの発見に要する計算量が大きいことによる，発見の困難性のことである。", correct: false },
+            { key: "エ", text: "衝突発見困難性とは，ハッシュ値が一致する二つの元のメッセージの発見に要する計算量が大きいことによる，発見の困難性のことである。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>衝突発見困難性は，同一ハッシュ値を生成する異なる 2 つのデータ (x, x') を求めることが計算量的に困難であることです。SHA-256 では誕生日のパラドックスにより，平均して 2<sup>128</sup> 程度です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：256<sup>2</sup> ではない。2<sup>128</sup> 程度 ❌</li>
+                <li><strong>イ</strong>：原像計算（一方向性）の計算量の話に近い ❌</li>
+                <li><strong>ウ</strong>：原像計算困難性（一方向性） ❌</li>
+                <li><strong>エ</strong>：衝突＝同じハッシュの異なる 2 メッセージ ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "メッセージ x", ip: "入力1", icon: "fa-file-lines", color: "var(--secondary)" },
+            center: { name: "H(x)=H(x')", ip: "衝突", icon: "fa-hashtag", color: "var(--primary)" },
+            right: { name: "メッセージ x'", ip: "入力2", icon: "fa-file-lines", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 定義", desc: "<strong>1. 衝突＝同じハッシュの異なる入力</strong><br>H(x) = H(x') かつ x ≠ x' です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 困難性", desc: "<strong>2. そのような組を見つけるのが困難</strong><br>これが衝突発見困難性です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 誕生日", desc: "<strong>3. n ビットなら約 2<sup>n/2</sup></strong><br>SHA-256 では約 2<sup>128</sup> です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 区別", desc: "<strong>4. 原像計算困難性とは別</strong><br>ハッシュから元データを求める話ではありません。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "x, x'", res: "同じハッシュ" }
+    },
+    cryptrec: {
+        source: "情報処理安全確保支援士試験・R4春・午前II問10",
+        diagramTitle: "CRYPTREC の活動（シミュレーター）",
+        text: "CRYPTREC の主な活動内容はどれか。",
+        options: [
+            { key: "ア", text: "暗号技術の技術的検討並びに国際競争力の向上及び運用面での安全性向上に関する検討を行う。", correct: true },
+            { key: "イ", text: "情報セキュリティ政策に係る基本戦略の立案，官民における統一的，横断的な情報セキュリティ政策の推進に係る企画などを行う。", correct: false },
+            { key: "ウ", text: "組織の情報セキュリティマネジメントシステムについて評価し認証する制度を運用する。", correct: false },
+            { key: "エ", text: "認証機関から貸与された暗号モジュール試験報告書作成支援ツールを用いて暗号モジュールの安全性についての評価試験を行う。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>CRYPTREC は電子政府推奨暗号の安全性を評価・監視し，適切な実装法・運用法を調査・検討するプロジェクトです。暗号技術評価委員会（技術的検討）と暗号技術活用委員会（国際競争力・運用面の安全性）の 2 委員会体制です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>イ</strong>：NISC 等の政策立案 ❌</li>
+                <li><strong>ウ</strong>：ISMS 認証 ❌</li>
+                <li><strong>エ</strong>：JCMVP 等のモジュール試験 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "評価委員会", ip: "技術的検討", icon: "fa-microscope", color: "var(--secondary)" },
+            center: { name: "CRYPTREC", ip: "推奨暗号", icon: "fa-landmark", color: "var(--primary)" },
+            right: { name: "活用委員会", ip: "運用・競争力", icon: "fa-gears", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 目的", desc: "<strong>1. 電子政府推奨暗号の評価・監視</strong><br>実装法・運用法も調査します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 評価", desc: "<strong>2. 暗号技術評価委員会</strong><br>安全性の技術的検討です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 活用", desc: "<strong>3. 暗号技術活用委員会</strong><br>国際競争力と運用面の安全性です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 該当", desc: "<strong>4. アの記述が活動内容</strong><br>政策立案や ISMS 認証ではありません。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "評価", res: "推奨暗号" }
+    },
+    qcrypto: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問9",
+        diagramTitle: "量子暗号の特徴（シミュレーター）",
+        text: "量子暗号の特徴として，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "暗号化と復号の処理を，量子コンピュータを用いて行うことができるので，従来のコンピュータでの処理に比べて大量のデータの秘匿を短時間で実現できる。", correct: false },
+            { key: "イ", text: "共通鍵暗号方式であり，従来の情報の取扱量の最小単位であるビットの代わりに量子ビットを用いることによって，高速なデータ送受信が実現できる。", correct: false },
+            { key: "ウ", text: "量子雑音を用いて共通鍵を生成し，公開鍵暗号方式で共有することによって，解読が困難な秘匿通信が実現できる。", correct: false },
+            { key: "エ", text: "量子通信路を用いて安全に共有した乱数列を使い捨ての暗号鍵として用いることによって，原理的に第三者に解読されない秘匿通信が実現できる。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>量子暗号は量子力学に基づく共通鍵暗号の一種で，光ファイバーなどの量子通信路を通じて光子で鍵を配送します。盗聴すると光子が正常に届かなくなり検知できます。共有した乱数列を使い捨ての鍵として用います。</p>
+        `,
+        nodes: {
+            left: { name: "送信者", ip: "光子で鍵配送", icon: "fa-paper-plane", color: "var(--secondary)" },
+            center: { name: "量子通信路", ip: "盗聴を検知", icon: "fa-wave-square", color: "var(--primary)" },
+            right: { name: "受信者", ip: "使い捨て鍵", icon: "fa-inbox", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. QKD", desc: "<strong>1. 量子通信路で鍵を共有</strong><br>光子で乱数列を配送します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 検知", desc: "<strong>2. 盗聴は状態を乱す</strong><br>受信側で異常を検知できます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 鍵", desc: "<strong>3. 乱数列を使い捨て鍵に</strong><br>ワンタイムパッド的に使います。", stateClass: "state-3" },
+            { num: 4, btn: "4. 秘匿", desc: "<strong>4. 原理的に解読されない通信</strong><br>量子コンピュータで高速暗号化する話ではありません。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "光子", res: "鍵共有" }
+    },
+    pqc: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問5",
+        diagramTitle: "PQC（シミュレーター）",
+        text: "PQC (Post-Quantum Cryptography) はどれか。",
+        options: [
+            { key: "ア", text: "量子アニーリングマシンを用いて，回路サイズ，消費電力，処理速度を飛躍的に向上させた実装性能をもつ暗号方式", correct: false },
+            { key: "イ", text: "量子コンピュータを用いて効率的に素因数分解を行うアルゴリズムによって，暗号を解読する技術", correct: false },
+            { key: "ウ", text: "量子コンピュータを用いても解読が困難であり，安全性を保つことができる暗号方式", correct: true },
+            { key: "エ", text: "量子通信路を用いた鍵配送システムを利用し，大容量のデータを高速に送受信する技術", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>PQC は耐量子計算機暗号で，量子コンピュータによる攻撃にも安全性を保つ暗号方式です。Shor のアルゴリズム等で既存の公開鍵暗号が危殆化し得るため，CRYPTREC でも動向が調査されています。イは解読技術，エは量子鍵配送（量子暗号）の説明に近いです。</p>
+        `,
+        nodes: {
+            left: { name: "量子コンピュータ", ip: "Shor 等", icon: "fa-microchip", color: "var(--secondary)" },
+            center: { name: "PQC", ip: "耐量子", icon: "fa-shield-halved", color: "var(--primary)" },
+            right: { name: "RSA 等", ip: "危殆化の恐れ", icon: "fa-unlock", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 脅威", desc: "<strong>1. 量子コンピュータで既存公開鍵が危ない</strong><br>素因数分解などが効率的になります。", stateClass: "state-1" },
+            { num: 2, btn: "2. PQC", desc: "<strong>2. それでも安全な方式を使う</strong><br>従来型コンピュータ上で実装します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 調査", desc: "<strong>3. CRYPTREC 等で動向調査</strong><br>標準化・移行が進められています。", stateClass: "state-3" },
+            { num: 4, btn: "4. 区別", desc: "<strong>4. QKD や解読アルゴリズムではない</strong><br>ウが定義です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "量子攻撃", res: "耐える" }
+    },
+    fwdsec: {
+        source: "情報処理安全確保支援士試験・R4秋・午前II問8",
+        diagramTitle: "前方秘匿性（シミュレーター）",
+        text: "前方秘匿性 (Forward Secrecy) の説明として，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "鍵交換に使った秘密鍵が漏えいしたとしても，それより前の暗号文は解読されない。", correct: true },
+            { key: "イ", text: "時系列データをチェーンの形で結び，かつ，ネットワーク上の複数のノードで共有するので，データを改ざんできない。", correct: false },
+            { key: "ウ", text: "対となる二つの鍵の片方の鍵で暗号化したデータは，もう片方の鍵でだけ復号できる。", correct: false },
+            { key: "エ", text: "データに非可逆処理をして生成される固定長のハッシュ値からは，元のデータを推測できない。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>前方秘匿性は，鍵交換に使った秘密鍵が漏れても，それより前の暗号文は解読されない性質です。セッション鍵を使い捨てにし，長期鍵から過去の鍵を導けないようにします。イはブロックチェーン，ウは公開鍵暗号，エはハッシュの一方向性です。</p>
+        `,
+        nodes: {
+            left: { name: "過去の暗号文", ip: "解読されない", icon: "fa-file-shield", color: "var(--secondary)" },
+            center: { name: "使い捨て鍵", ip: "ECDHE 等", icon: "fa-key", color: "var(--primary)" },
+            right: { name: "長期秘密鍵", ip: "後から漏洩", icon: "fa-unlock-keyhole", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 性質", desc: "<strong>1. 長期鍵が漏れても過去は守れ</strong><br>これが前方秘匿性です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 手段", desc: "<strong>2. セッション鍵は使い捨て</strong><br>長期鍵から過去鍵を導かない。", stateClass: "state-2" },
+            { num: 3, btn: "3. 例", desc: "<strong>3. TLS の ECDHE など</strong><br>毎回エフェメラルな DH を使います。", stateClass: "state-3" },
+            { num: 4, btn: "4. 非該当", desc: "<strong>4. ブロックチェーンやハッシュではない</strong><br>アが正解です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "鍵漏洩", res: "過去は安全" }
+    },
+    macmsg: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問2",
+        diagramTitle: "MAC の性質（シミュレーター）",
+        text: "送信者から受信者にメッセージ認証符号（MAC：Message Authentication Code）を付与したメッセージを送り，次に受信者が第三者に転送した。そのときのMACに関する記述のうち，適切なものはどれか。ここで，共通鍵は送信者と受信者だけが知っており，送信者と受信者のそれぞれの公開鍵は第三者を含めた 3 名が知っているものとする。",
+        options: [
+            { key: "ア", text: "MAC は，送信者がメッセージと共通鍵を用いて生成する。MAC を用いると，受信者がメッセージの完全性を確認できる。", correct: true },
+            { key: "イ", text: "MAC は，送信者がメッセージと共通鍵を用いて生成する。MAC を用いると，第三者が送信者の真正性を確認できる。", correct: false },
+            { key: "ウ", text: "MAC は，送信者がメッセージと受信者の公開鍵を用いて生成する。MAC を用いると，第三者がメッセージの完全性を確認できる。", correct: false },
+            { key: "エ", text: "MAC は，送信者がメッセージと送信者の公開鍵を用いて生成する。MAC を用いると，受信者が送信者の真正性を確認できる。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>MAC は共通鍵を用いて生成する固定長のコードで，改ざん検知（完全性）に使います。CMAC や HMAC などがあります。共通鍵は送信者と受信者だけが知るため，第三者は検証できません。公開鍵で生成するものでもありません。</p>
+        `,
+        nodes: {
+            left: { name: "送信者", ip: "メッセージ＋共通鍵", icon: "fa-user", color: "var(--secondary)" },
+            center: { name: "MAC", ip: "HMAC／CMAC", icon: "fa-fingerprint", color: "var(--primary)" },
+            right: { name: "受信者", ip: "完全性を確認", icon: "fa-user-check", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 生成", desc: "<strong>1. 送信者が共通鍵で MAC を生成</strong><br>公開鍵は使いません。", stateClass: "state-1" },
+            { num: 2, btn: "2. 検証", desc: "<strong>2. 受信者が同じ共通鍵で検証</strong><br>改ざんの有無が分かります。", stateClass: "state-2" },
+            { num: 3, btn: "3. 第三者", desc: "<strong>3. 第三者は共通鍵を知らない</strong><br>真正性の第三者検証はできません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 完全性", desc: "<strong>4. 受信者による完全性確認</strong><br>アが適切です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "MAC付与", res: "完全性OK" }
+    },
+    sha512256: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問3",
+        diagramTitle: "SHA-512/256（シミュレーター）",
+        text: "SHA-512/256 の説明はどれか。",
+        options: [
+            { key: "ア", text: "入力データに SHA-256 に基づいたハッシュ関数を 1 回適用し，256 ビットの値を出力した後，512 ビットに拡張して出力する。", correct: false },
+            { key: "イ", text: "入力データに SHA-256 に基づいたハッシュ関数を 512 回繰り返し適用し，256 ビットの値を出力する。", correct: false },
+            { key: "ウ", text: "入力データに SHA-512 に基づいたハッシュ関数を 1 回適用し，512 ビットの値を出力した後，256 ビットに切り詰めて出力する。", correct: true },
+            { key: "エ", text: "入力データに SHA-512 に基づいたハッシュ関数を 256 回繰り返し適用し，512 ビットの値を出力する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>SHA-512/256 は，入力に SHA-512 を 1 回適用して 512 ビットを得たあと，<strong>256 ビットに切り詰めて</strong>出力する方式です。CRYPTREC 暗号リストの推奨ハッシュ関数です。繰り返し適用や 256→512 への拡張ではありません。</p>
+        `,
+        nodes: {
+            left: { name: "入力データ", ip: "任意長", icon: "fa-file", color: "var(--secondary)" },
+            center: { name: "SHA-512", ip: "512 ビット", icon: "fa-hashtag", color: "var(--primary)" },
+            right: { name: "切り詰め", ip: "256 ビット", icon: "fa-scissors", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. SHA-512", desc: "<strong>1. SHA-512 を 1 回適用</strong><br>512 ビットのハッシュを得ます。", stateClass: "state-1" },
+            { num: 2, btn: "2. 切詰", desc: "<strong>2. 256 ビットに切り詰める</strong><br>これが SHA-512/256 です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 非該当", desc: "<strong>3. 512 回の繰り返しではない</strong><br>SHA-256 からの拡張でもありません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 推奨", desc: "<strong>4. CRYPTREC 推奨のハッシュ</strong><br>ウが正解です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "SHA-512", res: "256bit" }
     }
 };

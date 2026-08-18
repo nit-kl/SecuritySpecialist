@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（99問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（107問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（99問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（107問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1416,7 +1416,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（23問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（31問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1509,6 +1509,38 @@
                 <button class="question-tab-btn" onclick="switchQuestion('timingatk', this)">
                     <span class="btn-meta">問92: R7春 午前II問14</span>
                     <span class="btn-title">タイミング攻撃対策</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('ctrmode', this)">
+                    <span class="btn-meta">問100: R5春 午前II問7</span>
+                    <span class="btn-title">CTRモード</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('hashcol', this)">
+                    <span class="btn-meta">問101: R5春 午前II問4</span>
+                    <span class="btn-title">衝突発見困難性</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('cryptrec', this)">
+                    <span class="btn-meta">問102: R4春 午前II問10</span>
+                    <span class="btn-title">CRYPTRECの活動</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('qcrypto', this)">
+                    <span class="btn-meta">問103: R6秋 午前II問9</span>
+                    <span class="btn-title">量子暗号の特徴</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('pqc', this)">
+                    <span class="btn-meta">問104: R6秋 午前II問5</span>
+                    <span class="btn-title">PQC（耐量子暗号）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('fwdsec', this)">
+                    <span class="btn-meta">問105: R4秋 午前II問8</span>
+                    <span class="btn-title">前方秘匿性</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('macmsg', this)">
+                    <span class="btn-meta">問106: R6春 午前II問2</span>
+                    <span class="btn-title">MACと完全性</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('sha512256', this)">
+                    <span class="btn-meta">問107: R7春 午前II問3</span>
+                    <span class="btn-title">SHA-512/256</span>
                 </button>
                 </div>
             </details>
@@ -1785,7 +1817,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（347問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（356問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1829,6 +1861,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToAaaCheck()">RADIUS／Kerberos／802.1X（12問＋確認3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToSsoCheck()">SSO／SAML（8問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToOauthCheck()">ID連携／OAuth（2問＋確認2問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToCryptoCheck()">暗号技術（9問＋確認8問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1869,7 +1902,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>347+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>356+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1882,8 +1915,8 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全99問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全99問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全107問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全107問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1895,7 +1928,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">177問</div>
+                        <div class="card-meta">194問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1912,9 +1945,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（99問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（107問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 92 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 107 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1922,7 +1955,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（99問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（107問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -3969,6 +4002,176 @@
                 <div id="oauth-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! 暗号技術) -->
+            <section class="content-section" id="section-crypto-check">
+                <h2 class="section-title"><i class="fa-solid fa-key"></i>基礎知識: Check! 解説（暗号技術）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    共通鍵／公開鍵、ブロック暗号と利用モード、ハイブリッド暗号、量子暗号／PQC、ハッシュ、DH、前方秘匿性を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>共通鍵暗号方式、公開鍵暗号方式にはどのような特徴があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>ストリーム暗号とブロック暗号にはどのような違いがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>ブロック暗号の強度を高める手法にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>ハイブリッド暗号方式はどのような仕組みで暗号処理を行うか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>量子暗号と耐量子暗号について説明せよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>ハッシュ関数の性質と用途について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>フィンガプリントとは何か。入手にあたって留意すべきことは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>Diffie-Hellman 鍵交換とはどのようなものか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>前方秘匿性について説明せよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-crypto-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">ブロック暗号の暗号利用モードの一つである CTR (Counter) モードに関する記述のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>暗号化と復号の処理において，出力は，入力されたブロックと鍵ストリームとの排他的論理和である。</span></li>
+                        <li><span class="opt-key">イ</span><span>暗号化の処理において，平文のデータ長がブロック長の倍数でないときにパディングが必要である。</span></li>
+                        <li><span class="opt-key">ウ</span><span>ビット誤りがある暗号文を復号すると，ビット誤りのあるブロック全体と次のブロックの対応するビットが平文ではビット誤りになる。</span></li>
+                        <li><span class="opt-key">エ</span><span>複数ブロックの暗号化の処理は並列に実行できないが，複数ブロックの復号の処理は並列に実行できる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 春・午前Ⅱ 問 7］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>CTR モードは，nonce と 1 ずつ増加するカウンタから成る鍵ストリームを暗号化し，それと入力された平文ブロックとの排他的論理和（XOR）演算によって暗号ブロックを生成する。各ブロックが独立しているため，暗号化・復号ともに並列で高速に処理することが可能である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">ハッシュ関数の性質の一つである衝突発見困難性に関する記述のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>SHA-256 の衝突発見困難性を示す，ハッシュ値が一致する二つの元のメッセージの発見に要する最大の計算量は，256 の 2 乗である。</span></li>
+                        <li><span class="opt-key">イ</span><span>SHA-256 の衝突発見困難性を示す，ハッシュ値の元のメッセージの発見に要する最大の計算量は，2 の 256 乗である。</span></li>
+                        <li><span class="opt-key">ウ</span><span>衝突発見困難性とは，ハッシュ値が与えられたときに，元のメッセージの発見に要する計算量が大きいことによる，発見の困難性のことである。</span></li>
+                        <li><span class="opt-key">エ</span><span>衝突発見困難性とは，ハッシュ値が一致する二つの元のメッセージの発見に要する計算量が大きいことによる，発見の困難性のことである。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 春・午前Ⅱ 問 4］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>ハッシュ関数には衝突発見困難性，第 2 原像計算困難性，原像計算困難性（一方向性）が求められる。衝突発見困難性は，同一のハッシュ値を生成する異なる 2 つのデータを求めることが計算量的に困難であることである。SHA-256 では誕生日のパラドックスにより平均して 2<sup>128</sup> 程度となる。ウは原像計算困難性の説明である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">CRYPTREC の主な活動内容はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>暗号技術の技術的検討並びに国際競争力の向上及び運用面での安全性向上に関する検討を行う。</span></li>
+                        <li><span class="opt-key">イ</span><span>情報セキュリティ政策に係る基本戦略の立案，官民における統一的，横断的な情報セキュリティ政策の推進に係る企画などを行う。</span></li>
+                        <li><span class="opt-key">ウ</span><span>組織の情報セキュリティマネジメントシステムについて評価し認証する制度を運用する。</span></li>
+                        <li><span class="opt-key">エ</span><span>認証機関から貸与された暗号モジュール試験報告書作成支援ツールを用いて暗号モジュールの安全性についての評価試験を行う。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R4 春・午前Ⅱ 問 10］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>CRYPTREC は電子政府推奨暗号の安全性を評価・監視し，暗号技術の適切な実装法・運用法を調査・検討するプロジェクトである。暗号技術評価委員会（技術的検討）と暗号技術活用委員会（国際競争力の向上及び運用面での安全性向上）の 2 委員会体制をとる。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">量子暗号の特徴として，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>暗号化と復号の処理を，量子コンピュータを用いて行うことができるので，従来のコンピュータでの処理に比べて大量のデータの秘匿を短時間で実現できる。</span></li>
+                        <li><span class="opt-key">イ</span><span>共通鍵暗号方式であり，従来の情報の取扱量の最小単位であるビットの代わりに量子ビットを用いることによって，高速なデータ送受信が実現できる。</span></li>
+                        <li><span class="opt-key">ウ</span><span>量子雑音を用いて共通鍵を生成し，公開鍵暗号方式で共有することによって，解読が困難な秘匿通信が実現できる。</span></li>
+                        <li><span class="opt-key">エ</span><span>量子通信路を用いて安全に共有した乱数列を使い捨ての暗号鍵として用いることによって，原理的に第三者に解読されない秘匿通信が実現できる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 9］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>量子暗号は量子力学に基づく共通鍵暗号方式の一種であり，暗号化／復号に用いる共通鍵を，光ファイバーによる量子通信路を通じて光子で配送する。盗聴者が経路上で光子を盗み見た場合，当該光子が正常に届かなくなるため，受信者側で盗聴を検知できる。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">PQC (Post-Quantum Cryptography) はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>量子アニーリングマシンを用いて，回路サイズ，消費電力，処理速度を飛躍的に向上させた実装性能をもつ暗号方式</span></li>
+                        <li><span class="opt-key">イ</span><span>量子コンピュータを用いて効率的に素因数分解を行うアルゴリズムによって，暗号を解読する技術</span></li>
+                        <li><span class="opt-key">ウ</span><span>量子コンピュータを用いても解読が困難であり，安全性を保つことができる暗号方式</span></li>
+                        <li><span class="opt-key">エ</span><span>量子通信路を用いた鍵配送システムを利用し，大容量のデータを高速に送受信する技術</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 5］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>PQC は「耐量子計算機暗号」と訳されるように，量子コンピュータを用いた攻撃に対しても安全性を保つことができる暗号方式である。量子コンピュータが実用化されると，現在広く普及している公開鍵暗号技術等が危殆化する可能性がある。国内では CRYPTREC のサイトで影響調査結果や PQC の研究動向が公開されている。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">前方秘匿性 (Forward Secrecy) の説明として，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>鍵交換に使った秘密鍵が漏えいしたとしても，それより前の暗号文は解読されない。</span></li>
+                        <li><span class="opt-key">イ</span><span>時系列データをチェーンの形で結び，かつ，ネットワーク上の複数のノードで共有するので，データを改ざんできない。</span></li>
+                        <li><span class="opt-key">ウ</span><span>対となる二つの鍵の片方の鍵で暗号化したデータは，もう片方の鍵でだけ復号できる。</span></li>
+                        <li><span class="opt-key">エ</span><span>データに非可逆処理をして生成される固定長のハッシュ値からは，元のデータを推測できない。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R4 秋・午前Ⅱ 問 8］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>前方秘匿性とは，鍵交換に使った秘密鍵が漏えいしたとしても，それより前の暗号文は解読されないという性質であり，鍵交換プロトコルに求められる性質の一つである。これを実現するため，データ暗号化の鍵から別の鍵を生成しない，暗号鍵の基となる情報は使い捨てとする，といったことが求められる。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">送信者から受信者にメッセージ認証符号（MAC：Message Authentication Code）を付与したメッセージを送り，次に受信者が第三者に転送した。そのときのMACに関する記述のうち，適切なものはどれか。ここで，共通鍵は送信者と受信者だけが知っており，送信者と受信者のそれぞれの公開鍵は第三者を含めた 3 名が知っているものとする。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>MAC は，送信者がメッセージと共通鍵を用いて生成する。MAC を用いると，受信者がメッセージの完全性を確認できる。</span></li>
+                        <li><span class="opt-key">イ</span><span>MAC は，送信者がメッセージと共通鍵を用いて生成する。MAC を用いると，第三者が送信者の真正性を確認できる。</span></li>
+                        <li><span class="opt-key">ウ</span><span>MAC は，送信者がメッセージと受信者の公開鍵を用いて生成する。MAC を用いると，第三者がメッセージの完全性を確認できる。</span></li>
+                        <li><span class="opt-key">エ</span><span>MAC は，送信者がメッセージと送信者の公開鍵を用いて生成する。MAC を用いると，受信者が送信者の真正性を確認できる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ 問 2］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>MAC は，通信データの改ざん有無を検知し，完全性を保証するために通信データから生成する固定長のコードである。MAC には，ブロック暗号を用いた CMAC，ハッシュ関数を用いた HMAC などがある。MAC を用いることで，受信者がメッセージの完全性を確認できる。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">SHA-512/256 の説明はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>入力データに SHA-256 に基づいたハッシュ関数を 1 回適用し，256 ビットの値を出力した後，512 ビットに拡張して出力する。</span></li>
+                        <li><span class="opt-key">イ</span><span>入力データに SHA-256 に基づいたハッシュ関数を 512 回繰り返し適用し，256 ビットの値を出力する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>入力データに SHA-512 に基づいたハッシュ関数を 1 回適用し，512 ビットの値を出力した後，256 ビットに切り詰めて出力する。</span></li>
+                        <li><span class="opt-key">エ</span><span>入力データに SHA-512 に基づいたハッシュ関数を 256 回繰り返し適用し，512 ビットの値を出力する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R7 春・午前Ⅱ 問 3］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>SHA-512/256 は，入力データに SHA-512 を適用して 512 ビットの値を出力した後，256 ビットに切り詰めて出力する方式である。SHA-512/256 は CRYPTREC 暗号リスト推奨のハッシュ関数である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="crypto-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -4744,6 +4947,7 @@
     <script src="aaa-check-data.js"></script>
     <script src="sso-check-data.js"></script>
     <script src="oauth-check-data.js"></script>
+    <script src="crypto-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -9046,6 +9250,7 @@
             renderAccordionList(checkAaaData, 'accordion-aaa-list');
             renderAccordionList(checkSsoData, 'accordion-sso-list');
             renderAccordionList(checkOauthData, 'accordion-oauth-list');
+            renderAccordionList(checkCryptoData, 'accordion-crypto-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9120,6 +9325,7 @@
             renderSimulatorBridgeByKeys('aaa-simulator-bridge', ['eaptls', 'supplicant', 'aaaacct']);
             renderSimulatorBridgeByKeys('sso-simulator-bridge', ['samlfeat', 'oasisaml']);
             renderSimulatorBridgeByKeys('oauth-simulator-bridge', ['oauthdef', 'oauthtoken']);
+            renderSimulatorBridgeByKeys('crypto-simulator-bridge', ['ctrmode', 'hashcol', 'cryptrec', 'qcrypto', 'pqc', 'fwdsec', 'macmsg', 'sha512256']);
         }
 
 
@@ -9258,6 +9464,7 @@
             renderAccordionList(checkAaaData, 'accordion-aaa-list');
             renderAccordionList(checkSsoData, 'accordion-sso-list');
             renderAccordionList(checkOauthData, 'accordion-oauth-list');
+            renderAccordionList(checkCryptoData, 'accordion-crypto-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9449,6 +9656,10 @@
 
         function scrollToOauthCheck() {
             document.getElementById('section-oauth-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToCryptoCheck() {
+            document.getElementById('section-crypto-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {
