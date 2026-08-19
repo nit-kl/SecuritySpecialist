@@ -1817,7 +1817,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（356問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（358問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1862,6 +1862,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToSsoCheck()">SSO／SAML（8問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToOauthCheck()">ID連携／OAuth（2問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCryptoCheck()">暗号技術（9問＋確認8問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToVpnCheck()">VPN（2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1902,7 +1903,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>356+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>358+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1928,7 +1929,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">194問</div>
+                        <div class="card-meta">196問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -4172,6 +4173,22 @@
                 <div id="crypto-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! VPN) -->
+            <section class="content-section" id="section-vpn-check">
+                <h2 class="section-title"><i class="fa-solid fa-network-wired"></i>基礎知識: Check! 解説（VPN）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    VPN が通信路を保護する仕組みと，カプセル化・トンネリングの意味を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>VPN はどのような仕組みで通信路をセキュアにするのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>カプセル化，トンネリングとは何か。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-vpn-list"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -4948,6 +4965,7 @@
     <script src="sso-check-data.js"></script>
     <script src="oauth-check-data.js"></script>
     <script src="crypto-check-data.js"></script>
+    <script src="vpn-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -9251,6 +9269,7 @@
             renderAccordionList(checkSsoData, 'accordion-sso-list');
             renderAccordionList(checkOauthData, 'accordion-oauth-list');
             renderAccordionList(checkCryptoData, 'accordion-crypto-list');
+            renderAccordionList(checkVpnData, 'accordion-vpn-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9465,6 +9484,7 @@
             renderAccordionList(checkSsoData, 'accordion-sso-list');
             renderAccordionList(checkOauthData, 'accordion-oauth-list');
             renderAccordionList(checkCryptoData, 'accordion-crypto-list');
+            renderAccordionList(checkVpnData, 'accordion-vpn-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9660,6 +9680,10 @@
 
         function scrollToCryptoCheck() {
             document.getElementById('section-crypto-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToVpnCheck() {
+            document.getElementById('section-vpn-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {
