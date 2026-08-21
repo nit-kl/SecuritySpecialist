@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 107問）
+// 過去問一覧（すべてシミュレーター 110問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -58,7 +58,7 @@ const pastQuestionIndex = [
     { no: 105, format: 'simulator', category: 'fundamentals', key: 'fwdsec', source: 'R4秋 午前II問8', title: '前方秘匿性' },
     { no: 106, format: 'simulator', category: 'fundamentals', key: 'macmsg', source: 'R6春 午前II問2', title: 'MACと完全性' },
     { no: 107, format: 'simulator', category: 'fundamentals', key: 'sha512256', source: 'R7春 午前II問3', title: 'SHA-512/256' },
-    // --- ネットワーク (23) ---
+    // --- ネットワーク (26) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },
     { no: 25, format: 'simulator', category: 'network', key: 'cache',      source: 'R6春 午前II問20',  title: 'Cache-Control' },
@@ -112,6 +112,9 @@ const pastQuestionIndex = [
     { no: 97, format: 'simulator', category: 'network', key: 'oasisaml', source: 'R6春 午前II問4', title: 'OASISが策定したSAML' },
     { no: 98, format: 'simulator', category: 'network', key: 'oauthdef', source: 'R7春 午前II問16', title: 'OAuth 2.0の目的（認可）' },
     { no: 99, format: 'simulator', category: 'network', key: 'oauthtoken', source: 'R6秋 午前II問16', title: 'OAuth 2.0のトークン発行' },
+    { no: 108, format: 'simulator', category: 'network', key: 'ipsectunnel', source: 'R6秋 午前II問18', title: 'IPsecによるトンネリング' },
+    { no: 109, format: 'simulator', category: 'network', key: 'ipsecespah', source: 'H26春 午前II問20', title: 'ESP／AHを含む技術' },
+    { no: 110, format: 'simulator', category: 'network', key: 'ipsecv6', source: 'R4秋 午前II問13', title: 'IPv6のネットワーク層暗号化' },
     // --- メールセキュリティ (8) ---
     { no: 49, format: 'simulator', category: 'mail', key: 'spf', source: 'R4秋 午前II問15', title: 'SPF ドメイン認証' },
     { no: 50, format: 'simulator', category: 'mail', key: 'ip25b', source: 'R2秋 午前II問17', title: 'IP25B' },

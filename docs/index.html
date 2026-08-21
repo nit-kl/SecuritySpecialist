@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（107問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（110問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（107問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（110問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1546,7 +1546,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（23問）</summary>
+                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（26問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('vlan', this)">
                     <span class="btn-meta">問23: H31春 午前II問12</span>
@@ -1639,6 +1639,18 @@
                 <button class="question-tab-btn" onclick="switchQuestion('oauthtoken', this)">
                     <span class="btn-meta">問99: R6秋 午前II問16</span>
                     <span class="btn-title">OAuth 2.0のトークン発行</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('ipsectunnel', this)">
+                    <span class="btn-meta">問108: R6秋 午前II問18</span>
+                    <span class="btn-title">IPsecによるトンネリング</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('ipsecespah', this)">
+                    <span class="btn-meta">問109: H26春 午前II問20</span>
+                    <span class="btn-title">ESP／AHを含む技術</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('ipsecv6', this)">
+                    <span class="btn-meta">問110: R4秋 午前II問13</span>
+                    <span class="btn-title">IPv6のネットワーク層暗号化</span>
                 </button>
                 </div>
             </details>
@@ -1817,7 +1829,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（358問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（367問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1863,6 +1875,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToOauthCheck()">ID連携／OAuth（2問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCryptoCheck()">暗号技術（9問＋確認8問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToVpnCheck()">VPN（2問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToIpsecCheck()">IPsec／IKE（9問＋確認3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1903,7 +1916,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>358+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>367+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1916,8 +1929,8 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全107問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全107問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全110問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全110問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1929,7 +1942,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">196問</div>
+                        <div class="card-meta">208問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1946,9 +1959,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（107問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（110問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 107 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 110 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1956,7 +1969,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（107問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（110問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -4189,6 +4202,96 @@
                 <div class="accordion" id="accordion-vpn-list"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! IPsec／IKE) -->
+            <section class="content-section" id="section-ipsec-check">
+                <h2 class="section-title"><i class="fa-solid fa-shield-virus"></i>基礎知識: Check! 解説（IPsec／IKE）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    IPsec VPN の利用形態、トランスポート／トンネル、AH／ESP、SA、IKEv1／IKEv2 を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>IPsec VPN の利用形態にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>IPsec におけるトランスポートモードとトンネルモードにはどのような違いがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>AH プロトコルと ESP プロトコルではそれぞれのどのような機能が提供されるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>IPsec における SA とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>IKEv1 で通信相手を認証する方式としてどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>IKEv1 の SA にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>IKEv1 と IKEv2 を比較した場合の IKEv2 の特徴や利点を述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>IKEv2 の SA にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>IKEv2 で通信相手を認証する方式としてどのような種類があるか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-ipsec-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">ネットワーク層のパケットを対象として IP パケットでカプセル化し，トンネリングを行えるプロトコルはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>IPsec</span></li>
+                        <li><span class="opt-key">イ</span><span>L2TP</span></li>
+                        <li><span class="opt-key">ウ</span><span>PPTP</span></li>
+                        <li><span class="opt-key">エ</span><span>RSTP</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 18］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>問題文に該当するのは IPsec である。IPsec には，次のような特徴がある。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li>パケットをネットワーク層でカプセル化し，暗号化する</li>
+                            <li>上位層のアプリケーションに依存せずに暗号化通信が可能</li>
+                            <li>IPv4，IPv6 のどちらでも利用することができ，IPv6 では IPsec の実装が必須である</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">インターネット VPN を実現するために用いられる技術であり，ESP（Encapsulating Security Payload）や AH（Authentication Header）などのプロトコルを含むものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>IPsec</span></li>
+                        <li><span class="opt-key">イ</span><span>MPLS</span></li>
+                        <li><span class="opt-key">ウ</span><span>PPP</span></li>
+                        <li><span class="opt-key">エ</span><span>SSL</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報セキュリティスペシャリスト試験・H26 春・午前Ⅱ 問 20］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>インターネット VPN を実現するために用いられる技術としては，IPsec や SSL が代表的だが，ESP，AH などのプロトコルを含むのは IPsec である。AH は主に通信データの認証（メッセージ認証）のために使用され，暗号化機能はない。一方 ESP は，通信データの認証と暗号化の両方の機能を提供する。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">PC からサーバに対し，IPv6 を利用した通信を行う場合，ネットワーク層で暗号化を行うときに利用するものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>IPsec</span></li>
+                        <li><span class="opt-key">イ</span><span>PPP</span></li>
+                        <li><span class="opt-key">ウ</span><span>SSH</span></li>
+                        <li><span class="opt-key">エ</span><span>TLS</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R4 秋・午前Ⅱ 問 13］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>問題文に該当するのは IPsec である。ネットワーク層でカプセル化・暗号化でき，上位アプリに依存せず，IPv4／IPv6 のどちらでも利用でき，IPv6 では実装が必須である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="ipsec-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -4966,6 +5069,7 @@
     <script src="oauth-check-data.js"></script>
     <script src="crypto-check-data.js"></script>
     <script src="vpn-check-data.js"></script>
+    <script src="ipsec-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -9270,6 +9374,7 @@
             renderAccordionList(checkOauthData, 'accordion-oauth-list');
             renderAccordionList(checkCryptoData, 'accordion-crypto-list');
             renderAccordionList(checkVpnData, 'accordion-vpn-list');
+            renderAccordionList(checkIpsecData, 'accordion-ipsec-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9345,6 +9450,7 @@
             renderSimulatorBridgeByKeys('sso-simulator-bridge', ['samlfeat', 'oasisaml']);
             renderSimulatorBridgeByKeys('oauth-simulator-bridge', ['oauthdef', 'oauthtoken']);
             renderSimulatorBridgeByKeys('crypto-simulator-bridge', ['ctrmode', 'hashcol', 'cryptrec', 'qcrypto', 'pqc', 'fwdsec', 'macmsg', 'sha512256']);
+            renderSimulatorBridgeByKeys('ipsec-simulator-bridge', ['ipsectunnel', 'ipsecespah', 'ipsecv6']);
         }
 
 
@@ -9485,6 +9591,7 @@
             renderAccordionList(checkOauthData, 'accordion-oauth-list');
             renderAccordionList(checkCryptoData, 'accordion-crypto-list');
             renderAccordionList(checkVpnData, 'accordion-vpn-list');
+            renderAccordionList(checkIpsecData, 'accordion-ipsec-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9684,6 +9791,10 @@
 
         function scrollToVpnCheck() {
             document.getElementById('section-vpn-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToIpsecCheck() {
+            document.getElementById('section-ipsec-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {

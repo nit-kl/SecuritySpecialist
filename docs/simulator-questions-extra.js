@@ -2862,5 +2862,95 @@ const questionDataExtra = {
             { num: 4, btn: "4. 推奨", desc: "<strong>4. CRYPTREC 推奨のハッシュ</strong><br>ウが正解です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "SHA-512", res: "256bit" }
+    },
+    ipsectunnel: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問18",
+        diagramTitle: "ネットワーク層のトンネリング（シミュレーター）",
+        text: "ネットワーク層のパケットを対象として IP パケットでカプセル化し，トンネリングを行えるプロトコルはどれか。",
+        options: [
+            { key: "ア", text: "IPsec", correct: true },
+            { key: "イ", text: "L2TP", correct: false },
+            { key: "ウ", text: "PPTP", correct: false },
+            { key: "エ", text: "RSTP", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>IPsec はネットワーク層のパケットを IP パケットでカプセル化し，トンネリングできます。上位アプリに依存せず暗号化でき，IPv4／IPv6 のどちらでも利用可能です（IPv6 では実装が必須）。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>イ・ウ</strong>：主にデータリンク層寄りのトンネル技術 ❌</li>
+                <li><strong>エ</strong>：スパニングツリーの拡張（RSTP）で VPN ではない ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "元の IP パケット", ip: "ネットワーク層", icon: "fa-box", color: "var(--secondary)" },
+            center: { name: "IPsec", ip: "カプセル化", icon: "fa-lock", color: "var(--primary)" },
+            right: { name: "外側 IP", ip: "トンネル転送", icon: "fa-route", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 対象", desc: "<strong>1. ネットワーク層のパケット</strong><br>IP パケットを保護対象にします。", stateClass: "state-1" },
+            { num: 2, btn: "2. 包む", desc: "<strong>2. IP でカプセル化</strong><br>トンネルモードでは新しい IP ヘッダを付けます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 保護", desc: "<strong>3. 暗号化・認証</strong><br>ESP／AH で秘匿・完全性を確保します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 転送", desc: "<strong>4. トンネル越しに転送</strong><br>該当するのは IPsec です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "IPパケット", res: "トンネル" }
+    },
+    ipsecespah: {
+        source: "情報セキュリティスペシャリスト試験・H26春・午前II問20",
+        diagramTitle: "ESP／AH を含む技術（シミュレーター）",
+        text: "インターネット VPN を実現するために用いられる技術であり，ESP（Encapsulating Security Payload）や AH（Authentication Header）などのプロトコルを含むものはどれか。",
+        options: [
+            { key: "ア", text: "IPsec", correct: true },
+            { key: "イ", text: "MPLS", correct: false },
+            { key: "ウ", text: "PPP", correct: false },
+            { key: "エ", text: "SSL", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>インターネット VPN の代表は IPsec と SSL ですが，ESP・AH を含むのは <strong>IPsec</strong> です。AH は主に認証（完全性）で暗号化はなく，ESP は認証と暗号化の両方を提供できます。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>イ</strong>：ラベルスイッチング ❌</li>
+                <li><strong>ウ</strong>：ポイントツーポイントのリンク層プロトコル ❌</li>
+                <li><strong>エ</strong>：上位層の暗号化（ESP／AH ではない） ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "AH", ip: "認証・完全性", icon: "fa-fingerprint", color: "var(--secondary)" },
+            center: { name: "IPsec", ip: "インターネットVPN", icon: "fa-shield-halved", color: "var(--primary)" },
+            right: { name: "ESP", ip: "暗号化＋認証", icon: "fa-lock", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. VPN", desc: "<strong>1. インターネット VPN の技術</strong><br>IPsec と SSL が代表例です。", stateClass: "state-1" },
+            { num: 2, btn: "2. AH", desc: "<strong>2. AH は認証中心</strong><br>暗号化機能はありません。", stateClass: "state-2" },
+            { num: 3, btn: "3. ESP", desc: "<strong>3. ESP は暗号化＋認証</strong><br>VPN でよく使われます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 結論", desc: "<strong>4. ESP／AH を含むのは IPsec</strong><br>アが正解です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "AH/ESP", res: "IPsec" }
+    },
+    ipsecv6: {
+        source: "情報処理安全確保支援士試験・R4秋・午前II問13",
+        diagramTitle: "IPv6 のネットワーク層暗号化（シミュレーター）",
+        text: "PC からサーバに対し，IPv6 を利用した通信を行う場合，ネットワーク層で暗号化を行うときに利用するものはどれか。",
+        options: [
+            { key: "ア", text: "IPsec", correct: true },
+            { key: "イ", text: "PPP", correct: false },
+            { key: "ウ", text: "SSH", correct: false },
+            { key: "エ", text: "TLS", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>ネットワーク層で暗号化するのは <strong>IPsec</strong> です。上位アプリに依存せず，IPv4／IPv6 のどちらでも利用でき，IPv6 では実装が必須です。SSH・TLS は上位層，PPP はリンク層寄りのプロトコルです。</p>
+        `,
+        nodes: {
+            left: { name: "PC", ip: "IPv6", icon: "fa-laptop", color: "var(--secondary)" },
+            center: { name: "IPsec", ip: "ネットワーク層", icon: "fa-lock", color: "var(--primary)" },
+            right: { name: "サーバ", ip: "暗号化通信", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 層", desc: "<strong>1. ネットワーク層で暗号化</strong><br>IP パケット単位で保護します。", stateClass: "state-1" },
+            { num: 2, btn: "2. IPv6", desc: "<strong>2. IPv6 でも利用可能</strong><br>実装が必須とされています。", stateClass: "state-2" },
+            { num: 3, btn: "3. 比較", desc: "<strong>3. TLS／SSH は上位層</strong><br>本問の条件には合いません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 結論", desc: "<strong>4. 利用するのは IPsec</strong><br>アが正解です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "IPv6", res: "IPsec" }
     }
 };
