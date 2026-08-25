@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（110問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（114問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（110問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（114問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1546,7 +1546,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（26問）</summary>
+                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（30問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('vlan', this)">
                     <span class="btn-meta">問23: H31春 午前II問12</span>
@@ -1651,6 +1651,22 @@
                 <button class="question-tab-btn" onclick="switchQuestion('ipsecv6', this)">
                     <span class="btn-meta">問110: R4秋 午前II問13</span>
                     <span class="btn-title">IPv6のネットワーク層暗号化</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('tls13suite', this)">
+                    <span class="btn-meta">問111: R5秋 午前II問2</span>
+                    <span class="btn-title">TLS 1.3の暗号スイート</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('dtls', this)">
+                    <span class="btn-meta">問112: R6秋 午前II問15</span>
+                    <span class="btn-title">DTLSの特徴</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('hsts', this)">
+                    <span class="btn-meta">問113: R6春 午前II問13</span>
+                    <span class="btn-title">HSTSの動作</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('alwaysontls', this)">
+                    <span class="btn-meta">問114: R元秋 午前II問14</span>
+                    <span class="btn-title">常時SSL/TLSの効果</span>
                 </button>
                 </div>
             </details>
@@ -1829,7 +1845,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（367問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（374問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1876,6 +1892,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToCryptoCheck()">暗号技術（9問＋確認8問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToVpnCheck()">VPN（2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToIpsecCheck()">IPsec／IKE（9問＋確認3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToTlsCheck()">SSL/TLS（7問＋確認4問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1916,7 +1933,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>367+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>374+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1929,8 +1946,8 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全110問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全110問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全114問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全114問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1942,7 +1959,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">208問</div>
+                        <div class="card-meta">219問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1959,9 +1976,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（110問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（114問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 110 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 114 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1969,7 +1986,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（110問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（114問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -4292,6 +4309,106 @@
                 <div id="ipsec-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! SSL/TLS) -->
+            <section class="content-section" id="section-tls-check">
+                <h2 class="section-title"><i class="fa-solid fa-lock"></i>基礎知識: Check! 解説（SSL/TLS）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    SSL/TLS の機能と構成、TLS 1.3、AEAD、SSL-VPN、HSTS を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>SSL/TLS にはどのような機能があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>SSL/TLS はどのようなプロトコルから構成されるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>TLS 1.3 ではどのような手順でハンドシェイクを行うか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>認証付き暗号 (AEAD) とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>SSL-VPN は IPsec VPN と比較してどのようなメリットがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>SSL-VPN を Web 以外のアプリケーションで使用する場合にはどのような留意点があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>HSTS 機構とは何か。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-tls-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">TLS 1.3 の暗号スイートに関する説明のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>AEAD (Authenticated Encryption with Associated Data) とハッシュアルゴリズムの組みで構成されている。</span></li>
+                        <li><span class="opt-key">イ</span><span>TLS 1.2 で規定されている共通鍵暗号 AES-CBC をサポート必須の暗号アルゴリズムとして継続利用できるようにしている。</span></li>
+                        <li><span class="opt-key">ウ</span><span>Wi-Fi アライアンスにおいて規格化されている。</span></li>
+                        <li><span class="opt-key">エ</span><span>サーバとクライアントのそれぞれがお互いに別の暗号アルゴリズムを選択できる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 秋・午前Ⅱ 問 2］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>TLS 1.2 までの暗号スイートは，鍵交換アルゴリズム，署名アルゴリズム，暗号アルゴリズム，ハッシュアルゴリズムの 4 つで構成されていたが，TLS 1.3 からは，認証付き暗号アルゴリズムである AEAD とハッシュアルゴリズムの組みで構成されている。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">DTLS の特徴はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>IP パケットを暗号化できる。</span></li>
+                        <li><span class="opt-key">イ</span><span>Ethernet 上の PPP 接続でチャレンジレスポンス認証を行う。</span></li>
+                        <li><span class="opt-key">ウ</span><span>TCP のペイロードデータの暗号化を TLS よりも強化する。</span></li>
+                        <li><span class="opt-key">エ</span><span>UDP のペイロードデータを暗号化できる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 秋・午前Ⅱ 問 15］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>DTLS（Datagram Transport Layer Security）は，通常 TCP 上でアプリケーション層とトランスポート層の間のデータを暗号化する TLS を，UDP に適用する技術である。したがって UDP のペイロードデータを暗号化できる。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">HTTP Strict Transport Security（HSTS）の動作はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>HTTPS で接続したときに，サイトが EV SSL 証明書を使っているかどうかで，Web ブラウザのアドレスバーの表示を変える。</span></li>
+                        <li><span class="opt-key">イ</span><span>Web サーバからのコンテンツを圧縮し，秘密情報が特定できないようにする。</span></li>
+                        <li><span class="opt-key">ウ</span><span>TLS ハンドシェイク時に，新規セッションを確立する場合は，以前に確立したセッションを用いてハンドシェイクを再度実施する。</span></li>
+                        <li><span class="opt-key">エ</span><span>一度 Web ブラウザが Web サイトにアクセスした後は，指定された期間，そのサイトへのアクセスを HTTPS 接続に限定する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ 問 13］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>HSTS は，Web サイトがブラウザに対し，以降の一定期間（Strict-Transport-Security レスポンスヘッダの max-age で指定，単位は秒）はそのドメイン（およびサブドメイン）への接続を HTTPS に限定するよう指示する仕組みである。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">Web サイトの全ページを TLS で保護する「常時 SSL/TLS」のセキュリティ上の効果はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>SQL 文の組立て時にエスケープ処理を行い，SQL インジェクション攻撃を防ぎ，個人情報やデータベースのデータを保護する。</span></li>
+                        <li><span class="opt-key">イ</span><span>アクセスが人間によるものかを確認し，ボットによる大量リクエストへの応答を避ける。</span></li>
+                        <li><span class="opt-key">ウ</span><span>総当たりのログイン試行を検知してアカウントをロックし，不正アクセスを防ぐ。</span></li>
+                        <li><span class="opt-key">エ</span><span>ブラウザとサイト間の中間者攻撃による通信データの漏えい・改ざんを防ぎ，サーバ証明書により偽サイトの識別を容易にする。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R元 秋・午前Ⅱ 問 14］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>Web ページを TLS で保護すると，ブラウザは証明書でサイトの正当性を確認でき，通信は暗号化されて盗聴されにくくなる。これにより，ブラウザとサーバの間に不正なホストが入る中間者攻撃による漏えい・改ざんを防ぎやすくなる。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="tls-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -5070,6 +5187,7 @@
     <script src="crypto-check-data.js"></script>
     <script src="vpn-check-data.js"></script>
     <script src="ipsec-check-data.js"></script>
+    <script src="tls-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -9375,6 +9493,7 @@
             renderAccordionList(checkCryptoData, 'accordion-crypto-list');
             renderAccordionList(checkVpnData, 'accordion-vpn-list');
             renderAccordionList(checkIpsecData, 'accordion-ipsec-list');
+            renderAccordionList(checkTlsData, 'accordion-tls-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9451,6 +9570,7 @@
             renderSimulatorBridgeByKeys('oauth-simulator-bridge', ['oauthdef', 'oauthtoken']);
             renderSimulatorBridgeByKeys('crypto-simulator-bridge', ['ctrmode', 'hashcol', 'cryptrec', 'qcrypto', 'pqc', 'fwdsec', 'macmsg', 'sha512256']);
             renderSimulatorBridgeByKeys('ipsec-simulator-bridge', ['ipsectunnel', 'ipsecespah', 'ipsecv6']);
+            renderSimulatorBridgeByKeys('tls-simulator-bridge', ['tls13suite', 'dtls', 'hsts', 'alwaysontls']);
         }
 
 
@@ -9592,6 +9712,7 @@
             renderAccordionList(checkCryptoData, 'accordion-crypto-list');
             renderAccordionList(checkVpnData, 'accordion-vpn-list');
             renderAccordionList(checkIpsecData, 'accordion-ipsec-list');
+            renderAccordionList(checkTlsData, 'accordion-tls-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9795,6 +9916,10 @@
 
         function scrollToIpsecCheck() {
             document.getElementById('section-ipsec-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTlsCheck() {
+            document.getElementById('section-tls-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {

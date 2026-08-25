@@ -2952,5 +2952,113 @@ const questionDataExtra = {
             { num: 4, btn: "4. 結論", desc: "<strong>4. 利用するのは IPsec</strong><br>アが正解です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "IPv6", res: "IPsec" }
+    },
+    tls13suite: {
+        source: "情報処理安全確保支援士試験・R5秋・午前II問2",
+        diagramTitle: "TLS 1.3 の暗号スイート（シミュレーター）",
+        text: "TLS 1.3 の暗号スイートに関する説明のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "AEAD (Authenticated Encryption with Associated Data) とハッシュアルゴリズムの組みで構成されている。", correct: true },
+            { key: "イ", text: "TLS 1.2 で規定されている共通鍵暗号 AES-CBC をサポート必須の暗号アルゴリズムとして継続利用できるようにしている。", correct: false },
+            { key: "ウ", text: "Wi-Fi アライアンスにおいて規格化されている。", correct: false },
+            { key: "エ", text: "サーバとクライアントのそれぞれがお互いに別の暗号アルゴリズムを選択できる。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>TLS 1.2 までの暗号スイートは，鍵交換・署名・暗号・ハッシュの 4 つで構成されていました。TLS 1.3 からは <strong>AEAD とハッシュアルゴリズムの組</strong>で構成されます。AES-CBC は継続必須ではなく，Wi-Fi アライアンスの規格でもありません。</p>
+        `,
+        nodes: {
+            left: { name: "TLS 1.2", ip: "4要素の組", icon: "fa-layer-group", color: "var(--secondary)" },
+            center: { name: "TLS 1.3", ip: "簡素化", icon: "fa-lock", color: "var(--primary)" },
+            right: { name: "AEAD＋ハッシュ", ip: "暗号スイート", icon: "fa-shield-halved", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 旧構成", desc: "<strong>1. TLS 1.2 までは 4 要素</strong><br>鍵交換・署名・暗号・ハッシュでした。", stateClass: "state-1" },
+            { num: 2, btn: "2. 変更", desc: "<strong>2. TLS 1.3 で構成が変わる</strong><br>弱い方式も整理されます。", stateClass: "state-2" },
+            { num: 3, btn: "3. AEAD", desc: "<strong>3. AEAD で暗号化＋認証</strong><br>ハッシュと組になります。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. アが適切な説明</strong><br>AES-CBC 必須継続ではありません。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "スイート", res: "AEAD+Hash" }
+    },
+    dtls: {
+        source: "情報処理安全確保支援士試験・R6秋・午前II問15",
+        diagramTitle: "DTLS の特徴（シミュレーター）",
+        text: "DTLS の特徴はどれか。",
+        options: [
+            { key: "ア", text: "IP パケットを暗号化できる。", correct: false },
+            { key: "イ", text: "Ethernet 上の PPP 接続でチャレンジレスポンス認証を行う。", correct: false },
+            { key: "ウ", text: "TCP のペイロードデータの暗号化を TLS よりも強化する。", correct: false },
+            { key: "エ", text: "UDP のペイロードデータを暗号化できる。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>DTLS</strong>（Datagram Transport Layer Security）は，通常 TCP 上で使う TLS を UDP に適用する技術です。UDP のペイロードを暗号化できます。IP パケット暗号化は IPsec，PPP 認証は別技術です。</p>
+        `,
+        nodes: {
+            left: { name: "アプリ", ip: "データグラム", icon: "fa-window-maximize", color: "var(--secondary)" },
+            center: { name: "DTLS", ip: "TLS を UDP へ", icon: "fa-lock", color: "var(--primary)" },
+            right: { name: "UDP", ip: "ペイロード保護", icon: "fa-network-wired", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. TLS", desc: "<strong>1. TLS は通常 TCP 向け</strong><br>アプリとトランスポートの間で暗号化します。", stateClass: "state-1" },
+            { num: 2, btn: "2. DTLS", desc: "<strong>2. これを UDP に適用</strong><br>リアルタイム通信などで使われます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 対象", desc: "<strong>3. UDP ペイロードを保護</strong><br>IP パケット全体ではありません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エが特徴</strong><br>アは IPsec 寄りの説明です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "UDP", res: "暗号化" }
+    },
+    hsts: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問13",
+        diagramTitle: "HSTS の動作（シミュレーター）",
+        text: "HTTP Strict Transport Security（HSTS）の動作はどれか。",
+        options: [
+            { key: "ア", text: "HTTPS で接続したときに，サイトが EV SSL 証明書を使っているかどうかで，Web ブラウザのアドレスバーの表示を変える。", correct: false },
+            { key: "イ", text: "Web サーバからのコンテンツを圧縮し，秘密情報が特定できないようにする。", correct: false },
+            { key: "ウ", text: "TLS ハンドシェイク時に，新規セッションを確立する場合は，以前に確立したセッションを用いてハンドシェイクを再度実施する。", correct: false },
+            { key: "エ", text: "一度 Web ブラウザが Web サイトにアクセスした後は，指定された期間，そのサイトへのアクセスを HTTPS 接続に限定する。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>HSTS は，サイトがブラウザに対し，以降の一定期間（<code>Strict-Transport-Security</code> の <code>max-age</code>）はそのドメインへの接続を HTTPS に限定するよう指示する仕組みです。SSL ストリッピング対策になります。</p>
+        `,
+        nodes: {
+            left: { name: "初回 HTTPS", ip: "HSTS ヘッダ", icon: "fa-globe", color: "var(--secondary)" },
+            center: { name: "ブラウザ", ip: "max-age を記憶", icon: "fa-compass", color: "var(--primary)" },
+            right: { name: "以後 HTTPS のみ", ip: "HTTP を拒否", icon: "fa-lock", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 指示", desc: "<strong>1. サーバが HSTS を返す</strong><br>max-age で期間を指定します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 記憶", desc: "<strong>2. ブラウザが記憶</strong><br>対象ドメインを記録します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 強制", desc: "<strong>3. 以後は HTTPS 限定</strong><br>HTTP アクセスも HTTPS にします。", stateClass: "state-3" },
+            { num: 4, btn: "4. 効果", desc: "<strong>4. ダウングレード攻撃を抑制</strong><br>エが正しい動作です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "HSTS", res: "HTTPS限定" }
+    },
+    alwaysontls: {
+        source: "情報処理安全確保支援士試験・R元秋・午前II問14",
+        diagramTitle: "常時 SSL/TLS の効果（シミュレーター）",
+        text: "Web サイトの全ページを TLS で保護する「常時 SSL/TLS」のセキュリティ上の効果はどれか。",
+        options: [
+            { key: "ア", text: "SQL 文の組立て時にエスケープ処理を行い，SQL インジェクション攻撃を防ぎ，個人情報やデータベースのデータを保護する。", correct: false },
+            { key: "イ", text: "アクセスが人間によるものかを確認し，ボットによる大量リクエストへの応答を避ける。", correct: false },
+            { key: "ウ", text: "総当たりのログイン試行を検知してアカウントをロックし，不正アクセスを防ぐ。", correct: false },
+            { key: "エ", text: "ブラウザとサイト間の中間者攻撃による通信データの漏えい・改ざんを防ぎ，サーバ証明書により偽サイトの識別を容易にする。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>全ページを TLS で保護すると，通信が暗号化され盗聴・改ざんが難しくなり，証明書でサイトの正当性を確認できます。これによりブラウザ〜サイト間の中間者攻撃を防ぎやすくなります。ア〜ウはアプリ層の別対策です。</p>
+        `,
+        nodes: {
+            left: { name: "ブラウザ", ip: "証明書検証", icon: "fa-compass", color: "var(--secondary)" },
+            center: { name: "TLS", ip: "全ページ保護", icon: "fa-lock", color: "var(--primary)" },
+            right: { name: "正規サイト", ip: "偽サイトを識別", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 常時", desc: "<strong>1. 全ページを TLS 化</strong><br>ログイン後だけでなく全体を保護します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 暗号", desc: "<strong>2. 通信の盗聴・改ざんを抑制</strong><br>中間者攻撃への耐性が上がります。", stateClass: "state-2" },
+            { num: 3, btn: "3. 証明書", desc: "<strong>3. サーバ証明書で真正性確認</strong><br>偽サイトの識別が容易になります。", stateClass: "state-3" },
+            { num: 4, btn: "4. 効果", desc: "<strong>4. エがセキュリティ効果</strong><br>SQLi 対策などではありません。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "HTTPS", res: "MitM防止" }
     }
 };
