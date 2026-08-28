@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 114問）
+// 過去問一覧（すべてシミュレーター 119問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -58,7 +58,7 @@ const pastQuestionIndex = [
     { no: 105, format: 'simulator', category: 'fundamentals', key: 'fwdsec', source: 'R4秋 午前II問8', title: '前方秘匿性' },
     { no: 106, format: 'simulator', category: 'fundamentals', key: 'macmsg', source: 'R6春 午前II問2', title: 'MACと完全性' },
     { no: 107, format: 'simulator', category: 'fundamentals', key: 'sha512256', source: 'R7春 午前II問3', title: 'SHA-512/256' },
-    // --- ネットワーク (30) ---
+    // --- ネットワーク (35) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },
     { no: 25, format: 'simulator', category: 'network', key: 'cache',      source: 'R6春 午前II問20',  title: 'Cache-Control' },
@@ -119,6 +119,11 @@ const pastQuestionIndex = [
     { no: 112, format: 'simulator', category: 'network', key: 'dtls', source: 'R6秋 午前II問15', title: 'DTLSの特徴' },
     { no: 113, format: 'simulator', category: 'network', key: 'hsts', source: 'R6春 午前II問13', title: 'HSTSの動作' },
     { no: 114, format: 'simulator', category: 'network', key: 'alwaysontls', source: 'R元秋 午前II問14', title: '常時SSL/TLSの効果' },
+    { no: 115, format: 'simulator', category: 'network', key: 'mailpubkey', source: 'R6春 午前II問16', title: 'PGP／S/MIME／SMTP over TLSの公開鍵単位' },
+    { no: 116, format: 'simulator', category: 'network', key: 'sshlogin', source: 'R5秋 午前II問15', title: 'SSHによる安全な遠隔ログイン' },
+    { no: 117, format: 'simulator', category: 'network', key: 'pppoe', source: 'H31春 午前II問19', title: 'PPPoE' },
+    { no: 118, format: 'simulator', category: 'network', key: 'wpa3ent', source: 'R5春 午前II問14', title: 'WPA3-Enterprise' },
+    { no: 119, format: 'simulator', category: 'network', key: 'enhopen', source: 'R6春 午前II問12', title: 'Enhanced Open' },
     // --- メールセキュリティ (8) ---
     { no: 49, format: 'simulator', category: 'mail', key: 'spf', source: 'R4秋 午前II問15', title: 'SPF ドメイン認証' },
     { no: 50, format: 'simulator', category: 'mail', key: 'ip25b', source: 'R2秋 午前II問17', title: 'IP25B' },

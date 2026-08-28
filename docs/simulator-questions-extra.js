@@ -3060,5 +3060,151 @@ const questionDataExtra = {
             { num: 4, btn: "4. 効果", desc: "<strong>4. エがセキュリティ効果</strong><br>SQLi 対策などではありません。", stateClass: "state-4" }
         ],
         packetLabels: { req: "HTTPS", res: "MitM防止" }
+    },
+    mailpubkey: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問16",
+        diagramTitle: "メール暗号化の公開鍵の単位（シミュレーター）",
+        text: "電子メール又はその通信を暗号化する三つのプロトコルに関して，公開鍵を用意する単位の組合せのうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "PGP：メールアドレス／S/MIME：メールアドレス／SMTP over TLS：メールサーバ", correct: true },
+            { key: "イ", text: "PGP：メールアドレス／S/MIME：メールサーバ／SMTP over TLS：メールアドレス", correct: false },
+            { key: "ウ", text: "PGP：メールサーバ／S/MIME：メールアドレス／SMTP over TLS：メールアドレス", correct: false },
+            { key: "エ", text: "PGP：メールサーバ／S/MIME：メールサーバ／SMTP over TLS：メールサーバ", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>PGP</strong>・<strong>S/MIME</strong>は利用者（メールアドレス）単位で公開鍵を用意します。S/MIME では利用者が公開鍵を生成しデジタル証明書（S/MIME 証明書）を取得します。<strong>SMTP over TLS</strong>はクライアント〜サーバ／サーバ間の SMTP を TLS で暗号化するため，公開鍵・証明書は<strong>メールサーバ単位</strong>です。</p>
+        `,
+        nodes: {
+            left: { name: "PGP／S/MIME", ip: "メールアドレス単位", icon: "fa-envelope", color: "var(--secondary)" },
+            center: { name: "公開鍵", ip: "用意する単位", icon: "fa-key", color: "var(--primary)" },
+            right: { name: "SMTP over TLS", ip: "メールサーバ単位", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. PGP", desc: "<strong>1. PGP は利用者単位</strong><br>メールアドレスごとに公開鍵を用意します。", stateClass: "state-1" },
+            { num: 2, btn: "2. S/MIME", desc: "<strong>2. S/MIME も利用者単位</strong><br>証明書もメールアドレスに紐づきます。", stateClass: "state-2" },
+            { num: 3, btn: "3. SMTP/TLS", desc: "<strong>3. SMTP over TLS はサーバ単位</strong><br>経路暗号化の証明書です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 組合せ", desc: "<strong>4. アの組合せが適切</strong><br>アドレス／アドレス／サーバです。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "公開鍵", res: "単位" }
+    },
+    sshlogin: {
+        source: "情報処理安全確保支援士試験・R5秋・午前II問15",
+        diagramTitle: "安全な遠隔ログイン（シミュレーター）",
+        text: "通信の暗号化と利用者認証の機能をもち，遠隔コンピュータへの安全なログインに利用されるプロトコルはどれか。",
+        options: [
+            { key: "ア", text: "L2TP", correct: false },
+            { key: "イ", text: "LDAP", correct: false },
+            { key: "ウ", text: "RADIUS", correct: false },
+            { key: "エ", text: "SSH", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>SSH</strong>（Secure Shell）は通信の暗号化と利用者認証をもち，遠隔コンピュータへの安全なログインに広く使われます。L2TP はトンネル，LDAP はディレクトリアクセス，RADIUS は AAA です。</p>
+        `,
+        nodes: {
+            left: { name: "管理者 PC", ip: "SSH クライアント", icon: "fa-laptop", color: "var(--secondary)" },
+            center: { name: "SSH", ip: "暗号＋認証", icon: "fa-terminal", color: "var(--primary)" },
+            right: { name: "遠隔ホスト", ip: "安全にログイン", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 接続", desc: "<strong>1. 遠隔ホストへ接続</strong><br>平文の TELNET は使いません。", stateClass: "state-1" },
+            { num: 2, btn: "2. 認証", desc: "<strong>2. 利用者を認証</strong><br>パスワードや公開鍵認証など。", stateClass: "state-2" },
+            { num: 3, btn: "3. 暗号", desc: "<strong>3. 通信を暗号化</strong><br>盗聴・改ざんを防ぎます。", stateClass: "state-3" },
+            { num: 4, btn: "4. ログイン", desc: "<strong>4. 安全にログイン</strong><br>該当するのは SSH です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "認証", res: "暗号化" }
+    },
+    pppoe: {
+        source: "情報処理安全確保支援士試験・H31春・午前II問19",
+        diagramTitle: "LAN 上の PPP（シミュレーター）",
+        text: "シリアル回線で利用されているものと同じように，LAN 上で相手先を確認してからデータリンクを確立し，相手先との間でデータを転送するプロトコルはどれか。",
+        options: [
+            { key: "ア", text: "MPLS", correct: false },
+            { key: "イ", text: "PPP", correct: false },
+            { key: "ウ", text: "PPPoE", correct: true },
+            { key: "エ", text: "PPTP", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p><strong>PPPoE</strong>（PPP over Ethernet）は，電話回線などのシリアル回線で使う PPP を LAN（Ethernet）上で使えるようにしたプロトコルです。利用者認証や IP アドレス割当てが可能です。PPP 単体はシリアル向け，PPTP は PPP を IP でトンネルする方式，MPLS はラベル転送です。</p>
+        `,
+        nodes: {
+            left: { name: "PPP", ip: "シリアル回線", icon: "fa-phone", color: "var(--secondary)" },
+            center: { name: "PPPoE", ip: "Ethernet 上で PPP", icon: "fa-ethernet", color: "var(--primary)" },
+            right: { name: "LAN", ip: "認証・IP割当", icon: "fa-network-wired", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. PPP", desc: "<strong>1. PPP はシリアル向け</strong><br>相手確認後にデータリンクを確立します。", stateClass: "state-1" },
+            { num: 2, btn: "2. LAN", desc: "<strong>2. 同じ仕組みを LAN で</strong><br>ブロードバンド接続などで使います。", stateClass: "state-2" },
+            { num: 3, btn: "3. PPPoE", desc: "<strong>3. PPPoE が該当</strong><br>認証や IP 割当ても可能です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 非該当", desc: "<strong>4. MPLS／PPTP は別用途</strong><br>ウが正解です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "PPP", res: "Ethernet" }
+    },
+    wpa3ent: {
+        source: "情報処理安全確保支援士試験・R5春・午前II問14",
+        diagramTitle: "無線 LAN 暗号化通信の規格（シミュレーター）",
+        text: "無線 LAN の暗号化通信を実現する規格に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "EAP は，事前に登録した共通鍵を用いて，クライアント PC とアクセスポイント間の暗号化通信を実現する規格である。", correct: false },
+            { key: "イ", text: "RADIUS は，公開鍵暗号方式を用いて，クライアント PC とアクセスポイント間の暗号化通信を実現する規格である。", correct: false },
+            { key: "ウ", text: "SSID は，公開鍵暗号方式による暗号化通信を実現する規格において，クライアント PC が用いる秘密鍵である。", correct: false },
+            { key: "エ", text: "WPA3-Enterprise は，IEEE 802.1X 規格に基づく利用者認証と動的に配布される暗号鍵を用いて暗号化通信を実現する方式である。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>WPA3-Enterprise</strong>は IEEE 802.1X に基づく利用者認証と動的鍵配布で暗号化通信を実現します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：EAP は認証プロトコル（暗号化規格そのものではない） ❌</li>
+                <li><strong>イ</strong>：RADIUS は認証・課金の AAA プロトコル ❌</li>
+                <li><strong>ウ</strong>：SSID はネットワーク名（秘密鍵ではない） ❌</li>
+                <li><strong>エ</strong>：WPA3-Enterprise の説明 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "クライアント", ip: "802.1X", icon: "fa-laptop", color: "var(--secondary)" },
+            center: { name: "WPA3-Enterprise", ip: "動的鍵配布", icon: "fa-wifi", color: "var(--primary)" },
+            right: { name: "AP", ip: "暗号化通信", icon: "fa-tower-broadcast", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 認証", desc: "<strong>1. 802.1X で利用者認証</strong><br>EAP などで本人確認します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 鍵", desc: "<strong>2. 動的に暗号鍵を配布</strong><br>固定の共通鍵だけではありません。", stateClass: "state-2" },
+            { num: 3, btn: "3. 暗号", desc: "<strong>3. 無線通信を暗号化</strong><br>WPA3-Enterprise の方式です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 区別", desc: "<strong>4. EAP／RADIUS／SSID は別物</strong><br>エが適切な記述です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "認証", res: "暗号鍵" }
+    },
+    enhopen: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問12",
+        diagramTitle: "Enhanced Open（シミュレーター）",
+        text: "Wi-Fi Alliance の Enhanced Open で新たに定められた仕様として，不特定多数の利用者に無料で公開されている公共無線 LAN サービスのアクセスポイントと端末の間で用いられるものはどれか。",
+        options: [
+            { key: "ア", text: "端末でパスワードを入力することによって，端末からアクセスポイントへの接続が可能となる仕様", correct: false },
+            { key: "イ", text: "端末でパスワードを入力することによって，端末とアクセスポイント間の通信の暗号化が可能となる仕様", correct: false },
+            { key: "ウ", text: "端末でパスワードを入力しなくても，端末からアクセスポイントへの接続が可能となる仕様", correct: false },
+            { key: "エ", text: "端末でパスワードを入力しなくても，端末とアクセスポイント間の通信の暗号化が可能となる仕様", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>Enhanced Open</strong>（OWE）は，パスフレーズやパスワードによる認証を行わず，<strong>Diffie-Hellman 鍵交換</strong>により端末と AP 間の無線通信を暗号化する技術です。公共無線 LAN で平文通信のリスクを下げます。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア・イ</strong>：パスワード入力が必要 ❌</li>
+                <li><strong>ウ</strong>：接続だけ可能（暗号化の説明ではない） ❌</li>
+                <li><strong>エ</strong>：パスワードなしで暗号化 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "端末", ip: "パスワード不要", icon: "fa-mobile-screen", color: "var(--secondary)" },
+            center: { name: "Enhanced Open", ip: "DH 鍵交換", icon: "fa-wifi", color: "var(--primary)" },
+            right: { name: "公共 AP", ip: "通信を暗号化", icon: "fa-tower-broadcast", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 公開LAN", desc: "<strong>1. 公共無線 LAN 向け</strong><br>不特定多数が無料利用します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 認証なし", desc: "<strong>2. パスワード認証は行わない</strong><br>接続のハードルは低いです。", stateClass: "state-2" },
+            { num: 3, btn: "3. 暗号化", desc: "<strong>3. DH で鍵を共有して暗号化</strong><br>平文通信を避けられます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エが該当仕様</strong><br>パスワードなしで暗号化です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "OWE", res: "暗号化" }
     }
 };

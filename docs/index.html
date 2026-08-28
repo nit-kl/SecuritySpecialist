@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（114問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（119問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（114問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（119問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1546,7 +1546,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（30問）</summary>
+                <summary><i class="fa-solid fa-network-wired" style="color:#4ade80;"></i> ネットワーク（35問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('vlan', this)">
                     <span class="btn-meta">問23: H31春 午前II問12</span>
@@ -1667,6 +1667,26 @@
                 <button class="question-tab-btn" onclick="switchQuestion('alwaysontls', this)">
                     <span class="btn-meta">問114: R元秋 午前II問14</span>
                     <span class="btn-title">常時SSL/TLSの効果</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('mailpubkey', this)">
+                    <span class="btn-meta">問115: R6春 午前II問16</span>
+                    <span class="btn-title">PGP／S/MIME／SMTP over TLSの公開鍵単位</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('sshlogin', this)">
+                    <span class="btn-meta">問116: R5秋 午前II問15</span>
+                    <span class="btn-title">SSHによる安全な遠隔ログイン</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('pppoe', this)">
+                    <span class="btn-meta">問117: H31春 午前II問19</span>
+                    <span class="btn-title">PPPoE</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('wpa3ent', this)">
+                    <span class="btn-meta">問118: R5春 午前II問14</span>
+                    <span class="btn-title">WPA3-Enterprise</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('enhopen', this)">
+                    <span class="btn-meta">問119: R6春 午前II問12</span>
+                    <span class="btn-title">Enhanced Open</span>
                 </button>
                 </div>
             </details>
@@ -1845,7 +1865,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（374問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（388問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1893,6 +1913,8 @@
                     <button class="sidebar-link-btn" onclick="scrollToVpnCheck()">VPN（2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToIpsecCheck()">IPsec／IKE（9問＋確認3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTlsCheck()">SSL/TLS（7問＋確認4問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToSecureCommCheck()">その他のセキュア通信（8問＋確認3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToWirelessLanCheck()">無線LAN（6問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToNetSecCheck()">ネットワークセキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToTcpIpSecCheck()">TCP/IP セキュリティ（3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMailSecCheck()">メールセキュリティ（10問＋確認8問）</button>
@@ -1933,7 +1955,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>374+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>388+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1946,8 +1968,8 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全114問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全114問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全119問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全119問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -1959,7 +1981,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
                         <h3>ネットワーク・インフラ</h3>
                         <p>TCP/IP、DNS、クラウド、VDI、ゼロトラストなどインフラと運用に関する基礎知識。</p>
-                        <div class="card-meta">219問</div>
+                        <div class="card-meta">238問</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-attacks')">
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
@@ -1976,9 +1998,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（114問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（119問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 114 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 119 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -1986,7 +2008,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（114問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（119問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -4409,6 +4431,189 @@
                 <div id="tls-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! その他のセキュア通信) -->
+            <section class="content-section" id="section-secure-comm-check">
+                <h2 class="section-title"><i class="fa-solid fa-satellite-dish"></i>基礎知識: Check! 解説（その他のセキュア通信）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    IP-VPN と IPsec VPN の比較、SSH、PPTP／L2TP、S/MIME／PGP を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>IP-VPN はどのような特徴をもつネットワーク技術か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>IP-VPN と IPsec VPN を機密性の観点から比較した場合の違いは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>IP-VPN と IPsec VPN を可用性の観点から比較した場合の違いは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>SSH は主にどのような用途で用いられるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>PPTP と L2TP にはどのような違いがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>S/MIME と PGP の特徴と両者の違いについて述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>S/MIME を導入するメリットと留意点は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>S/MIME においてテキストデータの正規化が必要なのはなぜか。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-secure-comm-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">電子メール又はその通信を暗号化する三つのプロトコルに関して，公開鍵を用意する単位の組合せのうち，適切なものはどれか。</p>
+                    <div style="overflow-x:auto; margin:1rem 0;">
+                        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+                            <thead>
+                                <tr>
+                                    <th style="border:1px solid var(--border); padding:0.5rem;"></th>
+                                    <th style="border:1px solid var(--border); padding:0.5rem;">PGP</th>
+                                    <th style="border:1px solid var(--border); padding:0.5rem;">S/MIME</th>
+                                    <th style="border:1px solid var(--border); padding:0.5rem;">SMTP over TLS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;"><strong>ア</strong></td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールアドレス</td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールアドレス</td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールサーバ</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;"><strong>イ</strong></td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールアドレス</td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールサーバ</td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールアドレス</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;"><strong>ウ</strong></td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールサーバ</td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールアドレス</td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールアドレス</td>
+                                </tr>
+                                <tr>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;"><strong>エ</strong></td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールサーバ</td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールサーバ</td>
+                                    <td style="border:1px solid var(--border); padding:0.5rem;">メールサーバ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ 問 16］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>PGP は利用者（メールアドレス）単位で公開鍵を用意する。S/MIME も利用者が公開鍵を生成しデジタル証明書（S/MIME 証明書）を取得するため，メールアドレス単位である。SMTP over TLS はメールクライアントとサーバ間，又はサーバ間の SMTP 通信を TLS で暗号化するため，公開鍵はメールサーバ単位で用意する。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">通信の暗号化と利用者認証の機能をもち，遠隔コンピュータへの安全なログインに利用されるプロトコルはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>L2TP</span></li>
+                        <li><span class="opt-key">イ</span><span>LDAP</span></li>
+                        <li><span class="opt-key">ウ</span><span>RADIUS</span></li>
+                        <li><span class="opt-key">エ</span><span>SSH</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 秋・午前Ⅱ 問 15］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>SSH（Secure Shell）は通信の暗号化と利用者認証の機能をもち，遠隔コンピュータへの安全なログインに広く利用される。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">シリアル回線で利用されているものと同じように，LAN 上で相手先を確認してからデータリンクを確立し，相手先との間でデータを転送するプロトコルはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>MPLS</span></li>
+                        <li><span class="opt-key">イ</span><span>PPP</span></li>
+                        <li><span class="opt-key">ウ</span><span>PPPoE</span></li>
+                        <li><span class="opt-key">エ</span><span>PPTP</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・H31 春・午前Ⅱ 問 19］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>PPPoE（PPP over Ethernet）は，電話回線などのシリアル回線で利用される PPP を LAN（Ethernet）上で利用できるようにしたプロトコルである。利用者認証や IP アドレスの割当てが可能である。PPP はシリアル回線向け，PPTP は PPP フレームを IP でカプセル化するトンネル技術，MPLS は IP-VPN などで用いるラベル転送方式である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="secure-comm-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 無線 LAN) -->
+            <section class="content-section" id="section-wireless-lan-check">
+                <h2 class="section-title"><i class="fa-solid fa-wifi"></i>基礎知識: Check! 解説（無線 LAN）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    無線 LAN の種類、IEEE 802.11i、WPA／WPA3、Enhanced Open、プライバシーセパレータを確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>無線 LAN にはどのような種類があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>IEEE 802.11i 規格による無線 LAN のセキュリティ強化策とはどのような内容か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>WPA ではどのようにして WEP の脆弱性が克服されているのか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>WPA3 の特徴について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>Enhanced Open とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>プライバシーセパレータ機能について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-wireless-lan-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">無線 LAN の暗号化通信を実現する規格に関する記述のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>EAP は，事前に登録した共通鍵を用いて，クライアント PC とアクセスポイント間の暗号化通信を実現する規格である。</span></li>
+                        <li><span class="opt-key">イ</span><span>RADIUS は，公開鍵暗号方式を用いて，クライアント PC とアクセスポイント間の暗号化通信を実現する規格である。</span></li>
+                        <li><span class="opt-key">ウ</span><span>SSID は，公開鍵暗号方式による暗号化通信を実現する規格において，クライアント PC が用いる秘密鍵である。</span></li>
+                        <li><span class="opt-key">エ</span><span>WPA3-Enterprise は，IEEE 802.1X 規格に基づく利用者認証と動的に配布される暗号鍵を用いて暗号化通信を実現する方式である。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 春・午前Ⅱ 問 14］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>エ</strong>が正解。WPA3-Enterprise は IEEE 802.1X に基づく利用者認証と動的鍵配布で暗号化通信を実現する。</p>
+                        <p style="margin-top:0.75rem;"><strong>ア</strong>：EAP は PPP の認証機能を拡張した認証プロトコルであり，IEEE 802.1X に基づく利用者認証を強化するものである。</p>
+                        <p style="margin-top:0.5rem;"><strong>イ</strong>：RADIUS はネットワーク利用者の認証や利用ログを一元管理するシステムである。</p>
+                        <p style="margin-top:0.5rem;"><strong>ウ</strong>：SSID は同一の無線 LAN アクセスポイントに接続する通信端末をグループ化するために設定する論理名である。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">Wi-Fi Alliance の Enhanced Open で新たに定められた仕様として，不特定多数の利用者に無料で公開されている公共無線 LAN サービスのアクセスポイントと端末の間で用いられるものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>端末でパスワードを入力することによって，端末からアクセスポイントへの接続が可能となる仕様</span></li>
+                        <li><span class="opt-key">イ</span><span>端末でパスワードを入力することによって，端末とアクセスポイント間の通信の暗号化が可能となる仕様</span></li>
+                        <li><span class="opt-key">ウ</span><span>端末でパスワードを入力しなくても，端末からアクセスポイントへの接続が可能となる仕様</span></li>
+                        <li><span class="opt-key">エ</span><span>端末でパスワードを入力しなくても，端末とアクセスポイント間の通信の暗号化が可能となる仕様</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R6 春・午前Ⅱ 問 12］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>Enhanced Open は，パスフレーズやパスワードによる認証を行わず，<strong>Diffie-Hellman 鍵交換アルゴリズム</strong>を用いて公共無線 LAN における端末とアクセスポイント間の無線通信を暗号化する技術である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="wireless-lan-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! ネットワークセキュリティ) -->
             <section class="content-section" id="section-netsec-check">
                 <h2 class="section-title"><i class="fa-solid fa-shield-halved"></i>基礎知識: Check! 解説（ネットワークセキュリティ）</h2>
@@ -5188,6 +5393,8 @@
     <script src="vpn-check-data.js"></script>
     <script src="ipsec-check-data.js"></script>
     <script src="tls-check-data.js"></script>
+    <script src="secure-comm-check-data.js"></script>
+    <script src="wireless-lan-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -9494,6 +9701,8 @@
             renderAccordionList(checkVpnData, 'accordion-vpn-list');
             renderAccordionList(checkIpsecData, 'accordion-ipsec-list');
             renderAccordionList(checkTlsData, 'accordion-tls-list');
+            renderAccordionList(checkSecureCommData, 'accordion-secure-comm-list');
+            renderAccordionList(checkWirelessLanData, 'accordion-wireless-lan-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9571,6 +9780,8 @@
             renderSimulatorBridgeByKeys('crypto-simulator-bridge', ['ctrmode', 'hashcol', 'cryptrec', 'qcrypto', 'pqc', 'fwdsec', 'macmsg', 'sha512256']);
             renderSimulatorBridgeByKeys('ipsec-simulator-bridge', ['ipsectunnel', 'ipsecespah', 'ipsecv6']);
             renderSimulatorBridgeByKeys('tls-simulator-bridge', ['tls13suite', 'dtls', 'hsts', 'alwaysontls']);
+            renderSimulatorBridgeByKeys('secure-comm-simulator-bridge', ['mailpubkey', 'sshlogin', 'pppoe']);
+            renderSimulatorBridgeByKeys('wireless-lan-simulator-bridge', ['wpa3ent', 'enhopen']);
         }
 
 
@@ -9713,6 +9924,8 @@
             renderAccordionList(checkVpnData, 'accordion-vpn-list');
             renderAccordionList(checkIpsecData, 'accordion-ipsec-list');
             renderAccordionList(checkTlsData, 'accordion-tls-list');
+            renderAccordionList(checkSecureCommData, 'accordion-secure-comm-list');
+            renderAccordionList(checkWirelessLanData, 'accordion-wireless-lan-list');
             renderAccordionList(checkNetSecData, 'accordion-netsec-list');
             renderAccordionList(checkTcpIpSecData, 'accordion-tcpipsec-list');
             renderAccordionList(checkMailSecData, 'accordion-mailsec-list');
@@ -9920,6 +10133,14 @@
 
         function scrollToTlsCheck() {
             document.getElementById('section-tls-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToSecureCommCheck() {
+            document.getElementById('section-secure-comm-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToWirelessLanCheck() {
+            document.getElementById('section-wireless-lan-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetSecCheck() {
