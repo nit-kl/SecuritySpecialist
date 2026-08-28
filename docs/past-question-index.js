@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 119問）
+// 過去問一覧（すべてシミュレーター 125問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -26,7 +26,7 @@ const pastQuestionIndex = [
     { no: 20, format: 'simulator', category: 'malware', key: 'cryptojack',  source: 'R7春 午前II問5',   title: 'クリプトジャッキング' },
     { no: 21, format: 'simulator', category: 'malware', key: 'mitb',        source: 'R5秋 午前II問7',   title: 'MITB・トランザクション署名' },
     { no: 36, format: 'simulator', category: 'malware', key: 'rootkit',     source: 'R3秋 午前II問14',  title: 'ルートキット' },
-    // --- 基礎・管理 (31) ---
+    // --- 基礎・管理 (37) ---
     { no: 22, format: 'simulator', category: 'fundamentals', key: 'failsafe', source: 'H31春 高度共通 午前I問16', title: 'フェールセーフ' },
     { no: 59, format: 'simulator', category: 'fundamentals', key: 'riskident', source: 'R7春 午前II問10', title: 'JIS Q 27000 用語（リスク特定）' },
     { no: 60, format: 'simulator', category: 'fundamentals', key: 'riskdetail', source: 'H23秋 午前II問25', title: '詳細リスク分析' },
@@ -58,6 +58,12 @@ const pastQuestionIndex = [
     { no: 105, format: 'simulator', category: 'fundamentals', key: 'fwdsec', source: 'R4秋 午前II問8', title: '前方秘匿性' },
     { no: 106, format: 'simulator', category: 'fundamentals', key: 'macmsg', source: 'R6春 午前II問2', title: 'MACと完全性' },
     { no: 107, format: 'simulator', category: 'fundamentals', key: 'sha512256', source: 'R7春 午前II問3', title: 'SHA-512/256' },
+    { no: 120, format: 'simulator', category: 'fundamentals', key: 'digicert', source: 'R7春 午前II問6', title: 'デジタル証明書' },
+    { no: 121, format: 'simulator', category: 'fundamentals', key: 'crlx509', source: 'R6春 午前II問6', title: 'X.509のCRL' },
+    { no: 122, format: 'simulator', category: 'fundamentals', key: 'ocsppki', source: 'R3春 午前II問2', title: 'OCSP' },
+    { no: 123, format: 'simulator', category: 'fundamentals', key: 'xmldsig', source: 'R5秋 午前II問4', title: 'XMLデジタル署名' },
+    { no: 124, format: 'simulator', category: 'fundamentals', key: 'rarole', source: 'R6春 午前II問3', title: 'RAの役割' },
+    { no: 125, format: 'simulator', category: 'fundamentals', key: 'cpscope', source: 'R7春 午前II問9', title: 'CPS' },
     // --- ネットワーク (35) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },

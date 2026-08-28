@@ -3206,5 +3206,203 @@ const questionDataExtra = {
             { num: 4, btn: "4. 正解", desc: "<strong>4. エが該当仕様</strong><br>パスワードなしで暗号化です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "OWE", res: "暗号化" }
+    },
+    digicert: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問6",
+        diagramTitle: "デジタル証明書（シミュレーター）",
+        text: "デジタル証明書に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "S/MIME や TLS で利用するデジタル証明書の規格は，ITU-T X400 で標準化されている。", correct: false },
+            { key: "イ", text: "TLS において，デジタル証明書は，通信データの暗号化のための鍵交換や通信相手の認証に利用されている。", correct: true },
+            { key: "ウ", text: "認証局が発行するデジタル証明書は，申請者の秘密鍵に対して認証局がデジタル署名したものである。", correct: false },
+            { key: "エ", text: "ルート認証局は，下位の認証局の公開鍵にルート認証局の公開鍵でデジタル署名したデジタル証明書を発行する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p>デジタル証明書は ITU-T <strong>X.509</strong>（RFC 5280）で標準化されています。CA は申請者の<strong>公開鍵</strong>に署名します。ルート CA は下位 CA の公開鍵に<strong>ルート CA の秘密鍵</strong>で署名します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：X.509 が正しい（X.400 ではない） ❌</li>
+                <li><strong>イ</strong>：TLS で鍵交換・認証に利用 ✅</li>
+                <li><strong>ウ</strong>：公開鍵に署名（秘密鍵ではない） ❌</li>
+                <li><strong>エ</strong>：秘密鍵で署名 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "クライアント", ip: "TLS", icon: "fa-laptop", color: "var(--secondary)" },
+            center: { name: "デジタル証明書", ip: "鍵交換・認証", icon: "fa-certificate", color: "var(--primary)" },
+            right: { name: "サーバ", ip: "X.509", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 規格", desc: "<strong>1. X.509 規格</strong><br>S/MIME，TLS などで利用します。", stateClass: "state-1" },
+            { num: 2, btn: "2. TLS", desc: "<strong>2. TLS で認証・鍵交換</strong><br>通信相手を確認します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 署名", desc: "<strong>3. 公開鍵に CA が署名</strong><br>秘密鍵ではありません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. イが適切</strong><br>TLS での利用が正しい記述です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "証明書", res: "認証" }
+    },
+    crlx509: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問6",
+        diagramTitle: "X.509 の CRL（シミュレーター）",
+        text: "X.509 における CRL に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "RFC 5280 では，認証局は，発行したデジタル証明書のうち失効したものについては，シリアル番号を失効後 1 年間 CRL に記載するよう義務付けている。", correct: false },
+            { key: "イ", text: "Web サイトの利用者の Web ブラウザは，その Web サイトにサーバ証明書を発行した認証局の公開鍵が Web ブラウザに組み込まれていれば，CRL を参照しなくてもよい。", correct: false },
+            { key: "ウ", text: "認証局は，発行した全てのデジタル証明書の有効期限を CRL に記載する。", correct: false },
+            { key: "エ", text: "認証局は，有効期限内のデジタル証明書が失効されたとき，そのシリアル番号を CRL に記載する。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>CRL</strong>は有効期限前に失効した証明書のシリアル番号を掲載するリストです。有効期限が自然に切れた証明書は CRL から削除されます。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：失効後 1 年間の義務付けではない ❌</li>
+                <li><strong>イ</strong>：信頼の根があっても失効確認は必要 ❌</li>
+                <li><strong>ウ</strong>：全証明書の有効期限ではない ❌</li>
+                <li><strong>エ</strong>：失効時にシリアル番号を記載 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "CA", ip: "失効管理", icon: "fa-building-shield", color: "var(--secondary)" },
+            center: { name: "CRL", ip: "失効リスト", icon: "fa-list", color: "var(--primary)" },
+            right: { name: "クライアント", ip: "失効確認", icon: "fa-laptop", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 失効", desc: "<strong>1. 証明書が失効</strong><br>秘密鍵漏洩などの理由です。", stateClass: "state-1" },
+            { num: 2, btn: "2. CRL", desc: "<strong>2. シリアル番号を CRL に記載</strong><br>有効期限内の失効分です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 確認", desc: "<strong>3. クライアントが参照</strong><br>失効していないか確認します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エが適切</strong><br>失効時の CRL 記載です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "CRL", res: "失効情報" }
+    },
+    ocsppki: {
+        source: "情報処理安全確保支援士試験・R3春・午前II問2",
+        diagramTitle: "OCSP（シミュレーター）",
+        text: "PKI を構成する OCSP を利用する目的はどれか。",
+        options: [
+            { key: "ア", text: "誤って破棄してしまった秘密鍵の再発行処理の進捗状況を問い合わせる。", correct: false },
+            { key: "イ", text: "デジタル証明書から生成した鍵情報の交換が OCSP クライアントと OCSP レスポンダの間で失敗した際，認証状態を確認する。", correct: false },
+            { key: "ウ", text: "デジタル証明書の失効情報を問い合わせる。", correct: true },
+            { key: "エ", text: "有効期限の切れたデジタル証明書の更新処理の進捗状況を確認する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p><strong>OCSP</strong>（Online Certificate Status Protocol）は，特定のデジタル証明書の<strong>失効情報をリアルタイムに問い合わせ</strong>る仕組みです。OCSP レスポンダが状態を返答します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：秘密鍵再発行の進捗確認ではない ❌</li>
+                <li><strong>イ</strong>：鍵交換失敗時の確認ではない ❌</li>
+                <li><strong>ウ</strong>：失効情報の問い合わせ ✅</li>
+                <li><strong>エ</strong>：更新処理の進捗確認ではない ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "OCSP クライアント", ip: "問合せ", icon: "fa-laptop", color: "var(--secondary)" },
+            center: { name: "OCSP", ip: "失効照会", icon: "fa-magnifying-glass", color: "var(--primary)" },
+            right: { name: "レスポンダ", ip: "good/revoked", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. PKI", desc: "<strong>1. PKI の失効確認</strong><br>CRL の代替・補完です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 問合", desc: "<strong>2. 証明書の状態を問合</strong><br>シリアル番号等を送信します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 応答", desc: "<strong>3. レスポンダが返答</strong><br>失効かどうかを知らせます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. ウが目的</strong><br>失効情報の問い合わせです。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "OCSP", res: "失効状態" }
+    },
+    xmldsig: {
+        source: "情報処理安全確保支援士試験・R5秋・午前II問4",
+        diagramTitle: "XML デジタル署名（シミュレーター）",
+        text: "XML デジタル署名の特徴として，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "XML 文書中のエレメントに対するデタッチ署名 (Detached Signature) を作成し，同じ XML 文書に含めることができる。", correct: true },
+            { key: "イ", text: "エンベローピング署名 (Enveloping Signature) では一つの署名対象に複数の署名を付与する。", correct: false },
+            { key: "ウ", text: "署名の書式として，CMS (Cryptographic Message Syntax) を用いる。", correct: false },
+            { key: "エ", text: "デジタル署名では，署名対象と署名アルゴリズムを ASN.1 によって記述する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>XML デジタル署名</strong>は W3C と IETF が策定。文書全体または特定エレメントに<strong>デタッチ署名</strong>を付け，同一 XML 文書に含められます。書式は XML ベースです。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：デタッチ署名を同一文書に含められる ✅</li>
+                <li><strong>イ</strong>：エンベローピングの説明が不正確 ❌</li>
+                <li><strong>ウ</strong>：CMS ではなく XML 形式 ❌</li>
+                <li><strong>エ</strong>：ASN.1 ではなく XML で記述 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "XML 文書", ip: "エレメント", icon: "fa-file-code", color: "var(--secondary)" },
+            center: { name: "XML 署名", ip: "Detached", icon: "fa-signature", color: "var(--primary)" },
+            right: { name: "検証者", ip: "XML 形式", icon: "fa-user-check", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 標準", desc: "<strong>1. W3C/IETF 標準</strong><br>XML ベースの署名です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 対象", desc: "<strong>2. エレメント単位で署名</strong><br>デタッチ署名が可能です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 形式", desc: "<strong>3. CMS/ASN.1 ではない</strong><br>XML で記述します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. アが特徴</strong><br>デタッチ署名の説明です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "XML", res: "署名" }
+    },
+    rarole: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問3",
+        diagramTitle: "RA の役割（シミュレーター）",
+        text: "PKI（公開鍵基盤）を構成する RA（Registration Authority）の役割はどれか。",
+        options: [
+            { key: "ア", text: "デジタル証明書にデジタル署名を付与する。", correct: false },
+            { key: "イ", text: "デジタル証明書に紐づけられた属性証明書を発行する。", correct: false },
+            { key: "ウ", text: "デジタル証明書の失効リストを管理し，デジタル証明書の有効性を確認する。", correct: false },
+            { key: "エ", text: "本人確認を行い，デジタル証明書の発行申請の承認又は却下を行う。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>RA（登録局）</strong>は本人確認，資格審査，利用者情報の登録などを担い，証明書発行申請の承認／却下を行います。CA は証明書への署名と失効リスト管理を行います。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：CA の役割 ❌</li>
+                <li><strong>イ</strong>：属性証明書発行は別機能 ❌</li>
+                <li><strong>ウ</strong>：CRL 管理は CA 側 ❌</li>
+                <li><strong>エ</strong>：本人確認と申請審査 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "申請者", ip: "本人確認", icon: "fa-user", color: "var(--secondary)" },
+            center: { name: "RA", ip: "審査", icon: "fa-clipboard-check", color: "var(--primary)" },
+            right: { name: "CA", ip: "証明書発行", icon: "fa-building-shield", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 申請", desc: "<strong>1. 証明書発行申請</strong><br>利用者から受け付けます。", stateClass: "state-1" },
+            { num: 2, btn: "2. 本人確認", desc: "<strong>2. RA が本人確認</strong><br>身元を保証します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 審査", desc: "<strong>3. 承認または却下</strong><br>CA への発行判断です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エが RA の役割</strong><br>本人確認と審査です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "申請", res: "審査結果" }
+    },
+    cpscope: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問9",
+        diagramTitle: "CPS（シミュレーター）",
+        text: "公開鍵基盤における CPS（Certification Practice Statement）はどれか。",
+        options: [
+            { key: "ア", text: "認証局が発行するデジタル証明書の所有者が策定したセキュリティ宣言", correct: false },
+            { key: "イ", text: "認証局でのデジタル証明書発行手続を代行する事業者が策定したセキュリティ宣言", correct: false },
+            { key: "ウ", text: "認証局の認証業務の運用などに関する詳細を規定した文書", correct: true },
+            { key: "エ", text: "認証局を監査する第三者機関の運用などに関する詳細を規定した文書", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p><strong>CPS</strong>（認証局運用規程）は，CA などの信頼される第三者機関が，認証業務の運用体制や手順の詳細を利用者に開示する文書です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：証明書所有者の宣言ではない ❌</li>
+                <li><strong>イ</strong>：代行事業者の宣言ではない ❌</li>
+                <li><strong>ウ</strong>：CA の認証業務運用を規定 ✅</li>
+                <li><strong>エ</strong>：監査機関の文書ではない ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "CA", ip: "運用規程", icon: "fa-building-shield", color: "var(--secondary)" },
+            center: { name: "CPS", ip: "認証業務", icon: "fa-file-contract", color: "var(--primary)" },
+            right: { name: "利用者", ip: "信頼性評価", icon: "fa-users", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. CA", desc: "<strong>1. 認証局が策定</strong><br>運用の詳細を公開します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 内容", desc: "<strong>2. 認証業務の運用規定</strong><br>体制・手順を記載します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 目的", desc: "<strong>3. 信頼性の評価</strong><br>利用者が CA を判断できます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. ウが CPS</strong><br>認証業務運用の文書です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "CPS", res: "運用規程" }
     }
 };
