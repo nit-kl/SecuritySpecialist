@@ -3404,5 +3404,38 @@ const questionDataExtra = {
             { num: 4, btn: "4. 正解", desc: "<strong>4. ウが CPS</strong><br>認証業務運用の文書です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "CPS", res: "運用規程" }
+    },
+    formalmethod: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問23",
+        diagramTitle: "形式手法（シミュレーター）",
+        text: "ソフトウェアの品質を確保するための検証に形式手法を用いる。このとき行う検証方法の説明として，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "進行役（モデレーター），記録役などの役割を決めた複数人で，成果物に欠陥がないかどうかを検証する。", correct: false },
+            { key: "イ", text: "プログラムの内部構造とは無関係に，プログラムが仕様どおりに機能するかどうかを検証する。", correct: false },
+            { key: "ウ", text: "プログラムの内部構造に着目し，プログラムが仕様どおりに動作するかどうかを検証する。", correct: false },
+            { key: "エ", text: "明確で厳密な意味を定義することができる言語を用いてソフトウェアの仕様を記述して，満たすべき性質と仕様とが整合しているかどうかを論理的に検証する。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>形式手法</strong>（Formal Method）は，明確で厳密な意味を持つ言語でソフトウェア仕様を記述し，設計・記述の正しさを<strong>論理的に検証</strong>する手法です。品質・安全性向上を目的とし，論理学や離散数学が基礎です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：ウォークスルー／インスペクション ❌</li>
+                <li><strong>イ</strong>：ブラックボックステスト ❌</li>
+                <li><strong>ウ</strong>：ホワイトボックステスト ❌</li>
+                <li><strong>エ</strong>：形式手法の説明 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "仕様", ip: "形式言語", icon: "fa-file-code", color: "var(--secondary)" },
+            center: { name: "形式手法", ip: "論理検証", icon: "fa-check-double", color: "var(--primary)" },
+            right: { name: "性質", ip: "整合性", icon: "fa-shield-halved", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 記述", desc: "<strong>1. 厳密な言語で仕様記述</strong><br>曖昧さを排除します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 性質", desc: "<strong>2. 満たすべき性質を定義</strong><br>安全性などを表現します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 検証", desc: "<strong>3. 論理的に整合性を検証</strong><br>数学的・論理的に確認します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エが形式手法</strong><br>論理検証が特徴です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "仕様", res: "検証" }
     }
 };
