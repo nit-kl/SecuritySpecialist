@@ -1893,7 +1893,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（406問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（411問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1964,7 +1964,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToVulnCheck()">脆弱性（6問＋確認4問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToVulnAssessmentCheck()">脆弱性診断（10問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToDosCheck()">DoS 攻撃 Check!（5問）</button>
-                    <button class="sidebar-link-btn" onclick="scrollToBofCheck()">バッファオーバーフロー（10問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToBofCheck()">バッファオーバーフロー（15問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToWebSecCheck()">Web セキュリティ（8問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCheck()">Web 脆弱性 Check!（16問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMalwareCheck()">マルウェア・脅威（23問）</button>
@@ -1985,7 +1985,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>406+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>411+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -2017,7 +2017,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
                         <h3>攻撃・脅威・対策</h3>
                         <p>DoS、BOF、Web 脆弱性、マルウェア、パスワード・セッション攻撃など実践的な脅威と対策。</p>
-                        <div class="card-meta">104問超（Check! 解説）</div>
+                        <div class="card-meta">109問超（Check! 解説）</div>
                     </div>
                 </div>
                 <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.85rem;">
@@ -5301,7 +5301,7 @@
             <section class="content-section" id="section-bof-check">
                 <h2 class="section-title"><i class="fa-solid fa-memory"></i>基礎知識: Check! 解説（バッファオーバーフロー）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
-                    スタック・ヒープ、C/C++ の特性、BOF 攻撃、setuid/setgid、対策方法を確認します。各項目をクリックして展開してください。
+                    スタック・ヒープ、C/C++ の特性、危険な関数、BOF 攻撃の成立条件と対策、setuid/setgid、system 関数の注意点を確認します。各項目をクリックして展開してください。
                 </p>
                 <div class="check-box-panel">
                     <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
@@ -5316,6 +5316,11 @@
                         <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>商用ソフトウェアに対する BOF 攻撃の有効な対策は何か。</span></li>
                         <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>ソフトウェア開発者の視点で取るべき BOF 対策は何か。</span></li>
                         <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q10】</span>setuid/setgid 属性を悪用する BOF 攻撃に対する有効な対策は何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q11】</span>BOF 攻撃を許してしまう関数には何があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q12】</span>C/C++ 言語の文字列の処理においては何を注意する必要があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q13】</span>どのような場合に BOF 攻撃が成立してしまうか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q14】</span>BOF 攻撃を防ぐにはどのような対策を行う必要があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q15】</span>system 関数の使用において注意すべきことは何か。</span></li>
                     </ul>
                 </div>
                 <div class="accordion" id="accordion-bof-list"></div>
@@ -8899,7 +8904,7 @@
             }
         ];
 
-        // Check! 基礎知識の解説データ (BOF 10問)
+        // Check! 基礎知識の解説データ (BOF 15問)
         const checkBofData = [
             {
                 q: "【Q1】 スタック領域のデータ構造の特徴を挙げよ。",
@@ -9088,6 +9093,87 @@
                             <li><strong>chroot</strong>、コンテナ、サンドボックスによる実行環境の隔離</li>
                             <li>不要になった setuid ビットの<strong>削除</strong>（chmod で解除）</li>
                             <li>Q8・Q9 のパッチ適用・ASLR 等も引き続き有効</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                q: "【Q11】 BOF 攻撃を許してしまう関数には何があるか。",
+                ans: `
+                    <span class="check-category-badge badge-bof">危険な関数</span>
+                    <div class="check-measure-box">
+                        <p>入力長のチェックを行わず，バッファ境界を超えて書き込み得る代表的な関数です。</p>
+                        <ul style="margin-top:0.75rem;">
+                            <li><strong>strcpy</strong>，<strong>strcat</strong>：コピー先サイズを検証しない</li>
+                            <li><strong>gets</strong>：標準入力を長さ制限なく読み込む（廃止推奨）</li>
+                            <li><strong>sprintf</strong>，<strong>vsprintf</strong>：出力バッファの上限を超え得る</li>
+                            <li><strong>scanf</strong>（幅指定なしの %s 等）：入力長を制限しない</li>
+                            <li><strong>memcpy</strong> 等：コピー長を誤ると境界を超える</li>
+                        </ul>
+                        <p style="margin-top:0.75rem;">代替として <code>strncpy</code>，<code>strncat</code>，<code>snprintf</code>，<code>fgets</code> などを使い，必ず長さを検証します。</p>
+                    </div>
+                `
+            },
+            {
+                q: "【Q12】 C/C++ 言語の文字列の処理においては何を注意する必要があるか。",
+                ans: `
+                    <span class="check-category-badge badge-bof">文字列処理の注意点</span>
+                    <div class="check-measure-box">
+                        <ul>
+                            <li>文字列は<strong>ヌル終端（\\0）</strong>で終わるが，<strong>長さ情報を保持しない</strong></li>
+                            <li>配列サイズと実際の文字列長は別物（バッファサイズを超えないか常に確認）</li>
+                            <li>コピー・連結時は<strong>宛先バッファの残容量</strong>を計算する</li>
+                            <li>外部入力は<strong>最大長を前提に検証</strong>し，異常入力を拒否する</li>
+                            <li>マルチバイト文字ではバイト数と文字数を混同しない</li>
+                            <li>安全な API（長さ付き関数，C++ の <code>std::string</code> 等）の利用を検討</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                q: "【Q13】 どのような場合に BOF 攻撃が成立してしまうか。",
+                ans: `
+                    <span class="check-category-badge badge-bof">攻撃成立の条件</span>
+                    <div class="check-measure-box">
+                        <ul>
+                            <li>プログラムが<strong>固定長バッファ</strong>に外部入力を無制限に受け入れる</li>
+                            <li>入力長・境界の<strong>チェックがない</strong>（または不十分）</li>
+                            <li>溢れたデータが<strong>戻りアドレス</strong>，関数ポインタ，重要な変数を上書きする</li>
+                            <li>攻撃者が<strong>任意コードを実行</strong>できる環境（実行可能スタック，保護機能の無効化等）</li>
+                            <li>対象プロセスが<strong>高い権限</strong>で動作している場合は権限昇格につながる</li>
+                            <li>ヒープ領域の場合は Use-After-Free 等の別経路でも成立し得る</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                q: "【Q14】 BOF 攻撃を防ぐにはどのような対策を行う必要があるか。",
+                ans: `
+                    <span class="check-category-badge badge-bof">BOF 対策</span>
+                    <div class="check-measure-box">
+                        <ul>
+                            <li><strong>セキュアコーディング</strong>：境界チェック，危険関数の回避，安全 API の利用</li>
+                            <li><strong>コンパイラ・OS 保護</strong>：Stack Canary，ASLR，DEP/NX（非実行スタック）</li>
+                            <li><strong>静的・動的解析</strong>，ファジング，コードレビュー</li>
+                            <li><strong>パッチ適用</strong>と脆弱性管理</li>
+                            <li><strong>最小権限</strong>での実行，不要な setuid の削除</li>
+                            <li>可能であればメモリ安全な言語・ライブラリの採用</li>
+                        </ul>
+                    </div>
+                `
+            },
+            {
+                q: "【Q15】 system 関数の使用において注意すべきことは何か。",
+                ans: `
+                    <span class="check-category-badge badge-bof">system 関数</span>
+                    <div class="check-measure-box">
+                        <ul>
+                            <li><code>system()</code> は<strong>シェル経由</strong>でコマンドを実行するため，引数にユーザー入力をそのまま渡すと<strong>コマンドインジェクション</strong>の危険がある</li>
+                            <li><code>;</code>，<code>|</code>，<code>&&</code> 等の<strong>シェルメタ文字</strong>で任意コマンドが連結され得る</li>
+                            <li>外部入力は<strong>厳格に検証・サニタイズ</strong>するか，<code>system</code> を使わない</li>
+                            <li>代替として <code>execve</code> 等で<strong>引数を明示的に渡し</strong>シェルを介さない実行を検討</li>
+                            <li>必要最小限のコマンドのみ許可する<strong>ホワイトリスト</strong>方式が望ましい</li>
+                            <li>権限の高いプロセスでの使用は特に危険</li>
                         </ul>
                     </div>
                 `
