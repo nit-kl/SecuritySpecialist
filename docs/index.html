@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（126問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（127問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（126問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（127問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1416,7 +1416,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（38問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（39問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1569,6 +1569,10 @@
                 <button class="question-tab-btn" onclick="switchQuestion('formalmethod', this)">
                     <span class="btn-meta">問126: R6春 午前II問23</span>
                     <span class="btn-title">形式手法</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('gcollect', this)">
+                    <span class="btn-meta">問127: H28秋 高度共通 午前I問6</span>
+                    <span class="btn-title">ガーベジコレクション</span>
                 </button>
                 </div>
             </details>
@@ -1893,7 +1897,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（411問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（417問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1965,6 +1969,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToVulnAssessmentCheck()">脆弱性診断（10問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToDosCheck()">DoS 攻撃 Check!（5問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToBofCheck()">バッファオーバーフロー（15問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToJavaSecCheck()">Java セキュリティ（6問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToWebSecCheck()">Web セキュリティ（8問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCheck()">Web 脆弱性 Check!（16問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMalwareCheck()">マルウェア・脅威（23問）</button>
@@ -1985,7 +1990,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>411+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>417+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -1998,8 +2003,8 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全126問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全126問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全127問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全127問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -2017,7 +2022,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
                         <h3>攻撃・脅威・対策</h3>
                         <p>DoS、BOF、Web 脆弱性、マルウェア、パスワード・セッション攻撃など実践的な脅威と対策。</p>
-                        <div class="card-meta">109問超（Check! 解説）</div>
+                        <div class="card-meta">116問超（Check! 解説）</div>
                     </div>
                 </div>
                 <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.85rem;">
@@ -2028,9 +2033,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（126問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（127問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 126 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 127 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -2038,7 +2043,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（126問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（127問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -5333,6 +5338,54 @@
 
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! Java セキュリティ) -->
+            <section class="content-section" id="section-java-sec-check">
+                <h2 class="section-title"><i class="fa-brands fa-java"></i>基礎知識: Check! 解説（Java セキュリティ）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Java のメモリ管理、サンドボックス、フィールド保護、レースコンディション、継承制限、例外処理を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>Java のメモリ管理上の特性について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>サンドボックスモデルとはどのようなものか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>フィールドを不正や誤りによる書換えから防ぐにはどうするべきか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>レースコンディションとは何か、どのような対策があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>不正なクラスの継承を防ぐにはどうする必要があるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>例外処理の概要について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-java-sec-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">プログラム実行時の主記憶管理に関する記述として，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>主記憶の空き領域を結合して一つの連続した領域にすることを，可変区画方式という。</span></li>
+                        <li><span class="opt-key">イ</span><span>プログラムが使用しなくなったヒープ領域を回収して再度使用可能にすることを，ガーベジコレクションという。</span></li>
+                        <li><span class="opt-key">ウ</span><span>プログラムの実行中に主記憶内でモジュールの格納位置を移動させることを，動的リンキングという。</span></li>
+                        <li><span class="opt-key">エ</span><span>プログラムの実行中に必要になった時点でモジュールをロードすることを，動的再配置という。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・H28 秋・午前I 問 6］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>ガーベジコレクションは，不要になったメモリ領域を自動的に解放する機能であり，Java などで採用されている。これにより，プログラムがメモリを管理する負担を軽減しているが，実行時にはシステムリソースを消費するため，同機能の実行による応答性への影響等を考慮する必要がある。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>イ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="java-sec-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! Webセキュリティ) -->
             <section class="content-section" id="section-websec-check">
                 <h2 class="section-title"><i class="fa-solid fa-globe"></i>基礎知識: Check! 解説（Webセキュリティ）</h2>
@@ -5619,6 +5672,7 @@
     <script src="tls-check-data.js"></script>
     <script src="secure-comm-check-data.js"></script>
     <script src="wireless-lan-check-data.js"></script>
+    <script src="java-sec-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -10022,6 +10076,7 @@
             renderAccordionList(checkVulnData, 'accordion-vuln-list');
             renderAccordionList(checkVulnAssessmentData, 'accordion-vuln-assessment-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
+            renderAccordionList(checkJavaSecData, 'accordion-java-sec-list');
             renderAccordionList(checkWebSecData, 'accordion-websec-list');
             renderAccordionList(checkData, 'accordion-list');
             renderAccordionList(checkMalwareData, 'accordion-malware-list');
@@ -10054,6 +10109,7 @@
             renderSimulatorBridge('zerotrust-simulator-bridge', 'zerotrust');
             renderSimulatorBridge('threat-simulator-bridge', 'threat');
             renderSimulatorBridge('bof-simulator-bridge', 'bof');
+            renderSimulatorBridgeByKeys('java-sec-simulator-bridge', ['gcollect']);
             renderSimulatorBridge('vuln-simulator-bridge', 'vuln');
             renderSimulatorBridgeByKeys('malware-extra-simulator-bridge', ['rootkit']);
             renderSimulatorBridge('password-simulator-bridge', 'password');
@@ -10249,6 +10305,7 @@
             renderAccordionList(checkVulnData, 'accordion-vuln-list');
             renderAccordionList(checkVulnAssessmentData, 'accordion-vuln-assessment-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
+            renderAccordionList(checkJavaSecData, 'accordion-java-sec-list');
             renderAccordionList(checkWebSecData, 'accordion-websec-list');
             renderAccordionList(checkData, 'accordion-list');
             renderAccordionList(checkMalwareData, 'accordion-malware-list');
@@ -10504,6 +10561,10 @@
 
         function scrollToBofCheck() {
             document.getElementById('section-bof-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToJavaSecCheck() {
+            document.getElementById('section-java-sec-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToWebSecCheck() {

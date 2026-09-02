@@ -3437,5 +3437,38 @@ const questionDataExtra = {
             { num: 4, btn: "4. 正解", desc: "<strong>4. エが形式手法</strong><br>論理検証が特徴です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "仕様", res: "検証" }
+    },
+    gcollect: {
+        source: "情報処理技術者試験 高度共通・H28秋・午前I問6",
+        diagramTitle: "主記憶管理（シミュレーター）",
+        text: "プログラム実行時の主記憶管理に関する記述として，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "主記憶の空き領域を結合して一つの連続した領域にすることを，可変区画方式という。", correct: false },
+            { key: "イ", text: "プログラムが使用しなくなったヒープ領域を回収して再度使用可能にすることを，ガーベジコレクションという。", correct: true },
+            { key: "ウ", text: "プログラムの実行中に主記憶内でモジュールの格納位置を移動させることを，動的リンキングという。", correct: false },
+            { key: "エ", text: "プログラムの実行中に必要になった時点でモジュールをロードすることを，動的再配置という。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p><strong>ガーベジコレクション</strong>は，不要になったメモリ領域を自動的に解放する機能です。Java 等で採用され，プログラムのメモリ管理負担を軽減しますが，実行時にシステムリソースを消費するため応答性への影響に注意が必要です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：可変区画方式の説明ではない ❌</li>
+                <li><strong>イ</strong>：ガーベジコレクションの説明 ✅</li>
+                <li><strong>ウ</strong>：動的再配置の説明（動的リンキングではない） ❌</li>
+                <li><strong>エ</strong>：動的リンキングの説明（動的再配置ではない） ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "ヒープ", ip: "不要領域", icon: "fa-memory", color: "var(--secondary)" },
+            center: { name: "GC", ip: "自動回収", icon: "fa-recycle", color: "var(--primary)" },
+            right: { name: "JVM", ip: "再利用可能", icon: "fa-coffee", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 確保", desc: "<strong>1. ヒープにオブジェクト確保</strong><br>プログラムがメモリを使用します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 不要", desc: "<strong>2. 参照がなくなる</strong><br>使用しなくなった領域が発生します。", stateClass: "state-2" },
+            { num: 3, btn: "3. GC", desc: "<strong>3. ガーベジコレクション</strong><br>不要領域を回収して再利用可能にします。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. イが適切</strong><br>GC の説明です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "ヒープ", res: "回収" }
     }
 };
