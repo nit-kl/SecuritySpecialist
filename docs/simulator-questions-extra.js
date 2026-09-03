@@ -3470,5 +3470,70 @@ const questionDataExtra = {
             { num: 4, btn: "4. 正解", desc: "<strong>4. イが適切</strong><br>GC の説明です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "ヒープ", res: "回収" }
+    },
+    grantoption: {
+        source: "情報処理安全確保支援士試験・R5春・午前II問21",
+        diagramTitle: "SQL GRANT（シミュレーター）",
+        text: "次の SQL 文を A 表の所有者が発行したときの，利用者 B への A 表に関する権限の付与を説明したものはどれか。<br><code style=\"display:block;margin:0.75rem 0;padding:0.5rem;background:var(--bg-card);border-radius:4px;\">GRANT ALL PRIVILEGES ON A TO B WITH GRANT OPTION</code>",
+        options: [
+            { key: "ア", text: "SELECT 権限，UPDATE 権限，INSERT 権限，DELETE 権限などの全ての権限，及びそれらの付与権を付与する。", correct: true },
+            { key: "イ", text: "SELECT 権限，UPDATE 権限，INSERT 権限，DELETE 権限などの権限を付与するが，それらの付与権は付与しない。", correct: false },
+            { key: "ウ", text: "SELECT 権限，UPDATE 権限，INSERT 権限，DELETE 権限は付与しないが，それら全ての付与権だけを付与する。", correct: false },
+            { key: "エ", text: "SELECT 権限，及び SELECT 権限の付与権を付与するが，UPDATE 権限，INSERT 権限，DELETE 権限，及びそれらの付与権は付与しない。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>ALL PRIVILEGES</strong>（または ALL）は SELECT，UPDATE，INSERT，DELETE 等のすべての権限を付与します。<strong>WITH GRANT OPTION</strong> は，付与された権限を他ユーザに再付与できる権限です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：全権限＋付与権 ✅</li>
+                <li><strong>イ</strong>：WITH GRANT OPTION なし ❌</li>
+                <li><strong>ウ・エ</strong>：ALL PRIVILEGES の説明と不一致 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "所有者", ip: "GRANT", icon: "fa-user-shield", color: "var(--secondary)" },
+            center: { name: "表 A", ip: "ALL PRIVILEGES", icon: "fa-table", color: "var(--primary)" },
+            right: { name: "利用者 B", ip: "付与権あり", icon: "fa-user", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. GRANT", desc: "<strong>1. GRANT 文で権限付与</strong><br>表 A に対する権限です。", stateClass: "state-1" },
+            { num: 2, btn: "2. ALL", desc: "<strong>2. ALL PRIVILEGES</strong><br>SELECT 等すべての権限です。", stateClass: "state-2" },
+            { num: 3, btn: "3. OPTION", desc: "<strong>3. WITH GRANT OPTION</strong><br>他ユーザへの再付与権も与えます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. アが該当</strong><br>全権限と付与権です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "GRANT", res: "権限" }
+    },
+    jsondocdb: {
+        source: "情報処理安全確保支援士試験・R元秋・午前II問21",
+        diagramTitle: "JSON とドキュメント型 DB（シミュレーター）",
+        text: "JSON 形式で表現される商品データを複数の Web サービスから取得し，商品データベースとして蓄積する際のデータの格納方法に関する記述のうち，適切なものはどれか。ここで，商品データの取得元となる Web サービスは随時変更され，項目数や内容は予測できない。したがって，商品データベースの検索時に使用するキーにはあらかじめ制限を設けない。",
+        options: [
+            { key: "ア", text: "階層型データベースを使用し，項目名を上位階層とし，値を下位階層とした 2 階層でデータを格納する。", correct: false },
+            { key: "イ", text: "グラフ型データベースを使用し，商品データの項目名の集合から成るノードと値の集合から成るノードを作り，二つのノードを関係づけたグラフとしてデータを格納する。", correct: false },
+            { key: "ウ", text: "ドキュメント型データベースを使用し，項目構成の違いを区別せず，商品データ単位にデータを格納する。", correct: true },
+            { key: "エ", text: "リレーショナルデータベースを使用し，商品データの各項目名を個別の列名とした表を定義してデータを格納する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>取得元ごとに JSON の<strong>項目構成が異なり予測不能</strong>な場合，固定スキーマの RDB や 2 階層の階層 DB より，<strong>ドキュメント型 DB</strong>（MongoDB 等）が JSON/XML をそのままドキュメント単位で格納する方式が適しています。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：階層 DB（2 階層固定） ❌</li>
+                <li><strong>イ</strong>：グラフ DB（本問の用途に不適） ❌</li>
+                <li><strong>ウ</strong>：ドキュメント型 DB ✅</li>
+                <li><strong>エ</strong>：RDB（列固定で柔軟性不足） ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "Web API", ip: "JSON", icon: "fa-cloud", color: "var(--secondary)" },
+            center: { name: "ドキュメントDB", ip: "スキーマレス", icon: "fa-file-code", color: "var(--primary)" },
+            right: { name: "商品DB", ip: "柔軟格納", icon: "fa-database", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 多様", desc: "<strong>1. 取得元ごとに項目が異なる</strong><br>スキーマが固定できません。", stateClass: "state-1" },
+            { num: 2, btn: "2. JSON", desc: "<strong>2. JSON 形式のデータ</strong><br>構造化データとして扱います。", stateClass: "state-2" },
+            { num: 3, btn: "3. 格納", desc: "<strong>3. ドキュメント単位で格納</strong><br>項目構成の違いを吸収します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. ウが適切</strong><br>ドキュメント型 DB です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "JSON", res: "格納" }
     }
 };

@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 127問）
+// 過去問一覧（すべてシミュレーター 129問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -10,7 +10,7 @@ const pastQuestionIndex = [
     { no: 7,  format: 'simulator', category: 'dos',     key: 'services',    source: 'R3春 午前II問1',   title: '悪用されるサービス' },
     { no: 8,  format: 'simulator', category: 'dos',     key: 'notice',      source: 'R5秋 午前II問10',  title: 'IoT調査 "NOTICE"' },
     { no: 9,  format: 'simulator', category: 'dos',     key: 'drdos',       source: 'R7春 午前II問1',   title: 'DRDoS攻撃の定義' },
-    // --- Web (7) ---
+    // --- Web (9) ---
     { no: 10, format: 'simulator', category: 'web',     key: 'clickjack',   source: 'R6秋 午前II問14',  title: 'クリックジャッキング' },
     { no: 11, format: 'simulator', category: 'web',     key: 'oscmd',       source: 'R5秋 午前II問1',   title: 'OSコマンドインジェクション' },
     { no: 12, format: 'simulator', category: 'web',     key: 'sqlicounter', source: 'R5春 午前II問17',  title: 'SQLi対策の組合せ' },
@@ -18,6 +18,8 @@ const pastQuestionIndex = [
     { no: 14, format: 'simulator', category: 'web',     key: 'dirtraversal',source: 'H27春 午前I問15',  title: 'ディレクトリトラバーサル' },
     { no: 15, format: 'simulator', category: 'web',     key: 'oscmdlog',    source: 'R4春 午前II問1',   title: 'CGIログ解析（OSコマンド）' },
     { no: 58, format: 'simulator', category: 'web',     key: 'csrf',        source: 'R6春 午前II問1',   title: 'CSRF 対策' },
+    { no: 128, format: 'simulator', category: 'web', key: 'grantoption', source: 'R5春 午前II問21', title: 'SQL GRANT（WITH GRANT OPTION）' },
+    { no: 129, format: 'simulator', category: 'web', key: 'jsondocdb', source: 'R元秋 午前II問21', title: 'JSONとドキュメント型DB' },
     // --- マルウェア・高度脅威 (7) ---
     { no: 16, format: 'simulator', category: 'malware', key: 'ioc',         source: 'R7春 午前II問13',  title: 'IoC（侵害指標）' },
     { no: 17, format: 'simulator', category: 'malware', key: 'connectback', source: 'R7春 午前II問8',   title: 'コネクトバック' },

@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（127問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（129問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（127問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（129問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1348,7 +1348,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-globe" style="color:#818cf8;"></i> Web 脆弱性（7問）</summary>
+                <summary><i class="fa-solid fa-globe" style="color:#818cf8;"></i> Web 脆弱性（9問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('clickjack', this)">
                     <span class="btn-meta">問10: R6秋 午前II問14</span>
@@ -1377,6 +1377,14 @@
                 <button class="question-tab-btn" onclick="switchQuestion('csrf', this)">
                     <span class="btn-meta">問58: R6春 午前II問1</span>
                     <span class="btn-title">CSRF 対策</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('grantoption', this)">
+                    <span class="btn-meta">問128: R5春 午前II問21</span>
+                    <span class="btn-title">SQL GRANT（WITH GRANT OPTION）</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('jsondocdb', this)">
+                    <span class="btn-meta">問129: R元秋 午前II問21</span>
+                    <span class="btn-title">JSONとドキュメント型DB</span>
                 </button>
                 </div>
             </details>
@@ -1897,7 +1905,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（417問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（423問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1970,6 +1978,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToDosCheck()">DoS 攻撃 Check!（5問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToBofCheck()">バッファオーバーフロー（15問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToJavaSecCheck()">Java セキュリティ（6問＋確認1問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToJsWebCheck()">JavaScript／Web 技術（6問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToWebSecCheck()">Web セキュリティ（8問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCheck()">Web 脆弱性 Check!（16問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToMalwareCheck()">マルウェア・脅威（23問）</button>
@@ -1990,7 +1999,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>417+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>423+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -2003,8 +2012,8 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全127問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全127問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全129問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全129問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
@@ -2022,7 +2031,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
                         <h3>攻撃・脅威・対策</h3>
                         <p>DoS、BOF、Web 脆弱性、マルウェア、パスワード・セッション攻撃など実践的な脅威と対策。</p>
-                        <div class="card-meta">116問超（Check! 解説）</div>
+                        <div class="card-meta">124問超（Check! 解説）</div>
                     </div>
                 </div>
                 <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.85rem;">
@@ -2033,9 +2042,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（127問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（129問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 127 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 129 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -2043,7 +2052,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（127問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（129問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -5386,6 +5395,93 @@
                 <div id="java-sec-simulator-bridge"></div>
             </section>
 
+            <!-- 基礎知識の解説セクション (Check! JavaScript／Web 技術) -->
+            <section class="content-section" id="section-js-web-check">
+                <h2 class="section-title"><i class="fa-brands fa-js"></i>基礎知識: Check! 解説（JavaScript／Web 技術）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    ECMAScript、文字列エスケープ、変数スコープ、Ajax、JSON／JSONP、REST API の原則を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>ECMAScript の言語としての主な特徴を三つ挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>文字列リテラルにおいて最低限エスケープ処理を行うべき文字を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>グローバル変数とローカル変数の取扱いにおける留意点を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>Ajax とはどのような技術か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>JSON, JSONP の概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>API の REST 原則について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-js-web-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">次の SQL 文を A 表の所有者が発行したときの，利用者 B への A 表に関する権限の付与を説明したものはどれか。</p>
+                    <pre style="margin:1rem 0;padding:0.75rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;font-size:0.9rem;overflow-x:auto;">GRANT ALL PRIVILEGES ON A TO B WITH GRANT OPTION</pre>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>SELECT 権限，UPDATE 権限，INSERT 権限，DELETE 権限などの全ての権限，及びそれらの付与権を付与する。</span></li>
+                        <li><span class="opt-key">イ</span><span>SELECT 権限，UPDATE 権限，INSERT 権限，DELETE 権限などの権限を付与するが，それらの付与権は付与しない。</span></li>
+                        <li><span class="opt-key">ウ</span><span>SELECT 権限，UPDATE 権限，INSERT 権限，DELETE 権限は付与しないが，それら全ての付与権だけを付与する。</span></li>
+                        <li><span class="opt-key">エ</span><span>SELECT 権限，及び SELECT 権限の付与権を付与するが，UPDATE 権限，INSERT 権限，DELETE 権限，及びそれらの付与権は付与しない。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R5 春・午前Ⅱ 問 21］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>SQL の GRANT 文は，ユーザに対し，テーブル，ビューなどのオブジェクトに関する特定の権限を付与する。権限名に <strong>ALL</strong> もしくは <strong>ALL PRIVILEGES</strong> と記述すると，SELECT 権限，UPDATE 権限，INSERT 権限，DELETE 権限などのすべての権限を付与する。ユーザ名の後に <strong>WITH GRANT OPTION</strong> を指定すると，権限を他のユーザに付与する権限を与えることができる。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">JSON 形式で表現される図 1，図 2 のような商品データを複数の Web サービスから取得し，商品データベースとして蓄積する際のデータの格納方法に関する記述のうち，適切なものはどれか。ここで，商品データの取得元となる Web サービスは随時変更され，項目数や内容は予測できない。したがって，商品データベースの検索時に使用するキーにはあらかじめ制限を設けない。</p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;">
+                        <div>
+                            <p style="font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;">図 1：A 社 Web サービスの商品データ</p>
+                            <pre style="padding:0.75rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;font-size:0.8rem;overflow-x:auto;">{
+  "_id": "AA09",
+  "品名": "47型テレビ",
+  "価格": "オープンプライス",
+  "関連項目id": ["AA101", "BC06"]
+}</pre>
+                        </div>
+                        <div>
+                            <p style="font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;">図 2：B 社 Web サービスの商品データ</p>
+                            <pre style="padding:0.75rem;background:var(--bg-card);border:1px solid var(--border);border-radius:6px;font-size:0.8rem;overflow-x:auto;">{
+  "_id": "AA10",
+  "商品名": "りんご",
+  "生産地": "青森",
+  "価格": 100,
+  "画像URL": "http://www.example.com/apple.jpg"
+}</pre>
+                        </div>
+                    </div>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>階層型データベースを使用し，項目名を上位階層とし，値を下位階層とした 2 階層でデータを格納する。</span></li>
+                        <li><span class="opt-key">イ</span><span>グラフ型データベースを使用し，商品データの項目名の集合から成るノードと値の集合から成るノードを作り，二つのノードを関係づけたグラフとしてデータを格納する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>ドキュメント型データベースを使用し，項目構成の違いを区別せず，商品データ単位にデータを格納する。</span></li>
+                        <li><span class="opt-key">エ</span><span>リレーショナルデータベースを使用し，商品データの各項目名を個別の列名とした表を定義してデータを格納する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R 元秋・午前Ⅱ 問 21］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>JSON（JavaScript Object Notation）は JavaScript に基づく軽量なデータ記述方式であり，言語に依存しないデータ交換フォーマットとして広く利用される。取得元ごとに項目構成が異なり予測できない場合，JSON や XML などの構造化データをそのまま格納できる<strong>ドキュメント指向データベース</strong>が適している。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="js-web-simulator-bridge"></div>
+            </section>
+
             <!-- 基礎知識の解説セクション (Check! Webセキュリティ) -->
             <section class="content-section" id="section-websec-check">
                 <h2 class="section-title"><i class="fa-solid fa-globe"></i>基礎知識: Check! 解説（Webセキュリティ）</h2>
@@ -5673,6 +5769,7 @@
     <script src="secure-comm-check-data.js"></script>
     <script src="wireless-lan-check-data.js"></script>
     <script src="java-sec-check-data.js"></script>
+    <script src="js-web-check-data.js"></script>
     <script src="vuln-assessment-check-data.js"></script>
     <script src="past-question-index.js"></script>
     <script>
@@ -10077,6 +10174,7 @@
             renderAccordionList(checkVulnAssessmentData, 'accordion-vuln-assessment-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
             renderAccordionList(checkJavaSecData, 'accordion-java-sec-list');
+            renderAccordionList(checkJsWebData, 'accordion-js-web-list');
             renderAccordionList(checkWebSecData, 'accordion-websec-list');
             renderAccordionList(checkData, 'accordion-list');
             renderAccordionList(checkMalwareData, 'accordion-malware-list');
@@ -10110,6 +10208,7 @@
             renderSimulatorBridge('threat-simulator-bridge', 'threat');
             renderSimulatorBridge('bof-simulator-bridge', 'bof');
             renderSimulatorBridgeByKeys('java-sec-simulator-bridge', ['gcollect']);
+            renderSimulatorBridgeByKeys('js-web-simulator-bridge', ['grantoption', 'jsondocdb']);
             renderSimulatorBridge('vuln-simulator-bridge', 'vuln');
             renderSimulatorBridgeByKeys('malware-extra-simulator-bridge', ['rootkit']);
             renderSimulatorBridge('password-simulator-bridge', 'password');
@@ -10306,6 +10405,7 @@
             renderAccordionList(checkVulnAssessmentData, 'accordion-vuln-assessment-list');
             renderAccordionList(checkBofData, 'accordion-bof-list');
             renderAccordionList(checkJavaSecData, 'accordion-java-sec-list');
+            renderAccordionList(checkJsWebData, 'accordion-js-web-list');
             renderAccordionList(checkWebSecData, 'accordion-websec-list');
             renderAccordionList(checkData, 'accordion-list');
             renderAccordionList(checkMalwareData, 'accordion-malware-list');
@@ -10565,6 +10665,10 @@
 
         function scrollToJavaSecCheck() {
             document.getElementById('section-java-sec-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToJsWebCheck() {
+            document.getElementById('section-js-web-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToWebSecCheck() {
