@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 129問）
+// 過去問一覧（すべてシミュレーター 131問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -28,7 +28,7 @@ const pastQuestionIndex = [
     { no: 20, format: 'simulator', category: 'malware', key: 'cryptojack',  source: 'R7春 午前II問5',   title: 'クリプトジャッキング' },
     { no: 21, format: 'simulator', category: 'malware', key: 'mitb',        source: 'R5秋 午前II問7',   title: 'MITB・トランザクション署名' },
     { no: 36, format: 'simulator', category: 'malware', key: 'rootkit',     source: 'R3秋 午前II問14',  title: 'ルートキット' },
-    // --- 基礎・管理 (39) ---
+    // --- 基礎・管理 (41) ---
     { no: 22, format: 'simulator', category: 'fundamentals', key: 'failsafe', source: 'H31春 高度共通 午前I問16', title: 'フェールセーフ' },
     { no: 59, format: 'simulator', category: 'fundamentals', key: 'riskident', source: 'R7春 午前II問10', title: 'JIS Q 27000 用語（リスク特定）' },
     { no: 60, format: 'simulator', category: 'fundamentals', key: 'riskdetail', source: 'H23秋 午前II問25', title: '詳細リスク分析' },
@@ -68,6 +68,8 @@ const pastQuestionIndex = [
     { no: 125, format: 'simulator', category: 'fundamentals', key: 'cpscope', source: 'R7春 午前II問9', title: 'CPS' },
     { no: 126, format: 'simulator', category: 'fundamentals', key: 'formalmethod', source: 'R6春 午前II問23', title: '形式手法' },
     { no: 127, format: 'simulator', category: 'fundamentals', key: 'gcollect', source: 'H28秋 高度共通 午前I問6', title: 'ガーベジコレクション' },
+    { no: 130, format: 'simulator', category: 'fundamentals', key: 'nistcsf', source: 'R7春 午前II問12', title: 'NIST CSF 2.0（GOVERN）' },
+    { no: 131, format: 'simulator', category: 'fundamentals', key: 'edsa', source: 'H30秋 午前II問8', title: 'EDSA認証' },
     // --- ネットワーク (35) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },

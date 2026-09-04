@@ -3535,5 +3535,69 @@ const questionDataExtra = {
             { num: 4, btn: "4. 正解", desc: "<strong>4. ウが適切</strong><br>ドキュメント型 DB です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "JSON", res: "格納" }
+    },
+    nistcsf: {
+        source: "情報処理安全確保支援士試験・R7春・午前II問12",
+        diagramTitle: "NIST CSF 2.0（シミュレーター）",
+        text: "NIST “サイバーセキュリティフレームワーク (CSF) 2.0” のコアには，機能が六つある。IDENTIFY, PROTECT, DETECT, RESPOND, RECOVER と，あともう一つはどれか。",
+        options: [
+            { key: "ア", text: "CONTROL", correct: false },
+            { key: "イ", text: "DIRECT", correct: false },
+            { key: "ウ", text: "GOVERN", correct: true },
+            { key: "エ", text: "MANAGE", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>NIST CSF 2.0 では，コア機能を<strong>GOVERN（統治）</strong>，IDENTIFY，PROTECT，DETECT，RESPOND，RECOVER の 6 つに分類しています。GOVERN は 2.0 で追加された機能です。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア・イ・エ</strong>：CSF 2.0 のコア機能名ではない ❌</li>
+                <li><strong>ウ</strong>：GOVERN（統治） ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "CSF 1.1", ip: "5 機能", icon: "fa-layer-group", color: "var(--secondary)" },
+            center: { name: "CSF 2.0", ip: "6 機能", icon: "fa-sitemap", color: "var(--primary)" },
+            right: { name: "GOVERN", ip: "統治", icon: "fa-landmark", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 従来", desc: "<strong>1. 従来は 5 機能</strong><br>IDENTIFY〜RECOVER です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 2.0", desc: "<strong>2. CSF 2.0 で拡張</strong><br>ガバナンスを明確化します。", stateClass: "state-2" },
+            { num: 3, btn: "3. GOVERN", desc: "<strong>3. GOVERN を追加</strong><br>方針・役割・リスク統治です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. ウが正解</strong><br>もう一つは GOVERN です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "CSF", res: "GOVERN" }
+    },
+    edsa: {
+        source: "情報処理安全確保支援士試験・H30秋・午前II問8",
+        diagramTitle: "EDSA 認証（シミュレーター）",
+        text: "EDSA 認証における評価対象と評価項目について，適切な組みはどれか。",
+        options: [
+            { key: "ア", text: "評価対象：組込み機器である制御機器 ／ 評価項目：組込み機器ロバストネス試験", correct: true },
+            { key: "イ", text: "評価対象：組込み機器である制御機器が運用されている施設 ／ 評価項目：入退室管理の評価", correct: false },
+            { key: "ウ", text: "評価対象：複数の制御機器から構成される制御システム ／ 評価項目：脆弱性試験", correct: false },
+            { key: "エ", text: "評価対象：複数の制御機器から構成される制御システムを管理する組織 ／ 評価項目：セキュリティポリシの評価", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p><strong>EDSA</strong>は組込み機器である<strong>制御機器</strong>を評価対象とします。EDSA 2.0.0 の評価項目には組込み機器ロバストネス試験，機能セキュリティ評価，セキュリティ開発ライフサイクル，開発成果物などがあります。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：機器＋ロバストネス試験 ✅</li>
+                <li><strong>イ</strong>：施設・入退室は対象外 ❌</li>
+                <li><strong>ウ</strong>：制御システム全体ではない ❌</li>
+                <li><strong>エ</strong>：組織・ポリシ評価ではない ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "制御機器", ip: "組込み", icon: "fa-microchip", color: "var(--secondary)" },
+            center: { name: "EDSA", ip: "認証", icon: "fa-certificate", color: "var(--primary)" },
+            right: { name: "評価項目", ip: "ロバストネス等", icon: "fa-clipboard-check", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 対象", desc: "<strong>1. 評価対象は制御機器</strong><br>組込みデバイスです。", stateClass: "state-1" },
+            { num: 2, btn: "2. 項目", desc: "<strong>2. ロバストネス試験など</strong><br>機器向けの評価項目です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 非対象", desc: "<strong>3. 施設・組織は別</strong><br>EDSA の主対象ではありません。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. アが適切</strong><br>機器とロバストネス試験です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "機器", res: "認証" }
     }
 };
