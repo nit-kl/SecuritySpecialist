@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（131問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（133問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（131問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（133問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1424,7 +1424,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（41問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（43問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1589,6 +1589,14 @@
                 <button class="question-tab-btn" onclick="switchQuestion('edsa', this)">
                     <span class="btn-meta">問131: H30秋 午前II問8</span>
                     <span class="btn-title">EDSA認証</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('sensitivepi', this)">
+                    <span class="btn-meta">問132: H31春 高度共通 午前I問30</span>
+                    <span class="btn-title">要配慮個人情報</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('pmledger', this)">
+                    <span class="btn-meta">問133: R2秋 午前II問25</span>
+                    <span class="btn-title">個人情報管理台帳の監査</span>
                 </button>
                 </div>
             </details>
@@ -1913,7 +1921,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（438問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（449問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1934,6 +1942,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToAuditCheck()">情報セキュリティ監査・システム監査（8問＋確認3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToSdlcSecurityCheck()">開発工程のセキュリティ（6問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToStandardsCheck()">セキュリティ規格・フレームワーク（15問＋確認2問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToPrivacyCheck()">個人情報保護（11問＋確認2問）</button>
                 </div>
             </details>
 
@@ -2008,7 +2017,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>438+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>449+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -2021,14 +2030,14 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全131問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全131問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全133問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全133問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
                         <h3>基礎・管理</h3>
                         <p>セキュリティの定義、CIA 三要素、PDCA・ISMS など試験の土台となる概念を Check! 形式で確認。</p>
-                        <div class="card-meta">112問（4＋10＋4＋15＋3＋2＋9＋6＋3＋7＋6＋8＋3＋8＋7＋17）</div>
+                        <div class="card-meta">125問（4＋10＋4＋15＋3＋2＋9＋6＋3＋7＋6＋8＋3＋8＋7＋17＋13）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-network')">
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -2051,9 +2060,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（131問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（133問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 131 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 133 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -2061,7 +2070,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（131問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（133問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -3121,6 +3130,76 @@
                 </h3>
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
                 <div id="standards-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 個人情報保護) -->
+            <section class="content-section" id="section-privacy-check">
+                <h2 class="section-title"><i class="fa-solid fa-user-lock"></i>基礎知識: Check! 解説（個人情報保護）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    個人情報保護法の用語・義務・改正，安全管理措置，番号法，JIS Q 15001，プライバシーマーク，GDPR を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>個人情報保護法における次の用語の定義について述べよ。個人情報、個人識別符号、個人情報データベース等、個人データ、保有個人データ、個人情報取扱事業者、要配慮個人情報、匿名加工情報、仮名加工情報、個人関連情報。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>個人情報保護法は，個人情報取扱事業者に対して何を求めているか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>個人情報保護法の主な改正内容について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>個人情報保護法のガイドラインでは，個人データの安全管理のために講じるべき措置として，どのような観点が示されているか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>番号法（マイナンバー法）の概要と基本理念（目的）について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>個人番号（マイナンバー），特定個人情報とは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>事業者による個人番号の利用範囲について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>特定個人情報の適正な取扱いに関するガイドラインの概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>JIS Q 15001:2023 附属書 A における主な管理策を挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q10】</span>プライバシーマーク制度の概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q11】</span>GDPR の概要について述べよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-privacy-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">個人情報のうち，個人情報保護法における要配慮個人情報に該当するものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>個人情報の取得時に，本人が取扱いの配慮を申告することによって設定される情報</span></li>
+                        <li><span class="opt-key">イ</span><span>個人に割り当てられた，運転免許証，クレジットカードなどの番号</span></li>
+                        <li><span class="opt-key">ウ</span><span>生存する個人に関する，個人を特定するために用いられる勤務先や住所などの情報</span></li>
+                        <li><span class="opt-key">エ</span><span>本人の病歴，犯罪の経歴など不当な差別や不利益を生じさせるおそれのある情報</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・H31 春・午前I 問 30］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>要配慮個人情報とは，不当な差別や偏見，その他の不利益が生じないように，その取扱いに特に配慮を要するものとして政令で定める記述等が含まれる個人情報であり，本人の人種，信条，社会的身分，病歴，犯罪の経歴等が該当する。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">プライバシーマークを取得している A 社は，個人情報管理台帳の取扱いについて内部監査を行った。判明した状況のうち，監査人が指摘事項として監査報告書に記載すべきものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>個人情報管理台帳に，概数でしかつかめない個人情報の保有件数は概数だけで記載している。</span></li>
+                        <li><span class="opt-key">イ</span><span>個人情報管理台帳に，ほかの項目に加えて，個人情報の保管場所，保管方法，保管期限を記載している。</span></li>
+                        <li><span class="opt-key">ウ</span><span>個人情報管理台帳の機密性を守るための保護措置を講じている。</span></li>
+                        <li><span class="opt-key">エ</span><span>個人情報管理台帳の見直しは，新たな個人情報の取得があった場合にだけ行っている。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R2 秋・午前Ⅱ 問 25］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>JIS Q 15001 の附属書 A では，個人情報管理台帳を整備するとともに，当該台帳の内容を少なくとも年 1 回，適宜に確認し，最新の状態で維持されるようにしなければならないと定めている。新たな個人情報の取得があった場合にだけ見直している運用はこれに則しておらず，監査指摘事項となる。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="privacy-simulator-bridge"></div>
             </section>
 
             <div class="category-banner" id="category-network">
@@ -5853,6 +5932,7 @@
     <script src="audit-check-data.js"></script>
     <script src="sdlc-security-check-data.js"></script>
     <script src="standards-check-data.js"></script>
+    <script src="privacy-check-data.js"></script>
     <script src="control-func-check-data.js"></script>
     <script src="host-hardening-check-data.js"></script>
     <script src="trusted-os-check-data.js"></script>
@@ -10247,6 +10327,7 @@
             renderAccordionList(checkAuditData, 'accordion-audit-list');
             renderAccordionList(checkSdlcSecurityData, 'accordion-sdlc-security-list');
             renderAccordionList(checkStandardsData, 'accordion-standards-list');
+            renderAccordionList(checkPrivacyData, 'accordion-privacy-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
@@ -10339,6 +10420,7 @@
             renderSimulatorBridgeByKeys('audit-simulator-bridge', ['dbdirect', 'auditrec', 'audittec']);
             renderSimulatorBridgeByKeys('sdlc-security-simulator-bridge', ['formalmethod']);
             renderSimulatorBridgeByKeys('standards-simulator-bridge', ['nistcsf', 'edsa']);
+            renderSimulatorBridgeByKeys('privacy-simulator-bridge', ['sensitivepi', 'pmledger']);
             renderSimulatorBridgeByKeys('controlfunc-simulator-bridge', ['masteravail']);
             renderSimulatorBridgeByKeys('firewall-simulator-bridge', ['fwping', 'spi', 'spidef', 'fwdbmove', 'fwdmz']);
             renderSimulatorBridgeByKeys('ids-simulator-bridge', ['falseneg']);
@@ -10480,6 +10562,7 @@
             renderAccordionList(checkAuditData, 'accordion-audit-list');
             renderAccordionList(checkSdlcSecurityData, 'accordion-sdlc-security-list');
             renderAccordionList(checkStandardsData, 'accordion-standards-list');
+            renderAccordionList(checkPrivacyData, 'accordion-privacy-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
@@ -10631,6 +10714,10 @@
 
         function scrollToStandardsCheck() {
             document.getElementById('section-standards-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToPrivacyCheck() {
+            document.getElementById('section-privacy-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetworkCheck() {

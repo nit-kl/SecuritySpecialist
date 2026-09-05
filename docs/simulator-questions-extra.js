@@ -3599,5 +3599,69 @@ const questionDataExtra = {
             { num: 4, btn: "4. 正解", desc: "<strong>4. アが適切</strong><br>機器とロバストネス試験です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "機器", res: "認証" }
+    },
+    sensitivepi: {
+        source: "情報処理技術者試験 高度共通・H31春・午前I問30",
+        diagramTitle: "要配慮個人情報（シミュレーター）",
+        text: "個人情報のうち，個人情報保護法における要配慮個人情報に該当するものはどれか。",
+        options: [
+            { key: "ア", text: "個人情報の取得時に，本人が取扱いの配慮を申告することによって設定される情報", correct: false },
+            { key: "イ", text: "個人に割り当てられた，運転免許証，クレジットカードなどの番号", correct: false },
+            { key: "ウ", text: "生存する個人に関する，個人を特定するために用いられる勤務先や住所などの情報", correct: false },
+            { key: "エ", text: "本人の病歴，犯罪の経歴など不当な差別や不利益を生じさせるおそれのある情報", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p><strong>要配慮個人情報</strong>とは，不当な差別や偏見その他の不利益が生じないよう，取扱いに特に配慮を要するものとして政令で定める記述等が含まれる個人情報です。人種，信条，社会的身分，病歴，犯罪の経歴等が該当します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：本人申告で設定されるものではない ❌</li>
+                <li><strong>イ</strong>：個人識別符号に近いが要配慮ではない ❌</li>
+                <li><strong>ウ</strong>：一般の個人情報 ❌</li>
+                <li><strong>エ</strong>：病歴・犯罪経歴等 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "個人情報", ip: "一般", icon: "fa-user", color: "var(--secondary)" },
+            center: { name: "要配慮", ip: "特に配慮", icon: "fa-user-shield", color: "var(--primary)" },
+            right: { name: "病歴等", ip: "差別防止", icon: "fa-notes-medical", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 定義", desc: "<strong>1. 政令で定める記述</strong><br>特に配慮を要する情報です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 例", desc: "<strong>2. 病歴・犯罪経歴など</strong><br>差別・不利益のおそれがあります。", stateClass: "state-2" },
+            { num: 3, btn: "3. 区別", desc: "<strong>3. 住所・免許番号は別</strong><br>一般の個人情報等です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エが該当</strong><br>要配慮個人情報です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "個人情報", res: "要配慮" }
+    },
+    pmledger: {
+        source: "情報処理安全確保支援士試験・R2秋・午前II問25",
+        diagramTitle: "個人情報管理台帳の監査（シミュレーター）",
+        text: "プライバシーマークを取得している A 社は，個人情報管理台帳の取扱いについて内部監査を行った。判明した状況のうち，監査人が指摘事項として監査報告書に記載すべきものはどれか。",
+        options: [
+            { key: "ア", text: "個人情報管理台帳に，概数でしかつかめない個人情報の保有件数は概数だけで記載している。", correct: false },
+            { key: "イ", text: "個人情報管理台帳に，ほかの項目に加えて，個人情報の保管場所，保管方法，保管期限を記載している。", correct: false },
+            { key: "ウ", text: "個人情報管理台帳の機密性を守るための保護措置を講じている。", correct: false },
+            { key: "エ", text: "個人情報管理台帳の見直しは，新たな個人情報の取得があった場合にだけ行っている。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>JIS Q 15001 では，個人情報管理台帳を整備し，その内容を<strong>少なくとも年 1 回</strong>，適宜に確認し最新の状態で維持することが求められます。新たな取得時だけ見直す運用は不十分で，監査指摘事項となります。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア〜ウ</strong>：適切な取扱い ✅（指摘対象ではない）</li>
+                <li><strong>エ</strong>：年 1 回の見直し不足 ❌ → 指摘事項</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "台帳", ip: "個人情報", icon: "fa-book", color: "var(--secondary)" },
+            center: { name: "内部監査", ip: "JIS Q 15001", icon: "fa-magnifying-glass", color: "var(--primary)" },
+            right: { name: "指摘", ip: "年1回見直し", icon: "fa-triangle-exclamation", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 台帳", desc: "<strong>1. 個人情報管理台帳を整備</strong><br>項目・保管等を記載します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 要求", desc: "<strong>2. 少なくとも年 1 回確認</strong><br>最新状態を維持します。", stateClass: "state-2" },
+            { num: 3, btn: "3. 不備", desc: "<strong>3. 新規取得時だけ見直し</strong><br>要求に不足します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エを指摘</strong><br>監査報告書に記載します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "監査", res: "指摘" }
     }
 };
