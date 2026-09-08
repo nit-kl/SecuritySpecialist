@@ -1297,13 +1297,13 @@
                 <i class="fa-solid fa-compass"></i> 学習ガイド
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuestionIndex()">
-                <i class="fa-solid fa-list-ol"></i> 過去問一覧（133問）
+                <i class="fa-solid fa-list-ol"></i> 過去問一覧（141問）
             </button>
             <button class="sidebar-nav-btn" onclick="scrollToQuizSection()">
                 <i class="fa-solid fa-play-circle"></i> 過去問シミュレーター
             </button>
 
-            <div class="sidebar-category-label">過去問シミュレーター（133問）</div>
+            <div class="sidebar-category-label">過去問シミュレーター（141問）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-burst" style="color:#f87171;"></i> DoS / DDoS（9問）</summary>
@@ -1424,7 +1424,7 @@
             </details>
 
             <details class="sidebar-group">
-                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（43問）</summary>
+                <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理（51問）</summary>
                 <div class="question-list">
                 <button class="question-tab-btn" onclick="switchQuestion('failsafe', this)">
                     <span class="btn-meta">問22: H31春 高度共通 午前I問16</span>
@@ -1597,6 +1597,38 @@
                 <button class="question-tab-btn" onclick="switchQuestion('pmledger', this)">
                     <span class="btn-meta">問133: R2秋 午前II問25</span>
                     <span class="btn-title">個人情報管理台帳の監査</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('computercrime', this)">
+                    <span class="btn-meta">問134: H30春 高度共通 午前I問30</span>
+                    <span class="btn-title">電子計算機損壊等業務妨害</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('cyberbasic', this)">
+                    <span class="btn-meta">問135: H27秋 高度共通 午前I問30</span>
+                    <span class="btn-title">サイバーセキュリティ基本法</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('cybergovguide', this)">
+                    <span class="btn-meta">問136: R4春 午前II問9</span>
+                    <span class="btn-title">サイバーセキュリティ経営ガイドライン</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('webcopyright', this)">
+                    <span class="btn-meta">問137: H29春 高度共通 午前I問30</span>
+                    <span class="btn-title">Webページの著作権</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('softcopyright', this)">
+                    <span class="btn-meta">問138: H29秋 午前II問23</span>
+                    <span class="btn-title">開発請負の著作権帰属</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('tradesecret', this)">
+                    <span class="btn-meta">問139: H26秋 高度共通 午前I問30</span>
+                    <span class="btn-title">営業秘密の要件</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('softlicense', this)">
+                    <span class="btn-meta">問140: R元秋 高度共通 午前I問17</span>
+                    <span class="btn-title">ソフトウェアのライセンス</span>
+                </button>
+                <button class="question-tab-btn" onclick="switchQuestion('unfaircomp', this)">
+                    <span class="btn-meta">問141: R6春 高度共通 午前I問30</span>
+                    <span class="btn-title">不正競争行為</span>
                 </button>
                 </div>
             </details>
@@ -1921,7 +1953,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（449問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（465問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1943,6 +1975,8 @@
                     <button class="sidebar-link-btn" onclick="scrollToSdlcSecurityCheck()">開発工程のセキュリティ（6問＋確認1問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToStandardsCheck()">セキュリティ規格・フレームワーク（15問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToPrivacyCheck()">個人情報保護（11問＋確認2問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToCyberLawCheck()">サイバー関連法制度（9問＋確認3問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToIpCheck()">知的財産権（7問＋確認5問）</button>
                 </div>
             </details>
 
@@ -2017,7 +2051,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>449+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>465+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -2030,14 +2064,14 @@
                     <div class="overview-card" onclick="scrollToQuizSection()">
                         <div class="overview-card-icon"><i class="fa-solid fa-play-circle"></i></div>
                         <h3>過去問シミュレーター</h3>
-                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全133問。回答後にアニメーション図解で確認できます。</p>
-                        <div class="card-meta">全133問（15カテゴリ）</div>
+                        <p>DoS/DDoS・Web・マルウェア・ネットワーク・クラウドなど全141問。回答後にアニメーション図解で確認できます。</p>
+                        <div class="card-meta">全141問（15カテゴリ）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-fundamentals')">
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
                         <h3>基礎・管理</h3>
                         <p>セキュリティの定義、CIA 三要素、PDCA・ISMS など試験の土台となる概念を Check! 形式で確認。</p>
-                        <div class="card-meta">125問（4＋10＋4＋15＋3＋2＋9＋6＋3＋7＋6＋8＋3＋8＋7＋17＋13）</div>
+                        <div class="card-meta">149問（4＋10＋4＋15＋3＋2＋9＋6＋3＋7＋6＋8＋3＋8＋7＋17＋13＋12＋12）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-network')">
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -2060,9 +2094,9 @@
 
             <!-- 過去問一覧 -->
             <section class="content-section" id="section-question-index">
-                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（133問）</h2>
+                <h2 class="section-title"><i class="fa-solid fa-list-ol"></i>過去問一覧（141問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.92rem;">
-                    過去問 133 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
+                    過去問 141 問すべてをシミュレーター形式（アニメーション図解付き）で解けます。Check! 基礎知識セクションからも各カテゴリの過去問へジャンプできます。
                 </p>
                 <div class="question-index-filters" id="question-index-filters"></div>
                 <div id="question-index-container"></div>
@@ -2070,7 +2104,7 @@
 
             <!-- クイズ＆シミュレータセクション -->
             <section class="content-section" id="quiz-section">
-                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（133問）</h2>
+                <h2 class="section-title" id="sec-title"><i class="fa-solid fa-graduation-cap"></i>過去問シミュレーター（141問）</h2>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">
                     左サイドバーでカテゴリ別に問題を選び、回答するとアニメーション付き図解と解説が表示されます。
                 </p>
@@ -3200,6 +3234,211 @@
                 </h3>
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
                 <div id="privacy-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! サイバー関連法制度) -->
+            <section class="content-section" id="section-cyber-law-check">
+                <h2 class="section-title"><i class="fa-solid fa-gavel"></i>基礎知識: Check! 解説（サイバー関連法制度）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    刑法・不正アクセス禁止法・サイバーセキュリティ基本法・関連法制・経営ガイドライン・SECURITY ACTION・電子署名法を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>刑法によって処罰可能なコンピュータ犯罪にはどのようなものがあるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>不正アクセス禁止法の特徴について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>サイバーセキュリティ基本法の概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>国家サイバー統括室の主な役割について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>サイバー対処能力強化法の概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>情報流通プラットフォーム対処法の概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>サイバーセキュリティ経営ガイドラインの概要について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q8】</span>SECURITY ACTION について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q9】</span>電子署名法の目的は何か。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-cyber-law-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">企業の Web サイトに接続して Web ページを改ざんし，システムの意図に反する動作をさせて業務を妨害する行為を処罰する法律はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>刑法</span></li>
+                        <li><span class="opt-key">イ</span><span>特定商取引法</span></li>
+                        <li><span class="opt-key">ウ</span><span>不正競争防止法</span></li>
+                        <li><span class="opt-key">エ</span><span>プロバイダ責任制限法</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・H30 春・午前I 問 30］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>Web ページを改ざんし，システムの意図に反する動作をさせて業務を妨害する行為は，刑法の<strong>電子計算機損壊等業務妨害罪</strong>に該当する。他人のコンピュータに関する業務を妨害する目的で，コンピュータに虚偽の情報若しくは不正な指令を与えて使用し，意図に反する動作をさせ，又は意図する動作をさせない罪である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ア</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">サイバーセキュリティ基本法において，サイバーセキュリティの対象として規定されている情報の説明はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>外交，国家安全に関する機密情報に限られる。</span></li>
+                        <li><span class="opt-key">イ</span><span>公共機関で処理される対象の手書きの書類に限られる。</span></li>
+                        <li><span class="opt-key">ウ</span><span>個人の属性を含むプライバシー情報に限られる。</span></li>
+                        <li><span class="opt-key">エ</span><span>電磁的方式によって，記録，発信，伝送，受信される情報に限られる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・H27 秋・午前I 問 30］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>同法では，サイバーセキュリティについて，「電磁的方式により記録され，又は発信され，伝送され，若しくは受信される情報の漏えい，滅失又は毀損の防止その他の当該情報の安全管理のために必要な措置が講じられ，その状態が適切に維持管理されていること」と規定している。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">経済産業省と IPA が策定した “サイバーセキュリティ経営ガイドライン (Ver2.0)” に関する記述のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>経営者が，実施するサイバーセキュリティ対策を投資ではなくコストとして捉えることを重視し，コストパフォーマンスの良いサイバーセキュリティ対策をまとめたものである。</span></li>
+                        <li><span class="opt-key">イ</span><span>経営者が認識すべきサイバーセキュリティに関する原則と，経営者がリーダシップを発揮して取り組むべき項目を取りまとめたものである。</span></li>
+                        <li><span class="opt-key">ウ</span><span>事業の規模やビジネスモデルによらず，全ての経営者が自社に適用すべきサイバーセキュリティ対策を定めたものである。</span></li>
+                        <li><span class="opt-key">エ</span><span>製造業のサプライチェーンを構成する小規模事業者の経営者が，サイバー攻撃を受けた際に行う事後対応をまとめたものである。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・R4 春・午前Ⅱ 問 9］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>サイバーセキュリティ経営ガイドラインは，サイバー攻撃から企業を守る観点で，経営者が認識する必要のある「3 原則」，及び経営者がサイバーセキュリティ対策を実施する上での責任者となる担当幹部（CISO 等）に指示すべき「重要 10 項目」などをまとめた文書である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>イ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="cyber-law-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 知的財産権) -->
+            <section class="content-section" id="section-ip-check">
+                <h2 class="section-title"><i class="fa-solid fa-copyright"></i>基礎知識: Check! 解説（知的財産権）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    産業財産権，特許法，著作権法，著作者人格権，不正競争防止法・営業秘密を確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>産業財産権とは何を目的としており，何が含まれるか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>特許法の目的，特許を受けるための要件，特許権の存続期間について述べよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>著作権法が保護の対象としているのは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>著作権の対象とならないものを挙げよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q5】</span>著作者人格権について説明せよ。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q6】</span>不正競争防止法が保護の対象としているのは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q7】</span>不正競争防止法における営業秘密の要件について説明せよ。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-ip-list"></div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-circle-question" style="color:#f87171;"></i> 確認問題
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem;">教科書の確認問題です。解答・解説を読んで理解を深めたうえで、シミュレーターでも解いてみましょう。</p>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">Web ページの著作権に関する記述のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>営利を目的とせずに個人の趣味として開設している Web ページに，無断で他人の著作物を掲載しても，私的使用なので著作権の侵害にはならない。</span></li>
+                        <li><span class="opt-key">イ</span><span>作成したプログラムをフリーソフトウェアとしてインターネット上で公開した場合，配布したプログラムは著作権法による保護の対象とならない。</span></li>
+                        <li><span class="opt-key">ウ</span><span>シェアウェアを試用期間中に使用して作成したデータを，試用期間終了後も Web ページに掲載することは，著作権の侵害となる。</span></li>
+                        <li><span class="opt-key">エ</span><span>特定の分野の Web ページの URL を集め，それに独自の解説を加えて作成したリンク集は，著作権法によって保護され得る。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・H29 春・午前I 問 30］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p><strong>ア</strong>：個人の趣味のページであっても，Web という公衆に公開される場に無断で他人の著作物を掲載すれば著作権侵害となる。</p>
+                        <p style="margin-top:0.5rem;"><strong>イ</strong>：フリーソフトウェアであってもプログラムは著作物であり，著作権法で保護される。</p>
+                        <p style="margin-top:0.5rem;"><strong>ウ</strong>：シェアウェアで作成したデータの著作権はデータ作成者にあり，試用期間とは無関係で侵害にならない。</p>
+                        <p style="margin-top:0.5rem;"><strong>エ</strong>：独自の解説や分類など創作性があれば，リンク集も著作物として保護され得る。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">企業間で，商用目的で締結されたソフトウェアの開発請負契約書に著作権の帰属が記載されていない場合，著作権の帰属先として，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>請負人，発注者のいずれにも帰属しない。</span></li>
+                        <li><span class="opt-key">イ</span><span>請負人と発注者とで共有する。</span></li>
+                        <li><span class="opt-key">ウ</span><span>請負人（開発者）に帰属する。</span></li>
+                        <li><span class="opt-key">エ</span><span>発注者に帰属する。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理安全確保支援士試験・H29 秋・午前Ⅱ 問 23］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>著作権の帰属について特段の定めがない場合，原則として開発した<strong>請負人（開発者）</strong>に著作権が帰属する。発注者に帰属させたい場合は契約で明示する必要がある。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">不正競争防止法において，営業秘密となるための要件は，「秘密として管理されていること」と「事業活動に有用な技術上又は営業上の情報であること」である。あと一つの要件はどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>事業譲渡が可能であること</span></li>
+                        <li><span class="opt-key">イ</span><span>期間が 10 年を超えないこと</span></li>
+                        <li><span class="opt-key">ウ</span><span>公然と知られていないこと</span></li>
+                        <li><span class="opt-key">エ</span><span>特許出願がなされていること</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・H26 秋・午前I 問 30］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>営業秘密の 3 要件は，秘密管理性，有用性，<strong>非公知性</strong>（公然と知られていないこと）である。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">自社開発したソフトウェアの他社へのライセンスに関する説明のうち，適切なものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>自社製品にバンドルして販売している場合，単体ではライセンスできない。</span></li>
+                        <li><span class="opt-key">イ</span><span>ハードウェアと組み合わせて特許を取得している場合，ソフトウェア単体ではライセンスできない。</span></li>
+                        <li><span class="opt-key">ウ</span><span>ソースコードを無償でライセンスした場合，無条件にオープンソースソフトウェアになる。</span></li>
+                        <li><span class="opt-key">エ</span><span>特許技術を利用していないソフトウェアであっても，ライセンスすることができる。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・R 元秋・午前I 問 17］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>特許の有無やバンドル販売の有無にかかわらず，著作権等に基づきソフトウェアをライセンスできる。無償提供だけではオープンソースにはならない。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>エ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <div class="review-question-box">
+                    <div class="review-question-tab">確認問題</div>
+                    <p class="review-question-text">不正競争防止法における「不正競争」に該当するものはどれか。</p>
+                    <ul class="review-question-options">
+                        <li><span class="opt-key">ア</span><span>A 社の競合ではない B 社が，A 社の名称に似たドメイン名を偶然取得した。</span></li>
+                        <li><span class="opt-key">イ</span><span>特定地域のみで有名なお菓子に似た名称の飲料を，そのお菓子が知られていない別地域で販売して利益を得た。</span></li>
+                        <li><span class="opt-key">ウ</span><span>商標登録されていない商品名を用いたドメイン名を取得し，その商品のコピー品を販売して利益を得た。</span></li>
+                        <li><span class="opt-key">エ</span><span>他社サービスに似ているが自社サービスにも適したドメイン名を，正当な利益を得る目的で取得・使用した。</span></li>
+                    </ul>
+                    <p class="review-question-source">［情報処理技術者試験 高度共通・R6 春・午前I 問 30］</p>
+                    <div class="review-answer-title">解答・解説</div>
+                    <div class="review-answer-body">
+                        <p>不正競争防止法は，ドメイン名の不正取得・使用やコピー品販売など，不正の利益を図る行為を不正競争として規制する。偶然の取得，正当な利益目的，周知性が及ばない地域での類似名称販売などは，必ずしも不正競争に該当しない。</p>
+                        <p style="margin-top:0.75rem;">したがって<strong>ウ</strong>が正解。</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size:1.2rem; font-weight:700; margin: 2.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-play-circle" style="color:var(--primary);"></i> 関連する過去問（シミュレーター）
+                </h3>
+                <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
+                <div id="ip-simulator-bridge"></div>
             </section>
 
             <div class="category-banner" id="category-network">
@@ -5933,6 +6172,8 @@
     <script src="sdlc-security-check-data.js"></script>
     <script src="standards-check-data.js"></script>
     <script src="privacy-check-data.js"></script>
+    <script src="cyber-law-check-data.js"></script>
+    <script src="ip-check-data.js"></script>
     <script src="control-func-check-data.js"></script>
     <script src="host-hardening-check-data.js"></script>
     <script src="trusted-os-check-data.js"></script>
@@ -10328,6 +10569,8 @@
             renderAccordionList(checkSdlcSecurityData, 'accordion-sdlc-security-list');
             renderAccordionList(checkStandardsData, 'accordion-standards-list');
             renderAccordionList(checkPrivacyData, 'accordion-privacy-list');
+            renderAccordionList(checkCyberLawData, 'accordion-cyber-law-list');
+            renderAccordionList(checkIpData, 'accordion-ip-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
@@ -10421,6 +10664,8 @@
             renderSimulatorBridgeByKeys('sdlc-security-simulator-bridge', ['formalmethod']);
             renderSimulatorBridgeByKeys('standards-simulator-bridge', ['nistcsf', 'edsa']);
             renderSimulatorBridgeByKeys('privacy-simulator-bridge', ['sensitivepi', 'pmledger']);
+            renderSimulatorBridgeByKeys('cyber-law-simulator-bridge', ['computercrime', 'cyberbasic', 'cybergovguide']);
+            renderSimulatorBridgeByKeys('ip-simulator-bridge', ['webcopyright', 'softcopyright', 'tradesecret', 'softlicense', 'unfaircomp']);
             renderSimulatorBridgeByKeys('controlfunc-simulator-bridge', ['masteravail']);
             renderSimulatorBridgeByKeys('firewall-simulator-bridge', ['fwping', 'spi', 'spidef', 'fwdbmove', 'fwdmz']);
             renderSimulatorBridgeByKeys('ids-simulator-bridge', ['falseneg']);
@@ -10563,6 +10808,8 @@
             renderAccordionList(checkSdlcSecurityData, 'accordion-sdlc-security-list');
             renderAccordionList(checkStandardsData, 'accordion-standards-list');
             renderAccordionList(checkPrivacyData, 'accordion-privacy-list');
+            renderAccordionList(checkCyberLawData, 'accordion-cyber-law-list');
+            renderAccordionList(checkIpData, 'accordion-ip-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
@@ -10718,6 +10965,14 @@
 
         function scrollToPrivacyCheck() {
             document.getElementById('section-privacy-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToCyberLawCheck() {
+            document.getElementById('section-cyber-law-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToIpCheck() {
+            document.getElementById('section-ip-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetworkCheck() {

@@ -3663,5 +3663,252 @@ const questionDataExtra = {
             { num: 4, btn: "4. 正解", desc: "<strong>4. エを指摘</strong><br>監査報告書に記載します。", stateClass: "state-4" }
         ],
         packetLabels: { req: "監査", res: "指摘" }
+    },
+    computercrime: {
+        source: "情報処理技術者試験 高度共通・H30春・午前I問30",
+        diagramTitle: "電子計算機損壊等業務妨害（シミュレーター）",
+        text: "企業の Web サイトに接続して Web ページを改ざんし，システムの意図に反する動作をさせて業務を妨害する行為を処罰する法律はどれか。",
+        options: [
+            { key: "ア", text: "刑法", correct: true },
+            { key: "イ", text: "特定商取引法", correct: false },
+            { key: "ウ", text: "不正競争防止法", correct: false },
+            { key: "エ", text: "プロバイダ責任制限法", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ア」です。</strong></p><br>
+            <p>Web ページの改ざんによりシステムを意図に反して動作させ業務を妨害する行為は，刑法の<strong>電子計算機損壊等業務妨害罪</strong>に該当します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：刑法（電子計算機損壊等業務妨害罪） ✅</li>
+                <li><strong>イ</strong>：通信販売等の取引規制 ❌</li>
+                <li><strong>ウ</strong>：営業秘密侵害等 ❌</li>
+                <li><strong>エ</strong>：プロバイダの責任範囲・対応 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "攻撃者", ip: "改ざん", icon: "fa-user-secret", color: "var(--secondary)" },
+            center: { name: "Web サイト", ip: "意図反する動作", icon: "fa-globe", color: "var(--primary)" },
+            right: { name: "刑法", ip: "業務妨害", icon: "fa-gavel", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 侵入", desc: "<strong>1. サイトに接続して改ざん</strong><br>Web ページを書き換えます。", stateClass: "state-1" },
+            { num: 2, btn: "2. 妨害", desc: "<strong>2. 意図に反する動作</strong><br>業務が妨害されます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 罪名", desc: "<strong>3. 電子計算機損壊等業務妨害</strong><br>刑法で処罰されます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. アが該当</strong><br>刑法です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "改ざん", res: "刑法" }
+    },
+    cyberbasic: {
+        source: "情報処理技術者試験 高度共通・H27秋・午前I問30",
+        diagramTitle: "サイバーセキュリティ基本法（シミュレーター）",
+        text: "サイバーセキュリティ基本法において，サイバーセキュリティの対象として規定されている情報の説明はどれか。",
+        options: [
+            { key: "ア", text: "外交，国家安全に関する機密情報に限られる。", correct: false },
+            { key: "イ", text: "公共機関で処理される対象の手書きの書類に限られる。", correct: false },
+            { key: "ウ", text: "個人の属性を含むプライバシー情報に限られる。", correct: false },
+            { key: "エ", text: "電磁的方式によって，記録，発信，伝送，受信される情報に限られる。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <p>同法では，サイバーセキュリティを，<strong>電磁的方式により記録・発信・伝送・受信される情報</strong>の漏えい・滅失・毀損の防止その他の安全管理措置が講じられ，適切に維持管理されていることと規定しています。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア〜ウ</strong>：対象を不当に限定 ❌</li>
+                <li><strong>エ</strong>：電磁的方式の情報 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "情報", ip: "電磁的方式", icon: "fa-database", color: "var(--secondary)" },
+            center: { name: "基本法", ip: "定義", icon: "fa-book", color: "var(--primary)" },
+            right: { name: "安全管理", ip: "維持", icon: "fa-shield-halved", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 対象", desc: "<strong>1. 電磁的方式の情報</strong><br>記録・発信・伝送・受信です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 措置", desc: "<strong>2. 漏えい等の防止</strong><br>安全管理が必要です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 維持", desc: "<strong>3. 状態の適切な維持</strong><br>これがサイバーセキュリティです。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エが定義</strong><br>電磁的方式に限られます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "情報", res: "定義" }
+    },
+    cybergovguide: {
+        source: "情報処理安全確保支援士試験・R4春・午前II問9",
+        diagramTitle: "サイバーセキュリティ経営ガイドライン（シミュレーター）",
+        text: "経済産業省と IPA が策定した “サイバーセキュリティ経営ガイドライン (Ver2.0)” に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "経営者が，実施するサイバーセキュリティ対策を投資ではなくコストとして捉えることを重視し，コストパフォーマンスの良いサイバーセキュリティ対策をまとめたものである。", correct: false },
+            { key: "イ", text: "経営者が認識すべきサイバーセキュリティに関する原則と，経営者がリーダシップを発揮して取り組むべき項目を取りまとめたものである。", correct: true },
+            { key: "ウ", text: "事業の規模やビジネスモデルによらず，全ての経営者が自社に適用すべきサイバーセキュリティ対策を定めたものである。", correct: false },
+            { key: "エ", text: "製造業のサプライチェーンを構成する小規模事業者の経営者が，サイバー攻撃を受けた際に行う事後対応をまとめたものである。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「イ」です。</strong></p><br>
+            <p>サイバーセキュリティ経営ガイドラインは，経営者が認識すべき<strong>3 原則</strong>と，CISO 等に指示すべき<strong>重要 10 項目</strong>などをまとめた文書です。対策はコストではなく投資として捉えることが重視されます。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：コストではなく投資 ❌</li>
+                <li><strong>イ</strong>：原則とリーダシップ項目 ✅</li>
+                <li><strong>ウ</strong>：一律適用ではない ❌</li>
+                <li><strong>エ</strong>：製造業の事後対応に限定されない ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "経営者", ip: "3 原則", icon: "fa-user-tie", color: "var(--secondary)" },
+            center: { name: "ガイドライン", ip: "経産省・IPA", icon: "fa-clipboard-list", color: "var(--primary)" },
+            right: { name: "CISO", ip: "重要10項目", icon: "fa-user-shield", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 目的", desc: "<strong>1. 企業をサイバー攻撃から守る</strong><br>経営視点の指針です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 原則", desc: "<strong>2. 経営者が認識する 3 原則</strong><br>リーダシップが求められます。", stateClass: "state-2" },
+            { num: 3, btn: "3. 指示", desc: "<strong>3. 重要 10 項目を指示</strong><br>CISO 等へ展開します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. イが適切</strong><br>原則と取組項目の文書です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "経営", res: "指針" }
+    },
+    webcopyright: {
+        source: "情報処理技術者試験 高度共通・H29春・午前I問30",
+        diagramTitle: "Web ページの著作権（シミュレーター）",
+        text: "Web ページの著作権に関する記述のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "営利を目的とせずに個人の趣味として開設している Web ページに，無断で他人の著作物を掲載しても，私的使用なので著作権の侵害にはならない。", correct: false },
+            { key: "イ", text: "作成したプログラムをフリーソフトウェアとしてインターネット上で公開した場合，配布したプログラムは著作権法による保護の対象とならない。", correct: false },
+            { key: "ウ", text: "シェアウェアを試用期間中に使用して作成したデータを，試用期間終了後も Web ページに掲載することは，著作権の侵害となる。", correct: false },
+            { key: "エ", text: "特定の分野の Web ページの URL を集め，それに独自の解説を加えて作成したリンク集は，著作権法によって保護され得る。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：Web への無断掲載は私的使用に当たらず侵害 ❌</li>
+                <li><strong>イ</strong>：フリーソフトでも著作物として保護される ❌</li>
+                <li><strong>ウ</strong>：作成データの著作権は作成者にあり，試用期間とは無関係 ❌</li>
+                <li><strong>エ</strong>：独自の解説等で創作性があれば著作物として保護され得る ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "リンク集", ip: "独自解説", icon: "fa-link", color: "var(--secondary)" },
+            center: { name: "創作性", ip: "表現", icon: "fa-lightbulb", color: "var(--primary)" },
+            right: { name: "著作権法", ip: "保護", icon: "fa-copyright", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. Web", desc: "<strong>1. Web 公開は公衆への提供</strong><br>私的使用の例外は狭く解釈されます。", stateClass: "state-1" },
+            { num: 2, btn: "2. フリー", desc: "<strong>2. 無料配布でも著作物</strong><br>保護は存続します。", stateClass: "state-2" },
+            { num: 3, btn: "3. リンク集", desc: "<strong>3. 独自の選別・解説</strong><br>創作性があれば保護されます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エが適切</strong><br>リンク集も保護され得ます。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "Web", res: "著作権" }
+    },
+    softcopyright: {
+        source: "情報処理安全確保支援士試験・H29秋・午前II問23",
+        diagramTitle: "開発請負と著作権帰属（シミュレーター）",
+        text: "企業間で，商用目的で締結されたソフトウェアの開発請負契約書に著作権の帰属が記載されていない場合，著作権の帰属先として，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "請負人，発注者のいずれにも帰属しない。", correct: false },
+            { key: "イ", text: "請負人と発注者とで共有する。", correct: false },
+            { key: "ウ", text: "請負人（開発者）に帰属する。", correct: true },
+            { key: "エ", text: "発注者に帰属する。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>企業間の商用ソフトウェア開発請負で，著作権の帰属について特段の定めがない場合，原則として<strong>請負人（開発者）</strong>に著作権が帰属します。発注者に帰属させたい場合は契約で明示する必要があります。</p>
+        `,
+        nodes: {
+            left: { name: "発注者", ip: "契約", icon: "fa-building", color: "var(--secondary)" },
+            center: { name: "帰属記載なし", ip: "原則", icon: "fa-file-contract", color: "var(--primary)" },
+            right: { name: "請負人", ip: "著作権", icon: "fa-laptop-code", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 請負", desc: "<strong>1. 企業間の開発請負</strong><br>商用目的の契約です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 未記載", desc: "<strong>2. 帰属の記載がない</strong><br>特約がありません。", stateClass: "state-2" },
+            { num: 3, btn: "3. 原則", desc: "<strong>3. 創作者である請負人</strong><br>著作権が帰属します。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. ウが適切</strong><br>開発者に帰属します。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "契約", res: "帰属" }
+    },
+    tradesecret: {
+        source: "情報処理技術者試験 高度共通・H26秋・午前I問30",
+        diagramTitle: "営業秘密の要件（シミュレーター）",
+        text: "不正競争防止法において，営業秘密となるための要件は，「秘密として管理されていること」と「事業活動に有用な技術上又は営業上の情報であること」である。あと一つの要件はどれか。",
+        options: [
+            { key: "ア", text: "事業譲渡が可能であること", correct: false },
+            { key: "イ", text: "期間が 10 年を超えないこと", correct: false },
+            { key: "ウ", text: "公然と知られていないこと", correct: true },
+            { key: "エ", text: "特許出願がなされていること", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>営業秘密の 3 要件は，<strong>秘密管理性</strong>・<strong>有用性</strong>・<strong>非公知性</strong>（公然と知られていないこと）です。</p>
+        `,
+        nodes: {
+            left: { name: "秘密管理", ip: "管理性", icon: "fa-lock", color: "var(--secondary)" },
+            center: { name: "有用性", ip: "技術・営業", icon: "fa-briefcase", color: "var(--primary)" },
+            right: { name: "非公知", ip: "非公知性", icon: "fa-eye-slash", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 管理", desc: "<strong>1. 秘密として管理</strong><br>秘密管理性です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 有用", desc: "<strong>2. 事業に有用な情報</strong><br>有用性です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 非公知", desc: "<strong>3. 公然と知られていない</strong><br>非公知性です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. ウが第三要件</strong><br>非公知性です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "営業秘密", res: "3要件" }
+    },
+    softlicense: {
+        source: "情報処理技術者試験 高度共通・R元秋・午前I問17",
+        diagramTitle: "ソフトウェアのライセンス（シミュレーター）",
+        text: "自社開発したソフトウェアの他社へのライセンスに関する説明のうち，適切なものはどれか。",
+        options: [
+            { key: "ア", text: "自社製品にバンドルして販売している場合，単体ではライセンスできない。", correct: false },
+            { key: "イ", text: "ハードウェアと組み合わせて特許を取得している場合，ソフトウェア単体ではライセンスできない。", correct: false },
+            { key: "ウ", text: "ソースコードを無償でライセンスした場合，無条件にオープンソースソフトウェアになる。", correct: false },
+            { key: "エ", text: "特許技術を利用していないソフトウェアであっても，ライセンスすることができる。", correct: true }
+        ],
+        explanation: `
+            <p><strong>正解は「エ」です。</strong></p><br>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア・イ</strong>：バンドルや特許の有無にかかわらず単体ライセンスは可能 ❌</li>
+                <li><strong>ウ</strong>：無償提供＝オープンソースではない（ライセンス条件が必要） ❌</li>
+                <li><strong>エ</strong>：著作権等に基づきライセンス可能 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "自社ソフト", ip: "著作権", icon: "fa-compact-disc", color: "var(--secondary)" },
+            center: { name: "ライセンス", ip: "許諾", icon: "fa-file-signature", color: "var(--primary)" },
+            right: { name: "他社", ip: "利用", icon: "fa-building", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 権利", desc: "<strong>1. 著作権に基づく許諾</strong><br>特許は必須ではありません。", stateClass: "state-1" },
+            { num: 2, btn: "2. 形態", desc: "<strong>2. 単体・バンドルいずれも可</strong><br>契約で決められます。", stateClass: "state-2" },
+            { num: 3, btn: "3. OSS", desc: "<strong>3. 無償≠オープンソース</strong><br>条件付きライセンスが必要です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. エが適切</strong><br>特許なしでもライセンス可です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "許諾", res: "利用" }
+    },
+    unfaircomp: {
+        source: "情報処理技術者試験 高度共通・R6春・午前I問30",
+        diagramTitle: "不正競争行為（シミュレーター）",
+        text: "不正競争防止法における「不正競争」に該当するものはどれか。",
+        options: [
+            { key: "ア", text: "A 社の競合ではない B 社が，A 社の名称に似たドメイン名を偶然取得した。", correct: false },
+            { key: "イ", text: "特定地域のみで有名なお菓子に似た名称の飲料を，そのお菓子が知られていない別地域で販売して利益を得た。", correct: false },
+            { key: "ウ", text: "商標登録されていない商品名を用いたドメイン名を取得し，その商品のコピー品を販売して利益を得た。", correct: true },
+            { key: "エ", text: "他社サービスに似ているが自社サービスにも適したドメイン名を，正当な利益を得る目的で取得・使用した。", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p>不正競争防止法は，ドメイン名の不正取得・使用やコピー品販売など，不正の利益を図る行為を不正競争として規制します。偶然取得や正当な目的の使用，地域限定の周知性がない場合は該当しにくいです。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア</strong>：偶然・非競合 ❌</li>
+                <li><strong>イ</strong>：周知性がその地域にない ❌</li>
+                <li><strong>ウ</strong>：ドメイン不正取得＋コピー品販売 ✅</li>
+                <li><strong>エ</strong>：正当な利益目的 ❌</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "ドメイン", ip: "不正取得", icon: "fa-globe", color: "var(--secondary)" },
+            center: { name: "不正競争", ip: "防止法", icon: "fa-scale-balanced", color: "var(--primary)" },
+            right: { name: "コピー品", ip: "販売", icon: "fa-box", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 行為", desc: "<strong>1. ドメインを不正に取得</strong><br>商品名を悪用します。", stateClass: "state-1" },
+            { num: 2, btn: "2. 販売", desc: "<strong>2. コピー品を販売</strong><br>不正の利益を図ります。", stateClass: "state-2" },
+            { num: 3, btn: "3. 該当", desc: "<strong>3. 不正競争に該当</strong><br>法で規制されます。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. ウが該当</strong><br>不正競争行為です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "不正", res: "規制" }
     }
 };
