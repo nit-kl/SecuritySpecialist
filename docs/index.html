@@ -1953,7 +1953,7 @@
                 </div>
             </details>
 
-            <div class="sidebar-category-label">Check! 基礎知識（465問超）</div>
+            <div class="sidebar-category-label">Check! 基礎知識（469問超）</div>
 
             <details class="sidebar-group" open>
                 <summary><i class="fa-solid fa-book" style="color:#38bdf8;"></i> 基礎・管理</summary>
@@ -1977,6 +1977,7 @@
                     <button class="sidebar-link-btn" onclick="scrollToPrivacyCheck()">個人情報保護（11問＋確認2問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToCyberLawCheck()">サイバー関連法制度（9問＋確認3問）</button>
                     <button class="sidebar-link-btn" onclick="scrollToIpCheck()">知的財産権（7問＋確認5問）</button>
+                    <button class="sidebar-link-btn" onclick="scrollToEDocCheck()">電子文書・タイムスタンプ（4問）</button>
                 </div>
             </details>
 
@@ -2051,7 +2052,7 @@
                 </p>
                 <div class="overview-stats">
                     <div class="overview-stat"><strong>92</strong><span>過去問（すべてシミュレーター）</span></div>
-                    <div class="overview-stat"><strong>465+</strong><span>Check! 基礎知識</span></div>
+                    <div class="overview-stat"><strong>469+</strong><span>Check! 基礎知識</span></div>
                     <div class="overview-stat"><strong>15</strong><span>カテゴリ</span></div>
                 </div>
                 <div class="overview-grid">
@@ -2071,7 +2072,7 @@
                         <div class="overview-card-icon"><i class="fa-solid fa-book"></i></div>
                         <h3>基礎・管理</h3>
                         <p>セキュリティの定義、CIA 三要素、PDCA・ISMS など試験の土台となる概念を Check! 形式で確認。</p>
-                        <div class="card-meta">149問（4＋10＋4＋15＋3＋2＋9＋6＋3＋7＋6＋8＋3＋8＋7＋17＋13＋12＋12）</div>
+                        <div class="card-meta">153問（4＋10＋4＋15＋3＋2＋9＋6＋3＋7＋6＋8＋3＋8＋7＋17＋13＋12＋12＋4）</div>
                     </div>
                     <div class="overview-card" onclick="scrollToSection('category-network')">
                         <div class="overview-card-icon"><i class="fa-solid fa-network-wired"></i></div>
@@ -3439,6 +3440,24 @@
                 </h3>
                 <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">上記の確認問題は<strong>過去問シミュレーター</strong>でも解けます。</p>
                 <div id="ip-simulator-bridge"></div>
+            </section>
+
+            <!-- 基礎知識の解説セクション (Check! 電子文書・タイムスタンプ) -->
+            <section class="content-section" id="section-e-doc-check">
+                <h2 class="section-title"><i class="fa-solid fa-file-circle-check"></i>基礎知識: Check! 解説（電子文書・タイムスタンプ）</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    電子帳簿保存法，e-文書法，タイムビジネス，タイムスタンプを確認します。各項目をクリックして展開してください。
+                </p>
+                <div class="check-box-panel">
+                    <div class="check-box-tab"><i class="fa-solid fa-clipboard-check"></i> Check!</div>
+                    <ul class="check-question-list">
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q1】</span>電子帳簿保存法によって何が可能となったか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q2】</span>e-文書法によって何が可能となったか。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q3】</span>タイムビジネスとは何か。</span></li>
+                        <li><i class="fa-solid fa-square-check"></i><span><span class="q-label">【Q4】</span>タイムスタンプとは何か。</span></li>
+                    </ul>
+                </div>
+                <div class="accordion" id="accordion-e-doc-list"></div>
             </section>
 
             <div class="category-banner" id="category-network">
@@ -6174,6 +6193,7 @@
     <script src="privacy-check-data.js"></script>
     <script src="cyber-law-check-data.js"></script>
     <script src="ip-check-data.js"></script>
+    <script src="e-doc-check-data.js"></script>
     <script src="control-func-check-data.js"></script>
     <script src="host-hardening-check-data.js"></script>
     <script src="trusted-os-check-data.js"></script>
@@ -10571,6 +10591,7 @@
             renderAccordionList(checkPrivacyData, 'accordion-privacy-list');
             renderAccordionList(checkCyberLawData, 'accordion-cyber-law-list');
             renderAccordionList(checkIpData, 'accordion-ip-list');
+            renderAccordionList(checkEDocData, 'accordion-e-doc-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
@@ -10810,6 +10831,7 @@
             renderAccordionList(checkPrivacyData, 'accordion-privacy-list');
             renderAccordionList(checkCyberLawData, 'accordion-cyber-law-list');
             renderAccordionList(checkIpData, 'accordion-ip-list');
+            renderAccordionList(checkEDocData, 'accordion-e-doc-list');
             renderAccordionList(checkNetworkData, 'accordion-network-list');
             renderAccordionList(checkHostHardeningData, 'accordion-host-hardening-list');
             renderAccordionList(checkTrustedOsData, 'accordion-trustedos-list');
@@ -10973,6 +10995,10 @@
 
         function scrollToIpCheck() {
             document.getElementById('section-ip-check').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToEDocCheck() {
+            document.getElementById('section-e-doc-check').scrollIntoView({ behavior: 'smooth' });
         }
 
         function scrollToNetworkCheck() {
