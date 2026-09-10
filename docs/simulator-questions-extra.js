@@ -3910,5 +3910,36 @@ const questionDataExtra = {
             { num: 4, btn: "4. 正解", desc: "<strong>4. ウが該当</strong><br>不正競争行為です。", stateClass: "state-4" }
         ],
         packetLabels: { req: "不正", res: "規制" }
+    },
+    itgeneral: {
+        source: "情報処理安全確保支援士試験・R6春・午前II問25",
+        diagramTitle: "IT 全般統制（シミュレーター）",
+        text: "金融庁の「財務報告に係る内部統制の評価及び監査に関する実施基準（令和 5 年）」における IT 全般統制として，最も適切なものはどれか。",
+        options: [
+            { key: "ア", text: "アプリケーションプログラムの例外処理（エラー）の修正・再処理", correct: false },
+            { key: "イ", text: "業務運用によるマスタデータの保守・管理", correct: false },
+            { key: "ウ", text: "システムの開発・保守に関する管理", correct: true },
+            { key: "エ", text: "入力情報の完全性・正確性・妥当性等を確保する統制", correct: false }
+        ],
+        explanation: `
+            <p><strong>正解は「ウ」です。</strong></p><br>
+            <p><strong>IT 全般統制</strong>は，業務処理統制が有効に機能するための組織全体の IT 基盤・方針・体制に関する統制です。システムの開発・保守に関する管理がこれに該当します。</p>
+            <ul style="margin-top:0.75rem;">
+                <li><strong>ア・イ・エ</strong>：業務処理統制（アプリケーションコントロール） ❌</li>
+                <li><strong>ウ</strong>：IT 全般統制 ✅</li>
+            </ul>
+        `,
+        nodes: {
+            left: { name: "業務処理統制", ip: "アプリ", icon: "fa-gears", color: "var(--secondary)" },
+            center: { name: "IT統制", ip: "2分類", icon: "fa-sitemap", color: "var(--primary)" },
+            right: { name: "IT全般統制", ip: "開発・保守", icon: "fa-server", color: "var(--accent)" }
+        },
+        steps: [
+            { num: 1, btn: "1. 分類", desc: "<strong>1. IT 統制は 2 つ</strong><br>業務処理統制と全般統制です。", stateClass: "state-1" },
+            { num: 2, btn: "2. 業務", desc: "<strong>2. 業務処理統制</strong><br>入力・例外・マスタ等です。", stateClass: "state-2" },
+            { num: 3, btn: "3. 全般", desc: "<strong>3. IT 全般統制</strong><br>開発・保守管理など基盤です。", stateClass: "state-3" },
+            { num: 4, btn: "4. 正解", desc: "<strong>4. ウが全般統制</strong><br>システム開発・保守の管理です。", stateClass: "state-4" }
+        ],
+        packetLabels: { req: "統制", res: "全般" }
     }
 };

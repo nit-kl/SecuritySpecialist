@@ -1,4 +1,4 @@
-// 過去問一覧（すべてシミュレーター 141問）
+// 過去問一覧（すべてシミュレーター 142問）
 const pastQuestionIndex = [
     // --- DoS/DDoS (9) ---
     { no: 1,  format: 'simulator', category: 'dos',     key: 'ntp',         source: 'R6秋 午前II問4',   title: 'NTPリフレクション' },
@@ -28,7 +28,7 @@ const pastQuestionIndex = [
     { no: 20, format: 'simulator', category: 'malware', key: 'cryptojack',  source: 'R7春 午前II問5',   title: 'クリプトジャッキング' },
     { no: 21, format: 'simulator', category: 'malware', key: 'mitb',        source: 'R5秋 午前II問7',   title: 'MITB・トランザクション署名' },
     { no: 36, format: 'simulator', category: 'malware', key: 'rootkit',     source: 'R3秋 午前II問14',  title: 'ルートキット' },
-    // --- 基礎・管理 (51) ---
+    // --- 基礎・管理 (52) ---
     { no: 22, format: 'simulator', category: 'fundamentals', key: 'failsafe', source: 'H31春 高度共通 午前I問16', title: 'フェールセーフ' },
     { no: 59, format: 'simulator', category: 'fundamentals', key: 'riskident', source: 'R7春 午前II問10', title: 'JIS Q 27000 用語（リスク特定）' },
     { no: 60, format: 'simulator', category: 'fundamentals', key: 'riskdetail', source: 'H23秋 午前II問25', title: '詳細リスク分析' },
@@ -80,6 +80,7 @@ const pastQuestionIndex = [
     { no: 139, format: 'simulator', category: 'fundamentals', key: 'tradesecret', source: 'H26秋 高度共通 午前I問30', title: '営業秘密の要件' },
     { no: 140, format: 'simulator', category: 'fundamentals', key: 'softlicense', source: 'R元秋 高度共通 午前I問17', title: 'ソフトウェアのライセンス' },
     { no: 141, format: 'simulator', category: 'fundamentals', key: 'unfaircomp', source: 'R6春 高度共通 午前I問30', title: '不正競争行為' },
+    { no: 142, format: 'simulator', category: 'fundamentals', key: 'itgeneral', source: 'R6春 午前II問25', title: 'IT全般統制' },
     // --- ネットワーク (35) ---
     { no: 23, format: 'simulator', category: 'network', key: 'vlan',       source: 'H31春 午前II問12', title: 'VLANのセキュリティ効果' },
     { no: 24, format: 'simulator', category: 'network', key: 'cookie',     source: 'R3秋 午前II問10',  title: 'Cookie Secure属性' },
